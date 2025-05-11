@@ -1,0 +1,48 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo gradiente -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f5f5" />
+      <stop offset="100%" stop-color="#e0e0e0" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="5" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" />
+  
+  <!-- Silueta de coche de lujo -->
+  <g transform="translate(300, 350) scale(1.2)" filter="url(#shadow)">
+    <path d="M400,120 C450,120 480,140 500,150 C550,170 560,200 570,200 C650,200 680,180 700,160 C720,140 750,120 800,120 L820,120 C840,120 860,140 860,160 L860,180 C860,190 850,200 840,200 L800,200 C790,200 780,210 780,220 L780,240 C780,250 770,260 760,260 L740,260 C730,260 720,250 720,240 L720,220 C720,210 710,200 700,200 L300,200 C290,200 280,210 280,220 L280,240 C280,250 270,260 260,260 L240,260 C230,260 220,250 220,240 L220,220 C220,210 210,200 200,200 L160,200 C150,200 140,190 140,180 L140,160 C140,140 160,120 180,120 L200,120 C250,120 280,140 300,160 C320,180 350,200 380,200 C390,200 400,180 450,160 C470,150 380,120 400,120 Z" fill="#333" />
+    
+    <!-- Ventanas -->
+    <rect x="320" y="140" width="150" height="40" rx="5" fill="#666" />
+    <rect x="530" y="140" width="150" height="40" rx="5" fill="#666" />
+    
+    <!-- Ruedas -->
+    <circle cx="280" cy="260" r="40" fill="#222" />
+    <circle cx="280" cy="260" r="20" fill="#444" />
+    <circle cx="720" cy="260" r="40" fill="#222" />
+    <circle cx="720" cy="260" r="20" fill="#444" />
+  </g>
+  
+  <!-- Figuras humanas -->
+  <g transform="translate(300, 330) scale(0.8)">
+    <!-- Chófer -->
+    <circle cx="200" cy="100" r="20" fill="#333" /> <!-- Cabeza -->
+    <rect x="190" y="120" width="20" height="60" rx="5" fill="#333" /> <!-- Cuerpo -->
+    <rect x="180" y="120" width="10" height="40" rx="2" fill="#333" /> <!-- Brazo izquierdo -->
+    <rect x="210" y="120" width="10" height="40" rx="2" fill="#333" /> <!-- Brazo derecho -->
+    
+    <!-- Cliente -->
+    <circle cx="400" cy="100" r="20" fill="#555" /> <!-- Cabeza -->
+    <rect x="390" y="120" width="20" height="60" rx="5" fill="#555" /> <!-- Cuerpo -->
+    <rect x="380" y="120" width="10" height="40" rx="2" fill="#555" /> <!-- Brazo izquierdo -->
+    <rect x="410" y="120" width="10" height="40" rx="2" fill="#555" /> <!-- Brazo derecho -->
+  </g>
+  
+  <!-- Sombras y efectos -->
+  <rect x="200" y="400" width="800" height="20" rx="10" fill="#000" opacity="0.1" />
+</svg> 
