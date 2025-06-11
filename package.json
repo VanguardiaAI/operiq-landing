@@ -1,7 +1,7 @@
 {
-  "name": "plantilla-react18-flask-mongodb",
+  "name": "operiq-platform",
   "version": "1.0.0",
-  "description": "Plantilla para proyectos con React 18, TypeScript, Flask y MongoDB",
+  "description": "Plataforma integral de transporte de lujo con servicios de chófer premium a nivel global",
   "scripts": {
     "frontend:dev": "cd frontend && npm run dev",
     "frontend:build": "cd frontend && npm run build",
@@ -11,14 +11,25 @@
     "install:backend": "cd backend && pip install -r requirements.txt"
   },
   "keywords": [
+    "operiq",
+    "transporte",
+    "lujo",
+    "chauffeur",
+    "limousine",
     "react",
     "typescript",
     "flask",
     "mongodb",
-    "fullstack"
+    "fullstack",
+    "luxury-transport",
+    "booking-platform"
   ],
-  "author": "",
-  "license": "MIT",
+  "author": "Operiq Team",
+  "license": "Proprietary",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VanguardiaAI/operiq-landing.git"
+  },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.13",
     "@radix-ui/react-checkbox": "^1.3.1",
