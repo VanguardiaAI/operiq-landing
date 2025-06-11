@@ -1,37 +1,64 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Check, Globe, Shield, Users, DollarSign, Key, Leaf } from "lucide-react";
+import { motion } from "framer-motion";
 
 const StrategicPartnerships = () => {
+  const navigate = useNavigate();
+
+  const handleReservarClick = () => {
+    navigate('/login-companies');
+  };
+
   return (
     <div className="bg-white">
       {/* Navigation */}
       <Navbar />
       
-      {/* Hero Section with Full-Width Image */}
-      <div className="relative bg-white overflow-hidden w-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+      {/* Hero Section con mejor estructura para móviles */}
+      <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden w-full">
+        {/* Overlay más oscuro para mejorar el contraste */}
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        
+        {/* Imagen de fondo */}
         <img 
           src="/images/limo-airport.png" 
           alt="Servicio de chófer de primera clase" 
-          className="w-full h-[600px] object-cover object-center"
+          className="w-full h-[500px] md:h-[600px] object-cover object-center opacity-70"
         />
+        
+        {/* Contenido del hero con mejor padding y estructura */}
         <div className="absolute inset-0 flex items-center z-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              Conviértase en socio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300">Operiq</span>
-            </h1>
+          <div className="container mx-auto px-6 sm:px-8 lg:px-10 max-w-6xl">
+            <div className="max-w-3xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight">
+                Conviértase en socio de 
+                <span className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300"> Operiq</span>
+              </h1>
+              
+              <motion.button 
+                className="select-button h-12 px-8 py-3 rounded-md text-white font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 mt-4"
+                onClick={handleReservarClick}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Reservar ahora
+              </motion.button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content with Centered Max Width */}
+      {/* Main Content - AHORA COMPLETAMENTE SEPARADO DEL HERO */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 max-w-6xl">
         
-        {/* Aviation Section */}
+        {/* Aviation Section - COMPLETAMENTE FUERA DEL HERO */}
         <section className="mb-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>

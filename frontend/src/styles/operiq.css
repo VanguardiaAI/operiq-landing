@@ -94,8 +94,9 @@
 
 @media (max-width: 767px) {
   .hero-container {
-    min-height: 450px;
-    max-height: none;
+    min-height: 320px;
+    max-height: 380px;
+    height: 40vh;
   }
   
   .title-bar h1 {

@@ -11,12 +11,19 @@ export default defineConfig(({ mode }) => {
   console.log('- VITE_API_URL:', env.VITE_API_URL)
   console.log('- VITE_STRIPE_PUBLISHABLE_KEY:', env.VITE_STRIPE_PUBLISHABLE_KEY ? 
     `${env.VITE_STRIPE_PUBLISHABLE_KEY.substring(0, 10)}...${env.VITE_STRIPE_PUBLISHABLE_KEY.substring(env.VITE_STRIPE_PUBLISHABLE_KEY.length - 4)}` : 'no definida')
+  console.log('- VITE_GOOGLE_MAPS_API_KEY:', env.VITE_GOOGLE_MAPS_API_KEY ? 
+    `${env.VITE_GOOGLE_MAPS_API_KEY.substring(0, 10)}...${env.VITE_GOOGLE_MAPS_API_KEY.substring(env.VITE_GOOGLE_MAPS_API_KEY.length - 4)}` : 'no definida')
   
   return {
     define: {
       // Hacer que las variables de entorno estén disponibles en el código
       'import.meta.env.VITE_API_URL': JSON.stringify(env.VITE_API_URL),
       'import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY': JSON.stringify(env.VITE_STRIPE_PUBLISHABLE_KEY),
+      'import.meta.env.VITE_GOOGLE_MAPS_API_KEY': JSON.stringify(env.VITE_GOOGLE_MAPS_API_KEY),
+      // Agregar compatibilidad con entornos que usan process.env
+      'process.env.VITE_API_URL': JSON.stringify(env.VITE_API_URL),
+      'process.env.VITE_STRIPE_PUBLISHABLE_KEY': JSON.stringify(env.VITE_STRIPE_PUBLISHABLE_KEY),
+      'process.env.VITE_GOOGLE_MAPS_API_KEY': JSON.stringify(env.VITE_GOOGLE_MAPS_API_KEY),
     },
     plugins: [react()],
     resolve: {

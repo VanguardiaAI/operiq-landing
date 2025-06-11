@@ -15,6 +15,7 @@ type User = {
   id: string;
   email: string;
   name?: string;
+  role?: string;
   profile_completed?: boolean;
   profile?: UserProfile;
 };
@@ -24,12 +25,13 @@ type AuthContextType = {
   isLoading: boolean;
   error: string | null;
   login: (email: string, password: string) => Promise<void>;
-  register: (email: string, password: string, name?: string) => Promise<void>;
+  register: (email: string, password: string, name?: string, role?: string) => Promise<void>;
   logout: () => void;
   clearError: () => void;
   setUser: (user: User | null) => void;
   setToken: (token: string) => void;
   updateProfile: (profileData: Partial<UserProfile>) => Promise<void>;
+  setError: (error: string | null) => void;
 };
 
 // Crear el contexto
@@ -79,7 +81,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         throw new Error('No hay token');
       }
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/me`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || 'http://localhost:5000'}/api/auth/me`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -109,7 +111,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setError(null);
     
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/login`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || 'http://localhost:5000'}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -141,17 +143,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   // Función para registrar un nuevo usuario
-  const register = async (email: string, password: string, name?: string) => {
+  const register = async (email: string, password: string, name?: string, role?: string) => {
     setIsLoading(true);
     setError(null);
     
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/register`, {
+      console.log("Iniciando el registro con:", { email, name, role });
+      
+      // Si es un administrador, automáticamente establecemos el perfil como completado
+      const profile_completed = role === 'admin' ? true : false;
+      
+      const response = await fetch(`${import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || 'http://localhost:5000'}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password, name })
+        body: JSON.stringify({ email, password, name, role, profile_completed })
       });
 
       const data = await response.json();
@@ -160,11 +167,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         throw new Error(data.error || 'Error al registrar usuario');
       }
 
+      console.log("Registro exitoso, datos recibidos:", data);
+
       // Guardar token y datos del usuario
       localStorage.setItem('authToken', data.access_token);
       localStorage.setItem('user', JSON.stringify(data.user));
       
+      console.log("Actualizando estado de usuario con:", data.user);
       setUser(data.user);
+      console.log("Estado de usuario actualizado");
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -205,7 +216,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         throw new Error('No hay token de autenticación');
       }
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/profile/update`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || 'http://localhost:5000'}/api/profile/update`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -249,7 +260,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       clearError,
       setUser,
       setToken,
-      updateProfile
+      updateProfile,
+      setError
     }}>
       {children}
     </AuthContext.Provider>

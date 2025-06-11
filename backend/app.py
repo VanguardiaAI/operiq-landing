@@ -1,9 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from pymongo import MongoClient
 from dotenv import load_dotenv
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required, decode_token
+from flask_socketio import SocketIO, emit, join_room, leave_room
 import os
 from datetime import timedelta
 from bson import ObjectId
@@ -15,14 +16,32 @@ import uuid
 import datetime
 import math
 import stripe
+import slugify
 
 # Cargar variables de entorno
 load_dotenv()
 
 app = Flask(__name__)
 # Configurar CORS para permitir solicitudes desde el frontend
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "http://localhost:5174"]}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 bcrypt = Bcrypt(app)
+
+# Importar blueprints
+from routes.users import users_bp
+
+# Configurar Socket.IO para notificaciones en tiempo real
+socketio = SocketIO(app, 
+                   cors_allowed_origins="*",  # Permitir cualquier origen
+                   path="/socket.io",
+                   async_mode="threading",
+                   logger=True,
+                   engineio_logger=True)  # Activar logs para depuración
+
+# Configuración para archivos subidos
+UPLOAD_FOLDER = 'uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(os.path.join(UPLOAD_FOLDER, 'blog'), exist_ok=True)
 
 # Configuración de JWT
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'default_secret_key')
@@ -43,15 +62,196 @@ MONGO_URI = os.getenv('MONGO_URI')
 client = MongoClient(MONGO_URI)
 db = client['operiq']
 users_collection = db['users']
-bookings_collection = db['bookings']
+bookings_collection = db['bookings']  # Colección antigua (mantenida para compatibilidad)
 booking_sessions_collection = db['booking_sessions']
 vehicles_collection = db['vehicles']
 drivers_collection = db['drivers']
 driver_vehicle_assignments_collection = db['driver_vehicle_assignments']
+blog_posts_collection = db['blog_posts']
+collaborators_collection = db['collaborators']
+
+# Nuevas colecciones para el sistema avanzado de reservas
+reservations_collection = db['reservations']
+reservation_incidents_collection = db['reservation_incidents']
+reservation_changes_collection = db['reservation_changes']
+communication_logs_collection = db['communication_logs']
 
 # Configuración de Stripe
 stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
 stripe_webhook_secret = os.getenv('STRIPE_WEBHOOK_SECRET')
+
+# Importar y registrar el blueprint del blog
+from routes.blog import blog_bp
+app.register_blueprint(blog_bp, url_prefix='/api/blog')
+
+# Importar y registrar el blueprint de soporte
+from routes.support import support_bp, setup_collections as setup_support_collections
+setup_support_collections(db)  # Inicializar colecciones
+app.register_blueprint(support_bp, url_prefix='/api/support')
+
+# Importar y registrar el blueprint de notificaciones
+from routes.notifications import notifications_bp, setup_collections as setup_notifications_collections
+setup_notifications_collections(db)  # Inicializar colecciones
+app.register_blueprint(notifications_bp, url_prefix='/api/notifications')
+
+# Importar y registrar el blueprint de usuarios
+from routes.users import users_bp, setup_collections as setup_users_collections
+setup_users_collections(db)  # Inicializar colecciones
+app.register_blueprint(users_bp, url_prefix='/api/admin/users')
+
+# Importar y registrar el blueprint de colaboradores
+from routes.collaborators import collaborators_bp
+app.register_blueprint(collaborators_bp, url_prefix='/api/admin/collaborators')
+
+# Importar y registrar el blueprint de chóferes
+from routes.drivers import drivers_bp, setup_collections as setup_drivers_collections
+setup_drivers_collections(db)  # Inicializar colecciones
+app.register_blueprint(drivers_bp, url_prefix='/api/admin/drivers')
+
+# Importar y registrar el blueprint de vehículos
+from routes.vehicles import vehicles_bp, setup_collections as setup_vehicles_collections
+setup_vehicles_collections(db)  # Inicializar colecciones
+app.register_blueprint(vehicles_bp)
+
+# Importar y registrar el blueprint de rutas
+from routes.routes import routes_bp, setup_collections as setup_routes_collections
+setup_routes_collections(db)  # Inicializar colecciones
+app.register_blueprint(routes_bp, url_prefix='/api/admin/routes')
+
+# Importar y configurar el modelo de reservas avanzado
+from models.reservations import setup_collections as setup_reservations_collections
+setup_reservations_collections(db)  # Inicializar colecciones de reservas avanzadas
+
+# Importar y registrar el blueprint de reservas
+from routes.bookings import bookings_bp, setup_collections as setup_bookings_collections
+setup_bookings_collections(db)  # Inicializar colecciones
+app.register_blueprint(bookings_bp)
+
+# Importar los nuevos módulos
+from routes.availability import availability_bp, setup_collections as setup_availability_collections
+from models.drivers_agenda import setup_collection as setup_drivers_agenda_collection
+from models.fixed_routes import setup_collection as setup_fixed_routes_collection
+
+# Rutas de WebSocket para soporte
+@socketio.on('connect', namespace='/support')
+def handle_support_connect():
+    print(f'[SOCKET.IO] Cliente conectado al namespace de soporte: {request.sid}')
+
+@socketio.on('disconnect', namespace='/support')
+def handle_support_disconnect():
+    print(f'[SOCKET.IO] Cliente desconectado del namespace de soporte: {request.sid}')
+
+@socketio.on('join_conversation', namespace='/support')
+def handle_join_conversation(data):
+    if 'conversation_id' in data:
+        conversation_id = data['conversation_id']
+        # Unir al cliente a la sala de la conversación
+        join_room(conversation_id)
+        print(f"[SOCKET.IO] Cliente {request.sid} unido a la sala de conversación: {conversation_id}")
+        
+        # Enviar confirmación al cliente
+        emit('joined_conversation', {
+            'status': 'success', 
+            'message': f'Unido a la conversación {conversation_id}',
+            'conversation_id': conversation_id
+        })
+        
+        # Buscar conversación en MongoDB
+        from routes.support import support_conversations_collection, support_messages_collection
+        
+        conversation = support_conversations_collection.find_one({"id": conversation_id})
+        
+        if conversation:
+            # Convertir ObjectId a string si existe
+            if '_id' in conversation and isinstance(conversation['_id'], ObjectId):
+                conversation['_id'] = str(conversation['_id'])
+            
+            # Enviar información de la conversación (útil para sincronización)
+            emit('conversation_info', {
+                'id': conversation_id,
+                'title': conversation.get('title', ''),
+                'status': conversation.get('status', 'open')
+            })
+            
+            # Enviar el último mensaje para confirmar sincronización
+            last_message = support_messages_collection.find_one(
+                {"conversationId": conversation_id},
+                sort=[("timestamp", -1)]
+            )
+            
+            if last_message:
+                # Convertir ObjectId a string si existe
+                if '_id' in last_message and isinstance(last_message['_id'], ObjectId):
+                    last_message['_id'] = str(last_message['_id'])
+                
+                emit('sync_last_message', {
+                    'conversationId': conversation_id,
+                    'message': {
+                        'id': last_message.get('id', ''),
+                        'senderId': last_message.get('sender', {}).get('id', ''),
+                        'senderName': last_message.get('sender', {}).get('name', ''),
+                        'isAdmin': last_message.get('sender', {}).get('isAdmin', False),
+                        'message': last_message.get('message', ''),
+                        'timestamp': last_message.get('timestamp', '')
+                    }
+                })
+    else:
+        print(f"[SOCKET.IO] Error: Cliente {request.sid} intentó unirse a una sala sin proporcionar conversation_id")
+        emit('error', {'status': 'error', 'message': 'Se requiere conversation_id'})
+
+@socketio.on('leave_conversation', namespace='/support')
+def handle_leave_conversation(data):
+    if 'conversation_id' in data:
+        conversation_id = data['conversation_id']
+        leave_room(conversation_id)
+        print(f"[SOCKET.IO] Cliente {request.sid} ha salido de la sala de conversación: {conversation_id}")
+    else:
+        print(f"[SOCKET.IO] Error: Cliente {request.sid} intentó salir de una sala sin proporcionar conversation_id")
+
+# También escuchar eventos directos para test
+@socketio.on('test_connection', namespace='/support')
+def handle_test_connection(data):
+    print(f"[SOCKET.IO] Test de conexión recibido: {data}")
+    emit('test_response', {'status': 'success', 'message': 'Conexión establecida correctamente', 'received': data})
+
+# Rutas de WebSocket para el panel de administración
+@socketio.on('connect', namespace='/admin')
+def handle_admin_connect():
+    print(f'[SOCKET.IO] Cliente conectado al namespace de administración: {request.sid}')
+
+@socketio.on('disconnect', namespace='/admin')
+def handle_admin_disconnect():
+    print(f'[SOCKET.IO] Cliente desconectado del namespace de administración: {request.sid}')
+
+@socketio.on('join_admin_channel', namespace='/admin')
+def handle_join_admin_channel(data):
+    if 'adminId' in data:
+        admin_id = data['adminId']
+        # Unir al cliente a un canal específico para administradores
+        admin_room = f"admin:{admin_id}"
+        join_room(admin_room)
+        print(f"[SOCKET.IO] Administrador {admin_id} ({request.sid}) unido al canal de administración")
+        
+        # Confirmar unión
+        emit('joined_admin_channel', {
+            'status': 'success', 
+            'message': 'Unido al canal de administración',
+            'adminId': admin_id
+        })
+    else:
+        print(f"[SOCKET.IO] Error: Cliente {request.sid} intentó unirse al canal admin sin ID")
+        emit('error', {'status': 'error', 'message': 'Se requiere adminId'})
+
+# También escuchar eventos directos para test en admin
+@socketio.on('test_admin_connection', namespace='/admin')
+def handle_test_admin_connection(data):
+    print(f"[SOCKET.IO] Test de conexión admin recibido: {data}")
+    emit('test_admin_response', {'status': 'success', 'message': 'Conexión admin establecida correctamente', 'received': data})
+
+# Ruta para servir archivos estáticos
+@app.route('/uploads/<path:filename>')
+def uploaded_file(filename):
+    return send_from_directory(UPLOAD_FOLDER, filename)
 
 @app.route('/api/test', methods=['GET'])
 def test_route():
@@ -79,6 +279,7 @@ def register():
         'email': data['email'],
         'password': hashed_password,
         'name': data.get('name', ''),
+        'role': data.get('role', 'user'),  # Añadir role, default 'user'
         'created_at': ObjectId().generation_time,
         'profile_completed': False,
         'profile': {
@@ -103,6 +304,7 @@ def register():
             "id": str(result.inserted_id),
             "email": data['email'],
             "name": data.get('name', ''),
+            "role": data.get('role', 'user'),  # Incluir role en la respuesta
             "profile_completed": False
         }
     }), 201
@@ -135,6 +337,7 @@ def login():
             "id": str(user['_id']),
             "email": user['email'],
             "name": user.get('name', ''),
+            "role": user.get('role', 'user'),  # Incluir role en la respuesta
             "profile_completed": user.get('profile_completed', False)
         }
     }), 200
@@ -156,6 +359,7 @@ def get_user_profile():
         "id": str(user['_id']),
         "email": user['email'],
         "name": user.get('name', ''),
+        "role": user.get('role', 'user'),  # Incluir role en la respuesta
         "profile_completed": user.get('profile_completed', False),
         "profile": user.get('profile', {})
     }
@@ -193,6 +397,7 @@ def google_login():
                 'email': email,
                 'name': name,
                 'password': '',  # No hay contraseña para Google
+                'role': 'user',  # Añadir role predeterminado
                 'created_at': ObjectId().generation_time,
                 'profile_completed': False,
                 'profile': {
@@ -221,6 +426,7 @@ def google_login():
                 'id': str(user_id),
                 'email': user['email'],
                 'name': user.get('name', ''),
+                'role': user.get('role', 'user'),  # Incluir role en la respuesta
                 'profile_completed': user.get('profile_completed', False)
             }
         }), 200
@@ -360,6 +566,71 @@ def update_profile():
         "message": "Perfil actualizado exitosamente",
         "user": user_data
     }), 200
+
+@app.route('/api/profile/update-company', methods=['POST'])
+@jwt_required()
+def update_company_profile():
+    # Obtener identidad del token
+    current_user_id = get_jwt_identity()
+    
+    # Obtener datos del request
+    data = request.get_json()
+    
+    # Validar que se proporcionaron los campos requeridos
+    if not data or not all(k in data for k in ('companyName', 'phoneNumber', 'country', 'location')):
+        return jsonify({"error": "Se requieren los campos básicos de la empresa"}), 400
+    
+    # Estructura del perfil de empresa
+    company_profile = {
+        'companyName': data.get('companyName', ''),
+        'phoneNumber': data.get('phoneNumber', ''),
+        'country': data.get('country', ''),
+        'location': data.get('location', ''),
+        'companySize': data.get('companySize', ''),
+        'hearAbout': data.get('hearAbout', ''),
+        'additionalInfo': data.get('additionalInfo', ''),
+        'representativeInfo': data.get('representativeInfo', {}),
+        'isCompany': True
+    }
+    
+    # Actualizar usuario en la base de datos
+    try:
+        result = users_collection.update_one(
+            {'_id': ObjectId(current_user_id)},
+            {
+                '$set': {
+                    'company_profile': company_profile,
+                    'profile_completed': True,  # Marcar perfil como completado
+                    'is_company': True          # Marcar como cuenta de empresa
+                }
+            }
+        )
+        
+        if result.modified_count == 0:
+            return jsonify({"error": "No se pudo actualizar el perfil de la empresa"}), 404
+        
+        # Obtener el usuario actualizado
+        updated_user = users_collection.find_one({'_id': ObjectId(current_user_id)})
+        
+        # Preparar respuesta sin campos sensibles
+        user_data = {
+            "id": str(updated_user['_id']),
+            "email": updated_user['email'],
+            "name": updated_user.get('name', ''),
+            "profile_completed": updated_user.get('profile_completed', True),
+            "company_profile": updated_user.get('company_profile', {}),
+            "is_company": updated_user.get('is_company', True)
+        }
+        
+        return jsonify({
+            "message": "Perfil de empresa actualizado exitosamente",
+            "success": True,
+            "user": user_data
+        }), 200
+        
+    except Exception as e:
+        print(f"Error al actualizar perfil de empresa: {str(e)}")
+        return jsonify({"error": "Error al actualizar el perfil de la empresa", "details": str(e)}), 500
 
 # === ENDPOINTS PARA RESERVAS ===
 
@@ -2245,5 +2516,14 @@ def update_payment_method():
     except Exception as e:
         return jsonify({"error": f"Error al actualizar el método de pago: {str(e)}"}), 500
 
+# Después de la inicialización de la base de datos (donde se registran los otros blueprints)
+# Registrar el blueprint de disponibilidad
+app.register_blueprint(availability_bp)
+
+# En la función setup_collections o donde se inicializan las colecciones
+setup_availability_collections(db)
+setup_drivers_agenda_collection(db)
+setup_fixed_routes_collection(db)
+
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000) 
+    socketio.run(app, debug=True, host='0.0.0.0', port=5000) 

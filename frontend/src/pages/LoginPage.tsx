@@ -39,8 +39,9 @@ export default function LoginPage() {
   const handleGoogleLogin = async (credentialResponse: any) => {
     try {
       // Usar la URL completa del backend en lugar de URL relativa
-      const res = await axios.post('http://localhost:5000/api/auth/google', {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || 'http://localhost:5000'}/api/auth/google`, {
         credential: credentialResponse.credential,
+        role: 'user'
       });
       
       if (res.data && res.data.access_token) {
@@ -60,10 +61,11 @@ export default function LoginPage() {
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="w-full max-w-7xl mx-auto py-20 px-4">
-        <div className="max-w-md mx-auto">
+      
+      <main className="flex-1 bg-white pb-16">
+        <div className="w-full max-w-md mx-auto py-12 md:py-16 px-4">
           <h1 className="text-3xl font-bold text-center mb-8">Iniciar sesión</h1>
           
           <Card className="w-full shadow-lg bg-white rounded-xl overflow-hidden border-0 relative z-20">
@@ -146,8 +148,9 @@ export default function LoginPage() {
             </CardContent>
           </Card>
         </div>
-      </div>
+      </main>
+      
       <Footer />
-    </>
+    </div>
   );
 } 

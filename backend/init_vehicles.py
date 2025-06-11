@@ -4,6 +4,7 @@ import os
 from pymongo.errors import BulkWriteError
 from pymongo.collection import Collection
 import pymongo
+from datetime import datetime
 
 # Cargar variables de entorno
 load_dotenv()
@@ -13,6 +14,7 @@ MONGO_URI = os.getenv('MONGO_URI')
 client = MongoClient(MONGO_URI)
 db = client['operiq']
 vehicles_collection = db['vehicles']
+routes_collection = db['fixed_routes']
 
 # Crear índice geoespacial para búsquedas por ubicación
 vehicles_collection.create_index([("location", pymongo.GEOSPHERE)])
@@ -49,7 +51,19 @@ vehicles_data = [
         },
         "availability_radius": 25.0,  # Radio en km
         "available": True,
-        "image": "/assets/cars/mercedes-e-class.png"
+        "image": "/assets/cars/mercedes-e-class.png",
+        # Campos adicionales
+        "licensePlate": "1234ABC",
+        "ownerType": "company",
+        "ownerName": "Operiq Transport",
+        "ownerCountry": "ES",
+        "availabilityType": "zone",
+        "availabilityDetails": "Madrid Centro",
+        "associatedDrivers": ["driver_101", "driver_102"],
+        "insurancePolicyNumber": "INS-001-12345",
+        "lastMaintenanceDate": "2024-05-15",
+        "contractEndDate": "2025-12-31",
+        "notes": "Vehículo principal para ejecutivos. Revisar estado semanalmente."
     },
     {
         "type": "sedan",
@@ -80,7 +94,19 @@ vehicles_data = [
         },
         "availability_radius": 30.0,
         "available": True,
-        "image": "/assets/cars/mercedes-s-class.png"
+        "image": "/assets/cars/mercedes-s-class.png",
+        # Campos adicionales
+        "licensePlate": "5678DEF",
+        "ownerType": "company",
+        "ownerName": "Luxury Fleet SL",
+        "ownerCountry": "ES",
+        "availabilityType": "zone",
+        "availabilityDetails": "Madrid Capital y aeropuerto",
+        "associatedDrivers": ["driver_201", "driver_203"],
+        "insurancePolicyNumber": "INS-002-67890",
+        "lastMaintenanceDate": "2024-06-01",
+        "contractEndDate": "2025-12-31",
+        "notes": "Vehículo reservado para clientes premium. Mantener siempre con agua y refrescos."
     },
     # SUVs y Vans
     {
@@ -112,7 +138,19 @@ vehicles_data = [
         },
         "availability_radius": 20.0,
         "available": True,
-        "image": "/assets/cars/mercedes-v-class.png"
+        "image": "/assets/cars/mercedes-v-class.png",
+        # Campos adicionales
+        "licensePlate": "9012GHI",
+        "ownerType": "private_driver",
+        "ownerName": "Carlos Gómez",
+        "ownerCountry": "ES",
+        "availabilityType": "flexible",
+        "availabilityDetails": "Disponible para toda España, viajes cortos y largos",
+        "associatedDrivers": ["driver_301"],
+        "insurancePolicyNumber": "INS-003-24680",
+        "lastMaintenanceDate": "2024-04-20",
+        "contractEndDate": "2026-06-30",
+        "notes": "Van para grupos corporativos y familias. Incluye sistema multimedia completo."
     },
     # Vehículos blindados
     {
@@ -145,7 +183,19 @@ vehicles_data = [
         },
         "availability_radius": 40.0,
         "available": True,
-        "image": "/assets/cars/audi-a8-security.png"
+        "image": "/assets/cars/audi-a8-security.png",
+        # Campos adicionales
+        "licensePlate": "3456JKL",
+        "ownerType": "company",
+        "ownerName": "Security Transport Ltd.",
+        "ownerCountry": "ES",
+        "availabilityType": "route",
+        "availabilityDetails": "Aeropuerto - Embajadas - Centros financieros",
+        "associatedDrivers": ["driver_401", "driver_402"],
+        "insurancePolicyNumber": "INS-004-13579",
+        "lastMaintenanceDate": "2024-03-10",
+        "contractEndDate": "2026-12-31",
+        "notes": "Vehículo de alta seguridad. Requiere autorización especial para reservas."
     },
     # Limusinas
     {
@@ -177,7 +227,19 @@ vehicles_data = [
         },
         "availability_radius": 35.0,
         "available": True,
-        "image": "/assets/cars/maybach-limousine.png"
+        "image": "/assets/cars/maybach-limousine.png",
+        # Campos adicionales
+        "licensePlate": "7890MNO",
+        "ownerType": "company",
+        "ownerName": "VIP Events SL",
+        "ownerCountry": "ES",
+        "availabilityType": "zone",
+        "availabilityDetails": "Madrid y Barcelona, eventos especiales",
+        "associatedDrivers": ["driver_501", "driver_502", "driver_503"],
+        "insurancePolicyNumber": "INS-005-97531",
+        "lastMaintenanceDate": "2024-02-25",
+        "contractEndDate": "2025-12-31",
+        "notes": "Limousina para eventos premium, bodas y ceremonias. Incluye decoración a solicitud."
     },
     # Aeronaves
     {
@@ -209,7 +271,19 @@ vehicles_data = [
         },
         "availability_radius": 150.0,
         "available": True,
-        "image": "/assets/air/bell-429.png"
+        "image": "/assets/air/bell-429.png",
+        # Campos adicionales
+        "licensePlate": "HELI-001",
+        "ownerType": "company",
+        "ownerName": "Sky Executive SL",
+        "ownerCountry": "ES",
+        "availabilityType": "flexible",
+        "availabilityDetails": "Disponible en toda España peninsular",
+        "associatedDrivers": ["pilot_101", "pilot_102"],
+        "insurancePolicyNumber": "INS-AIR-12345",
+        "lastMaintenanceDate": "2024-01-15",
+        "contractEndDate": "2026-01-31",
+        "notes": "Helicóptero para traslados ejecutivos. Solicitar con 48h de antelación."
     },
     {
         "type": "jet",
@@ -240,11 +314,274 @@ vehicles_data = [
         },
         "availability_radius": 500.0,
         "available": True,
-        "image": "/assets/air/embraer-phenom-300.png"
+        "image": "/assets/air/embraer-phenom-300.png",
+        # Campos adicionales
+        "licensePlate": "JET-001",
+        "ownerType": "company",
+        "ownerName": "Global Executive Jets",
+        "ownerCountry": "ES",
+        "availabilityType": "flexible",
+        "availabilityDetails": "Rutas internacionales, vuelos intercontinentales",
+        "associatedDrivers": ["pilot_201", "pilot_202", "pilot_203"],
+        "insurancePolicyNumber": "INS-JET-67890",
+        "lastMaintenanceDate": "2024-04-05",
+        "contractEndDate": "2027-12-31",
+        "notes": "Jet para viajes intercontinentales. Reserva con mínimo 72h de antelación."
     }
 ]
 
-# Función para insertar o actualizar datos
+# Datos de rutas fijas con múltiples vehículos
+fixed_routes_data = [
+    {
+        "name": "AICM → Santa Fe (Fleet)",
+        "description": "Servicio corporativo para grupos y VIPs desde el aeropuerto a Santa Fe",
+        "origin": {
+            "name": "Aeropuerto Internacional de la Ciudad de México",
+            "location": {
+                "type": "Point",
+                "coordinates": [-99.0721, 19.4361]
+            }
+        },
+        "destination": {
+            "name": "Centro Santa Fe",
+            "location": {
+                "type": "Point",
+                "coordinates": [-99.2618, 19.3659]
+            }
+        },
+        "collaboratorId": "collab_001",
+        # Nueva estructura: lista de vehículos
+        "vehicles": [
+            {
+                "id": "v1",
+                "licensePlate": "1234ABC",
+                "model": "Mercedes-Benz E-Class",
+                "imageUrl": "/assets/cars/mercedes-e-class.png"
+            },
+            {
+                "id": "v2",
+                "licensePlate": "5678DEF",
+                "model": "Mercedes-Benz S-Class",
+                "imageUrl": "/assets/cars/mercedes-s-class.png"
+            },
+            {
+                "id": "v3",
+                "licensePlate": "9012GHI",
+                "model": "Mercedes-Benz V-Class",
+                "imageUrl": "/assets/cars/mercedes-v-class.png"
+            }
+        ],
+        # Para compatibilidad con sistemas antiguos
+        "vehicle": {
+            "id": "v1",
+            "licensePlate": "1234ABC",
+            "model": "Mercedes-Benz E-Class",
+            "imageUrl": "/assets/cars/mercedes-e-class.png"
+        },
+        # Lista de conductores asociados a estos vehículos
+        "drivers": [
+            {
+                "id": "driver_101",
+                "name": "Carlos Rodríguez",
+                "photo": "https://randomuser.me/api/portraits/men/32.jpg"
+            },
+            {
+                "id": "driver_102",
+                "name": "Laura Martínez",
+                "photo": "https://randomuser.me/api/portraits/women/45.jpg"
+            }
+        ],
+        # Para compatibilidad con sistemas antiguos
+        "driver": {
+            "id": "driver_101",
+            "name": "Carlos Rodríguez",
+            "photo": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "pricing": {
+            "standard": 1200,
+            "night": 1500,
+            "holiday": 1800,
+            "currency": "MXN"
+        },
+        "availability": {
+            "timeSlots": ["08:00-20:00"],
+            "days": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+        },
+        "status": "active",
+        "distance": 23,
+        "estimatedTime": 45,
+        "created_at": datetime.now(),
+        "updated_at": datetime.now()
+    },
+    {
+        "name": "Polanco → Interlomas (Servicio Premium)",
+        "description": "Servicio premium con opciones de vehículos exclusivos",
+        "origin": {
+            "name": "Polanco",
+            "location": {
+                "type": "Point",
+                "coordinates": [-99.1892, 19.4284]
+            }
+        },
+        "destination": {
+            "name": "Interlomas",
+            "location": {
+                "type": "Point",
+                "coordinates": [-99.2839, 19.3812]
+            }
+        },
+        "collaboratorId": "collab_002",
+        # Nueva estructura: lista de vehículos
+        "vehicles": [
+            {
+                "id": "v2",
+                "licensePlate": "5678DEF",
+                "model": "Mercedes-Benz S-Class",
+                "imageUrl": "/assets/cars/mercedes-s-class.png"
+            },
+            {
+                "id": "v4",
+                "licensePlate": "3456JKL",
+                "model": "Audi A8 Security",
+                "imageUrl": "/assets/cars/audi-a8-security.png"
+            }
+        ],
+        # Para compatibilidad con sistemas antiguos
+        "vehicle": {
+            "id": "v2",
+            "licensePlate": "5678DEF",
+            "model": "Mercedes-Benz S-Class",
+            "imageUrl": "/assets/cars/mercedes-s-class.png"
+        },
+        # Lista de conductores asociados a estos vehículos
+        "drivers": [
+            {
+                "id": "driver_201",
+                "name": "Eduardo Pérez",
+                "photo": "https://randomuser.me/api/portraits/men/45.jpg"
+            },
+            {
+                "id": "driver_401",
+                "name": "Miguel Ángel Sánchez",
+                "photo": "https://randomuser.me/api/portraits/men/60.jpg"
+            }
+        ],
+        # Para compatibilidad con sistemas antiguos
+        "driver": {
+            "id": "driver_201",
+            "name": "Eduardo Pérez",
+            "photo": "https://randomuser.me/api/portraits/men/45.jpg"
+        },
+        "pricing": {
+            "standard": 950,
+            "night": 1200,
+            "holiday": 1400,
+            "currency": "MXN"
+        },
+        "availability": {
+            "timeSlots": ["09:00-22:00"],
+            "days": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+        },
+        "status": "active",
+        "distance": 12,
+        "estimatedTime": 25,
+        "created_at": datetime.now(),
+        "updated_at": datetime.now()
+    },
+    {
+        "name": "Servicio Corporativo Aeropuerto",
+        "description": "Flota completa para servicios corporativos desde/hacia el aeropuerto",
+        "origin": {
+            "name": "Aeropuerto Internacional de la Ciudad de México",
+            "location": {
+                "type": "Point",
+                "coordinates": [-99.0721, 19.4361]
+            }
+        },
+        "destination": {
+            "name": "Zona Hotelera Reforma",
+            "location": {
+                "type": "Point",
+                "coordinates": [-99.1732, 19.4254]
+            }
+        },
+        "collaboratorId": "collab_003",
+        # Nueva estructura: lista de vehículos
+        "vehicles": [
+            {
+                "id": "v1",
+                "licensePlate": "1234ABC",
+                "model": "Mercedes-Benz E-Class",
+                "imageUrl": "/assets/cars/mercedes-e-class.png"
+            },
+            {
+                "id": "v2",
+                "licensePlate": "5678DEF",
+                "model": "Mercedes-Benz S-Class",
+                "imageUrl": "/assets/cars/mercedes-s-class.png"
+            },
+            {
+                "id": "v3",
+                "licensePlate": "9012GHI",
+                "model": "Mercedes-Benz V-Class",
+                "imageUrl": "/assets/cars/mercedes-v-class.png"
+            },
+            {
+                "id": "v5",
+                "licensePlate": "7890MNO",
+                "model": "Limusina Mercedes-Benz Maybach",
+                "imageUrl": "/assets/cars/maybach-limousine.png"
+            }
+        ],
+        # Para compatibilidad con sistemas antiguos
+        "vehicle": {
+            "id": "v1",
+            "licensePlate": "1234ABC",
+            "model": "Mercedes-Benz E-Class",
+            "imageUrl": "/assets/cars/mercedes-e-class.png"
+        },
+        "drivers": [
+            {
+                "id": "driver_101",
+                "name": "Carlos Rodríguez",
+                "photo": "https://randomuser.me/api/portraits/men/32.jpg"
+            },
+            {
+                "id": "driver_201",
+                "name": "Eduardo Pérez",
+                "photo": "https://randomuser.me/api/portraits/men/45.jpg"
+            },
+            {
+                "id": "driver_301",
+                "name": "Javier López",
+                "photo": "https://randomuser.me/api/portraits/men/53.jpg"
+            }
+        ],
+        # Para compatibilidad con sistemas antiguos
+        "driver": {
+            "id": "driver_101",
+            "name": "Carlos Rodríguez",
+            "photo": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "pricing": {
+            "standard": 1100,
+            "night": 1350,
+            "holiday": 1600,
+            "currency": "MXN"
+        },
+        "availability": {
+            "timeSlots": ["00:00-23:59"],
+            "days": ["Todos"]
+        },
+        "status": "active",
+        "distance": 18,
+        "estimatedTime": 35,
+        "created_at": datetime.now(),
+        "updated_at": datetime.now()
+    }
+]
+
+# Función para insertar o actualizar datos de vehículos
 def upsert_vehicles():
     try:
         # Eliminar vehículos existentes y cargar los nuevos
@@ -256,6 +593,19 @@ def upsert_vehicles():
     except Exception as e:
         print(f"Error: {e}")
 
+# Función para insertar o actualizar datos de rutas fijas
+def upsert_fixed_routes():
+    try:
+        # Eliminar rutas existentes y cargar las nuevas
+        routes_collection.delete_many({})
+        result = routes_collection.insert_many(fixed_routes_data)
+        print(f"Se han insertado {len(result.inserted_ids)} rutas fijas en la base de datos.")
+    except BulkWriteError as bwe:
+        print(f"Error al insertar rutas fijas: {bwe.details}")
+    except Exception as e:
+        print(f"Error: {e}")
+
 if __name__ == "__main__":
     upsert_vehicles()
-    print("Inicialización de vehículos completada.") 
+    upsert_fixed_routes()
+    print("Inicialización de vehículos y rutas fijas completada.") 

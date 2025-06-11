@@ -4,6 +4,7 @@ import BookingForm from "@/components/booking-form"
 import DownloadSection from "@/components/download-section"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import SupportChat from "@/components/SupportChat"
 import "../styles/operiq.css"
 import { Link } from "react-router-dom"
 
@@ -355,6 +356,9 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+      
+      {/* Support Chat */}
+      <SupportChat />
     </main>
   )
 } 

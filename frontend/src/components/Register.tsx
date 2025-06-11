@@ -22,7 +22,7 @@ function Register() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await register(email, password, name);
+    await register(email, password, name, 'user');
     if (!error) {
       setOpen(false);
     }

@@ -175,165 +175,167 @@ export default function AccountPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       
-      <div className="flex-grow container mx-auto px-4 py-8 max-w-5xl">
-        <h1 className="text-3xl font-bold text-gray-800 mb-6">Cuenta</h1>
-        <p className="text-gray-600 mb-8">Gestione su información para que Operiq satisfaga sus necesidades.</p>
-        
-        {/* Información personal */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Información personal</h2>
+      <main className="flex-1 bg-white pb-16">
+        <div className="container mx-auto px-4 py-8 max-w-5xl">
+          <h1 className="text-3xl font-bold text-gray-800 mb-6">Cuenta</h1>
+          <p className="text-gray-600 mb-8">Gestione su información para que Operiq satisfaga sus necesidades.</p>
           
-          <div className="border border-gray-200 rounded-md overflow-hidden">
-            {/* Nombre */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Nombre</div>
-                <div className="font-medium">{user?.profile?.title || ''} {user?.profile?.first_name || ''} {user?.profile?.last_name || ''}</div>
-              </div>
-              <button 
-                className="p-2 text-gray-600 hover:text-black"
-                onClick={() => openModal('name')}
-              >
-                <Edit className="w-5 h-5" />
-              </button>
-            </div>
+          {/* Información personal */}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">Información personal</h2>
             
-            {/* Email */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Email</div>
-                <div className="font-medium">{user?.email}</div>
+            <div className="border border-gray-200 rounded-md overflow-hidden">
+              {/* Nombre */}
+              <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                <div>
+                  <div className="text-sm text-gray-500 mb-1">Nombre</div>
+                  <div className="font-medium">{user?.profile?.title || ''} {user?.profile?.first_name || ''} {user?.profile?.last_name || ''}</div>
+                </div>
+                <button 
+                  className="p-2 text-gray-600 hover:text-black"
+                  onClick={() => openModal('name')}
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
               </div>
-              <button 
-                className="p-2 text-gray-600 hover:text-black"
-                onClick={() => openModal('email')}
-              >
-                <Edit className="w-5 h-5" />
-              </button>
-            </div>
-            
-            {/* Teléfono móvil */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Teléfono móvil</div>
-                <div className="font-medium">{user?.profile?.country_code || ''}{user?.profile?.phone || ''}</div>
+              
+              {/* Email */}
+              <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                <div>
+                  <div className="text-sm text-gray-500 mb-1">Email</div>
+                  <div className="font-medium">{user?.email}</div>
+                </div>
+                <button 
+                  className="p-2 text-gray-600 hover:text-black"
+                  onClick={() => openModal('email')}
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
               </div>
-              <button 
-                className="p-2 text-gray-600 hover:text-black"
-                onClick={() => openModal('phone')}
-              >
-                <Edit className="w-5 h-5" />
-              </button>
-            </div>
-            
-            {/* Empresa */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Empresa</div>
-                <div className="font-medium">{user?.profile?.company || '—'}</div>
+              
+              {/* Teléfono móvil */}
+              <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                <div>
+                  <div className="text-sm text-gray-500 mb-1">Teléfono móvil</div>
+                  <div className="font-medium">{user?.profile?.country_code || ''}{user?.profile?.phone || ''}</div>
+                </div>
+                <button 
+                  className="p-2 text-gray-600 hover:text-black"
+                  onClick={() => openModal('phone')}
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
               </div>
-              <button 
-                className="p-2 text-gray-600 hover:text-black"
-                onClick={() => openModal('company')}
-              >
-                <Edit className="w-5 h-5" />
-              </button>
-            </div>
-            
-            {/* Dirección */}
-            <div className="flex justify-between items-center p-4">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Dirección</div>
-                <div className="font-medium">{user?.profile?.address || '—'}</div>
+              
+              {/* Empresa */}
+              <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                <div>
+                  <div className="text-sm text-gray-500 mb-1">Empresa</div>
+                  <div className="font-medium">{user?.profile?.company || '—'}</div>
+                </div>
+                <button 
+                  className="p-2 text-gray-600 hover:text-black"
+                  onClick={() => openModal('company')}
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
               </div>
-              <button 
-                className="p-2 text-gray-600 hover:text-black"
-                onClick={() => openModal('address')}
-              >
-                <Edit className="w-5 h-5" />
-              </button>
+              
+              {/* Dirección */}
+              <div className="flex justify-between items-center p-4">
+                <div>
+                  <div className="text-sm text-gray-500 mb-1">Dirección</div>
+                  <div className="font-medium">{user?.profile?.address || '—'}</div>
+                </div>
+                <button 
+                  className="p-2 text-gray-600 hover:text-black"
+                  onClick={() => openModal('address')}
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        
-        {/* Contraseña */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Contraseña</h2>
           
-          <div className="border border-gray-200 rounded-md overflow-hidden">
-            <div className="flex justify-between items-center p-4">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Contraseña</div>
-                <div className="font-medium">••••••••••••••</div>
+          {/* Contraseña */}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">Contraseña</h2>
+            
+            <div className="border border-gray-200 rounded-md overflow-hidden">
+              <div className="flex justify-between items-center p-4">
+                <div>
+                  <div className="text-sm text-gray-500 mb-1">Contraseña</div>
+                  <div className="font-medium">••••••••••••••</div>
+                </div>
+                <button 
+                  className="p-2 text-gray-600 hover:text-black"
+                  onClick={() => openModal('password')}
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
               </div>
-              <button 
-                className="p-2 text-gray-600 hover:text-black"
-                onClick={() => openModal('password')}
-              >
-                <Edit className="w-5 h-5" />
-              </button>
             </div>
           </div>
-        </div>
-        
-        {/* Pago */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Pago</h2>
           
-          <button className="w-full border border-gray-300 rounded-md py-3 px-4 text-center flex items-center justify-center hover:bg-gray-50">
-            <span className="text-gray-700 font-medium">+ Añadir nueva tarjeta</span>
+          {/* Pago */}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">Pago</h2>
+            
+            <button className="w-full border border-gray-300 rounded-md py-3 px-4 text-center flex items-center justify-center hover:bg-gray-50">
+              <span className="text-gray-700 font-medium">+ Añadir nueva tarjeta</span>
+            </button>
+          </div>
+          
+          {/* Promociones */}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">Promociones</h2>
+            <p className="text-gray-600">No hay vales disponibles en su cuenta en este momento.</p>
+          </div>
+          
+          {/* Notificaciones */}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">Notificaciones</h2>
+            
+            <div className="border border-gray-200 rounded-md overflow-hidden">
+              {/* Correos de marketing */}
+              <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                <div>
+                  <div className="text-sm text-gray-500 mb-1">Correos electrónicos de marketing</div>
+                  <div className="font-medium">On</div>
+                </div>
+                <button 
+                  className="p-2 text-gray-600 hover:text-black"
+                  onClick={() => openModal('marketing')}
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
+              </div>
+              
+              {/* Notificaciones de reserva */}
+              <div className="flex justify-between items-center p-4">
+                <div>
+                  <div className="text-sm text-gray-500 mb-1">Notificaciones de reserva</div>
+                  <div className="font-medium">Activado: Correo electrónico y SMS</div>
+                </div>
+                <button 
+                  className="p-2 text-gray-600 hover:text-black"
+                  onClick={() => openModal('notifications')}
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          {/* Borrar cuenta */}
+          <button className="w-full border border-gray-300 rounded-md py-3 px-4 text-center mb-8 hover:bg-gray-50">
+            <span className="text-gray-700 font-medium">Borrar mi cuenta</span>
           </button>
         </div>
-        
-        {/* Promociones */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Promociones</h2>
-          <p className="text-gray-600">No hay vales disponibles en su cuenta en este momento.</p>
-        </div>
-        
-        {/* Notificaciones */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Notificaciones</h2>
-          
-          <div className="border border-gray-200 rounded-md overflow-hidden">
-            {/* Correos de marketing */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Correos electrónicos de marketing</div>
-                <div className="font-medium">On</div>
-              </div>
-              <button 
-                className="p-2 text-gray-600 hover:text-black"
-                onClick={() => openModal('marketing')}
-              >
-                <Edit className="w-5 h-5" />
-              </button>
-            </div>
-            
-            {/* Notificaciones de reserva */}
-            <div className="flex justify-between items-center p-4">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Notificaciones de reserva</div>
-                <div className="font-medium">Activado: Correo electrónico y SMS</div>
-              </div>
-              <button 
-                className="p-2 text-gray-600 hover:text-black"
-                onClick={() => openModal('notifications')}
-              >
-                <Edit className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        {/* Borrar cuenta */}
-        <button className="w-full border border-gray-300 rounded-md py-3 px-4 text-center mb-8 hover:bg-gray-50">
-          <span className="text-gray-700 font-medium">Borrar mi cuenta</span>
-        </button>
-      </div>
+      </main>
       
       {/* Modal de Edición */}
       {activeModal && (
