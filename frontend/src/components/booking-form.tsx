@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import { format, addDays} from "date-fns"
+import { format } from "date-fns"
 import { es } from "date-fns/locale"
 import { TimePicker } from "@/components/ui/time-picker"
 
@@ -253,35 +253,23 @@ export default function BookingForm() {
     from: {
       description: '',
     },
-    date: format(new Date(), "E, dd MMM yyyy", { locale: es }),
+    to: {
+      description: '',
+    },
+    duration: '2 horas',
+    date: format(new Date(), "yyyy-MM-dd"),
     time: "12:00",
   })
   const navigate = useNavigate()
   
-  // Estados para los valores del formulario
-  const [selectedDate, setSelectedDate] = useState(new Date(formData.date))
-  const [selectedDuration, setSelectedDuration] = useState("2 horas")
-  
-  // Estados para mostrar la fecha y hora formateadas
-  const [date, setDate] = useState(formData.date)
-  const [time, setTime] = useState(formData.time)
-  const [duration, setDuration] = useState("2 horas")
-  
-  // Estados para diálogos
+  // Estados para la UI
   const [dateDialogOpen, setDateDialogOpen] = useState(false)
   const [durationDialogOpen, setDurationDialogOpen] = useState(false)
-  
-  // Estados para predicciones de lugares
-  const [fromQuery, setFromQuery] = useState("")
-  const [toQuery, setToQuery] = useState("")
   const [fromPredictions, setFromPredictions] = useState<PlacePrediction[]>([])
   const [toPredictions, setToPredictions] = useState<PlacePrediction[]>([])
   const [showFromPredictions, setShowFromPredictions] = useState(false)
   const [showToPredictions, setShowToPredictions] = useState(false)
-  const [selectedFrom, setSelectedFrom] = useState<PlacePrediction | null>(null)
-  const [selectedTo, setSelectedTo] = useState<PlacePrediction | null>(null)
   const [loading, setLoading] = useState(false)
-  const [activeTab, setActiveTab] = useState<'ida' | 'horas'>('ida')
   
   // Referencias para los dropdowns
   const fromDropdownRef = useRef<HTMLDivElement>(null)
@@ -289,8 +277,7 @@ export default function BookingForm() {
   
   // Manejador para búsqueda de lugares "desde"
   const handleFromSearch = async (query: string) => {
-    setFromQuery(query)
-    setSelectedFrom(null)
+    setFormData(prev => ({ ...prev, from: { ...prev.from, description: query } }))
     
     if (query.length < 3) {
       setFromPredictions([])
@@ -311,8 +298,7 @@ export default function BookingForm() {
   
   // Manejador para búsqueda de lugares "hacia"
   const handleToSearch = async (query: string) => {
-    setToQuery(query)
-    setSelectedTo(null)
+    setFormData(prev => ({ ...prev, to: { ...prev.to, description: query } }))
     
     if (query.length < 3) {
       setToPredictions([])
@@ -333,34 +319,42 @@ export default function BookingForm() {
   
   // Manejador para seleccionar un lugar "desde"
   const handleSelectFrom = (prediction: PlacePrediction) => {
-    setSelectedFrom(prediction)
-    setFromQuery(prediction.description)
+    setFormData(prev => ({ 
+      ...prev, 
+      from: { 
+        place_id: prediction.place_id, 
+        description: prediction.description 
+      } 
+    }))
     setShowFromPredictions(false)
   }
   
   // Manejador para seleccionar un lugar "hacia"
   const handleSelectTo = (prediction: PlacePrediction) => {
-    setSelectedTo(prediction)
-    setToQuery(prediction.description)
+    setFormData(prev => ({ 
+      ...prev, 
+      to: { 
+        place_id: prediction.place_id, 
+        description: prediction.description 
+      } 
+    }))
     setShowToPredictions(false)
   }
   
   // Manejador para seleccionar fecha
   const handleDateChange = (newDate: Date) => {
-    setSelectedDate(newDate)
-    setDate(format(newDate, "E, dd MMM yyyy", { locale: es }))
+    setFormData(prev => ({ ...prev, date: format(newDate, "yyyy-MM-dd") }))
     setDateDialogOpen(false)
   }
   
   // Manejador para seleccionar hora
   const handleTimeChange = (time: string) => {
-    setTime(time)
+    setFormData(prev => ({ ...prev, time }))
   }
   
   // Manejador para seleccionar duración
   const handleDurationChange = (duration: string) => {
-    setSelectedDuration(duration)
-    setDuration(duration)
+    setFormData(prev => ({ ...prev, duration }))
     setDurationDialogOpen(false)
   }
   
@@ -383,28 +377,8 @@ export default function BookingForm() {
     }
 
     try {
-      // Construir los datos de la reserva según el tipo de viaje
-      const bookingData: BookingFormData = {
-        tripType: activeTab,
-        from: {
-          place_id: selectedFrom?.place_id,
-          description: fromQuery
-        },
-        date: date,
-        time: time
-      }
-      
-      if (activeTab === 'ida') {
-        bookingData.to = {
-          place_id: selectedTo?.place_id,
-          description: toQuery
-        }
-      } else {
-        bookingData.duration = duration
-      }
-      
       // Guardar datos en localStorage para pasarlos a la siguiente página
-      localStorage.setItem("bookingDetails", JSON.stringify(bookingData))
+      localStorage.setItem("bookingDetails", JSON.stringify(formData))
       
       // Redirigir a la página de checkout
       navigate("/checkout")
@@ -433,13 +407,22 @@ export default function BookingForm() {
     }
   }, [])
 
+  const handleTabChange = (value: 'ida' | 'horas') => {
+    setFormData(prev => ({
+      ...prev,
+      tripType: value,
+      to: value === 'horas' ? { description: '' } : prev.to,
+      duration: value === 'ida' ? '' : prev.duration || '2 horas'
+    }));
+  };
+
   return (
     <>
       <Card className="w-full max-w-full mx-auto shadow-lg bg-white rounded-xl overflow-hidden border-0 relative z-20 booking-contrast-shadow">
         <Tabs 
-          defaultValue="ida" 
+          value={formData.tripType}
           className="w-full"
-          onValueChange={(value) => setActiveTab(value as 'ida' | 'horas')}
+          onValueChange={(value) => handleTabChange(value as 'ida' | 'horas')}
         >
           <TabsList className="grid w-full grid-cols-2 bg-gray-100 p-0 h-12 rounded-none">
             <TabsTrigger 
@@ -466,7 +449,7 @@ export default function BookingForm() {
                     <Input 
                       className="border-0 p-0 h-6 focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none placeholder:text-gray-400 booking-form-input bg-gray-50" 
                       placeholder="Dirección, aeropuerto, hotel..." 
-                      value={fromQuery}
+                      value={formData.from.description}
                       onChange={(e) => handleFromSearch(e.target.value)}
                       onFocus={() => setShowFromPredictions(true)}
                       style={{ boxShadow: 'none' }}
@@ -497,7 +480,7 @@ export default function BookingForm() {
                     <Input 
                       className="border-0 p-0 h-6 focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none placeholder:text-gray-400 booking-form-input bg-gray-50" 
                       placeholder="Dirección, aeropuerto, hotel..." 
-                      value={toQuery}
+                      value={formData.to?.description || ''}
                       onChange={(e) => handleToSearch(e.target.value)}
                       onFocus={() => setShowToPredictions(true)}
                       style={{ boxShadow: 'none' }}
@@ -529,7 +512,7 @@ export default function BookingForm() {
                   >
                     <label className="booking-form-label mb-0 text-left text-xs">Fecha</label>
                     <div className="flex items-center justify-between pr-3">
-                      <div className="booking-form-input h-6 flex items-center focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none" style={{ boxShadow: 'none' }}>{date}</div>
+                      <div className="booking-form-input h-6 flex items-center focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none" style={{ boxShadow: 'none' }}>{format(new Date(formData.date), "E, dd MMM yyyy", { locale: es })}</div>
                       <ChevronDown className="h-4 w-4" />
                     </div>
                   </div>
@@ -537,7 +520,7 @@ export default function BookingForm() {
 
                 <div className="relative">
                   <TimePicker
-                    value={time}
+                    value={formData.time}
                     onChange={handleTimeChange}
                   />
                 </div>
@@ -577,7 +560,7 @@ export default function BookingForm() {
                     <Input 
                       className="border-0 p-0 h-6 focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none placeholder:text-gray-400 booking-form-input bg-gray-50" 
                       placeholder="Dirección, aeropuerto, hotel..." 
-                      value={fromQuery}
+                      value={formData.from.description}
                       onChange={(e) => handleFromSearch(e.target.value)}
                       onFocus={() => setShowFromPredictions(true)}
                       style={{ boxShadow: 'none' }}
@@ -609,7 +592,7 @@ export default function BookingForm() {
                   >
                     <label className="booking-form-label mb-0 text-left text-xs">Duración</label>
                     <div className="flex items-center justify-between pr-3">
-                      <div className="booking-form-input h-6 flex items-center focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none" style={{ boxShadow: 'none' }}>{duration}</div>
+                      <div className="booking-form-input h-6 flex items-center focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none" style={{ boxShadow: 'none' }}>{formData.duration}</div>
                       <ChevronDown className="h-4 w-4" />
                     </div>
                   </div>
@@ -623,7 +606,7 @@ export default function BookingForm() {
                   >
                     <label className="booking-form-label mb-0 text-left text-xs">Fecha</label>
                     <div className="flex items-center justify-between pr-3">
-                      <div className="booking-form-input h-6 flex items-center focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none" style={{ boxShadow: 'none' }}>{date}</div>
+                      <div className="booking-form-input h-6 flex items-center focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none" style={{ boxShadow: 'none' }}>{format(new Date(formData.date), "E, dd MMM yyyy", { locale: es })}</div>
                       <ChevronDown className="h-4 w-4" />
                     </div>
                   </div>
@@ -631,7 +614,7 @@ export default function BookingForm() {
 
                 <div className="relative">
                   <TimePicker
-                    value={time}
+                    value={formData.time}
                     onChange={handleTimeChange}
                   />
                 </div>
@@ -669,7 +652,7 @@ export default function BookingForm() {
           </DialogHeader>
           <div className="calendar-container p-2">
             <CalendarComponent 
-              selectedDate={selectedDate}
+              selectedDate={new Date(formData.date)}
               onDateChange={handleDateChange}
             />
           </div>
@@ -683,7 +666,7 @@ export default function BookingForm() {
             <DialogTitle className="text-center text-lg font-bold mb-4">Selecciona la duración</DialogTitle>
           </DialogHeader>
           <DurationSelector 
-            selectedDuration={selectedDuration}
+            selectedDuration={formData.duration || ''}
             onDurationChange={handleDurationChange}
           />
         </DialogContent>
