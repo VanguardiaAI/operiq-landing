@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Booking } from "@/hooks/useBookingManagement";
-
 type BookingsTableProps = {
   bookingsData: any[];
   handleViewBookingDetails: (booking: any) => void;
@@ -57,7 +54,7 @@ const BookingsTable = ({ bookingsData, handleViewBookingDetails }: BookingsTable
                 <td className="px-6 py-4">
                   <div className="text-sm text-gray-900">{booking.fromTo}</div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-6 py-3 whitespace-nowrap">
                   <div className="text-sm text-gray-900">
                     {booking.type === 'one_way' ? 'Un trayecto' : 
                      booking.type === 'round_trip' ? 'Ida y vuelta' : 

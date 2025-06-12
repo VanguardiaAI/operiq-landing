@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
-  const { register, error, isLoading, clearError, user } = useAuth();
+  const { register, error, isLoading, user } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");

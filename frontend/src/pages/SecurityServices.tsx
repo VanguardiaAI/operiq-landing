@@ -1,12 +1,11 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef } from 'react';
 import '../App.css';
 import Image from "@/components/ui/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/booking-form";
 import DownloadSection from "@/components/download-section";
-import { ChevronDown, ChevronUp, ShieldCheck, Eye, UserCheck, Lock, UserPlus, Layers, ChevronLeft, ChevronRight, CheckCircle, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, ShieldCheck, UserCheck, Lock, Layers, ChevronLeft, ChevronRight, CheckCircle, Star } from "lucide-react";
 
 const SecurityServices = () => {
   // Estado para controlar qué clase de servicio está seleccionada
@@ -56,8 +55,7 @@ const SecurityServices = () => {
       capacity: "Capacidad para 3 personas",
       security: "Protección nivel B4 - resistente a armas de fuego de mano",
       availability: "Aspecto discreto, indistinguible de un vehículo estándar",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Ejecutivo+Protegido",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Ejecutivo+Protegido"},
     {
       id: 2,
       title: "Luxury Escudo",
@@ -65,8 +63,7 @@ const SecurityServices = () => {
       capacity: "Capacidad para 3 personas",
       security: "Protección nivel B6/B7 - resistente a armas de asalto",
       availability: "Discreto con apariencia de alta gama ejecutiva",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Luxury+Escudo",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Luxury+Escudo"},
     {
       id: 3,
       title: "SUV Táctico",
@@ -74,8 +71,7 @@ const SecurityServices = () => {
       capacity: "Capacidad para 4 personas",
       security: "Protección completa - vidrios anti-balas y suelo anti-explosión",
       availability: "Mayor capacidad todo-terreno con seguridad integrada",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=SUV+Táctico",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=SUV+Táctico"},
     {
       id: 4,
       title: "Convoy Ejecutivo",
@@ -83,8 +79,7 @@ const SecurityServices = () => {
       capacity: "Capacidad para 4-6 personas",
       security: "Solución completa con vehículo principal y escolta",
       availability: "Ideal para delegaciones o ejecutivos de alto perfil",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Convoy+Ejecutivo",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Convoy+Ejecutivo"},
     {
       id: 5,
       title: "Discreto Ultra-Seguro",
@@ -92,8 +87,7 @@ const SecurityServices = () => {
       capacity: "Capacidad según modelo seleccionado",
       security: "Diversas opciones de protección en vehículos no llamativos",
       availability: "Máxima discreción con seguridad oculta",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Discreto+Ultra-Seguro",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Discreto+Ultra-Seguro"},
   ];
 
   // Datos para los niveles de seguridad
@@ -150,20 +144,17 @@ const SecurityServices = () => {
       name: "Ricardo Velázquez",
       position: "Director de Seguridad, Multinacional Energética",
       text: "Privyde ha redefinido nuestros estándares de seguridad ejecutiva. Su enfoque discreto pero altamente efectivo permite que nuestros directivos viajen con total tranquilidad sin llamar la atención. La combinación de vehículos de lujo con medidas de seguridad avanzadas es exactamente lo que buscábamos.",
-      stars: 5,
-    },
+      stars: 5},
     {
       name: "Elena Domínguez",
       position: "Jefa de Operaciones, Grupo Financiero Internacional",
       text: "Después de incidentes de seguridad en uno de nuestros mercados emergentes, contratamos los servicios de Privyde. La diferencia fue inmediata: mantuvieron un perfil bajo pero con protección de primer nivel. Pudimos continuar con nuestras operaciones sin interrupción y con la tranquilidad de contar con profesionales experimentados.",
-      stars: 5,
-    },
+      stars: 5},
     {
       name: "Alejandro Méndez",
       position: "Empresario y Figura Pública",
       text: "Como figura mediática, necesitaba un servicio que me permitiera mantener mi privacidad sin sacrificar la seguridad. El enfoque personalizado de Privyde y su capacidad para adaptarse a diferentes niveles de amenaza según las circunstancias ha sido invaluable. Su discreción es tan impecable como su servicio.",
-      stars: 5,
-    },
+      stars: 5},
   ];
 
   // Datos de las preguntas frecuentes
@@ -182,8 +173,7 @@ const SecurityServices = () => {
           </ul>
           <p className="mt-2">Cada solución se adapta precisamente a sus necesidades reales, evitando tanto la insuficiencia como el exceso de medidas que podrían llamar la atención innecesariamente.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Qué formación tiene su personal de seguridad?",
       answer: (
@@ -197,16 +187,14 @@ const SecurityServices = () => {
           </ul>
           <p className="mt-2">Todo nuestro personal pasa por rigurosos procesos de selección, verificación de antecedentes y capacitación continua. Además, están formados específicamente en servicios discretos que combinan seguridad con elegancia y profesionalismo.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Sus vehículos blindados son reconocibles externamente?",
       answer: (
         <p className="text-gray-600">
           Una de nuestras principales ventajas es la absoluta discreción visual de nuestra flota. Nuestros vehículos blindados utilizan las técnicas más avanzadas de integración de protección, haciendo imposible distinguirlos de vehículos de lujo estándar. A diferencia de soluciones tradicionales de blindaje que añaden peso visible y modifican la apariencia, trabajamos con fabricantes que implementan elementos de seguridad desde el diseño original. Los vidrios anti-balas mantienen la transparencia y aspecto normal, las carrocerías reforzadas conservan las líneas elegantes del vehículo, y los sistemas defensivos quedan completamente ocultos. Esta discreción es fundamental para nuestra filosofía: la mejor seguridad es aquella que permanece invisible.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Cómo garantizan la privacidad y confidencialidad?",
       answer: (
@@ -222,8 +210,7 @@ const SecurityServices = () => {
           </ul>
           <p className="mt-2">Nuestros clientes valoran que mantenemos el mismo nivel de discreción incluso después de finalizado el servicio. Su privacidad es permanente, no temporal.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Pueden proporcionar seguridad en destinos internacionales?",
       answer: (
@@ -238,8 +225,7 @@ const SecurityServices = () => {
           </ul>
           <p className="mt-2">Para viajes internacionales, proporcionamos un informe previo detallado sobre la situación de seguridad del destino y adaptamos nuestro servicio según las normativas y desafíos locales, garantizando una experiencia fluida sin comprometer la seguridad.</p>
         </div>
-      ),
-    },
+      )},
   ];
 
   return (

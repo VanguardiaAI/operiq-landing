@@ -14,20 +14,20 @@ export interface Vehicle {
   id: string;
   brand: string;
   model: string;
-  year: number; // Cambiado a number
+  year: number;
   color: string;
   seats: number; 
   luggageCapacity: number; 
-  type: string; // Cambiado a string para compatibilidad
-  category: string; // Cambiado a string para compatibilidad
+  type: string;
+  category: string;
   licensePlate: string;
   image?: string;
   available: boolean;
   ownerType: 'company' | 'private_driver';
   ownerName: string;
   ownerCountry: string; 
-  associatedDrivers: string[]; // Cambiado a string[]
-  availabilityType: string[]; // Cambiado a array de strings
+  associatedDrivers: string[];
+  availabilityType: string[];
   availabilityDetails: string; 
   insurancePolicyNumber: string;
   lastMaintenanceDate: string; 
@@ -39,7 +39,6 @@ export interface Vehicle {
     per_km?: number;
     per_hour?: number;
   };
-  // Campos adicionales
   details?: {
     features?: string[];
     armored?: boolean;
@@ -86,15 +85,14 @@ const CustomDropdownMenu = ({
             <div className="py-1" role="menu" aria-orientation="vertical">
               {React.Children.map(children, child => {
                 if (React.isValidElement(child)) {
-                  // Clonar el elemento hijo y sobreescribir/añadir onClick
                   const originalOnClick = (child.props as { onClick?: React.MouseEventHandler<HTMLButtonElement> }).onClick;
                   return React.cloneElement(child as React.ReactElement<{ onClick?: React.MouseEventHandler<HTMLButtonElement> }>, { 
                     onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
-                      e.stopPropagation(); // Detener la propagación para no cerrar el menú si el item tiene su propia lógica que no debería cerrarlo
+                      e.stopPropagation();
                       if (originalOnClick) {
-                        originalOnClick(e); // Ejecutar el onClick original del item
+                        originalOnClick(e);
                       }
-                      setOpen(false); // Cerrar el menú después del clic
+                      setOpen(false);
                     }
                   });
                 }
@@ -114,7 +112,7 @@ const CustomDropdownMenuItem = ({
   children,
   className = ""
 }: { 
-  onClick?: React.MouseEventHandler<HTMLButtonElement>, // Tipo corregido para el evento de clic
+  onClick?: React.MouseEventHandler<HTMLButtonElement>,
   children: React.ReactNode,
   className?: string 
 }) => (
@@ -182,11 +180,11 @@ const CustomAlertDialog = ({
 
 type VehiclesTableProps = {
   vehicles: Vehicle[];
-  onEdit: (vehicle: Vehicle) => void; // Probablemente se gestione desde la vista de detalles
+  onEdit: (vehicle: Vehicle) => void;
   onDelete: (vehicleId: string) => void;
   onToggleAvailability: (vehicleId: string, available: boolean) => void;
-  onViewDetails: (vehicle: Vehicle) => void; // Para abrir la vista de detalles completa
-  onAssignDriver: (vehicleId: string) => void; // Podría moverse a la vista de detalles también
+  onViewDetails: (vehicle: Vehicle) => void;
+  onAssignDriver: (vehicleId: string) => void;
 };
 
 const VehiclesTable = ({
@@ -204,12 +202,10 @@ const VehiclesTable = ({
   const [driversMap, setDriversMap] = useState<Record<string, Driver>>({});
   const [loadingDrivers, setLoadingDrivers] = useState<boolean>(false);
 
-  // Función para obtener el token de autenticación
   const getAuthToken = () => {
     return localStorage.getItem('authToken');
   };
 
-  // Configurar headers para las peticiones
   const getAuthHeaders = () => {
     const token = getAuthToken();
     return {
@@ -219,20 +215,14 @@ const VehiclesTable = ({
     };
   };
 
-  // Cargar los datos de los choferes según los IDs presentes en los vehículos
   useEffect(() => {
     const fetchDriversData = async () => {
-      // Recolectar todos los IDs de choferes de todos los vehículos
       const driverIds = [...new Set(vehicles.flatMap(vehicle => vehicle.associatedDrivers))];
-      
       if (driverIds.length === 0) return;
       
       setLoadingDrivers(true);
       try {
         const driversData: Record<string, Driver> = {};
-        
-        // Hacer peticiones individuales por cada chofer
-        // En un entorno real, sería mejor tener un endpoint que acepte múltiples IDs
         await Promise.all(driverIds.map(async (driverId) => {
           try {
             const response = await axios.get(`/api/admin/drivers/${driverId}`, getAuthHeaders());
@@ -246,11 +236,9 @@ const VehiclesTable = ({
             }
           } catch (error) {
             console.error(`Error fetching driver ${driverId}:`, error);
-            // Guardar un placeholder para los choferes que no se pudieron cargar
             driversData[driverId] = {
               id: driverId,
-              name: `Chofer #${driverId.substring(0, 6)}`,
-            };
+              name: `Chofer #${driverId.substring(0, 6)}`};
           }
         }));
         
@@ -265,7 +253,6 @@ const VehiclesTable = ({
     fetchDriversData();
   }, [vehicles]);
 
-  // Mapeo para mostrar etiquetas de tipo de vehículo
   const typeLabels: Record<string, { label: string, color: string, icon?: React.ReactNode }> = {
     sedan: { label: "Sedán", color: "bg-gray-200 text-blue-800" },
     suv: { label: "SUV", color: "bg-gray-200 text-green-800" },
@@ -279,7 +266,6 @@ const VehiclesTable = ({
     jet: { label: "Jet Privado", color: "bg-pink-100 text-pink-800" }
   };
 
-  // Mapeo para mostrar etiquetas de categoría
   const categoryLabels: Record<string, { label: string, color: string }> = {
     standard: { label: "Estándar", color: "bg-gray-100 text-gray-800" },
     premium: { label: "Premium", color: "bg-gray-200 text-blue-800" },
@@ -459,21 +445,24 @@ const VehiclesTable = ({
                     }
                   >
                     <CustomDropdownMenuItem onClick={(e) => { e.stopPropagation(); onViewDetails(vehicle);}}>
-                      <div className="flex items-center"><Eye className="mr-2 h-4 w-4" /><span>Ver/Editar Detalles</span></div>
+                      <div className="flex items-center"><Eye className="mr-2 h-4 w-4" /><span>Ver Detalles</span></div>
+                    </CustomDropdownMenuItem>
+                    <CustomDropdownMenuItem onClick={(e) => { e.stopPropagation(); onEdit(vehicle);}}>
+                      <div className="flex items-center"><Edit className="mr-2 h-4 w-4" /><span>Editar</span></div>
                     </CustomDropdownMenuItem>
                     <CustomDropdownMenuItem onClick={(e) => { e.stopPropagation(); onToggleAvailability(vehicle.id, !vehicle.available); }}>
                       <div className="flex items-center">
                         {vehicle.available ? <X className="mr-2 h-4 w-4" /> : <Check className="mr-2 h-4 w-4" />}
-                        <span>{vehicle.available ? "Marcar como No Disponible" : "Marcar como Disponible"}</span>
+                        <span>{vehicle.available ? "No Disponible" : "Disponible"}</span>
                       </div>
                     </CustomDropdownMenuItem>
-                    <CustomDropdownMenuItem onClick={(e) => { e.stopPropagation(); onAssignDriver(vehicle.id); /* Implementar lógica */ }}>
+                    <CustomDropdownMenuItem onClick={(e) => { e.stopPropagation(); onAssignDriver(vehicle.id); }}>
                        <div className="flex items-center"><MapPin className="mr-2 h-4 w-4" /><span>Asignar Chóferes</span></div>
                     </CustomDropdownMenuItem>
                      <div className="border-t my-1"></div>
                     <CustomDropdownMenuItem 
                       onClick={(e) => { e.stopPropagation(); handleDelete(vehicle.id);}}
-                      className="text-gray-600 hover:bg-gray-100"
+                      className="text-red-600 hover:bg-red-50"
                     >
                       <div className="flex items-center"><Trash2 className="mr-2 h-4 w-4" /><span>Eliminar Vehículo</span></div>
                     </CustomDropdownMenuItem>
@@ -493,7 +482,6 @@ const VehiclesTable = ({
         </table>
       </div>
 
-      {/* Diálogo de confirmación para eliminar */}
       <CustomAlertDialog
         open={deleteDialog.open}
         onOpenChange={(isOpen: boolean) => setDeleteDialog({ ...deleteDialog, open: isOpen })}

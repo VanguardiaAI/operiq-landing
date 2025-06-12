@@ -7,10 +7,9 @@ import { blogService } from "@/services/blogService";
 import { BlogPost } from "@/types/blog";
 
 interface SidebarProps {
-  onSearch?: (query: string) => void;
 }
 
-export const Sidebar = ({ onSearch }: SidebarProps) => {
+const Sidebar: React.FC<SidebarProps> = () => {
   const [categories, setCategories] = useState<string[]>([]);
   const [tags, setTags] = useState<string[]>([]);
   const [recentPosts, setRecentPosts] = useState<BlogPost[]>([]);
@@ -120,4 +119,6 @@ export const Sidebar = ({ onSearch }: SidebarProps) => {
       </Card>
     </div>
   );
-}; 
+};
+
+export default Sidebar; 

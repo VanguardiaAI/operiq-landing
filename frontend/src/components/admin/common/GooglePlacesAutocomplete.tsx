@@ -45,7 +45,7 @@ const GooglePlacesAutocomplete = ({
   const [query, setQuery] = useState(value);
   const [predictions, setPredictions] = useState<PlacePrediction[]>([]);
   const [showPredictions, setShowPredictions] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [, setLoading] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // API URL desde .env o fallback a localhost

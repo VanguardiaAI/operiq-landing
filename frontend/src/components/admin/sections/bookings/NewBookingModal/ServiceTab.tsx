@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Search, Check, AlertCircle, Car, MapPin, DollarSign, Clock, Phone, User, Image } from "lucide-react";
-import type { FixedRoute, VehicleAvailabilityResult } from "@/hooks/useBookingManagement";
+import { Search, Check, AlertCircle, Car, MapPin, DollarSign, Clock, Phone, User } from "lucide-react";
+import type { FixedRoute } from "@/hooks/useBookingManagement";
 import { priceCalculationService } from "@/services/priceCalculationService";
 import ContactDriverModal from "./ContactDriverModal";
 import SuggestScheduleModal from "./SuggestScheduleModal";
@@ -104,7 +104,7 @@ const ServiceTab = ({
   handleClearVehicleSelection,
   
   // Función para limpiar precio calculado
-  clearCalculatedPrice
+  // clearCalculatedPrice
 }: ServiceTabProps) => {
   // Estados para controlar la visibilidad de los desplegables
   const [showPickupDropdown, setShowPickupDropdown] = useState(false);
@@ -134,10 +134,12 @@ const ServiceTab = ({
   const hasSelectedVehicle = !!newBookingFormData.vehicle?.id;
   const hasPriceCalculated = !!newBookingFormData.payment?.priceBreakdown;
   
+  /*
   const formatDistance = (meters: number): string => {
     const km = meters / 1000;
     return `${km.toFixed(1)} km`;
   };
+  */
   
   const formatDuration = (seconds: number): string => {
     const minutes = Math.floor(seconds / 60);
@@ -640,7 +642,6 @@ const ServiceTab = ({
                 <div className="font-medium text-gray-700 mb-2">Vehículos disponibles:</div>
                 <div className="space-y-2 max-h-60 overflow-y-auto">
                   {availabilityResults.available_vehicles.map((vehicle: any, index: number) => {
-                    const vehicleId = vehicle.id || vehicle.vehicle_id || "Vehículo sin ID";
                     const model = vehicle.model || vehicle.vehicle_data?.model || "Vehículo sin modelo";
                     const licensePlate = vehicle.license_plate || vehicle.vehicle_data?.licensePlate;
                     const driverName = vehicle.driver_name || vehicle.vehicle_data?.driver?.name || "Conductor no asignado";
@@ -653,10 +654,10 @@ const ServiceTab = ({
                     const zoneName = vehicle.zone_name;
                     
                     return (
-                      <div key={index} className={`bg-white rounded-md p-3 border ${newBookingFormData.vehicle?.id === vehicleId ? 'border-red-600 bg-gray-100' : 'border-green-200'} shadow-sm cursor-pointer transition-all hover:border-gray-500 hover:shadow-md`}
+                      <div key={index} className={`bg-white rounded-md p-3 border ${newBookingFormData.vehicle?.id === vehicle.id ? 'border-red-600 bg-gray-100' : 'border-green-200'} shadow-sm cursor-pointer transition-all hover:border-gray-500 hover:shadow-md`}
                         onClick={() => {
                           const vehicleObj = {
-                            id: vehicleId,
+                            id: vehicle.id,
                             name: model
                           };
                           
@@ -703,7 +704,7 @@ const ServiceTab = ({
                                       {licensePlate}
                                     </span>
                                   )}
-                                  {newBookingFormData.vehicle?.id === vehicleId && (
+                                  {newBookingFormData.vehicle?.id === vehicle.id && (
                                     <Check className="h-4 w-4 ml-2 text-gray-600" />
                                   )}
                                 </div>
@@ -791,7 +792,7 @@ const ServiceTab = ({
                 </div>
                 <div className="space-y-2 max-h-60 overflow-y-auto">
                   {availabilityResults.vehicles_with_alternative_schedules.map((vehicle: any, index: number) => {
-                    const vehicleId = vehicle.id || vehicle.vehicle_id || "Vehículo sin ID";
+                    // const vehicleId = vehicle.id || vehicle.vehicle_id || "Vehículo sin ID";
                     const model = vehicle.model || vehicle.vehicle_data?.model || "Vehículo sin modelo";
                     const licensePlate = vehicle.license_plate || vehicle.vehicle_data?.licensePlate;
                     const driverName = vehicle.driver_name || vehicle.vehicle_data?.driver?.name || "Conductor no asignado";

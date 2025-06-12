@@ -2,12 +2,11 @@ import { useAuth } from "../context/AuthContext";
 
 import { useState, useEffect } from "react";
 import { 
-  Users, Car, CalendarClock, Map, MessageSquare, 
+  Users, Car, CalendarClock, MessageSquare, 
   BarChart2, Settings, FileText, LogOut, Home,
-  PlusCircle, Search, Bell, ChevronDown, Menu, X, MapPin
+  PlusCircle, Search, ChevronDown, Menu, Pin, X
 } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import NotificationsMenu from "@/components/admin/NotificationsMenu";
 
 // Importar la sección de vehículos modularizada
@@ -160,7 +159,7 @@ export default function AdminPage() {
     { id: "collaborators", label: "Colaboradores", icon: <Users size={20} /> },
     { id: "drivers", label: "Chóferes", icon: <Users size={20} /> },
     { id: "vehicles", label: "Vehículos", icon: <Car size={20} /> },
-    { id: "routes", label: "Rutas", icon: <MapPin size={20} /> },
+    { id: "routes", label: "Rutas", icon: <Pin size={20} /> },
     { id: "bookings", label: "Reservas", icon: <CalendarClock size={20} /> },
     { id: "support", label: "Soporte", icon: <MessageSquare size={20} /> },
     { id: "blog", label: "Blog", icon: <FileText size={20} /> },

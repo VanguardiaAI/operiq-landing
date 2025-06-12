@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, Search } from "lucide-react";
 import { useBookingManagement } from "@/hooks/useBookingManagement";
@@ -16,7 +15,6 @@ const BookingsSection = () => {
     selectedBookingForDetails,
     isBookingDetailsViewOpen,
     isNewBookingModalOpen,
-    isLoading,
     newBookingFormData,
     activeTab,
     validationErrors,
@@ -37,8 +35,8 @@ const BookingsSection = () => {
     availabilityResults,
     // Nuevos estados para el cálculo de precios
     isCalculatingPrice,
-    priceBreakdown,
-    routeInfo,
+    // priceBreakdown,
+    // routeInfo,
     
     // Funciones para la gestión de detalles de reserva
     handleViewBookingDetails,

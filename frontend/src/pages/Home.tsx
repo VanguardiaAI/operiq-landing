@@ -1,4 +1,4 @@
-import { ChevronDown, ShieldCheck, CarFront, Leaf, Linkedin, Instagram, Facebook, Youtube, Twitter, HelpCircle } from "lucide-react"
+import { ShieldCheck, CarFront, Leaf} from "lucide-react"
 import Image from "@/components/ui/image"
 import BookingForm from "@/components/booking-form"
 import DownloadSection from "@/components/download-section"
@@ -15,64 +15,56 @@ const servicesData = [
     description: "Servicio de coche de larga distancia con chófer para viajes entre ciudades con tarifas fijas y todo incluido.",
     imageUrl: "/images/city2city.jpeg",
     linkText: "Más información",
-    linkHref: "/city-to-city",
-  },
+    linkHref: "/city-to-city"},
   {
     id: 1,
     title: "Traslados al aeropuerto",
     description: "Con el tiempo de espera adicional y el seguimiento de los vuelos en caso de retrasos, nuestro servicio está optimizado para hacer que cada traslado al aeropuerto sea una brisa.",
     imageUrl: "/images/airport.jpeg",
     linkText: "Más información",
-    linkHref: "/airport-transfers",
-  },
+    linkHref: "/airport-transfers"},
   {
     id: 2,
     title: "Alquiler por horas y día completo",
     description: "Si quieres reservar o contratar a un chófer por horas o un día completo, elige uno de nuestros servicios a medida y disfruta de una flexibilidad total, fiable y cómoda.",
     imageUrl: "/images/hours.jpeg",
     linkText: "Más información",
-    linkHref: "/hourly-hire",
-  },
+    linkHref: "/hourly-hire"},
   {
     id: 3,
     title: "Servicios para bodas y eventos especiales",
     description: "Elegancia y confort para sus celebraciones más importantes, con vehículos de lujo y atención personalizada.",
     imageUrl: "/images/weddings.jpeg",
     linkText: "Más información",
-    linkHref: "/special-events",
-  },
+    linkHref: "/special-events"},
   {
     id: 4,
     title: "Servicios de limusinas",
     description: "Lujo y estilo para sus momentos inolvidables. Disfrute de una experiencia única en nuestras limusinas.",
     imageUrl: "/images/limo.jpeg",
     linkText: "Más información",
-    linkHref: "/limousine-service",
-  },
+    linkHref: "/limousine-service"},
   {
     id: 5,
     title: "Jets privados",
     description: "Viajes exclusivos y personalizados con la máxima privacidad, eficiencia y confort aéreo.",
     imageUrl: "/images/jet.png",
     linkText: "Más información",
-    linkHref: "/private-jets",
-  },
+    linkHref: "/private-jets"},
   {
     id: 6,
     title: "Traslados corporativos VIP",
     description: "Soluciones de transporte ejecutivo para profesionales y empresas, enfocadas en la puntualidad y discreción.",
     imageUrl: "/images/corporative.png",
     linkText: "Más información",
-    linkHref: "/corporate-transfers",
-  },
+    linkHref: "/corporate-transfers"},
   {
     id: 7,
     title: "Servicios de seguridad ejecutiva discreta",
     description: "Protección y tranquilidad con nuestros profesionales de seguridad altamente capacitados y discretos.",
     imageUrl: "/images/security.png",
     linkText: "Más información",
-    linkHref: "/security-services",
-  },
+    linkHref: "/security-services"},
 ];
 
 const majorCitiesData = [
@@ -117,18 +109,15 @@ const featureData = [
   {
     icon: ShieldCheck,
     title: "Viaje seguro y protegido",
-    description: "Viaje con confianza sabiendo que su seguridad es nuestra prioridad número uno. Los rigurosos estándares de salud y limpieza completan un servicio de primera clase.",
-  },
+    description: "Viaje con confianza sabiendo que su seguridad es nuestra prioridad número uno. Los rigurosos estándares de salud y limpieza completan un servicio de primera clase."},
   {
     icon: CarFront,
     title: "Soluciones para viajes privados",
-    description: "Descubra nuestros servicios integrales de viajes: trayectos de larga distancia, ida o vuelta, por horas, traslados al aeropuerto, y mucho más.",
-  },
+    description: "Descubra nuestros servicios integrales de viajes: trayectos de larga distancia, ida o vuelta, por horas, traslados al aeropuerto, y mucho más."},
   {
     icon: Leaf,
     title: "Viaje sostenible",
-    description: "Todos nuestro trayectos son neutros en emisiones de carbono, como parte de nuestro programa global de compensación de emisiones de carbono iniciado en 2017, el primero de la industria.",
-  },
+    description: "Todos nuestro trayectos son neutros en emisiones de carbono, como parte de nuestro programa global de compensación de emisiones de carbono iniciado en 2017, el primero de la industria."},
 ];
 
 export default function Home() {

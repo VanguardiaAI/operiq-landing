@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@/components/ui/switch";
 import { 
   Select, 
   SelectContent, 
@@ -14,9 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { 
-  MapPin, 
   Car, 
-  Calendar, 
   Clock, 
   DollarSign, 
   Save, 
@@ -78,8 +75,8 @@ const FixedRouteForm = ({
   const [loadingCollaborators, setLoadingCollaborators] = useState(false);
   const [selectedOrigin, setSelectedOrigin] = useState<PlacePrediction | null>(null);
   const [selectedDestination, setSelectedDestination] = useState<PlacePrediction | null>(null);
-  const [originDetails, setOriginDetails] = useState<PlaceDetails | null>(null);
-  const [destinationDetails, setDestinationDetails] = useState<PlaceDetails | null>(null);
+  const [, setOriginDetails] = useState<PlaceDetails | null>(null);
+  const [, setDestinationDetails] = useState<PlaceDetails | null>(null);
   
   // Valores del formulario
   const [formValues, setFormValues] = useState({
@@ -931,7 +928,7 @@ const FixedRouteForm = ({
                       <div className="flex-shrink-0 ml-2">
                         <Checkbox 
                           checked={formValues.vehicleIds.includes(vehicle.id)}
-                          onCheckedChange={(checked: boolean | 'indeterminate') => {
+                          onCheckedChange={(_checked: boolean | 'indeterminate') => {
                             // El div padre maneja el click
                           }}
                           className="h-5 w-5"

@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Clock } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -8,14 +7,23 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 interface TimePickerProps {
-  value: string
+  value?: string
   onChange: (time: string) => void
   className?: string
 }
 
 export function TimePicker({ value, onChange, className }: TimePickerProps) {
   // Parse the time value
-  const [hours, minutes] = value ? value.split(":").map(Number) : [12, 0]
+  const timeParts = value ? value.split(":") : []
+  let hours = parseInt(timeParts[0], 10)
+  let minutes = parseInt(timeParts[1], 10)
+
+  if (isNaN(hours)) {
+    hours = 12
+  }
+  if (isNaN(minutes)) {
+    minutes = 0
+  }
 
   // Handles
   const handleHourChange = (hour: string) => {

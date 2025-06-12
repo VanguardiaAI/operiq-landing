@@ -1,13 +1,11 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, Search, Edit, Trash2, ToggleLeft, ToggleRight, MapPin, Car, User, Building, X, Eye, Info, DollarSign, Maximize2 } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { PlusCircle, Search, Edit, Trash2, ToggleLeft, ToggleRight, MapPin, Car, Building, X, Eye, Info, Maximize2 } from "lucide-react";
 import { FlexibleZone } from "@/components/admin/sections/RoutesSection";
 import FlexibleZoneForm from "./FlexibleZoneForm";
 import { Badge } from "@/components/ui/badge";
 import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction } from "@/components/ui/alert-dialog";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
-import { toast } from "@/components/ui/use-toast";
 
 // Nueva interfaz para la información del colaborador
 interface Collaborator {

@@ -46,7 +46,7 @@ const initialFormData: CompanyRegistrationData = {
 };
 
 export default function RegisterCompaniesPage() {
-  const { register, error, isLoading, clearError, setUser, setToken, setError } = useAuth();
+  const { register, error, isLoading, setUser, setError } = useAuth();
   const [formData, setFormData] = useState<CompanyRegistrationData>(initialFormData);
   const [validationErrors, setValidationErrors] = useState<Partial<Record<keyof CompanyRegistrationData, string>>>({});
   const [isFromCompaniesForm, setIsFromCompaniesForm] = useState(false);

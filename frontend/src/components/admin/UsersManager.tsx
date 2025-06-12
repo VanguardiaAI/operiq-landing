@@ -3,27 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+  CardContent} from "@/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  SelectValue} from "@/components/ui/select";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Search, Plus, Edit, Trash2, Eye, Tag, AlertTriangle, BarChart, BadgeCheck, Loader2, Building2 } from "lucide-react";
+  DialogTitle} from "@/components/ui/dialog";
+import { Search, Plus, Trash2, Tag, AlertTriangle, BarChart, BadgeCheck, Loader2, Building2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import axios from "axios";
 // Importar componente de detalles del usuario
@@ -141,7 +135,7 @@ const UsersManager = () => {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
   const [userFormOpen, setUserFormOpen] = useState(false);
-  const [editingUser, setEditingUser] = useState<User | null>(null);
+  const [editingUser, setingUser] = useState<User | null>(null);
   const [newUserRole, setNewUserRole] = useState<string>("user");
   
   // Estado para vista de detalles
@@ -221,7 +215,7 @@ const UsersManager = () => {
 
   // Funciones para gestionar usuarios
   const handleAddUser = () => {
-    setEditingUser(null);
+    setingUser(null);
     setNewUserRole("user");
     setUserFormOpen(true);
   };
@@ -254,8 +248,7 @@ const UsersManager = () => {
         setUsers(users.filter(user => user.id !== selectedUserId));
         toast({
           title: "Usuario eliminado",
-          description: "El usuario ha sido eliminado correctamente",
-        });
+          description: "El usuario ha sido eliminado correctamente"});
       } catch (err) {
         console.error('Error al eliminar usuario:', err);
         toast({
@@ -343,8 +336,7 @@ const UsersManager = () => {
         
         toast({
           title: "Usuario actualizado",
-          description: "El usuario ha sido actualizado correctamente",
-        });
+          description: "El usuario ha sido actualizado correctamente"});
       } else {
         // Crear nuevo usuario
         const response = await axios.post('/api/admin/users/create', userData, {
@@ -364,8 +356,7 @@ const UsersManager = () => {
         
         toast({
           title: "Usuario creado",
-          description: "El usuario ha sido creado correctamente",
-        });
+          description: "El usuario ha sido creado correctamente"});
       }
     } catch (err) {
       console.error('Error al guardar usuario:', err);
@@ -378,7 +369,7 @@ const UsersManager = () => {
       });
     } finally {
       setUserFormOpen(false);
-      setEditingUser(null);
+      setingUser(null);
     }
   };
 
@@ -496,8 +487,7 @@ const UsersManager = () => {
       
       toast({
         title: "Etiqueta asignada",
-        description: `La etiqueta "${tag}" ha sido asignada correctamente`,
-      });
+        description: `La etiqueta "${tag}" ha sido asignada correctamente`});
     } catch (err) {
       console.error('Error al asignar etiqueta:', err);
       toast({
@@ -552,8 +542,7 @@ const UsersManager = () => {
       
       toast({
         title: "Etiqueta eliminada",
-        description: `La etiqueta "${tag}" ha sido eliminada correctamente`,
-      });
+        description: `La etiqueta "${tag}" ha sido eliminada correctamente`});
     } catch (err) {
       console.error('Error al eliminar etiqueta:', err);
       toast({
@@ -888,7 +877,7 @@ const UsersManager = () => {
       <Dialog open={userFormOpen} onOpenChange={setUserFormOpen}>
         <DialogContent className="sm:max-w-[600px] max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>{editingUser ? "Editar Usuario" : "Añadir Usuario"}</DialogTitle>
+            <DialogTitle>{editingUser ? "ar Usuario" : "Añadir Usuario"}</DialogTitle>
             <DialogDescription>
               {editingUser ? "Actualiza los datos del usuario" : "Completa el formulario para crear un nuevo usuario"}
             </DialogDescription>

@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import '../App.css';
 import Image from "@/components/ui/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/booking-form";
 import DownloadSection from "@/components/download-section";
-import { ChevronDown, ChevronUp, Clock, Map, Shield, DollarSign, Wifi, CalendarCheck, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, Clock, Shield, DollarSign, Wifi, CalendarCheck, Star } from "lucide-react";
 
 const HourlyHire = () => {
   // Estado para controlar qué FAQ está abierta
@@ -36,16 +35,14 @@ const HourlyHire = () => {
             <li>¡Completa tu reserva y disfruta de tu chófer privado!</li>
           </ol>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Cómo puedo crear un itinerario para el trayecto por horas?",
       answer: (
         <p className="text-gray-600">
           Aunque no es necesario revelar tu itinerario con antelación, puedes agregarlo en el campo «Notas para el chófer».
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Cuándo recibiré los datos de contacto del chófer?",
       answer: (
@@ -53,8 +50,7 @@ const HourlyHire = () => {
           <p className="mb-2">El nombre y el número de teléfono del chófer se enviarán al pasajero una hora antes de la recogida por correo electrónico y SMS. Este mensaje también contiene la marca, el modelo y el número de matrícula del vehículo. Si has realizado una reserva para otra persona, esta información se enviará a la dirección de correo electrónico y al número de teléfono proporcionados en el proceso de reserva.</p>
           <p>Una hora antes de un viaje, los pasajeros también pueden iniciar un chat con su chófer en nuestra aplicación.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Cómo me comunico con el chófer entre paradas?",
       answer: (
@@ -62,16 +58,14 @@ const HourlyHire = () => {
           <p className="mb-2">Para mayor facilidad, recomendamos descargar la aplicación y utilizar la función de chat.</p>
           <p>Alternativamente, puedes ponerte en contacto con el chófer a través del número de teléfono que te enviaremos una hora antes de la recogida por correo electrónico y SMS.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿El chófer habla inglés?",
       answer: (
         <p className="text-gray-600">
           Los chóferes de Privyde hablan inglés básico, así como el idioma local del país en el que se realiza el viaje.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Puede el chófer recogerme en una ciudad y dejarme en otra?",
       answer: (
@@ -80,24 +74,21 @@ const HourlyHire = () => {
           <p className="mb-2">Sin embargo, si tu reserva por hora termina en una ciudad diferente a aquella en la que comenzaste, se aplicará un cargo por devolución del vehículo. Esto tiene en cuenta el tiempo y la distancia que el chófer debe recorrer para volver al lugar original. Si planeas viajar entre ciudades, te recomendamos reservar un viaje de ciudad a ciudad.</p>
           <p>Si necesitas un chófer durante varios días, ponte en contacto con el servicio de atención al cliente a través de chat o correo electrónico en service@privyde.com.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Durante cuántas horas puedo reservar un chófer por horas?",
       answer: (
         <p className="text-gray-600">
           Puedes reservar un chófer el número de horas que quieras, con una reserva mínima de 2 horas y máxima de 24 horas.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Puedo ampliar el número de horas que he reservado?",
       answer: (
         <p className="text-gray-600">
           Sí, si necesitas al chófer durante algún tiempo más, hazlo saber. Si se acepta, se cobrará ese tiempo adicional directamente a tu cuenta.
         </p>
-      ),
-    },
+      )},
     {
       question: "What if the number of booked hours changes and the booking is unexpectedly extended or shortened?",
       answer: (
@@ -105,16 +96,14 @@ const HourlyHire = () => {
           <p className="mb-2">Unexpected events can happen.</p>
           <p>If the number of booked hours is extended, extra time is charged in half hour increments. If the number of booked hours is shortened, unfortunately, no reimbursement applies. Please see section 5.2 of our T&C's.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Puedo añadir plazas para niños a la reserva?",
       answer: (
         <p className="text-gray-600">
           Sí, esto es posible. Añade las plazas infantiles necesarias en el campo «Notas para el chófer»; haremos lo posible por organizar las plazas infantiles de antemano.
         </p>
-      ),
-    },
+      )},
   ];
 
   // Testimonios de clientes

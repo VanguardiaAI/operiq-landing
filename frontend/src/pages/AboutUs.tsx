@@ -1,16 +1,9 @@
 import { 
-  ChevronDown, 
   AlertCircle, 
   Rocket, 
   Heart, 
   PenTool, 
-  Puzzle, 
-  Linkedin, 
-  Instagram, 
-  Facebook, 
-  Youtube, 
-  Twitter
-} from "lucide-react"
+  Puzzle} from "lucide-react"
 import Image from "@/components/ui/image"
 import { Link } from "react-router-dom"
 import Navbar from "@/components/Navbar"

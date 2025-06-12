@@ -34,7 +34,7 @@ import { AuthProvider } from './context/AuthContext'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import ScrollToTop from './components/ScrollToTop'
 import { useAuth } from './context/AuthContext'
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // Componente para rutas protegidas
 function PrivateRoute() {

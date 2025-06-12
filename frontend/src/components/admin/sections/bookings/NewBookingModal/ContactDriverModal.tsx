@@ -36,7 +36,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
 }) => {
   const [driverInfo, setDriverInfo] = useState<DriverContactInfo | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedContactMethod, setSelectedContactMethod] = useState<string>('');
+  const [_selectedContactMethod, setSelectedContactMethod] = useState<string>('');
   const [notes, setNotes] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
 

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { Pagination } from "@/components/blog/Pagination";
-import { Sidebar } from "@/components/blog/Sidebar";
+import Sidebar from "@/components/blog/Sidebar";
 import { blogService } from "@/services/blogService";
 import { BlogPost } from "@/types/blog";
 import { ArrowLeft, Tag, Hash } from "lucide-react";

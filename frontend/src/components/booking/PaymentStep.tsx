@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Loader2, ShieldCheck, AlertCircle } from "lucide-react"
+import { Loader2, AlertCircle } from "lucide-react"
 import axios from "axios"
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
@@ -271,8 +271,7 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
             appearance: {
               theme: 'stripe',
               variables: {
-                colorPrimary: '#000000',
-              }
+                colorPrimary: '#000000'}
             }
           }}
         >
@@ -285,7 +284,6 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
                 currency: priceBreakdown?.currency 
               }
             }}
-            paymentIntentId={paymentIntentId}
             onPaymentSuccess={(paymentResult: any) => {
               console.log("PaymentStep: Payment successful!", paymentResult);
               // Asumir que paymentResult contiene stripe_payment_intent_id
@@ -401,9 +399,6 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
   const destinationName = initializedData?.to?.description || "Destino"
   const tripDate = initializedData?.date || ""
   const tripTime = initializedData?.time || ""
-  
-  // Calcular precio total
-  const totalPrice = priceBreakdown?.total || (initializedData?.vehicle?.price || 65.00)
   
   return (
     <Card className="max-w-3xl mx-auto shadow-sm">

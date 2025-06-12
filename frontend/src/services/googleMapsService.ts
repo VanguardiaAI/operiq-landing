@@ -94,7 +94,7 @@ class GoogleMapsService {
       }
     }
     
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       // Configurar la solicitud de autocompletado
       const request: google.maps.places.AutocompletionRequest = {
         input: query,
@@ -147,7 +147,7 @@ class GoogleMapsService {
       }
     }
     
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const request: google.maps.places.PlaceDetailsRequest = {
         placeId: placeId,
         fields: ['name', 'formatted_address', 'geometry']
@@ -178,7 +178,7 @@ class GoogleMapsService {
       }
     }
     
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.geocoder!.geocode(
         { address },
         (results, status) => {

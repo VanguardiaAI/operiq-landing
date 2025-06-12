@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import '../App.css';
 import Image from "@/components/ui/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/booking-form";
 import DownloadSection from "@/components/download-section";
-import { ChevronDown, ChevronUp, Check, ArrowRight } from "lucide-react";
+import { ChevronDown, ChevronUp, Check} from "lucide-react";
 
 const CityToCity = () => {
   // Estado para controlar qué FAQ está abierta
@@ -36,8 +35,7 @@ const CityToCity = () => {
             <li className="text-gray-600 text-left">En el siguiente paso, verá las tarifas para cada tipo de vehículo</li>
           </ul>
         </>
-      ),
-    },
+      )},
     {
       question: "¿Puedo hacer paradas en un viaje de ciudad a ciudad?",
       answer: (
@@ -49,16 +47,14 @@ const CityToCity = () => {
             Si desea hacer paradas adicionales, puede reservar estos viajes por separado o hacer una reserva por horas, en la que, en lugar de tener un destino fijo, dispondrá de su chófer por un período de tiempo durante el cual podrá hacer tantas paradas como desee. Tenga en cuenta que nuestro servicio por horas incluye 20 km de viaje por hora reservada y se cobra un suplemento por la distancia adicional.
           </p>
         </>
-      ),
-    },
+      )},
     {
       question: "¿Cuál es la política de cancelación y cómo puedo cancelar mi viaje?",
       answer: (
         <p className="text-gray-600">
           Puede cancelar su viaje de forma gratuita hasta 1 hora antes de la hora de recogida programada. Para cancelar, diríjase a la sección de viajes reservados de la aplicación o el sitio web, seleccione el viaje y elija la opción de cancelación.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Qué vehículos utiliza Privyde?",
       answer: (
@@ -73,8 +69,7 @@ const CityToCity = () => {
             Tenga en cuenta que las imágenes que se muestran al reservar son meramente ilustrativas. No podemos garantizar ninguna solicitud de modelos o colores específicos de vehículos, ya que el vehículo a utilizar está sujeto a disponibilidad.
           </p>
         </>
-      ),
-    },
+      )},
     {
       question: "¿Cuándo recibiré la información de contacto del chófer?",
       answer: (
@@ -86,40 +81,35 @@ const CityToCity = () => {
             Una hora antes del viaje, los pasajeros también pueden contactar por chat con su chófer a través de la aplicación de Privyde.
           </p>
         </>
-      ),
-    },
+      )},
     {
       question: "¿Qué sucede si el chófer llega tarde?",
       answer: (
         <p className="text-gray-600">
           En el improbable caso de que su chófer se retrase, póngase en contacto con el chófer mediante el chat de la aplicación de Privyde. Si desea cancelar la reserva, puede hacerlo a través de la aplicación o el sitio web de Privyde.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Qué sucede si no encuentro a mi chófer en la ubicación de recogida acordada?",
       answer: (
         <p className="text-gray-600">
           En ese caso, póngase en contacto con el chófer directamente. Puede hacerlo mediante la función de chat de la aplicación o a través del número de teléfono que se le habrá enviado una hora antes de la recogida por correo electrónico y SMS. Este mensaje también contiene la marca, el modelo y el número de placa del vehículo.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿El chófer habla inglés?",
       answer: (
         <p className="text-gray-600">
           Todos los chóferes de Privyde hablan inglés básico, así como el idioma local del país en el que se realiza el viaje.
         </p>
-      ),
-    },
+      )},
     {
       question: "Can I add child seats to the booking?",
       answer: (
         <p className="text-gray-600">
           Yes, this is possible. Please select the Business Van/SUV vehicle class and add the required child seat in the "Notes for the chauffeur" field. We will do our best to organize a child seat ahead of time.
         </p>
-      ),
-    },
+      )},
   ];
 
   const majorCitiesData = [
@@ -127,26 +117,22 @@ const CityToCity = () => {
       id: 1,
       name: "New York",
       description: "21 rutas hacia/desde esta ciudad",
-      imageUrl: "/images/newyork.jpg",
-    },
+      imageUrl: "/images/newyork.jpg"},
     {
       id: 2,
       name: "London",
       description: "25 rutas hacia/desde esta ciudad",
-      imageUrl: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
-    },
+      imageUrl: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"},
     {
       id: 3,
       name: "Paris",
       description: "16 rutas hacia/desde esta ciudad",
-      imageUrl: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
-    },
+      imageUrl: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"},
     {
       id: 4,
       name: "Dubai",
       description: "15 rutas hacia/desde esta ciudad",
-      imageUrl: "/images/dubai.jpg",
-    },
+      imageUrl: "/images/dubai.jpg"},
   ];
 
   const majorRoutesData = [

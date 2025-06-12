@@ -11,42 +11,48 @@
 ### 1. Conectar al Servidor
 
 ```bash
-ssh tu_usuario@tu_servidor.com
+ssh root@217.65.146.106
 ```
 
 ### 2. Crear Directorio del Proyecto
 
 ```bash
 # Crear directorio
-sudo mkdir -p /opt/privyde
-sudo chown $USER:$USER /opt/privyde
+mkdir -p /opt/privyde
 cd /opt/privyde
 ```
 
-### 3. Subir Archivos del Proyecto
+### 3. Clonar el Repositorio desde GitHub
 
-**Opción A: Desde tu máquina local (nueva terminal)**
 ```bash
-# Comprimir proyecto localmente
-cd /Users/vanguardia/Desktop/Privyde
-tar -czf privyde-project.tar.gz --exclude=node_modules --exclude=.git --exclude=backend/__pycache__ .
+# Clonar el repositorio
+git clone https://github.com/VanguardiaAI/operiq-landing.git .
 
-# Subir al servidor
-scp privyde-project.tar.gz tu_usuario@tu_servidor.com:/opt/privyde/
-
-# Volver a la terminal SSH y extraer
-cd /opt/privyde
-tar -xzf privyde-project.tar.gz
-rm privyde-project.tar.gz
+# Verificar que se clonó correctamente
+ls -la
 ```
 
-**Opción B: Usando Git (si tienes repositorio)**
+### 4. Verificar Docker
+
 ```bash
+# Verificar que Docker esté instalado
+docker --version
+docker-compose --version
+
+# Si no están instalados:
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+usermod -aG docker root
+curl -L "https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+# Reiniciar sesión SSH después de instalar Docker (si fue necesario)
+exit
+ssh root@217.65.146.106
 cd /opt/privyde
-git clone https://github.com/tu-usuario/privyde-platform.git .
 ```
 
-### 4. Configurar Variables de Entorno
+### 5. Configurar Variables de Entorno
 
 ```bash
 # Copiar archivo de ejemplo
@@ -78,26 +84,6 @@ OPENAI_API_KEY=tu_openai_api_key_real
 VITE_API_URL=https://privyde.com/api
 VITE_STRIPE_PUBLISHABLE_KEY=pk_live_tu_clave_publica_stripe_real
 VITE_GOOGLE_MAPS_API_KEY=tu_google_maps_api_key_real
-```
-
-### 5. Verificar Docker
-
-```bash
-# Verificar que Docker esté instalado
-docker --version
-docker-compose --version
-
-# Si no están instalados:
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo usermod -aG docker $USER
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
-# Reiniciar sesión SSH después de instalar Docker
-exit
-ssh tu_usuario@tu_servidor.com
-cd /opt/privyde
 ```
 
 ### 6. Ejecutar Despliegue
@@ -169,12 +155,12 @@ docker-compose logs -f
 
 ```bash
 # Permitir solo puertos necesarios
-sudo ufw allow 22      # SSH
-sudo ufw allow 80      # HTTP
-sudo ufw allow 443     # HTTPS
-sudo ufw allow 8081    # Privyde Frontend (interno)
-sudo ufw allow 5002    # Privyde Backend (interno)
-sudo ufw --force enable
+ufw allow 22      # SSH
+ufw allow 80      # HTTP
+ufw allow 443     # HTTPS
+ufw allow 8081    # Privyde Frontend (interno)
+ufw allow 5002    # Privyde Backend (interno)
+ufw --force enable
 ```
 
 ## ✅ Verificación Final
@@ -197,8 +183,8 @@ docker-compose logs -f
 # Reiniciar servicios
 docker-compose restart
 
-# Actualizar aplicación
-git pull origin main  # Si usas Git
+# Actualizar aplicación desde GitHub
+git pull origin master  # o main según tu rama
 docker-compose up --build -d
 
 # Backup de uploads
@@ -235,10 +221,23 @@ print('MongoDB conectado:', client.admin.command('ping'))
 ### Si los puertos siguen ocupados:
 ```bash
 # Verificar qué usa los puertos
-sudo netstat -tulpn | grep :8081
-sudo netstat -tulpn | grep :5002
+netstat -tulpn | grep :8081
+netstat -tulpn | grep :5002
 
 # Si hay conflicto, cambiar puertos en docker-compose.yml
+```
+
+### Si hay problemas con Git:
+```bash
+# Verificar estado del repositorio
+git status
+
+# Actualizar desde GitHub
+git fetch origin
+git reset --hard origin/master  # Cuidado: esto sobrescribe cambios locales
+
+# Ver commits recientes
+git log --oneline -5
 ```
 
 ## 📊 Arquitectura Final
@@ -251,12 +250,48 @@ Internet → 1Panel/Nginx (puerto 443/80)
                               └── MongoDB Atlas (cloud)
 ```
 
+## 🔄 Actualizaciones Futuras
+
+### Para actualizar la aplicación:
+```bash
+cd /opt/privyde
+
+# Obtener últimos cambios del repositorio
+git pull origin master
+
+# Reconstruir y desplegar
+docker-compose up --build -d
+
+# Verificar que todo funcione
+docker-compose ps
+```
+
+### Para hacer cambios y subirlos al repositorio:
+```bash
+# Hacer cambios en archivos
+nano archivo.txt
+
+# Agregar cambios
+git add .
+
+# Commit
+git commit -m "Descripción de los cambios"
+
+# Subir al repositorio
+git push origin master
+```
+
 ## 🎉 ¡Listo!
 
 Tu aplicación Privyde Platform estará disponible en:
 - **https://privyde.com** - Tu aplicación principal
 - **https://privyde.com/api** - API del backend
 - **Tu WordPress** - Sigue funcionando normalmente
+
+### Repositorio GitHub:
+- **URL**: https://github.com/VanguardiaAI/operiq-landing.git
+- **Rama principal**: master
+- **Actualizaciones**: `git pull origin master`
 
 ---
 

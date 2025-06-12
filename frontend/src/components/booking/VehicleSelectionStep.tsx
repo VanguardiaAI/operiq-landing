@@ -1,17 +1,11 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Car, 
-  ShieldCheck, 
-  UserCheck, 
-  Clock, 
   Users, 
   Briefcase,
-  ChevronRight,
-  ChevronLeft,
-  Check,
   Loader2,
-  AlertCircle
+  AlertCircle,
+  Check
 } from "lucide-react"
 import axios from "axios"
 
@@ -75,7 +69,7 @@ export default function VehicleSelectionStep({ sessionData, onComplete }: Vehicl
     sessionData.vehicle?.id || null
   )
   
-  // Cargar las opciones de vehículos al montar el componente
+  //gar las opciones de vehículos al montar el componente
   useEffect(() => {
     const fetchVehicles = async () => {
       try {
@@ -123,7 +117,7 @@ export default function VehicleSelectionStep({ sessionData, onComplete }: Vehicl
     return (
       <div className="flex items-center justify-center min-h-[300px]">
         <Loader2 className="h-8 w-8 animate-spin text-gray-700" />
-        <span className="ml-2 text-lg">Cargando opciones de vehículos...</span>
+        <span className="ml-2 text-lg">gando opciones de vehículos...</span>
       </div>
     )
   }
@@ -251,8 +245,7 @@ export default function VehicleSelectionStep({ sessionData, onComplete }: Vehicl
           <button 
             className="w-full py-3 px-4 rounded-md text-white font-semibold relative z-20"
             style={{
-                              background: "#000000",
-            }}
+                              background: "#000000"}}
             disabled={!selectedVehicle}
             onClick={handleContinue}
           >

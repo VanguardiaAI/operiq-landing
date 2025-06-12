@@ -18,9 +18,8 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
-import { Upload, X, PlusCircle, Car, DollarSign, User, MapPin, Shield, Calendar, FileText, Globe, Building, UserCircle, Check, ChevronsUpDown } from "lucide-react";
+import { Upload, X, PlusCircle, Car, DollarSign, User, Check, ChevronsUpDown } from "lucide-react";
 import axios from "axios";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";

@@ -45,13 +45,10 @@ export type ServiceType = 'one_way' | 'round_trip' | 'hourly' | 'full_day';
  * Servicio para el cálculo de precios
  */
 class PriceCalculationService {
-  private apiKey: string;
   private directionsService: google.maps.DirectionsService | null = null;
   private cachedRoutes: Map<string, RouteInfo> = new Map();
   
   constructor() {
-    // La API_KEY debe estar en las variables de entorno
-    this.apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
     this.initServices();
   }
 

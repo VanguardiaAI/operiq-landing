@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ChevronDown, ChevronUp, CheckCircle } from "lucide-react";
+import { ChevronDown, ChevronUp} from "lucide-react";
 import { motion } from "framer-motion";
 
 const TravelAgencies = () => {
@@ -36,48 +36,42 @@ const TravelAgencies = () => {
         <p className="text-gray-600">
           Sí, las agencias de viajes pueden ganar comisiones por viajes reservados a través de su agencia con Privyde. Se puede ganar más comisiones. Hable con nuestro equipo para obtener más información.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Qué información recibe mi cliente?",
       answer: (
         <p className="text-gray-600">
           Las confirmaciones de reserva solo se envían al titular de la reserva y nunca al cliente. Su cliente no recibirá ninguna información sobre el precio. Las únicas ocasiones en que contactamos con el pasajero son: Cuando el chófer está de camino: el pasajero recibe un correo electrónico y un mensaje SMS con los datos de contacto del chófer. Cuando el chófer ha llegado: el pasajero recibe otro correo electrónico y un mensaje SMS confirmando la llegada del chófer. Si necesitamos aclarar detalles: por ejemplo, podemos llamar al número de móvil del pasajero si nuestro chófer no puede localizarlo.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Qué vehículos usa Privyde?",
       answer: (
         <p className="text-gray-600">
           Privyde ofrece varios servicios según la lista de vehículos aprobados de la ciudad. Estos pueden incluir: • Business Class: Mercedes-Benz E-Class, BMW Serie 5, Cadillac XTS o similar • Business Van/SUV: Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac Escalade, Toyota Alphard o similar • First Class: Mercedes-Benz S-Class, BMW Serie 7, Audi A8 o similar • Electric Class (disponible en ciudades seleccionadas): Jaguar I-PACE, Tesla Model S, Tesla Model X o similar • Sprinter Class (disponible en ciudades seleccionadas): Mercedes-Benz Sprinter o similar Otros tipos de vehículos pueden ser aprobados para diferentes ciudades si cumplen con el estándar de Privyde.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Con cuánta antelación puedo reservar un viaje?",
       answer: (
         <p className="text-gray-600">
           Puede reservar viajes con meses de antelación o tan pronto como 60 minutos antes de que lo necesite. Recomendamos reservar con la mayor antelación posible. Privyde cuenta con la política de cancelación más flexible del sector, ya que los pasajeros pueden cancelar viajes de forma gratuita hasta una hora antes de la hora de recogida. También puede realizar cambios en su reserva hasta 60 minutos antes de la hora de recogida.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Cómo contribuye Privyde a las opciones de viaje sostenibles?",
       answer: (
         <p className="text-gray-600">
           Privyde contribuye a los viajes sostenibles al ofrecer opciones de vehículos eléctricos, incorporar vehículos eléctricos en nuestra oferta de Business Class en muchas más ciudades y trabajar activamente para compensar su huella de carbono.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Cómo son los precios de Privyde frente a los proveedores tradicionales?",
       answer: (
         <p className="text-gray-600">
           El modelo de precios competitivo de Privyde es más transparente en comparación con los proveedores tradicionales, lo que garantiza una buena relación calidad-precio sin comprometer la calidad del servicio.
         </p>
-      ),
-    },
+      )},
   ];
 
   return (

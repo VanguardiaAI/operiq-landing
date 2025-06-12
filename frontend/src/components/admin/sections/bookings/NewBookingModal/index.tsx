@@ -81,7 +81,6 @@ const NewBookingModal = ({
   newBookingFormData,
   validationErrors,
   handleFormChange,
-  validateFormTab,
   handleNextTab,
   handleSubmitNewBooking,
   // Datos y funciones para clientes
@@ -94,7 +93,6 @@ const NewBookingModal = ({
   handleRouteTypeChange,
   handleSearchFixedRoutes,
   handleSelectFixedRoute,
-  fixedRoutes,
   isSearchingRoutes,
   routeSearchResults,
   selectedRoute,

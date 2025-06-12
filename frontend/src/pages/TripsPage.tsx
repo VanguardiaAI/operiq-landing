@@ -4,19 +4,8 @@ import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
 import { Search, Filter, Download, Calendar, ChevronDown } from "lucide-react";
 
-// Definir tipo para los viajes
-type Trip = {
-  id: string;
-  from: string;
-  to: string;
-  date: string;
-  status: string;
-  vehicleType?: string;
-  price?: number;
-};
-
 export default function TripsPage() {
-  const { user } = useAuth();
+  const {} = useAuth();
   const [activeTab, setActiveTab] = useState<'upcoming' | 'past' | 'canceled'>('upcoming');
   const [searchQuery, setSearchQuery] = useState('');
   const [showFilters, setShowFilters] = useState(false);
@@ -43,13 +32,13 @@ export default function TripsPage() {
   };
 
   // En un escenario real, estos datos se obtendrían de una API
-  const upcomingTrips: Trip[] = [
+  /* const upcomingTrips: Trip[] = [
     // Por ahora, no hay viajes próximos
   ];
 
   const pastTrips: Trip[] = [
     // Por ahora, no hay viajes pasados
-  ];
+  ]; */
 
   return (
     <div className="flex flex-col min-h-screen">

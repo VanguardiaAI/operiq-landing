@@ -14,7 +14,7 @@ import {
   SelectValue 
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { MapPin, Car, DollarSign, Save, X, Loader2, Info, Building } from "lucide-react";
+import { Car, DollarSign, Save, X, Loader2, Info, Building } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { FlexibleZone } from "@/components/admin/sections/RoutesSection";
 import axios from "axios";
@@ -58,7 +58,7 @@ const FlexibleZoneForm = ({
   const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
   const [loadingCollaborators, setLoadingCollaborators] = useState(false);
   const [selectedCenter, setSelectedCenter] = useState<PlacePrediction | null>(null);
-  const [centerDetails, setCenterDetails] = useState<PlaceDetails | null>(null);
+  const [, setCenterDetails] = useState<PlaceDetails | null>(null);
   const [enableDistanceRestrictions, setEnableDistanceRestrictions] = useState(false);
   
   // Valores del formulario
@@ -825,7 +825,7 @@ const FlexibleZoneForm = ({
                       <div className="flex-shrink-0 ml-2">
                         <Checkbox 
                           checked={selectedVehicles.includes(vehicle.id)}
-                          onCheckedChange={(checked) => {
+                          onCheckedChange={(_checked) => {
                             // Evitar la propagación de eventos para que no se llame handleVehicleToggle dos veces
                             // El div padre ya maneja el clic
                           }}

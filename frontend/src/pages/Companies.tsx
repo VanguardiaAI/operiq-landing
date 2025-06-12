@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -66,8 +66,7 @@ const Companies = () => {
         <p className="text-gray-600">
           Puede reservar viajes con meses de antelación o tan pronto como 60 minutos antes de que lo necesite. Recomendamos reservar con la mayor antelación posible. Privyde cuenta con la política de cancelación más flexible del sector, ya que los pasajeros pueden cancelar viajes de forma gratuita hasta una hora antes de la hora de recogida. También puede realizar cambios en su reserva hasta 60 minutos antes de la hora de recogida.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Qué vehículos utiliza Privyde?",
       answer: (
@@ -78,16 +77,14 @@ const Companies = () => {
           <br /><br />
           Tenga en cuenta que las imágenes que se muestran al reservar son meramente ilustrativas. No podemos garantizar ninguna solicitud de modelos o colores específicos de vehículos, ya que el vehículo a utilizar está sujeto a disponibilidad.
         </p>
-      ),
-    },
+      )},
     {
       question: "Which languages do the chauffeurs speak?",
       answer: (
         <p className="text-gray-600">
           All of Privyde's chauffeurs speak English and the language of the country they operate in.
         </p>
-      ),
-    },
+      )},
     {
       question: "Which payment options are available?",
       answer: (
@@ -100,16 +97,14 @@ const Companies = () => {
           <br /><br />
           See the latest information here.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Cómo contribuye Privyde a las opciones de viaje sostenibles?",
       answer: (
         <p className="text-gray-600">
           Privyde contribuye a los viajes sostenibles al ofrecer opciones de vehículos eléctricos, incorporar vehículos eléctricos en nuestra oferta de Business Class en muchas más ciudades y trabajar activamente para compensar su huella de carbono.
         </p>
-      ),
-    },
+      )},
   ];
 
   return (

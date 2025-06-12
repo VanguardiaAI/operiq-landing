@@ -9,13 +9,11 @@ import { Loader2, ShieldCheck, AlertCircle } from "lucide-react"
 
 interface CheckoutFormProps {
   sessionData: any;
-  paymentIntentId: string | null;
   onPaymentSuccess: (paymentResult: any) => void;
 }
 
 export default function CheckoutForm({ 
   sessionData, 
-  paymentIntentId,
   onPaymentSuccess
 }: CheckoutFormProps) {
   const stripe = useStripe()

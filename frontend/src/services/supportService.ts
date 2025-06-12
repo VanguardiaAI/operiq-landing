@@ -125,7 +125,7 @@ export const supportService = {
     if (!socket || !socketConnected) return;
     
     // Reestablecer salas de conversaciones
-    messageCallbacks.forEach((callbacks, conversationId) => {
+    messageCallbacks.forEach((_, conversationId) => {
       console.log(`Re-uniendo a conversación: ${conversationId}`);
       socket?.emit('join_conversation', { conversation_id: conversationId });
     });

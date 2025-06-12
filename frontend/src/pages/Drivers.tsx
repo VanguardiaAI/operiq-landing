@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -45,16 +45,14 @@ const Drivers = () => {
             Una vez su cuenta esté activa, puede agregar tantos vehículos y chóferes como quiera. Puede consultar los requisitos de vehículo y documentación de su ciudad y comenzar su solicitud de socio aquí.
           </p>
         </>
-      ),
-    },
+      )},
     {
       question: "¿Cuántos viajes puedo hacer al mes con Privyde?",
       answer: (
         <p className="text-gray-600">
           La cantidad de viajes que realice depende totalmente de usted. Puede aceptar tantos viajes como su capacidad permita. El volumen de viajes ofrecido depende de la demanda regional y estacional.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Cómo recibo los pagos?",
       answer: (
@@ -66,16 +64,14 @@ const Drivers = () => {
             Los pagos se realizan mediante transferencia bancaria y suelen aparecer en su cuenta antes del 17 de cada mes.
           </p>
         </>
-      ),
-    },
+      )},
     {
       question: "¿Qué vehículos puedo usar para trabajar con Privyde?",
       answer: (
         <p className="text-gray-600">
           Solo pueden usarse determinados vehículos para los viajes de Privyde. Los requisitos del vehículo pueden variar según la ciudad en la que trabaje, y puede encontrar la lista de vehículos que necesita aquí. No tiene más que seleccionar el país y la ciudad sobre los que desea obtener más información.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Cómo puedo asociarme con Blackane?",
       answer: (
@@ -90,8 +86,7 @@ const Drivers = () => {
             Puede comenzar su solicitud de asociación aquí.
           </p>
         </>
-      ),
-    },
+      )},
     {
       question: "¿Funciona Privyde con vehículos eléctricos?",
       answer: (
@@ -106,8 +101,7 @@ const Drivers = () => {
             Solo se pueden utilizar vehículos totalmente eléctricos para realizar viajes con vehículos eléctricos. Los modelos eléctricos aceptados pueden variar según la ciudad en la que trabaje; puede encontrar la lista de vehículos que necesita aquí.
           </p>
         </>
-      ),
-    },
+      )},
   ];
 
   return (

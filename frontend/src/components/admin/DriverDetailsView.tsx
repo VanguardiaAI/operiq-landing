@@ -18,9 +18,9 @@ import {
 } from "@/components/ui/select";
 import { useState, useEffect } from "react";
 import {
-  X, Save, Edit, CheckCircle, AlertTriangle, Mail, Phone, MapPin, 
-  Calendar, User as UserIcon, FileText, RefreshCw, Clock, Award,
-  Car, Star, BookOpen, Languages, CreditCard, Book, Bookmark, Building,
+  X, Save, Edit, CheckCircle, AlertTriangle, Mail, Phone, 
+  User as UserIcon, FileText, RefreshCw,
+  Car, Star, BookOpen, CreditCard, Book, Bookmark, Building,
   Upload, Circle
 } from "lucide-react";
 import axios from "axios";
@@ -97,7 +97,7 @@ const DriverDetailsView = ({
   const [formData, setFormData] = useState<any>({});
   const [isSaving, setIsSaving] = useState(false);
   const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
-  const [loadingCollaborators, setLoadingCollaborators] = useState(false);
+  const [, setLoadingCollaborators] = useState(false);
   const [imagePreview, setImagePreview] = useState<string | null>(initialDriver.photo || null);
   
   // Estado local para el driver que puede actualizarse

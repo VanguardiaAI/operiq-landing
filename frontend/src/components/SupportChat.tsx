@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageSquare, X, Send, ChevronDown, Loader2, AlertCircle } from 'lucide-react';
+import { MessageSquare, X, Send, Loader2, AlertCircle } from 'lucide-react';
 import supportService, { SupportMessageDTO } from '../services/supportService';
 
 interface SupportMessage {
@@ -319,7 +319,7 @@ const SupportChat: React.FC = () => {
       console.log(`[SupportChat] Configurando escucha WebSocket para conversación: ${conversationId}`);
       
       // Inicializar el socket
-      const socket = supportService.initSocket();
+      supportService.initSocket();
       
       // Unirse a la sala de conversación
       supportService.joinConversation(conversationId);

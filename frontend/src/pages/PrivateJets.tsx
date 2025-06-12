@@ -1,12 +1,11 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef } from 'react';
 import '../App.css';
 import Image from "@/components/ui/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/booking-form";
 import DownloadSection from "@/components/download-section";
-import { ChevronDown, ChevronUp, DollarSign, Clock, TimerReset, CheckCircle, ChevronLeft, ChevronRight, Shield, Star, Plane } from "lucide-react";
+import { ChevronDown, ChevronUp, Clock, CheckCircle, ChevronLeft, ChevronRight, Shield, Star, Plane } from "lucide-react";
 
 const PrivateJets = () => {
   // Estado para controlar qué clase de servicio está seleccionada
@@ -54,8 +53,7 @@ const PrivateJets = () => {
       luggage: "Capacidad para equipaje de mano y hasta 8 maletas estándar",
       availability: "Ideal para vuelos nacionales y regionales de hasta 3 horas",
       range: "Autonomía de vuelo de aproximadamente 2.000 km",
-      image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-    },
+      image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"},
     {
       id: 2,
       title: "Midsize Jet",
@@ -64,8 +62,7 @@ const PrivateJets = () => {
       luggage: "Amplio espacio para equipaje, hasta 10 maletas estándar",
       availability: "Disponible para vuelos continentales de hasta 5 horas",
       range: "Autonomía de vuelo de aproximadamente 4.000 km",
-      image: "https://images.unsplash.com/photo-1583161036683-f5f3856ee519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-    },
+      image: "https://images.unsplash.com/photo-1583161036683-f5f3856ee519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"},
     {
       id: 3,
       title: "Heavy Jet",
@@ -74,8 +71,7 @@ const PrivateJets = () => {
       luggage: "Amplio compartimento para equipaje, hasta 15 maletas estándar",
       availability: "Ideal para vuelos intercontinentales y viajes de negocios de larga distancia",
       range: "Autonomía de vuelo de aproximadamente 7.000 km",
-      image: "https://images.unsplash.com/photo-1612647242324-5d5d017b4742?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-    },
+      image: "https://images.unsplash.com/photo-1612647242324-5d5d017b4742?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"},
     {
       id: 4,
       title: "Ultra Long Range",
@@ -84,8 +80,7 @@ const PrivateJets = () => {
       luggage: "Espacio para equipaje de gran capacidad, hasta 20 maletas",
       availability: "Disponible para vuelos intercontinentales sin escalas",
       range: "Autonomía de vuelo superior a 11.000 km para trayectos globales",
-      image: "https://images.unsplash.com/photo-1582851896496-4901e8145949?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-    },
+      image: "https://images.unsplash.com/photo-1582851896496-4901e8145949?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"},
   ];
 
   // Datos de las preguntas frecuentes
@@ -96,24 +91,21 @@ const PrivateJets = () => {
         <p className="text-gray-600">
           Viajar en jet privado ofrece numerosas ventajas como ahorro significativo de tiempo al evitar las largas esperas en los aeropuertos comerciales, mayor flexibilidad de horarios y rutas, acceso a más de 5.000 aeropuertos en todo el mundo (frente a los aproximadamente 500 que utilizan las aerolíneas comerciales), máxima privacidad para realizar reuniones de negocios o disfrutar de tiempo personal, mayor comodidad con cabinas diseñadas para el máximo confort, y la posibilidad de personalizar cada aspecto del viaje según sus necesidades específicas.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Con cuánta antelación debo reservar un jet privado?",
       answer: (
         <p className="text-gray-600">
           Aunque podemos organizar vuelos con tan solo 4 horas de antelación, recomendamos reservar con al menos 48-72 horas para garantizar la disponibilidad de la aeronave preferida. Para viajes durante temporadas altas, eventos importantes o destinos populares, es aconsejable reservar con 1-2 semanas de anticipación. Para itinerarios complejos o grupos grandes, un plazo de 7-10 días nos permitirá coordinar todos los aspectos de su viaje a la perfección.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Qué aeropuertos puedo utilizar con un jet privado?",
       answer: (
         <p className="text-gray-600">
           Una de las grandes ventajas de los jets privados es el acceso a más de 5.000 aeropuertos en todo el mundo, muchos de los cuales no están disponibles para vuelos comerciales. Esto incluye aeropuertos locales más pequeños que a menudo están más cerca de su destino final, reduciendo significativamente el tiempo de traslado terrestre. Además, puede seleccionar los aeropuertos de salida y llegada que mejor se adapten a su itinerario, evitando los principales centros aeroportuarios congestionados cuando sea posible.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Cómo se determina el precio de un vuelo en jet privado?",
       answer: (
@@ -129,8 +121,7 @@ const PrivateJets = () => {
           </ul>
           <p className="mt-2">Trabajamos con transparencia total en los precios, proporcionando un presupuesto detallado sin costes ocultos. Además, ofrecemos opciones de vuelos vacíos (empty legs) que pueden resultar significativamente más económicos para clientes con flexibilidad en sus fechas de viaje.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Qué servicios a bordo están incluidos?",
       answer: (
@@ -146,8 +137,7 @@ const PrivateJets = () => {
           </ul>
           <p className="mt-2">Además, podemos personalizar cada aspecto de su experiencia de vuelo, desde configuraciones especiales de cabina hasta arreglos de catering específicos, decoración para ocasiones especiales o cualquier otro servicio que pueda necesitar.</p>
         </div>
-      ),
-    },
+      )},
   ];
 
   return (

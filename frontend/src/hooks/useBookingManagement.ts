@@ -361,7 +361,7 @@ export const useBookingManagement = () => {
 
   // Estados para rutas fijas
   const [routeType, setRouteType] = useState<'fixed' | 'flexible'>('flexible');
-  const [fixedRoutes, setFixedRoutes] = useState<FixedRoute[]>([]);
+  const [fixedRoutes, _setFixedRoutes] = useState<FixedRoute[]>([]);
   const [isSearchingRoutes, setIsSearchingRoutes] = useState(false);
   const [routeSearchResults, setRouteSearchResults] = useState<FixedRoute[]>([]);
   const [selectedRoute, setSelectedRoute] = useState<FixedRoute | null>(null);

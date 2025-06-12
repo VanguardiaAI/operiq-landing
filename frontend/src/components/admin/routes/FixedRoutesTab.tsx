@@ -1,7 +1,6 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, Search, Edit, Trash2, ToggleLeft, ToggleRight, MapPin, Clock, Car, User, Building, X, Eye, ExternalLink, Maximize2, Info } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { PlusCircle, Search, Edit, Trash2, ToggleLeft, ToggleRight, MapPin, Clock, Car, User, Building, X, Eye, Maximize2, Info } from "lucide-react";
 import { FixedRoute } from "@/components/admin/sections/RoutesSection";
 import FixedRouteForm from "./FixedRouteForm";
 import { Badge } from "@/components/ui/badge";

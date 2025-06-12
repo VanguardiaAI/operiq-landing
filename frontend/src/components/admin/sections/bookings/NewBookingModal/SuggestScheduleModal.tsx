@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { X, Calendar, Clock, MapPin, User, Phone, Mail, MessageCircle, Send } from 'lucide-react';
+import { X, Calendar, Clock, MapPin, User, Phone, Mail, Send } from 'lucide-react';
 
 interface SuggestScheduleModalProps {
   isOpen: boolean;
@@ -181,11 +181,6 @@ const SuggestScheduleModal: React.FC<SuggestScheduleModalProps> = ({
     }
   };
 
-  const formatTimeSlot = (slot: TimeSlot | string): string => {
-    if (typeof slot === 'string') return slot;
-    return `${slot.start_time} - ${slot.end_time}`;
-  };
-
   // No renderizar si no está abierto o no hay vehículo
   if (!isOpen || !vehicle) return null;
 
@@ -288,28 +283,19 @@ const SuggestScheduleModal: React.FC<SuggestScheduleModalProps> = ({
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Horarios alternativos disponibles
               </label>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                {alternativeSlots.map((slot: TimeSlot, index: number) => {
-                  const formattedSlot = formatTimeSlot(slot);
-                  const isSelected = selectedSlots.includes(formattedSlot);
-                  
-                  return (
+              <div className="flex flex-wrap gap-2">
+                {selectedSlots.map((slot) => (
+                  <div key={slot} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm flex items-center">
+                    <Clock className="h-3 w-3 mr-1.5" />
+                    {slot}
                     <button
-                      key={index}
-                      onClick={() => handleSlotToggle(formattedSlot)}
-                      className={`p-2 text-sm border rounded-md transition-colors ${
-                        isSelected
-                          ? 'bg-gray-1000 text-white border-blue-500'
-                          : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
-                      }`}
+                      onClick={() => handleSlotToggle(slot)}
+                      className="ml-2 text-gray-500 hover:text-gray-700"
                     >
-                      <div className="flex items-center justify-center">
-                        <Clock className="h-3 w-3 mr-1" />
-                        {formattedSlot}
-                      </div>
+                      <X className="h-3 w-3" />
                     </button>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
               <p className="text-xs text-gray-500 mt-2">
                 Se han preseleccionado automáticamente los primeros 3 horarios. Puedes modificar la selección.
@@ -383,7 +369,7 @@ const SuggestScheduleModal: React.FC<SuggestScheduleModalProps> = ({
               {selectedSlots.length > 0 && (
                 <>
                   {'\n\n'}📅 <strong>Horarios disponibles:</strong>
-                  {selectedSlots.map((slot, idx) => (
+                  {selectedSlots.map((slot) => (
                     `\n• ${slot}`
                   )).join('')}
                 </>

@@ -20,11 +20,11 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
   const [pickupSign, setPickupSign] = useState("")
   const [notes, setNotes] = useState("")
   const [reference, setReference] = useState("")
-  const [originDetails, setOriginDetails] = useState<any>(null)
-  const [destinationDetails, setDestinationDetails] = useState<any>(null)
+  const [_originDetails, setOriginDetails] = useState<any>(null)
+  const [_destinationDetails, setDestinationDetails] = useState<any>(null)
   const [estimatedArrival, setEstimatedArrival] = useState("")
   const [distance, setDistance] = useState("")
-  const [fetchingDetails, setFetchingDetails] = useState(false)
+  const [_fetchingDetails, setFetchingDetails] = useState(false)
   const [error, setError] = useState<string | null>(null)
   
   // Inicializar datos
@@ -397,8 +397,7 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
             type="submit"
             className="w-full py-3 px-4 rounded-md text-white font-semibold relative z-20 disabled:opacity-70"
             style={{
-                              background: "#000000",
-            }}
+                              background: "#000000"}}
             disabled={loading}
           >
             {loading ? (

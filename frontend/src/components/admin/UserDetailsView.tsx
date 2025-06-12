@@ -5,8 +5,7 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  CardTitle} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -14,17 +13,14 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  SelectValue} from "@/components/ui/select";
 import { useState } from "react";
 import {
-  X, Save, Edit, CheckCircle, AlertTriangle, Mail, Phone, MapPin, 
-  Calendar, User as UserIcon, Building, CreditCard, Clock, FileText,
+  X, Save, Edit, CheckCircle, AlertTriangle, Mail, Phone, User as UserIcon, Building, CreditCard, Clock, FileText,
   Award, BookOpen, RefreshCw, BarChart
 } from "lucide-react";
 import axios from "axios";
 import { useToast } from "@/components/ui/use-toast";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 
 // Tipo para usuarios con propiedades extendidas
@@ -91,8 +87,7 @@ const UserDetailsView = ({
   user,
   onClose,
   onAssignTag,
-  onRemoveTag,
-}: UserDetailsViewProps) => {
+  onRemoveTag}: UserDetailsViewProps) => {
   const { toast } = useToast();
   
   // Estados para edición
@@ -129,8 +124,7 @@ const UserDetailsView = ({
     let initialData: any = {
       name: user.name,
       email: user.email,
-      status: user.status,
-    };
+      status: user.status};
     
     if (user.role === 'user') {
       initialData = {
@@ -140,8 +134,7 @@ const UserDetailsView = ({
         last_name: user.profile?.last_name || '',
         phone: user.profile?.phone || '',
         country_code: user.profile?.country_code || '',
-        address: user.profile?.address || '',
-      };
+        address: user.profile?.address || ''};
     } else if (user.role === 'company') {
       initialData = {
         ...initialData,
@@ -154,8 +147,7 @@ const UserDetailsView = ({
         additionalInfo: user.company_profile?.additionalInfo || '',
         representativeFirstName: user.company_profile?.representativeInfo?.firstName || '',
         representativeLastName: user.company_profile?.representativeInfo?.lastName || '',
-        representativeEmail: user.company_profile?.representativeInfo?.email || '',
-      };
+        representativeEmail: user.company_profile?.representativeInfo?.email || ''};
     }
     
     setFormData(initialData);
@@ -215,7 +207,7 @@ const UserDetailsView = ({
       console.log('Enviando datos:', dataToSend);
       
       // Enviar los datos al backend
-      const response = await axios.put(`/api/admin/users/${user.id}/update`, dataToSend, {
+      await axios.put(`/api/admin/users/${user.id}/update`, dataToSend, {
         headers: {
           Authorization: `Bearer ${token}`
         }

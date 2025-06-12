@@ -1,14 +1,14 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Calendar as CalendarIcon, Clock, MapPin, ChevronDown, Loader2, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Calendar as CalendarIcon, Clock, MapPin, ChevronDown, Loader2, ChevronLeft, ChevronRight } from "lucide-react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import { format, addDays, isBefore, addMonths } from "date-fns"
+import { format, addDays} from "date-fns"
 import { es } from "date-fns/locale"
 import { TimePicker } from "@/components/ui/time-picker"
 
@@ -39,35 +39,7 @@ interface BookingFormData {
   time: string
 }
 
-// Opciones de duración disponibles
-const DURATION_OPTIONS = [
-  "1 hora",
-  "2 horas",
-  "3 horas",
-  "4 horas",
-  "5 horas",
-  "6 horas",
-  "7 horas",
-  "8 horas",
-  "Día completo (10 horas)"
-]
-
-// Opciones de hora disponibles
-const generateTimeOptions = () => {
-  const options = []
-  for (let hour = 0; hour < 24; hour++) {
-    for (let minute = 0; minute < 60; minute += 30) {
-      const formattedHour = hour.toString().padStart(2, '0')
-      const formattedMinute = minute.toString().padStart(2, '0')
-      options.push(`${formattedHour}:${formattedMinute}`)
-    }
-  }
-  return options
-}
-
-const TIME_OPTIONS = generateTimeOptions()
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
 // Componente de calendario mejorado
 function CalendarComponent({ selectedDate, onDateChange }: { selectedDate: Date, onDateChange: (date: Date) => void }) {
@@ -276,17 +248,23 @@ function DurationSelector({ selectedDuration, onDurationChange }: { selectedDura
 }
 
 export default function BookingForm() {
+  const [formData, setFormData] = useState<BookingFormData>({
+    tripType: 'ida',
+    from: {
+      description: '',
+    },
+    date: format(new Date(), "E, dd MMM yyyy", { locale: es }),
+    time: "12:00",
+  })
   const navigate = useNavigate()
-  const today = new Date()
   
   // Estados para los valores del formulario
-  const [selectedDate, setSelectedDate] = useState(addDays(today, 1))
-  const [selectedTime, setSelectedTime] = useState("12:00")
+  const [selectedDate, setSelectedDate] = useState(new Date(formData.date))
   const [selectedDuration, setSelectedDuration] = useState("2 horas")
   
   // Estados para mostrar la fecha y hora formateadas
-  const [date, setDate] = useState(format(addDays(today, 1), "E, dd MMM yyyy", { locale: es }))
-  const [time, setTime] = useState("12:00")
+  const [date, setDate] = useState(formData.date)
+  const [time, setTime] = useState(formData.time)
   const [duration, setDuration] = useState("2 horas")
   
   // Estados para diálogos
@@ -376,7 +354,6 @@ export default function BookingForm() {
   
   // Manejador para seleccionar hora
   const handleTimeChange = (time: string) => {
-    setSelectedTime(time)
     setTime(time)
   }
   
@@ -392,6 +369,19 @@ export default function BookingForm() {
     e.preventDefault()
     setLoading(true)
     
+    // Validar campos
+    if (!formData.from.description) {
+      console.error("El punto de partida es obligatorio.")
+      setLoading(false)
+      return
+    }
+
+    if (formData.tripType === 'ida' && !formData.to?.description) {
+      console.error("El destino es obligatorio para viajes de solo ida.")
+      setLoading(false)
+      return
+    }
+
     try {
       // Construir los datos de la reserva según el tipo de viaje
       const bookingData: BookingFormData = {
@@ -413,14 +403,14 @@ export default function BookingForm() {
         bookingData.duration = duration
       }
       
-      // Crear una sesión de reserva en el backend
-      const response = await axios.post(`${API_URL}/booking/create-session`, bookingData)
+      // Guardar datos en localStorage para pasarlos a la siguiente página
+      localStorage.setItem("bookingDetails", JSON.stringify(bookingData))
       
-      // Redirigir al usuario al proceso de wizard con el session_id
-      navigate(`/reserva/${response.data.session_id}`)
+      // Redirigir a la página de checkout
+      navigate("/checkout")
     } catch (error) {
-      console.error("Error al crear la sesión de reserva:", error)
-      alert("Ha ocurrido un error al procesar tu solicitud. Por favor, inténtalo de nuevo.")
+      console.error("Error al procesar la reserva:", error)
+      alert("Hubo un problema al procesar tu solicitud. Inténtalo de nuevo.")
     } finally {
       setLoading(false)
     }

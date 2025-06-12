@@ -1,12 +1,11 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef } from 'react';
 import '../App.css';
 import Image from "@/components/ui/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/booking-form";
 import DownloadSection from "@/components/download-section";
-import { ChevronDown, ChevronUp, ShieldCheck, Clock, Building, Users, Briefcase, Award, ChevronLeft, ChevronRight, CheckCircle, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, ShieldCheck, Clock, Building, Briefcase, ChevronLeft, ChevronRight, CheckCircle, Star } from "lucide-react";
 
 const CorporateTransfers = () => {
   // Estado para controlar qué clase de servicio está seleccionada
@@ -56,8 +55,7 @@ const CorporateTransfers = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Espacio para 2 maletas de cabina y 2 maletines ejecutivos",
       availability: "Disponible en todas las ciudades principales",
-      image: "/images/e-class-limo.png",
-    },
+      image: "/images/e-class-limo.png"},
     {
       id: 2,
       title: "Lujo Corporativo",
@@ -65,8 +63,7 @@ const CorporateTransfers = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Espacio para 2 maletas estándar y 2 maletines ejecutivos",
       availability: "Disponible en principales centros financieros",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Lujo+Corporativo",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Lujo+Corporativo"},
     {
       id: 3,
       title: "SUV Ejecutiva",
@@ -74,8 +71,7 @@ const CorporateTransfers = () => {
       capacity: "Capacidad para 4 personas",
       luggage: "Espacio para 3 maletas estándar y equipaje de mano",
       availability: "Ideal para equipos pequeños con necesidad de mayor espacio",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=SUV+Ejecutiva",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=SUV+Ejecutiva"},
     {
       id: 4,
       title: "Movilidad Grupal",
@@ -83,8 +79,7 @@ const CorporateTransfers = () => {
       capacity: "Capacidad para 6-14 personas",
       luggage: "Amplio espacio para equipaje de todo el equipo",
       availability: "Perfecta para delegaciones y equipos completos",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Movilidad+Grupal",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Movilidad+Grupal"},
     {
       id: 5,
       title: "Seguridad Reforzada",
@@ -92,8 +87,7 @@ const CorporateTransfers = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Espacio para 2 maletas con compartimentos seguros",
       availability: "Disponible para ejecutivos con necesidades de seguridad elevadas",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Seguridad+Reforzada",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Seguridad+Reforzada"},
     {
       id: 6,
       title: "Eléctrico Ejecutivo",
@@ -101,8 +95,7 @@ const CorporateTransfers = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Espacio para 2 maletas estándar y equipaje de mano",
       availability: "Opción sostenible para empresas comprometidas con el medio ambiente",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Eléctrico+Ejecutivo",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Eléctrico+Ejecutivo"},
   ];
 
   // Datos para los beneficios corporativos
@@ -159,20 +152,17 @@ const CorporateTransfers = () => {
       name: "María González",
       position: "Directora de Operaciones, Global Enterprises",
       text: "Privyde ha transformado nuestra logística ejecutiva. Su servicio es consistente, puntual y verdaderamente premium. Los directivos ahora pueden prepararse para reuniones en el trayecto, aprovechando al máximo cada minuto. Su plataforma de gestión nos permite un control completo sobre gastos y asignaciones.",
-      stars: 5,
-    },
+      stars: 5},
     {
       name: "Carlos Mendoza",
       position: "CFO, Tech Innovations Inc.",
       text: "Como empresa con operaciones en 8 países, necesitábamos un servicio de transporte que mantuviera el mismo estándar de calidad en todas nuestras ubicaciones. Privyde no solo cumplió esa expectativa sino que la superó. Su sistema centralizado de facturación ha simplificado enormemente nuestra administración.",
-      stars: 5,
-    },
+      stars: 5},
     {
       name: "Ana Ramírez",
       position: "Directora de Eventos, Premium Consultants",
       text: "Organizamos más de 50 eventos corporativos al año y la logística de traslados siempre era un dolor de cabeza hasta que encontramos Privyde. Su capacidad para gestionar múltiples recogidas y traslados simultáneos es impresionante. Los asistentes siempre destacan el nivel de servicio como un diferencial de nuestros eventos.",
-      stars: 5,
-    },
+      stars: 5},
   ];
 
   // Datos de las preguntas frecuentes
@@ -191,8 +181,7 @@ const CorporateTransfers = () => {
           </ul>
           <p className="mt-2">Todo el proceso puede completarse en menos de una semana, permitiéndole comenzar a disfrutar de nuestros servicios VIP rápidamente.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Qué opciones de facturación ofrecen para empresas?",
       answer: (
@@ -207,16 +196,14 @@ const CorporateTransfers = () => {
           </ul>
           <p className="mt-2">Todas nuestras facturas incluyen informes detallados de uso que facilitan la auditoría y control de gastos.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Cómo gestionan los cambios de última hora en la agenda?",
       answer: (
         <p className="text-gray-600">
           Entendemos que los horarios empresariales pueden cambiar rápidamente. Nuestro servicio corporativo está diseñado con la flexibilidad como prioridad. A través de nuestra aplicación o portal corporativo, puede realizar cambios en las reservas hasta 30 minutos antes del servicio sin cargos adicionales. Para cambios más inmediatos, contamos con un equipo de coordinación disponible 24/7 que se encargará de reorganizar su servicio minimizando cualquier impacto. Además, nuestros chóferes están capacitados para adaptarse a modificaciones en el itinerario durante el servicio, pudiendo extender el tiempo, añadir paradas adicionales o cambiar el destino según sea necesario.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Ofrecen servicios internacionales para ejecutivos que viajan con frecuencia?",
       answer: (
@@ -231,8 +218,7 @@ const CorporateTransfers = () => {
           </ul>
           <p className="mt-2">Además, ofrecemos paquetes corporativos globales con tarifas preferentes para empresas con alto volumen de viajes internacionales, garantizando que sus ejecutivos reciban el mismo nivel de servicio en cualquier parte del mundo.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Qué medidas de seguridad implementan para ejecutivos de alto nivel?",
       answer: (
@@ -248,8 +234,7 @@ const CorporateTransfers = () => {
           </ul>
           <p className="mt-2">Todos estos servicios se implementan de manera discreta, manteniendo la apariencia de un servicio premium estándar para no llamar atención innecesaria.</p>
         </div>
-      ),
-    },
+      )},
   ];
 
   return (

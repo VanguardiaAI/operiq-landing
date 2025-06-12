@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, Search, Trash2, AlertTriangle, Loader2, UserCircle, FileText, MapPin, Upload, X } from "lucide-react";
+import { PlusCircle, Search, Trash2, AlertTriangle, Loader2, UserCircle, FileText, MapPin, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -402,20 +402,19 @@ const DriversSection = () => {
   // Funciones para la gestión de chóferes
   const handleAddDriver = () => {
     setEditingDriver(null);
-    setImagePreview(null);
     setShowDriverForm(true);
   };
 
+  /*
   const handleEditDriver = (driver: Driver) => {
     setEditingDriver(driver);
-    setImagePreview(driver.photo || null);
     setShowDriverForm(true);
   };
-  
+  */
+
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      // En un caso real, subiríamos la imagen a un servidor
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
       const reader = new FileReader();
       reader.onloadend = () => {
         const result = reader.result as string;
@@ -467,12 +466,11 @@ const DriversSection = () => {
     setSelectedDriverDetails(driverDetails || driver);
     setIsDriverDetailsViewOpen(true);
   };
-
+  
   const handleCloseDriverDetails = () => {
     setIsDriverDetailsViewOpen(false);
     setSelectedDriverDetails(null);
-    // Actualizar la lista de chóferes al cerrar los detalles
-    fetchDrivers();
+    setEditingDriver(null);
   };
 
   // Manejar actualización desde la vista detallada

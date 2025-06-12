@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
-  const { login, error, isLoading, clearError, setUser, setToken, user } = useAuth();
+  const { login, error, isLoading, setUser, setToken, user } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);

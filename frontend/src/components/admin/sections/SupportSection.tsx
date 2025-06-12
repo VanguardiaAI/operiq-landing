@@ -3,14 +3,8 @@ import { Button } from "@/components/ui/button";
 import { 
   PlusCircle, 
   Search, 
-  Filter, 
-  Check, 
-  X, 
-  ChevronDown, 
   MessageSquare,
   User,
-  Users,
-  Clock,
   SendHorizonal,
   RefreshCw
 } from "lucide-react";
@@ -88,11 +82,11 @@ const StatusBadge = ({ status }: { status: string }) => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'open':
-        return 'bg-gray-200 text-blue-800';
+        return 'bg-blue-100 text-blue-800';
       case 'in_progress':
-        return 'bg-gray-200 text-yellow-800';
+        return 'bg-yellow-100 text-yellow-800';
       case 'resolved':
-        return 'bg-gray-200 text-green-800';
+        return 'bg-green-100 text-green-800';
       case 'closed':
         return 'bg-gray-100 text-gray-800';
       default:
@@ -112,13 +106,13 @@ const PriorityBadge = ({ priority }: { priority: string }) => {
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'low':
-        return 'bg-gray-200 text-green-800';
+        return 'bg-green-100 text-green-800';
       case 'medium':
-        return 'bg-gray-200 text-blue-800';
+        return 'bg-blue-100 text-blue-800';
       case 'high':
-        return 'bg-gray-200 text-orange-800';
+        return 'bg-orange-100 text-orange-800';
       case 'urgent':
-        return 'bg-gray-200 text-gray-800';
+        return 'bg-red-100 text-red-800';
       default:
         return 'bg-gray-100 text-gray-800';
     }
@@ -136,13 +130,13 @@ const SourceBadge = ({ source }: { source: string }) => {
   const getSourceColor = (source: string) => {
     switch (source) {
       case 'web':
-        return 'bg-gray-200 text-indigo-800';
+        return 'bg-indigo-100 text-indigo-800';
       case 'app_client':
-        return 'bg-gray-200 text-blue-800';
+        return 'bg-blue-100 text-blue-800';
       case 'app_driver':
-        return 'bg-gray-200 text-green-800';
+        return 'bg-green-100 text-green-800';
       case 'email':
-        return 'bg-gray-200 text-purple-800';
+        return 'bg-purple-100 text-purple-800';
       case 'internal':
         return 'bg-gray-100 text-gray-800';
       default:
@@ -180,7 +174,7 @@ const UserTypeBadge = ({ userType, companyName }: { userType?: string, companyNa
   
   return (
     <span className={`px-2 py-1 text-xs rounded-full ${
-      userType === 'company' ? 'bg-gray-200 text-gray-800' : 'bg-gray-200 text-teal-800'
+      userType === 'company' ? 'bg-violet-100 text-violet-800' : 'bg-teal-100 text-teal-800'
     }`}>
       {userType === 'company' ? `Empresa${companyName ? ': ' + companyName : ''}` : 'Particular'}
     </span>
@@ -197,11 +191,11 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
   const [activeView, setActiveView] = useState<'inbox' | 'conversation'>('inbox');
   const [selectedConversation, setSelectedConversation] = useState<Conversation | null>(null);
   const [conversations, setConversations] = useState<Conversation[]>([]);
-  const [isLoadingConversations, setIsLoadingConversations] = useState(false);
-  const [loadingError, setLoadingError] = useState<string | null>(null);
+  const [, _setIsLoadingConversations] = useState(false);
+  const [, setLoadingError] = useState<string | null>(null);
   const [messages, setMessages] = useState<Record<string, SupportMessage[]>>({});
   const [newMessage, setNewMessage] = useState("");
-  const [isSendingMessage, setIsSendingMessage] = useState(false);
+  const [, setIsSendingMessage] = useState(false);
   const [filterStatus, setFilterStatus] = useState<string>("all");
   const [filterPriority, setFilterPriority] = useState<string>("all");
   const [filterCategory, setFilterCategory] = useState<string>("all");
@@ -209,7 +203,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
   const [filterUserType, setFilterUserType] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
   // Nuevos estados para manejar el tiempo real
-  const [socketConnected, setSocketConnected] = useState(false);
+  const [, _setSocketConnected] = useState(false);
   const [isPolling, setIsPolling] = useState(false);
   const pollingIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const lastPollingTimestampRef = useRef<string | null>(null);
@@ -224,12 +218,10 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
 
     socket.on('connect', () => {
       console.log("[SupportSection] Socket conectado correctamente");
-      setSocketConnected(true);
     });
 
     socket.on('disconnect', () => {
       console.log("[SupportSection] Socket desconectado");
-      setSocketConnected(false);
     });
 
     // Limpiar al desmontar
@@ -242,8 +234,6 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
 
   // Cargar conversaciones al inicio y periódicamente
   const fetchConversations = useCallback(async () => {
-    setIsLoadingConversations(true);
-    setLoadingError(null);
     try {
       const response = await axios.get(`${API_URL}/support/conversations`);
       console.log("Conversaciones obtenidas:", response.data);
@@ -252,8 +242,8 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
       const formattedConversations: Conversation[] = response.data.map((conv: any) => ({
         id: conv._id || conv.id,
         title: conv.title || "Sin título",
-      participants: [
-        {
+        participants: [
+          {
             id: conv.userId || "user-id",
             name: conv.userName || "Usuario",
             role: 'client',
@@ -263,21 +253,21 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
           },
           {
             id: "admin",
-          name: "Soporte Privyde",
+            name: "Soporte Privyde",
             role: 'admin',
-          avatar: "https://ui-avatars.com/api/?name=Soporte+Privyde&background=f44336&color=fff"
-        }
-      ],
-      lastMessage: {
+            avatar: "https://ui-avatars.com/api/?name=Soporte+Privyde&background=f44336&color=fff"
+          }
+        ],
+        lastMessage: {
           message: conv.lastMessage?.message || "Sin mensajes",
           timestamp: conv.lastMessage?.timestamp || new Date().toISOString(),
-        sender: {
+          sender: {
             id: conv.lastMessage?.senderId || "user-id",
             name: conv.lastMessage?.senderName || "Usuario",
             role: conv.lastMessage?.isAdmin ? 'admin' : 'client',
-          userType: "individual"
-        }
-      },
+            userType: "individual"
+          }
+        },
         unreadCount: conv.unreadCount || 0,
         status: conv.status || "open",
         priority: conv.priority || "medium",
@@ -291,8 +281,6 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
     } catch (error) {
       console.error("Error al cargar conversaciones:", error);
       setLoadingError("No se pudieron cargar las conversaciones. Por favor, inténtalo de nuevo.");
-    } finally {
-      setIsLoadingConversations(false);
     }
   }, [API_URL]);
 
@@ -314,7 +302,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
   }, [selectedConversationId, conversations]);
 
   // Cargar mensajes de una conversación
-  const fetchMessagesForConversation = useCallback(async (conversationId: string) => {
+  const fetchMessagesForConversation = useCallback(async (conversationId: string, _refresh = false) => {
     try {
       const response = await axios.get(`${API_URL}/support/conversations/${conversationId}/messages`);
       console.log(`Mensajes para conversación ${conversationId}:`, response.data);
@@ -659,25 +647,25 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
         // Llamada al API para marcar como leídos
         await axios.put(`${API_URL}/support/conversations/${conversation.id}/read`);
         
-      const updatedMessages = messages[conversation.id].map(msg => ({
-        ...msg,
-        read: true
-      }));
-      
-      setMessages({
-        ...messages,
-        [conversation.id]: updatedMessages
-      });
-      
-      // Actualizar contador de no leídos
-      const updatedConversations = conversations.map(conv => {
-        if (conv.id === conversation.id) {
-          return { ...conv, unreadCount: 0 };
-        }
-        return conv;
-      });
-      
-      setConversations(updatedConversations);
+        const updatedMessages = messages[conversation.id].map(msg => ({
+          ...msg,
+          read: true
+        }));
+        
+        setMessages({
+          ...messages,
+          [conversation.id]: updatedMessages
+        });
+        
+        // Actualizar contador de no leídos
+        const updatedConversations = conversations.map(conv => {
+          if (conv.id === conversation.id) {
+            return { ...conv, unreadCount: 0 };
+          }
+          return conv;
+        });
+        
+        setConversations(updatedConversations);
       } catch (error) {
         console.error("Error al marcar mensajes como leídos:", error);
       }
@@ -712,7 +700,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
         message: newMessage.trim(),
         sender: {
           name: "Soporte Privyde",
-          email: "soporte@operiq.com",
+          email: "soporte@privyde.com",
           isAdmin: true
         },
         conversationId: selectedConversation.id,
@@ -725,61 +713,61 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
       console.log("Mensaje enviado:", response);
       
       // Crear objeto de mensaje para UI
-    const newMsg: SupportMessage = {
+      const newMsg: SupportMessage = {
         id: response._id || response.id || `admin-${Date.now()}`,
-      conversationId: selectedConversation.id,
-      subject: `RE: ${selectedConversation.title}`,
+        conversationId: selectedConversation.id,
+        subject: `RE: ${selectedConversation.title}`,
         message: newMessage.trim(),
-      sender: {
-        id: "a1",
-        name: "Soporte Privyde",
-        role: "admin",
-        avatar: "https://ui-avatars.com/api/?name=Soporte+Privyde&background=f44336&color=fff"
-      },
-      recipient: selectedConversation.participants.find(p => p.role !== 'admin') || {
-        id: "",
-        name: "",
-        role: "client"
-      },
-      timestamp: new Date().toISOString(),
-      read: true,
-      status: "in_progress",
-      priority: selectedConversation.priority,
-      category: selectedConversation.category,
-      source: "web"
-    };
-    
-    // Actualizar mensajes
-    const conversationMessages = messages[selectedConversation.id] || [];
-    setMessages({
-      ...messages,
-      [selectedConversation.id]: [...conversationMessages, newMsg]
-    });
-    
-    // Actualizar última actividad en la conversación
-    const updatedConversations = conversations.map(conv => {
-      if (conv.id === selectedConversation.id) {
-        return {
-          ...conv,
-          lastMessage: {
+        sender: {
+          id: "a1",
+          name: "Soporte Privyde",
+          role: "admin",
+          avatar: "https://ui-avatars.com/api/?name=Soporte+Privyde&background=f44336&color=fff"
+        },
+        recipient: selectedConversation.participants.find(p => p.role !== 'admin') || {
+          id: "",
+          name: "",
+          role: "client"
+        },
+        timestamp: new Date().toISOString(),
+        read: true,
+        status: "in_progress",
+        priority: selectedConversation.priority,
+        category: selectedConversation.category,
+        source: "web"
+      };
+      
+      // Actualizar mensajes
+      const conversationMessages = messages[selectedConversation.id] || [];
+      setMessages({
+        ...messages,
+        [selectedConversation.id]: [...conversationMessages, newMsg]
+      });
+      
+      // Actualizar última actividad en la conversación
+      const updatedConversations = conversations.map(conv => {
+        if (conv.id === selectedConversation.id) {
+          return {
+            ...conv,
+            lastMessage: {
               message: newMessage.trim(),
-            timestamp: new Date().toISOString(),
-            sender: {
-              id: "a1",
-              name: "Soporte Privyde",
-              role: "admin" as 'admin',
-              userType: 'individual' as 'individual'
-            }
-          },
-          status: "in_progress" as 'in_progress',
-          updated: new Date().toISOString()
-        };
-      }
-      return conv;
-    });
-    
-    setConversations(updatedConversations);
-    setNewMessage("");
+              timestamp: new Date().toISOString(),
+              sender: {
+                id: "a1",
+                name: "Soporte Privyde",
+                role: "admin" as 'admin',
+                userType: 'individual' as 'individual'
+              }
+            },
+            status: "in_progress" as 'in_progress',
+            updated: new Date().toISOString()
+          };
+        }
+        return conv;
+      });
+      
+      setConversations(updatedConversations);
+      setNewMessage("");
     } catch (error) {
       console.error("Error al enviar mensaje:", error);
       // Mostrar notificación de error
@@ -794,17 +782,17 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
       await axios.put(`${API_URL}/support/conversations/${conversationId}/status`, { status: newStatus });
       
       // Actualizar estado de la conversación en la UI
-    const updatedConversations = conversations.map(conv => {
-      if (conv.id === conversationId) {
-        return { ...conv, status: newStatus };
-      }
-      return conv;
-    });
-    
-    setConversations(updatedConversations);
-    
-    if (selectedConversation && selectedConversation.id === conversationId) {
-      setSelectedConversation({ ...selectedConversation, status: newStatus });
+      const updatedConversations = conversations.map(conv => {
+        if (conv.id === conversationId) {
+          return { ...conv, status: newStatus };
+        }
+        return conv;
+      });
+      
+      setConversations(updatedConversations);
+      
+      if (selectedConversation && selectedConversation.id === conversationId) {
+        setSelectedConversation({ ...selectedConversation, status: newStatus });
       }
     } catch (error) {
       console.error("Error al actualizar estado de la conversación:", error);
@@ -812,15 +800,9 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
     }
   };
 
-  const handleRefreshConversations = () => {
-    fetchConversations();
-  };
-  
-  // Función para refrescar manualmente los mensajes de la conversación actual
   const handleRefreshMessages = async () => {
     if (selectedConversation) {
-      console.log(`[SupportSection] Refrescando mensajes para conversación ${selectedConversation.id}`);
-      await fetchMessagesForConversation(selectedConversation.id);
+      await fetchMessagesForConversation(selectedConversation.id, true);
     }
   };
 
@@ -858,7 +840,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
         </div>
         
         {activeView === 'inbox' ? (
-          <Button className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
+          <Button className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
             <PlusCircle size={18} className="mr-2" />
             Nueva conversación
           </Button>
@@ -998,7 +980,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
                   <div 
                     key={conversation.id}
                     onClick={() => handleSelectConversation(conversation)}
-                    className={`p-4 hover:bg-gray-50 cursor-pointer transition-colors ${conversation.unreadCount > 0 ? 'bg-gray-100' : ''}`}
+                    className={`p-4 hover:bg-gray-50 cursor-pointer transition-colors ${conversation.unreadCount > 0 ? 'bg-red-50' : ''}`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
@@ -1016,17 +998,17 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
                           )}
                           
                           {conversation.unreadCount > 0 && (
-                            <span className="absolute -top-1 -right-1 w-5 h-5 bg-gray-1000 text-white rounded-full text-xs flex items-center justify-center">
+                            <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white rounded-full text-xs flex items-center justify-center">
                               {conversation.unreadCount}
                             </span>
                           )}
                           
                           <span className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${
                             conversation.participants.find(p => p.role !== 'admin')?.role === 'client' 
-                              ? 'bg-gray-1000' 
+                              ? 'bg-blue-500' 
                               : conversation.participants.find(p => p.role !== 'admin')?.role === 'driver'
-                                ? 'bg-gray-600'
-                                : 'bg-gray-600'
+                                ? 'bg-green-500'
+                                : 'bg-purple-500'
                           }`}></span>
                         </div>
                         
@@ -1088,10 +1070,10 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
                   </h3>
                   <span className={`ml-2 w-2 h-2 rounded-full ${
                     selectedConversation.participants.find(p => p.role !== 'admin')?.role === 'client' 
-                      ? 'bg-gray-1000' 
+                      ? 'bg-blue-500' 
                       : selectedConversation.participants.find(p => p.role !== 'admin')?.role === 'driver'
-                        ? 'bg-gray-600'
-                        : 'bg-gray-600'
+                        ? 'bg-green-500'
+                        : 'bg-purple-500'
                   }`}></span>
                   <span className="text-xs text-gray-500 ml-2">
                     {selectedConversation.participants.find(p => p.role !== 'admin')?.role === 'client' 
@@ -1128,7 +1110,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
               >
                 <div className={`max-w-[70%] rounded-lg p-4 ${
                   message.sender.role === 'admin' 
-                    ? 'bg-black text-white' 
+                    ? 'bg-red-600 text-white' 
                     : 'bg-white border border-gray-200'
                 }`}>
                   <div className="flex justify-between items-start mb-1">
@@ -1148,7 +1130,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
                         <div 
                           key={index}
                           className={`text-xs flex items-center px-2 py-1 rounded ${
-                            message.sender.role === 'admin' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-800'
+                            message.sender.role === 'admin' ? 'bg-red-700 text-white' : 'bg-gray-100 text-gray-800'
                           }`}
                         >
                           <span className="truncate">{attachment.name}</span>
@@ -1176,7 +1158,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
               <Button 
                 onClick={handleSendMessage}
                 disabled={!newMessage.trim()} 
-                className="bg-black hover:bg-gray-800 text-white h-full"
+                className="bg-red-600 hover:bg-red-700 text-white h-full"
               >
                 <SendHorizonal size={18} />
               </Button>

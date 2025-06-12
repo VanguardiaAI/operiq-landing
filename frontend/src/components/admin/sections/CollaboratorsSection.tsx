@@ -75,8 +75,8 @@ interface Vehicle {
 const CollaboratorsSection = () => {
   // Estados para la gestión de colaboradores
   const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [_loading, setLoading] = useState(true);
+  const [_error, setError] = useState<string | null>(null);
   const [showCollaboratorForm, setShowCollaboratorForm] = useState(false);
   const [editingCollaborator, setEditingCollaborator] = useState<Collaborator | null>(null);
   const [selectedCollaboratorForDetails, setSelectedCollaboratorForDetails] = useState<Collaborator | null>(null);

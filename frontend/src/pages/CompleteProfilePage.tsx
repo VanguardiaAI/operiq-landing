@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
 import { useAuth } from "../context/AuthContext";
-import { User, ChevronDown, ChevronLeft, Phone } from "lucide-react";
-import Navbar from "../components/Navbar";
+import { ChevronDown, ChevronLeft} from "lucide-react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { 
@@ -13,8 +11,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "../components/ui/select";
+  SelectValue} from "../components/ui/select";
 
 export default function CompleteProfilePage() {
   const { user, isLoading: authLoading, setUser } = useAuth();

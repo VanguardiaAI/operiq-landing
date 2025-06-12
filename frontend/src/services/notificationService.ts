@@ -46,7 +46,9 @@ export const notificationService = {
         console.log('[NotificationService] Conexión establecida:', socket?.id);
         
         // Unirse a canal de admin al conectar
-        socket.emit('join_admin_channel', { adminId: localStorage.getItem('adminId') || 'unknown' });
+        if (socket) {
+          socket.emit('join_admin_channel', { adminId: localStorage.getItem('adminId') || 'unknown' });
+        }
       });
       
       socket.on('connect_error', (err: Error) => {

@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef } from 'react';
 import '../App.css';
 import Image from "@/components/ui/image";
 import Navbar from "@/components/Navbar";
@@ -53,8 +52,7 @@ const AirportTransfers = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Capacidad para 2 maletas de mano, o 2 maletas estándar de facturación, o 1 maleta extra grande de facturación",
       availability: "Disponible en la mayoría de nuestros distritos de negocios",
-      image: "/images/e-class-limo.png",
-    },
+      image: "/images/e-class-limo.png"},
     {
       id: 2,
       title: "First Class",
@@ -62,8 +60,7 @@ const AirportTransfers = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Capacidad para 2 maletas de mano, o 2 maletas estándar de facturación, o 1 maleta extra grande de facturación",
       availability: "Disponible en la mayoría de nuestros distritos de negocios",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Mercedes+S-Class",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Mercedes+S-Class"},
     {
       id: 3,
       title: "Business Van",
@@ -71,8 +68,7 @@ const AirportTransfers = () => {
       capacity: "Capacidad para 6 personas",
       luggage: "Capacidad para 12 maletas de mano u 8 maletas estándar de facturación o 6 maletas extra grandes de facturación",
       availability: "Ideal para grupos más grandes, mucho equipaje o familias",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Mercedes+V-Class",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Mercedes+V-Class"},
     {
       id: 4,
       title: "Electric Class",
@@ -80,8 +76,7 @@ const AirportTransfers = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Capacidad para 2 maletas de mano, o 2 maletas estándar de facturación, o 1 maleta extra grande de facturación",
       availability: "Disponible en algunos de nuestros distritos de negocios",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Tesla+Model+S",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Tesla+Model+S"},
     {
       id: 5,
       title: "Limusinas",
@@ -89,8 +84,7 @@ const AirportTransfers = () => {
       capacity: "Capacidad para hasta 12 personas",
       luggage: "Capacidad para 10 maletas de mano o 6 maletas estándar de facturación",
       availability: "Disponible para eventos especiales, bodas y ocasiones VIP",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Stretch+Limousine",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Stretch+Limousine"},
     {
       id: 6,
       title: "Jets Privados",
@@ -98,8 +92,7 @@ const AirportTransfers = () => {
       capacity: "Capacidad para 4-16 personas dependiendo del modelo",
       luggage: "Capacidad personalizada según necesidades",
       availability: "Reserva con 48h de antelación, disponible en aeropuertos principales",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Private+Jet",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Private+Jet"},
     {
       id: 7,
       title: "Coches Blindados",
@@ -107,8 +100,7 @@ const AirportTransfers = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Capacidad para 2 maletas de mano, o 2 maletas estándar de facturación",
       availability: "Disponible solo en ciudades seleccionadas con reserva anticipada",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Armored+Car",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Armored+Car"},
   ];
 
   // Datos de las preguntas frecuentes
@@ -119,24 +111,21 @@ const AirportTransfers = () => {
         <p className="text-gray-600">
           An airport transfer is a private car service which takes air passengers to and from the airport from a city or transport hub. Professional airport transfer services like Privyde offer chauffeur-driven vehicles to pick up passengers in the terminal after they collect their luggage, or drop them off to their departure gate well ahead of time. As a global company Privyde is ideally suited to airport transfers, as they can handle passenger's needs at both ends of their international flight.
         </p>
-      ),
-    },
+      )},
     {
       question: "Is it worth booking an airport transfer?",
       answer: (
         <p className="text-gray-600">
           Airport transfers are a great way of avoiding the stress at both ends of a flight — the stress of packing and getting to an airport on time via public transport, as well as that of your onward journey after stepping off an airplane fatigued. Privyde offers a wide range of airport transfer options to suit your needs, from luxury Electric Class limos to glide silently along the route, to the roomy Business Van Class which can comfortably handle groups and their luggage.
         </p>
-      ),
-    },
+      )},
     {
       question: "What is a paid airport transfer?",
       answer: (
         <p className="text-gray-600">
           A paid airport transfer is a ride with a pre-booked professional driver to take customers to and/or from the airport. These airport shuttles are designed to accommodate passengers and their luggage comfortably and safely. Privyde's airport transfer includes tips, tolls, and any additional payments, so the price you see is the final price of your journey.
         </p>
-      ),
-    },
+      )},
   ];
 
   return (

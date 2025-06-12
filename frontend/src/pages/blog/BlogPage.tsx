@@ -6,7 +6,7 @@ import { BlogCard } from "@/components/blog/BlogCard";
 import { SearchBlog } from "@/components/blog/SearchBlog";
 import { CategoryList } from "@/components/blog/CategoryList";
 import { Pagination } from "@/components/blog/Pagination";
-import { Sidebar } from "@/components/blog/Sidebar";
+import Sidebar from "@/components/blog/Sidebar";
 import { blogService } from "@/services/blogService";
 import { BlogPost } from "@/types/blog";
 
@@ -168,7 +168,7 @@ const BlogPage = () => {
               {/* Sidebar */}
               <div className="lg:w-1/3 mt-12 lg:mt-0">
                 <div className="sticky top-24 pt-8">
-                  <Sidebar onSearch={!searchQuery ? handleSearch : undefined} />
+                  <Sidebar />
                 </div>
               </div>
             </div>

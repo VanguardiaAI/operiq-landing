@@ -8,28 +8,24 @@ import { Edit, X } from "lucide-react";
 type ModalField = 'name' | 'email' | 'phone' | 'company' | 'address' | 'password' | 'marketing' | 'notifications' | null;
 
 export default function AccountPage() {
-  const { user, logout, updateProfile } = useAuth();
+  const { user, updateProfile } = useAuth();
   const [activeModal, setActiveModal] = useState<ModalField>(null);
   
   // Estados para los formularios de edición
   const [nameForm, setNameForm] = useState({
     title: user?.profile?.title || '',
     first_name: user?.profile?.first_name || '',
-    last_name: user?.profile?.last_name || '',
-  });
+    last_name: user?.profile?.last_name || ''});
   
   const [phoneForm, setPhoneForm] = useState({
     country_code: user?.profile?.country_code || '',
-    phone: user?.profile?.phone || '',
-  });
+    phone: user?.profile?.phone || ''});
   
   const [companyForm, setCompanyForm] = useState({
-    company: user?.profile?.company || '',
-  });
+    company: user?.profile?.company || ''});
   
   const [addressForm, setAddressForm] = useState({
-    address: user?.profile?.address || '',
-  });
+    address: user?.profile?.address || ''});
   
   // Estado para mostrar mensajes de éxito o error
   const [saveMessage, setSaveMessage] = useState<{type: 'success' | 'error', text: string} | null>(null);

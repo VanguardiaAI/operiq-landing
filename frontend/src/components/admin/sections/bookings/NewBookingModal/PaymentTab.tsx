@@ -18,11 +18,13 @@ const PaymentTab = ({
   // Comprobar si hay un precio calculado
   const hasPriceCalculated = !!newBookingFormData.payment?.priceBreakdown;
   
+  /*
   // Formatear distancia y duración
   const formatDistance = (meters: number): string => {
     const km = meters / 1000;
     return `${km.toFixed(1)} km`;
   };
+  */
   
   const formatDuration = (seconds: number): string => {
     const minutes = Math.floor(seconds / 60);

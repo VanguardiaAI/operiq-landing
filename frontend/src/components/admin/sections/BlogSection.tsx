@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Plus, Edit, Trash2, Eye, RefreshCw, Search, ChevronLeft, ChevronRight, Upload, Image } from "lucide-react";
+import { Plus, Edit, Trash2, Eye, RefreshCw, Search, ChevronLeft, ChevronRight, Image } from "lucide-react";
 import axios from "axios";
 import MDEditor from "@uiw/react-md-editor";
 import { useDropzone } from "react-dropzone";
@@ -68,8 +68,6 @@ const BlogSection = () => {
       keywords: []
     }
   });
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   
   // Cargar artículos al iniciar
   useEffect(() => {
@@ -306,27 +304,30 @@ const BlogSection = () => {
   
   // Manejar cambios en el toggle de artículo destacado
   const handleFeaturedChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      featured: e.target.checked
-    }));
+    setFormData(prev => ({ ...prev, featured: e.target.checked }));
   };
   
-  const handleImagePreview = (file: File) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      if (e.target?.result) {
-        setImagePreview(e.target.result as string);
-      }
-    };
-    reader.readAsDataURL(file);
+  /*
+  const _handleImagePreview = (file: File) => {
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        if (reader.result) {
+          setImagePreview(reader.result as string);
+        }
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setImagePreview(null);
+    }
   };
-  
+  */
+
   // Formatear URL de imagen para asegurar que sea completa
   const defaultImage = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNlZWVlZWUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgYWxpZ25tZW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UsIHNhbnMtc2VyaWYiIGZpbGw9IiM5OTk5OTkiPkVycm9yIGNhcmdhbmRvIGltYWdlbjwvdGV4dD48L3N2Zz4=";
-  
+
   const getFullImageUrl = (url: string | undefined): string => {
-    if (!url) return "";
+    if (!url) return "/placeholder.png";
     
     // Si es una URL absoluta o ya comienza con http, mantenerla como está
     if (url.startsWith('http://') || url.startsWith('https://')) {
@@ -358,35 +359,37 @@ const BlogSection = () => {
       'image/*': ['.jpeg', '.jpg', '.png', '.gif', '.webp']
     },
     onDrop: async (acceptedFiles) => {
-      const file = acceptedFiles[0];
-      if (!file) return;
-      
-      try {
-        setUploadingImage(true);
-        const formData = new FormData();
-        formData.append('image', file);
+      if (acceptedFiles.length > 0) {
+        const file = acceptedFiles[0];
+        if (!file) return;
         
-        const response = await axios.post(`${BLOG_API_URL}/upload`, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        });
-        
-        // Asegurarse de guardar la URL completa
-        const imageUrl = getFullImageUrl(response.data.imageUrl);
-        console.log("Imagen subida URL:", imageUrl);
-        
-        setFormData(prev => ({
-          ...prev,
-          featuredImage: imageUrl
-        }));
-        
-        toast.success("Imagen subida correctamente");
-        setUploadingImage(false);
-      } catch (error) {
-        console.error("Error al subir la imagen:", error);
-        toast.error("Error al subir la imagen");
-        setUploadingImage(false);
+        try {
+          setUploadingImage(true);
+          const formData = new FormData();
+          formData.append('image', file);
+          
+          const response = await axios.post(`${BLOG_API_URL}/upload`, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          });
+          
+          // Asegurarse de guardar la URL completa
+          const imageUrl = getFullImageUrl(response.data.imageUrl);
+          console.log("Imagen subida URL:", imageUrl);
+          
+          setFormData(prev => ({
+            ...prev,
+            featuredImage: imageUrl
+          }));
+          
+          toast.success("Imagen subida correctamente");
+          setUploadingImage(false);
+        } catch (error) {
+          console.error("Error al subir la imagen:", error);
+          toast.error("Error al subir la imagen");
+          setUploadingImage(false);
+        }
       }
     }
   });

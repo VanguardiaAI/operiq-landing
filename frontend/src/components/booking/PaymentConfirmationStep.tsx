@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, XCircle, ChevronRight, Share2, Download, Copy, Phone, CreditCard, Loader2, CarFront, CalendarClock, AlertCircle } from "lucide-react"
+import { CheckCircle, XCircle, ChevronRight, Share2, Download, Copy, CreditCard, Loader2, CarFront, CalendarClock, AlertCircle } from "lucide-react"
 import { useNavigate, useParams, useSearchParams } from "react-router-dom"
 import axios from "axios"
-import { loadStripe } from "@stripe/stripe-js"
 
 // Obtener variables de entorno de manera segura
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
@@ -20,9 +19,6 @@ if (import.meta.env.DEV) {
   });
 }
 
-// Cargar Stripe fuera del componente para evitar múltiples instancias
-const stripePromise = STRIPE_PUBLISHABLE_KEY ? loadStripe(STRIPE_PUBLISHABLE_KEY) : null;
-
 interface PaymentConfirmationStepProps {
   sessionData: any
 }
@@ -33,7 +29,7 @@ export default function PaymentConfirmationStep({ sessionData }: PaymentConfirma
   const [searchParams] = useSearchParams()
   const [showShareOptions, setShowShareOptions] = useState(false)
   const [confirmingBooking, setConfirmingBooking] = useState(true)
-  const [bookingConfirmed, setBookingConfirmed] = useState(false)
+  const [_bookingConfirmed, setBookingConfirmed] = useState(false)
   const [bookingDetails, setBookingDetails] = useState<any>(null)
   const [error, setError] = useState<string | null>(null)
   const [estimatedArrival, setEstimatedArrival] = useState("")
@@ -65,7 +61,7 @@ export default function PaymentConfirmationStep({ sessionData }: PaymentConfirma
         }
         
         // Verificar el estado del pago con Stripe usando el API del backend
-        const stripeResponse = await axios.post(`${API_URL}/payment/update-payment-method`, {
+        await axios.post(`${API_URL}/payment/update-payment-method`, {
           payment_intent_id: paymentIntentId,
           payment_method_id: initializedData?.payment?.payment_method_details || null
         })

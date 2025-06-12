@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef } from 'react';
 import '../App.css';
 import Image from "@/components/ui/image";
 import Navbar from "@/components/Navbar";
@@ -53,8 +52,7 @@ const LimousineService = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Capacidad para 2 maletas de mano, o 2 maletas estándar de facturación, o 1 maleta extra grande de facturación",
       availability: "Disponible en la mayoría de nuestros distritos de negocios",
-      image: "/images/e-class-limo.png",
-    },
+      image: "/images/e-class-limo.png"},
     {
       id: 2,
       title: "First Class",
@@ -62,8 +60,7 @@ const LimousineService = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Capacidad para 2 maletas de mano, o 2 maletas estándar de facturación, o 1 maleta extra grande de facturación",
       availability: "Disponible en la mayoría de nuestros distritos de negocios",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=First+Class",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=First+Class"},
     {
       id: 3,
       title: "Business Van",
@@ -71,8 +68,7 @@ const LimousineService = () => {
       capacity: "Capacidad para 6 personas",
       luggage: "Capacidad para 12 maletas de mano u 8 maletas estándar de facturación o 6 maletas extra grandes de facturación",
       availability: "Ideal para grupos más grandes, mucho equipaje o familias",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Business+Van",
-    },
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Business+Van"},
     {
       id: 4,
       title: "Electric Class",
@@ -80,8 +76,7 @@ const LimousineService = () => {
       capacity: "Capacidad para 3 personas",
       luggage: "Capacidad para 2 maletas de mano, o 2 maletas estándar de facturación, o 1 maleta extra grande de facturación",
       availability: "Disponible en algunos de nuestros distritos de negocios",
-      image: "https://via.placeholder.com/600x350/ccc/fff?text=Electric+Class",
-    }
+      image: "https://via.placeholder.com/600x350/ccc/fff?text=Electric+Class"}
   ];
 
   // Datos de las preguntas frecuentes
@@ -92,32 +87,28 @@ const LimousineService = () => {
         <p className="text-gray-600">
           El término "limo" (abreviatura de limusina) puede referirse a muchos tipos de vehículos de pasajeros de lujo. Típicamente más grandes que el promedio para la comodidad del pasajero, pueden variar desde sedanes y SUVs hasta furgonetas ejecutivas y limusinas alargadas, con espacio para múltiples pasajeros.
         </p>
-      ),
-    },
+      )},
     {
       question: "What is airport limo service?",
       answer: (
         <p className="text-gray-600">
           El servicio de limusina para aeropuertos es un servicio donde los pasajeros que viajan hacia o desde un aeropuerto son transportados con su equipaje en un vehículo con chófer. El conductor de la limusina del aeropuerto normalmente hace un seguimiento del vuelo de su pasajero, para poder ajustar la hora de recogida si hay algún retraso.
         </p>
-      ),
-    },
+      )},
     {
       question: "What is the benefit of limo?",
       answer: (
         <p className="text-gray-600">
           El principal beneficio de contratar una limusina es la comodidad, el lujo y la tranquilidad. Ya sea que vaya a un evento, le recojan en un aeropuerto durante un estresante viaje de negocios, o esté con un grupo en unas vacaciones de esquí con todo su equipo, sabrá que el chófer está haciendo todo lo posible para que su viaje sea lo más fluido posible. Los mejores servicios de limusina permiten a las personas relajarse y recargar energías mientras viajan.
         </p>
-      ),
-    },
+      )},
     {
       question: "Do you tip a private limo driver?",
       answer: (
         <p className="text-gray-600">
           Depende de dónde se encuentre en el mundo, pero si cree que hicieron un trabajo particularmente bueno, entonces sí, puede dar propina a su conductor de limusina privada. En Privyde, sin embargo, las propinas y gratificaciones están incluidas en el precio que paga, por lo que no tiene que preocuparse por ese cálculo. En lugares como Nueva York, tiene la opción de añadir una propina extra para su conductor de limusina privada.
         </p>
-      ),
-    },
+      )},
   ];
 
   return (

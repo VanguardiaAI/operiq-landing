@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function LoginCompaniesPage() {
-  const { login, error, isLoading, clearError, setUser, setToken, user, setError } = useAuth();
+  const { error, isLoading, setUser, setToken, user, setError } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -32,8 +32,8 @@ export default function LoginCompaniesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // La función login no acepta directamente el rol, así que usamos un enfoque similar al de Google
-      const response = await axios.post(`${import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || 'http://localhost:5000'}/api/auth/login`, {
+      // La funciónno acepta directamente el rol, así que usamos un enfoque similar al de Google
+      const response = await axios.post(`${import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || 'http://localhost:5000'}/api/auth/`, {
         email,
         password,
         role: 'company' // Asignar rol de empresa

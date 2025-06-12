@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { CategoryList } from "@/components/blog/CategoryList";
 import { Pagination } from "@/components/blog/Pagination";
-import { Sidebar } from "@/components/blog/Sidebar";
+import Sidebar from "@/components/blog/Sidebar";
 import { blogService } from "@/services/blogService";
 import { BlogPost } from "@/types/blog";
 import { ArrowLeft, FolderOpen } from "lucide-react";

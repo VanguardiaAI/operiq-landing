@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, Search, Loader2, AlertTriangle, Map } from "lucide-react";
+import { Loader2, AlertTriangle, Map } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import axios from "axios";
 import { useToast } from "@/components/ui/use-toast";
@@ -121,7 +121,7 @@ const RoutesSection = () => {
   const [activeTab, setActiveTab] = useState<string>("fixed");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setQuery] = useState("");
 
   // Cargar datos de rutas desde la API
   useEffect(() => {
@@ -816,7 +816,7 @@ const RoutesSection = () => {
         onValueChange={(value) => {
           setActiveTab(value);
           // Resetear búsqueda al cambiar de pestaña
-          setSearchQuery("");
+          setQuery("");
         }}
         className="w-full"
       >
@@ -832,10 +832,10 @@ const RoutesSection = () => {
         </TabsList>
         
         <TabsContent value="fixed">
-          <FixedRoutesTab 
+          <FixedRoutesTab
             routes={fixedRoutes}
             searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
+            setSearchQuery={setQuery}
             onCreateRoute={createFixedRoute}
             onUpdateRoute={updateFixedRoute}
             onDeleteRoute={deleteFixedRoute}
@@ -847,7 +847,7 @@ const RoutesSection = () => {
           <FlexibleRoutesTab
             zones={flexibleZones}
             searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
+            setSearchQuery={setQuery}
             onCreateZone={createFlexibleZone}
             onUpdateZone={updateFlexibleZone}
             onDeleteZone={deleteFlexibleZone}

@@ -11,7 +11,6 @@ import {
   Map,
   BarChart2,
   Calendar,
-  ArrowUp,
   ArrowDown
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -80,9 +79,6 @@ const driverPerformance = [
   { name: "Sofía G.", rating: 4.7, bookings: 35 },
   { name: "Miguel P.", rating: 4.6, bookings: 32 }
 ];
-
-// Función para formatear valores a formato de precio
-const formatPrice = (value: number) => `${value.toLocaleString('es-ES')}€`;
 
 // Componente para mostrar barras horizontales
 const HorizontalBar = ({ value, maxValue, color }: { value: number; maxValue: number; color: string }) => {
@@ -281,7 +277,7 @@ class StatsSection extends React.Component {
           <Card>
             <CardContent className="p-6">
               <div className="flex justify-between items-start mb-2">
-                <div className="text-xs text-gray-500 uppercase">Incidencias</div>
+                <div className="text-xs text-gray-500 uppercase">Tasa de Cancelación</div>
                 <AlertCircle size={18} className="text-gray-500" />
               </div>
               <div className="text-3xl font-bold mt-2">2.3%</div>
@@ -312,16 +308,14 @@ class StatsSection extends React.Component {
                         <div 
                           className="w-8 bg-black opacity-80 rounded-t-sm mx-auto"
                           style={{ 
-                            height: `${(month.revenue / 40000) * 100}%`,
-                          }}
+                            height: `${(month.revenue / 40000) * 100}%`}}
                         ></div>
                         
                         {/* Barra de beneficios (superpuesta) */}
                         <div 
                           className="w-8 bg-gray-600 opacity-80 rounded-t-sm mx-auto absolute bottom-0"
                           style={{ 
-                            height: `${(month.beneficio / 40000) * 100}%`,
-                          }}
+                            height: `${(month.beneficio / 40000) * 100}%`}}
                         ></div>
                       </div>
                       <div className="text-xs mt-2 text-gray-600">{month.name}</div>

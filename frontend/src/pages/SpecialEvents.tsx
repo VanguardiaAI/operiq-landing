@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import '../App.css';
 import Image from "@/components/ui/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/booking-form";
 import DownloadSection from "@/components/download-section";
-import { ChevronDown, ChevronUp, Award, Heart, GraduationCap, Wine, Building, Calendar, Clock, UserCheck, ShieldCheck, Car, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, Award, Heart, GraduationCap, Wine, Building, Calendar, Clock, UserCheck, Car, Star } from "lucide-react";
 
 const SpecialEvents = () => {
   // Estado para controlar qué FAQ está abierta
@@ -101,8 +100,7 @@ const SpecialEvents = () => {
         <p className="text-gray-600">
           Recomendamos realizar la reserva con al menos 2 semanas de antelación para eventos estándar. Para eventos de gran magnitud como bodas o eventos corporativos importantes, es aconsejable reservar con 1-3 meses de antelación, especialmente durante la temporada alta (primavera y verano). Para fechas especialmente solicitadas como Nochevieja o festividades importantes, una reserva con 3-6 meses de anticipación garantiza la disponibilidad de nuestros mejores vehículos y chóferes.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Puedo personalizar el servicio para mi evento especial?",
       answer: (
@@ -117,8 +115,7 @@ const SpecialEvents = () => {
           </ul>
           <p className="mt-2">Comunique sus necesidades específicas en el campo de "Notas especiales" al realizar su reserva o contáctenos directamente para un servicio totalmente a medida.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Qué tipos de vehículos están disponibles para eventos especiales?",
       answer: (
@@ -133,24 +130,21 @@ const SpecialEvents = () => {
           </ul>
           <p className="mt-2">Todos nuestros vehículos se mantienen en perfecto estado y se presentan impecables para su evento.</p>
         </div>
-      ),
-    },
+      )},
     {
       question: "¿Puedo reservar múltiples vehículos para mi evento?",
       answer: (
         <p className="text-gray-600">
           Sí, ofrecemos la posibilidad de reservar múltiples vehículos para su evento. Esto es especialmente útil para bodas donde se necesita transporte para los novios, padres, padrinos e invitados VIP, o para eventos corporativos que requieren el traslado simultáneo de varios ejecutivos o grupos. Contamos con un equipo de coordinación de flota que asegura que todos los vehículos lleguen puntualmente y se mantengan en perfecta sincronización durante todo el evento. Para reservas de más de 3 vehículos, recomendamos contactar directamente con nuestro departamento de eventos para una cotización personalizada.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Qué ocurre si mi evento se extiende más de lo previsto?",
       answer: (
         <p className="text-gray-600">
           Entendemos que los eventos especiales a veces pueden extenderse más allá del horario planificado. Nuestros chóferes están preparados para ser flexibles. Si su evento se prolonga, el chófer puede extender el servicio siempre que su agenda lo permita. Las horas adicionales se facturarán según nuestra tarifa por hora estándar. Para mayor tranquilidad, recomendamos reservar el servicio con un margen de tiempo adicional o comunicar la posibilidad de extensión al realizar la reserva para garantizar la disponibilidad del chófer.
         </p>
-      ),
-    },
+      )},
     {
       question: "¿Ofrecen servicios para eventos infantiles como fiestas de cumpleaños?",
       answer: (
@@ -164,8 +158,7 @@ const SpecialEvents = () => {
           </ul>
           <p className="mt-2">Todos nuestros servicios para eventos con menores cumplen con las normativas de seguridad más estrictas, incluyendo asientos adaptados para niños cuando sea necesario. Nuestros chóferes asignados a estos servicios son seleccionados específicamente por su experiencia y aptitud para trabajar en eventos con niños.</p>
         </div>
-      ),
-    },
+      )},
   ];
 
   // Testimonios de clientes
@@ -174,20 +167,17 @@ const SpecialEvents = () => {
       name: "Laura y Carlos",
       event: "Boda en Madrid",
       text: "Contratamos el servicio para nuestra boda y superó todas nuestras expectativas. El chófer fue increíblemente atento, el coche estaba decorado exactamente como habíamos solicitado y la puntualidad fue perfecta. Hizo que nuestro día especial fuera aún más memorable. ¡Altamente recomendado para cualquier pareja!",
-      stars: 5,
-    },
+      stars: 5},
     {
       name: "Miguel Ángel",
       event: "Graduación universitaria",
       text: "Quería sorprender a mi hija en su graduación y reservé una limusina. La cara de sorpresa no tuvo precio. El servicio fue excepcional, el chófer muy profesional y amable, y las fotos que pudimos tomar con el vehículo quedaron espectaculares. Un detalle que transformó un día importante en uno inolvidable.",
-      stars: 5,
-    },
+      stars: 5},
     {
       name: "Grupo Innova",
       event: "Conferencia anual",
       text: "Como directora de eventos corporativos, he trabajado con muchos servicios de transporte, pero este ha sido sin duda el mejor. Coordinaron el traslado de 15 ejecutivos internacionales sin un solo contratiempo. La profesionalidad, los vehículos y la atención al detalle fueron impecables. Serán nuestro proveedor exclusivo a partir de ahora.",
-      stars: 5,
-    },
+      stars: 5},
   ];
 
   return (

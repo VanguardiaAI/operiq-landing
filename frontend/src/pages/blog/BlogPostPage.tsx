@@ -1,4 +1,17 @@
-import { useState, useEffect } from "react";import { useParams, Link } from "react-router-dom";import Navbar from "@/components/Navbar";import Footer from "@/components/Footer";import { TagList } from "@/components/blog/TagList";import { RelatedPosts } from "@/components/blog/RelatedPosts";import { Sidebar } from "@/components/blog/Sidebar";import { SharePost } from "@/components/blog/SharePost";import { blogService } from "@/services/blogService";import { BlogPost } from "@/types/blog";import { CalendarIcon, Clock, User, ArrowLeft, Share2 } from "lucide-react";import { Button } from "@/components/ui/button";import { marked } from "marked";import { Toaster } from "@/components/ui/toaster";
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { TagList } from "@/components/blog/TagList";
+import { RelatedPosts } from "@/components/blog/RelatedPosts";
+import Sidebar from "@/components/blog/Sidebar";
+import { SharePost } from "@/components/blog/SharePost";
+import { blogService } from "@/services/blogService";
+import { BlogPost } from "@/types/blog";
+import { CalendarIcon, Clock, User, ArrowLeft} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { marked } from "marked";
+import { Toaster } from "@/components/ui/toaster";
 
 // Configuración de marked para convertir markdown a HTML
 marked.setOptions({
