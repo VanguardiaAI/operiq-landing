@@ -142,10 +142,20 @@ docker-compose logs -f
        proxy_set_header X-Real-IP $remote_addr;
        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
        proxy_set_header X-Forwarded-Proto $scheme;
+       
+       # Configuración para WebSockets si es necesario
+       proxy_http_version 1.1;
+       proxy_set_header Upgrade $http_upgrade;
+       proxy_set_header Connection "upgrade";
+       
+       # Timeouts
+       proxy_connect_timeout 60s;
+       proxy_send_timeout 60s;
+       proxy_read_timeout 60s;
    }
 
-   # --- NUEVO BLOQUE PARA WEBSOCKETS ---
-   # Proxy para Socket.IO
+   # --- CONFIGURACIÓN CRÍTICA PARA WEBSOCKETS ---
+   # Proxy para Socket.IO - OBLIGATORIO para el chat de soporte
    location /socket.io/ {
        proxy_pass http://127.0.0.1:5002/socket.io/;
        proxy_http_version 1.1;
@@ -155,9 +165,24 @@ docker-compose logs -f
        proxy_set_header X-Real-IP $remote_addr;
        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
        proxy_set_header X-Forwarded-Proto $scheme;
+       
+       # Configuración específica para WebSockets
+       proxy_buffering off;
+       proxy_cache off;
+       
+       # Timeouts más largos para conexiones persistentes
+       proxy_connect_timeout 60s;
+       proxy_send_timeout 300s;
+       proxy_read_timeout 300s;
+       
+       # Headers adicionales para WebSocket
+       proxy_set_header X-Forwarded-Host $server_name;
+       proxy_set_header X-Forwarded-Server $host;
    }
-   # --- FIN DEL NUEVO BLOQUE ---
+   # --- FIN DE CONFIGURACIÓN WEBSOCKETS ---
    ```
+
+   **⚠️ IMPORTANTE**: Sin esta configuración de WebSockets, el chat de soporte NO funcionará.
 
 ### 9. Configurar Firewall (Opcional pero Recomendado)
 
