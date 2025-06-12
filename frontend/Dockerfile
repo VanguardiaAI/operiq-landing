@@ -3,16 +3,26 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
+# Declarar ARGs para las variables de entorno en tiempo de build
+ARG VITE_API_URL
+ARG VITE_STRIPE_PUBLISHABLE_KEY
+ARG VITE_GOOGLE_MAPS_API_KEY
+
+# Asignar ARGs a ENVs para que el build de Vite las use
+ENV VITE_API_URL=$VITE_API_URL
+ENV VITE_STRIPE_PUBLISHABLE_KEY=$VITE_STRIPE_PUBLISHABLE_KEY
+ENV VITE_GOOGLE_MAPS_API_KEY=$VITE_GOOGLE_MAPS_API_KEY
+
 # Copiar package files
 COPY package*.json ./
 
-# Instalar dependencias
-RUN npm ci --only=production
+# Instalar dependencias (incluyendo devDependencies para el build)
+RUN npm ci
 
 # Copiar código fuente
 COPY . .
 
-# Build de la aplicación
+# Build de la aplicación (ahora usará las ENVs de producción)
 RUN npm run build
 
 # Etapa 2: Producción con Nginx

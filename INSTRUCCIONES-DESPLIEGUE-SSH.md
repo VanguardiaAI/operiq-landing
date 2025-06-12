@@ -123,7 +123,7 @@ docker-compose logs -f
 2. **Configuración del Sitio:**
    - **Domain**: `privyde.com`
    - **Type**: `Reverse Proxy`
-   - **Target**: `http://127.0.0.1:8081`
+   - **Target**: `127.0.0.1:8081`
    - **Enable SSL**: ✅ (Let's Encrypt)
 
 3. **Configurar Proxy para API:**
@@ -142,13 +142,21 @@ docker-compose logs -f
        proxy_set_header X-Real-IP $remote_addr;
        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
        proxy_set_header X-Forwarded-Proto $scheme;
-       proxy_set_header X-Forwarded-Host $server_name;
-       
-       # Para WebSockets si es necesario
+   }
+
+   # --- NUEVO BLOQUE PARA WEBSOCKETS ---
+   # Proxy para Socket.IO
+   location /socket.io/ {
+       proxy_pass http://127.0.0.1:5002/socket.io/;
        proxy_http_version 1.1;
        proxy_set_header Upgrade $http_upgrade;
        proxy_set_header Connection "upgrade";
+       proxy_set_header Host $host;
+       proxy_set_header X-Real-IP $remote_addr;
+       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+       proxy_set_header X-Forwarded-Proto $scheme;
    }
+   # --- FIN DEL NUEVO BLOQUE ---
    ```
 
 ### 9. Configurar Firewall (Opcional pero Recomendado)
