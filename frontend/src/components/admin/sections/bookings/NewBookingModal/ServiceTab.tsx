@@ -315,7 +315,7 @@ const ServiceTab = ({
                     type="button"
                     className={`px-3 py-2 text-xs border rounded-md transition-colors ${
                       newBookingFormData.service.duration === option.value
-                        ? 'bg-red-600 text-white border-red-600'
+                        ? 'bg-black text-white border-red-600'
                         : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
                     }`}
                     onClick={() => handleFormChange('service', 'duration', option.value)}
@@ -330,7 +330,7 @@ const ServiceTab = ({
                 <span className="text-xs text-gray-500">O personalizado:</span>
                 <input
                   type="number"
-                  className={`flex-1 px-3 py-2 border ${validationErrors['service.duration'] ? 'border-red-500' : 'border-gray-300'} rounded-md text-sm`}
+                  className={`flex-1 px-3 py-2 border ${validationErrors['service.duration'] ? 'border-gray-500' : 'border-gray-300'} rounded-md text-sm`}
                   value={newBookingFormData.service.duration || ''}
                   onChange={(e) => handleFormChange('service', 'duration', parseInt(e.target.value))}
                   placeholder="Minutos"
@@ -341,7 +341,7 @@ const ServiceTab = ({
               </div>
             </div>
             {validationErrors['service.duration'] && (
-              <p className="text-red-500 text-xs mt-1">{validationErrors['service.duration']}</p>
+              <p className="text-black text-xs mt-1">{validationErrors['service.duration']}</p>
             )}
           </div>
         )}
@@ -353,7 +353,7 @@ const ServiceTab = ({
           <label className="inline-flex items-center">
             <input
               type="radio"
-              className="form-radio text-red-600"
+              className="form-radio text-gray-600"
               checked={routeType === 'flexible'}
               onChange={() => handleRouteTypeChange('flexible')}
             />
@@ -362,7 +362,7 @@ const ServiceTab = ({
           <label className="inline-flex items-center">
             <input
               type="radio"
-              className="form-radio text-red-600"
+              className="form-radio text-gray-600"
               checked={routeType === 'fixed'}
               onChange={() => handleRouteTypeChange('fixed')}
             />
@@ -430,24 +430,24 @@ const ServiceTab = ({
             <label className="block text-sm font-medium text-gray-700 mb-1">Fecha de recogida</label>
             <input
               type="date"
-              className={`w-full px-3 py-2 border ${validationErrors['service.pickup.date'] ? 'border-red-500' : 'border-gray-300'} rounded-md text-sm`}
+              className={`w-full px-3 py-2 border ${validationErrors['service.pickup.date'] ? 'border-gray-500' : 'border-gray-300'} rounded-md text-sm`}
               value={newBookingFormData.service.pickup.date}
               onChange={(e) => handleFormChange('service', 'pickup.date', e.target.value)}
             />
             {validationErrors['service.pickup.date'] && (
-              <p className="text-red-500 text-xs mt-1">{validationErrors['service.pickup.date']}</p>
+              <p className="text-black text-xs mt-1">{validationErrors['service.pickup.date']}</p>
             )}
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Hora de recogida</label>
             <input
               type="time"
-              className={`w-full px-3 py-2 border ${validationErrors['service.pickup.time'] ? 'border-red-500' : 'border-gray-300'} rounded-md text-sm`}
+              className={`w-full px-3 py-2 border ${validationErrors['service.pickup.time'] ? 'border-gray-500' : 'border-gray-300'} rounded-md text-sm`}
               value={newBookingFormData.service.pickup.time}
               onChange={(e) => handleFormChange('service', 'pickup.time', e.target.value)}
             />
             {validationErrors['service.pickup.time'] && (
-              <p className="text-red-500 text-xs mt-1">{validationErrors['service.pickup.time']}</p>
+              <p className="text-black text-xs mt-1">{validationErrors['service.pickup.time']}</p>
             )}
           </div>
         </div>
@@ -460,7 +460,7 @@ const ServiceTab = ({
               </div>
               <input
                 type="text"
-                className={`w-full pl-10 px-3 py-2 border ${validationErrors['service.pickup.location'] ? 'border-red-500' : 'border-gray-300'} rounded-md text-sm`}
+                className={`w-full pl-10 px-3 py-2 border ${validationErrors['service.pickup.location'] ? 'border-gray-500' : 'border-gray-300'} rounded-md text-sm`}
                 value={newBookingFormData.service.pickup.location}
                 onChange={(e) => {
                   handleFormChange('service', 'pickup.location', e.target.value);
@@ -498,7 +498,7 @@ const ServiceTab = ({
             )}
           </div>
           {validationErrors['service.pickup.location'] && (
-            <p className="text-red-500 text-xs mt-1">{validationErrors['service.pickup.location']}</p>
+            <p className="text-black text-xs mt-1">{validationErrors['service.pickup.location']}</p>
           )}
         </div>
       </div>
@@ -507,7 +507,7 @@ const ServiceTab = ({
         <h3 className="text-sm font-semibold text-gray-700 mb-3">Información de destino</h3>
         <div className="mt-3">
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Lugar de destino {hasSelectedVehicle && !newBookingFormData.service.dropoff.location && <span className="text-red-500">*</span>}
+            Lugar de destino {hasSelectedVehicle && !newBookingFormData.service.dropoff.location && <span className="text-black">*</span>}
           </label>
           <div className="relative" ref={dropoffDropdownRef}>
             <div className="relative rounded-md shadow-sm">
@@ -516,7 +516,7 @@ const ServiceTab = ({
               </div>
               <input
                 type="text"
-                className={`w-full pl-10 px-3 py-2 border ${validationErrors['service.dropoff.location'] || (hasSelectedVehicle && !newBookingFormData.service.dropoff.location) ? 'border-red-500' : 'border-gray-300'} rounded-md text-sm`}
+                className={`w-full pl-10 px-3 py-2 border ${validationErrors['service.dropoff.location'] || (hasSelectedVehicle && !newBookingFormData.service.dropoff.location) ? 'border-gray-500' : 'border-gray-300'} rounded-md text-sm`}
                 value={newBookingFormData.service.dropoff.location}
                 onChange={(e) => {
                   handleFormChange('service', 'dropoff.location', e.target.value);
@@ -555,10 +555,10 @@ const ServiceTab = ({
             )}
           </div>
           {validationErrors['service.dropoff.location'] && (
-            <p className="text-red-500 text-xs mt-1">{validationErrors['service.dropoff.location']}</p>
+            <p className="text-black text-xs mt-1">{validationErrors['service.dropoff.location']}</p>
           )}
           {hasSelectedVehicle && !newBookingFormData.service.dropoff.location && (
-            <p className="text-red-500 text-xs mt-1">
+            <p className="text-black text-xs mt-1">
               <AlertCircle className="h-3.5 w-3.5 inline mr-1" />
               Debe seleccionar un destino para calcular el precio del viaje
             </p>
@@ -598,7 +598,7 @@ const ServiceTab = ({
         </div>
         
         {isCheckingAvailability && (
-          <div className="bg-blue-50 rounded-md p-3 flex items-center text-sm text-blue-700 mb-3">
+          <div className="bg-gray-100 rounded-md p-3 flex items-center text-sm text-blue-700 mb-3">
             <div className="animate-spin h-4 w-4 border-2 border-blue-600 rounded-full border-t-transparent mr-2"></div>
             Verificando disponibilidad de vehículos automáticamente...
           </div>
@@ -612,10 +612,10 @@ const ServiceTab = ({
             
             {/* Info de duración solicitada */}
             {(newBookingFormData.service.type === 'hourly' || newBookingFormData.service.type === 'full_day') && newBookingFormData.service.duration && (
-              <div className="mb-3 p-2 bg-blue-50 rounded-md border border-blue-200">
+              <div className="mb-3 p-2 bg-gray-100 rounded-md border border-blue-200">
                 <div className="text-xs text-blue-700 font-medium">
                   Duración solicitada: {Math.floor(newBookingFormData.service.duration / 60)}h {newBookingFormData.service.duration % 60 > 0 && `${newBookingFormData.service.duration % 60}min`}
-                  <span className="ml-2 text-blue-600">({newBookingFormData.service.duration} minutos)</span>
+                  <span className="ml-2 text-gray-600">({newBookingFormData.service.duration} minutos)</span>
                 </div>
               </div>
             )}
@@ -653,7 +653,7 @@ const ServiceTab = ({
                     const zoneName = vehicle.zone_name;
                     
                     return (
-                      <div key={index} className={`bg-white rounded-md p-3 border ${newBookingFormData.vehicle?.id === vehicleId ? 'border-red-600 bg-red-50' : 'border-green-200'} shadow-sm cursor-pointer transition-all hover:border-red-500 hover:shadow-md`}
+                      <div key={index} className={`bg-white rounded-md p-3 border ${newBookingFormData.vehicle?.id === vehicleId ? 'border-red-600 bg-gray-100' : 'border-green-200'} shadow-sm cursor-pointer transition-all hover:border-gray-500 hover:shadow-md`}
                         onClick={() => {
                           const vehicleObj = {
                             id: vehicleId,
@@ -704,7 +704,7 @@ const ServiceTab = ({
                                     </span>
                                   )}
                                   {newBookingFormData.vehicle?.id === vehicleId && (
-                                    <Check className="h-4 w-4 ml-2 text-red-600" />
+                                    <Check className="h-4 w-4 ml-2 text-gray-600" />
                                   )}
                                 </div>
                                 
@@ -740,7 +740,7 @@ const ServiceTab = ({
                               {/* Type Badge & Availability Info */}
                               <div className="text-right">
                                 <span className={`inline-flex items-center px-2 py-1 rounded text-xs font-medium 
-                                  ${availabilityType === 'fixed_zone' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'}`}
+                                  ${availabilityType === 'fixed_zone' ? 'bg-gray-200 text-purple-800' : 'bg-gray-200 text-blue-800'}`}
                                 >
                                   {availabilityType === 'fixed_zone' ? 'Zona Fija' : 'Ruta Flexible'}
                                 </span>
@@ -775,7 +775,7 @@ const ServiceTab = ({
                 </div>
               </div>
             ) : (
-              <div className="text-orange-600 flex items-center text-sm">
+              <div className="text-gray-600 flex items-center text-sm">
                 <AlertCircle className="h-4 w-4 mr-1" />
                 No hay vehículos disponibles en esta ubicación y horario.
               </div>
@@ -826,7 +826,7 @@ const ServiceTab = ({
                           </div>
                           <div className="text-xs">
                             <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium 
-                              ${availabilityType === 'fixed_zone' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'}`}
+                              ${availabilityType === 'fixed_zone' ? 'bg-gray-200 text-purple-800' : 'bg-gray-200 text-blue-800'}`}
                             >
                               {availabilityType === 'fixed_zone' ? 'Zona Fija' : 'Ruta Flexible'}
                             </span>
@@ -856,7 +856,7 @@ const ServiceTab = ({
                                {alternativeSlots.slice(0, 3).map((slot: any, slotIndex: number) => (
                                  <span 
                                    key={slotIndex}
-                                   className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs"
+                                   className="bg-gray-200 text-green-800 px-2 py-1 rounded text-xs"
                                  >
                                    {formatTimeSlot(slot)}
                                  </span>
@@ -872,12 +872,12 @@ const ServiceTab = ({
 
                         {/* Mensaje cuando no hay horarios alternativos */}
                         {alternativeSlots.length === 0 && (
-                          <div className="text-xs bg-red-100 text-red-700 p-2 rounded mt-2">
+                          <div className="text-xs bg-gray-200 text-gray-700 p-2 rounded mt-2">
                             <div className="flex items-center">
                               <AlertCircle className="h-3 w-3 mr-1" />
                               <span className="font-medium">Sin horarios disponibles para esta fecha</span>
                             </div>
-                            <div className="mt-1 text-red-600">
+                            <div className="mt-1 text-gray-600">
                               Este conductor no tiene slots libres el <strong>{newBookingFormData.service.pickup.date}</strong>. 
                               Considera cambiar la fecha o contactar directamente.
                             </div>
@@ -890,7 +890,7 @@ const ServiceTab = ({
                           </div>
                           <div className="flex space-x-1 flex-wrap">
                             <button 
-                              className="text-xs bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700 flex items-center"
+                              className="text-xs bg-black text-white px-2 py-1 rounded hover:bg-gray-800 flex items-center"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 handleOpenContactModal(vehicle);
@@ -900,7 +900,7 @@ const ServiceTab = ({
                               Llamar
                             </button>
                             <button 
-                              className="text-xs bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700"
+                              className="text-xs bg-black text-white px-2 py-1 rounded hover:bg-gray-800"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 handleOpenSuggestModal(vehicle);
@@ -925,7 +925,7 @@ const ServiceTab = ({
                     );
                   })}
                 </div>
-                <div className="mt-2 text-xs text-gray-600 bg-blue-50 p-2 rounded">
+                <div className="mt-2 text-xs text-gray-600 bg-gray-100 p-2 rounded">
                   <strong>Consejo:</strong> Estos vehículos están en la zona pero ocupados. Considera contactar al conductor 
                   para verificar disponibilidad de última hora o sugerir un horario alternativo al cliente.
                 </div>
@@ -937,7 +937,7 @@ const ServiceTab = ({
                  ) && (
                   <div className="mt-3 bg-orange-50 border border-orange-200 rounded p-3">
                     <div className="flex items-start">
-                      <AlertCircle className="h-4 w-4 text-orange-500 mr-2 mt-0.5" />
+                      <AlertCircle className="h-4 w-4 text-gray-500 mr-2 mt-0.5" />
                       <div className="text-sm">
                         <p className="font-medium text-orange-800 mb-1">
                           Vehículos encontrados pero sin horarios disponibles
@@ -946,7 +946,7 @@ const ServiceTab = ({
                           Se encontraron {availabilityResults.vehicles_with_alternative_schedules.length} vehículo(s) en la zona, 
                           pero ninguno tiene disponibilidad para el <strong>{newBookingFormData.service.pickup.date}</strong>.
                         </p>
-                        <p className="text-orange-600 mt-2 text-xs">
+                        <p className="text-gray-600 mt-2 text-xs">
                           💡 <strong>Sugerencia:</strong> Prueba cambiar la fecha o contacta directamente a los conductores 
                           para consultar disponibilidad especial.
                         </p>
@@ -961,31 +961,31 @@ const ServiceTab = ({
               (!availabilityResults.vehicles_with_alternative_schedules || 
                availabilityResults.vehicles_with_alternative_schedules.length === 0) && (
                 <div className="mt-4 pt-4 border-t border-gray-200">
-                  <div className="bg-red-50 border border-red-200 rounded-md p-4">
+                  <div className="bg-gray-100 border border-gray-200 rounded-md p-4">
                     <div className="flex items-start">
                       <div className="flex-shrink-0">
-                        <AlertCircle className="h-5 w-5 text-red-400" />
+                        <AlertCircle className="h-5 w-5 text-gray-400" />
                       </div>
                       <div className="ml-3">
-                        <h3 className="text-sm font-medium text-red-800 mb-2">
+                        <h3 className="text-sm font-medium text-gray-800 mb-2">
                           Sin disponibilidad para esta fecha
                         </h3>
-                        <div className="text-sm text-red-700 space-y-2">
+                        <div className="text-sm text-gray-700 space-y-2">
                           <p>
                             No hay vehículos disponibles para <strong>{newBookingFormData.service.pickup.date}</strong> 
                             {newBookingFormData.service.pickup.time && (
                               <span> a las <strong>{newBookingFormData.service.pickup.time}</strong></span>
                             )} en la ubicación seleccionada.
                           </p>
-                          <div className="bg-red-100 rounded p-3 mt-3">
-                            <p className="font-medium text-red-800 mb-1">💡 Recomendaciones:</p>
+                          <div className="bg-gray-200 rounded p-3 mt-3">
+                            <p className="font-medium text-gray-800 mb-1">💡 Recomendaciones:</p>
                             <ul className="text-sm space-y-1 list-disc list-inside">
                               <li>Selecciona una <strong>fecha diferente</strong></li>
                               <li>Prueba con un <strong>horario diferente</strong> (mañana o tarde)</li>
                               <li>Considera una <strong>ubicación cercana</strong> diferente</li>
                             </ul>
                           </div>
-                          <div className="bg-blue-50 border border-blue-200 rounded p-3 mt-3">
+                          <div className="bg-gray-100 border border-blue-200 rounded p-3 mt-3">
                             <p className="text-blue-800 text-xs">
                               <span className="font-medium">📞 ¿Urgente?</span> Contacta a nuestro equipo de soporte para verificar disponibilidad de última hora o explorar opciones especiales.
                             </p>
@@ -1001,7 +1001,7 @@ const ServiceTab = ({
                                     key={altDate.date}
                                     type="button"
                                     onClick={() => handleSelectAlternativeDate(altDate.date)}
-                                    className="text-xs bg-white border border-green-300 rounded px-2 py-1.5 hover:bg-green-100 hover:border-green-400 transition-colors text-left"
+                                    className="text-xs bg-white border border-green-300 rounded px-2 py-1.5 hover:bg-gray-200 hover:border-green-400 transition-colors text-left"
                                   >
                                     <div className="font-medium text-green-800">{altDate.label}</div>
                                     <div className="text-green-600 capitalize">{altDate.dayOfWeek}</div>
@@ -1033,7 +1033,7 @@ const ServiceTab = ({
         {!isCheckingAvailability && !availabilityResults && (
           <div className="bg-gray-50 rounded-md p-3 text-xs text-gray-600">
             <div className="flex items-center">
-              <span className="text-blue-500 mr-2">ℹ️</span>
+              <span className="text-black mr-2">ℹ️</span>
               La disponibilidad se verifica automáticamente cuando completas la ubicación, fecha y hora.
             </div>
           </div>
@@ -1066,7 +1066,7 @@ const ServiceTab = ({
             <div className="flex justify-end mt-3">
               <button 
                 type="button"
-                className="text-xs text-red-600 hover:text-red-800"
+                className="text-xs text-gray-600 hover:text-gray-800"
                 onClick={handleClearVehicleSelection || (() => {
                   handleFormChange('vehicle', 'id', '');
                   handleFormChange('vehicle', 'name', '');
@@ -1105,7 +1105,7 @@ const ServiceTab = ({
           </div>
           
           {isCalculatingPrice && (
-            <div className="bg-blue-50 rounded-md p-3 flex items-center text-sm text-blue-700">
+            <div className="bg-gray-100 rounded-md p-3 flex items-center text-sm text-blue-700">
               <div className="animate-spin h-4 w-4 border-2 border-blue-600 rounded-full border-t-transparent mr-2"></div>
               Calculando tarifa según la distancia...
             </div>
@@ -1192,13 +1192,13 @@ const ServiceTab = ({
                 </div>
                 <div className="flex justify-between font-bold pt-1 border-t border-gray-200">
                   <span>TOTAL:</span>
-                  <span className="text-red-600">{priceCalculationService.formatPrice(newBookingFormData.payment.priceBreakdown.total)}</span>
+                  <span className="text-gray-600">{priceCalculationService.formatPrice(newBookingFormData.payment.priceBreakdown.total)}</span>
                 </div>
               </div>
               
               <div className="text-xs text-gray-500">
                 {newBookingFormData.payment.priceBreakdown.is_round_trip && (
-                  <div className="mb-2 p-2 bg-blue-50 rounded border-l-4 border-blue-400">
+                  <div className="mb-2 p-2 bg-gray-100 rounded border-l-4 border-blue-400">
                     <strong>Viaje de ida y vuelta:</strong> El precio incluye tanto el trayecto de ida como el de vuelta. 
                     La distancia total calculada es de {priceCalculationService.formatDistance(newBookingFormData.payment.priceBreakdown.total_distance_km)}.
                   </div>
@@ -1220,7 +1220,7 @@ const ServiceTab = ({
           Anterior: Cliente
         </Button>
         <Button 
-          className="bg-red-600 hover:bg-red-700 text-sm"
+          className="bg-black hover:bg-gray-800 text-sm"
           onClick={() => handleNextTab('service')}
           disabled={hasSelectedVehicle && !hasPriceCalculated}
         >

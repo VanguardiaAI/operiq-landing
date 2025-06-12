@@ -181,7 +181,7 @@ export default function AccountPage() {
       <main className="flex-1 bg-white pb-16">
         <div className="container mx-auto px-4 py-8 max-w-5xl">
           <h1 className="text-3xl font-bold text-gray-800 mb-6">Cuenta</h1>
-          <p className="text-gray-600 mb-8">Gestione su información para que Operiq satisfaga sus necesidades.</p>
+                      <p className="text-gray-600 mb-8">Gestione su información para que Privyde satisfaga sus necesidades.</p>
           
           {/* Información personal */}
           <div className="mb-8">
@@ -388,7 +388,7 @@ export default function AccountPage() {
                   </div>
                   
                   {saveMessage && (
-                    <div className={`p-2 mb-4 rounded-md ${saveMessage.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    <div className={`p-2 mb-4 rounded-md ${saveMessage.type === 'success' ? 'bg-gray-200 text-green-700' : 'bg-gray-200 text-gray-700'}`}>
                       {saveMessage.text}
                     </div>
                   )}
@@ -403,7 +403,7 @@ export default function AccountPage() {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-md transition-all duration-150 ease-in-out"
+                      className="px-4 py-2 bg-black hover:bg-gray-800 text-white rounded-md transition-all duration-150 ease-in-out"
                     >
                       Guardar
                     </button>
@@ -473,7 +473,7 @@ export default function AccountPage() {
                   </div>
                   
                   {saveMessage && (
-                    <div className={`p-2 mb-4 rounded-md ${saveMessage.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    <div className={`p-2 mb-4 rounded-md ${saveMessage.type === 'success' ? 'bg-gray-200 text-green-700' : 'bg-gray-200 text-gray-700'}`}>
                       {saveMessage.text}
                     </div>
                   )}
@@ -488,7 +488,7 @@ export default function AccountPage() {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-md transition-all duration-150 ease-in-out"
+                      className="px-4 py-2 bg-black hover:bg-gray-800 text-white rounded-md transition-all duration-150 ease-in-out"
                     >
                       Guardar
                     </button>
@@ -518,7 +518,7 @@ export default function AccountPage() {
                   </div>
                   
                   {saveMessage && (
-                    <div className={`p-2 mb-4 rounded-md ${saveMessage.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    <div className={`p-2 mb-4 rounded-md ${saveMessage.type === 'success' ? 'bg-gray-200 text-green-700' : 'bg-gray-200 text-gray-700'}`}>
                       {saveMessage.text}
                     </div>
                   )}
@@ -533,7 +533,7 @@ export default function AccountPage() {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-md transition-all duration-150 ease-in-out"
+                      className="px-4 py-2 bg-black hover:bg-gray-800 text-white rounded-md transition-all duration-150 ease-in-out"
                     >
                       Guardar
                     </button>
@@ -563,7 +563,7 @@ export default function AccountPage() {
                   </div>
                   
                   {saveMessage && (
-                    <div className={`p-2 mb-4 rounded-md ${saveMessage.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    <div className={`p-2 mb-4 rounded-md ${saveMessage.type === 'success' ? 'bg-gray-200 text-green-700' : 'bg-gray-200 text-gray-700'}`}>
                       {saveMessage.text}
                     </div>
                   )}
@@ -578,7 +578,7 @@ export default function AccountPage() {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-md transition-all duration-150 ease-in-out"
+                      className="px-4 py-2 bg-black hover:bg-gray-800 text-white rounded-md transition-all duration-150 ease-in-out"
                     >
                       Guardar
                     </button>

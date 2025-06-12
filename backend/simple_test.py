@@ -9,7 +9,7 @@ print("=" * 40)
 try:
     # Prueba simple de conexión
     print("1. Probando conexión básica...")
-    response = requests.get("http://localhost:5000/", timeout=5)
+    response = requests.get("http://localhost:5001/", timeout=5)
     print(f"   Status: {response.status_code}")
     
     # Prueba con datos mínimos
@@ -22,7 +22,7 @@ try:
     }
     
     response = requests.post(
-        "http://localhost:5000/api/admin/reservations/search-vehicles", 
+        "http://localhost:5001/api/admin/reservations/search-vehicles", 
         json=simple_data, 
         timeout=10
     )

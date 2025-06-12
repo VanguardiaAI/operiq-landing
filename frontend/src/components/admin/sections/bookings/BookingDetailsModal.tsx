@@ -37,12 +37,12 @@ const BookingDetailsModal = ({
                 <div className="flex justify-between">
                   <span className="text-gray-600">Estado:</span>
                   <span className={`font-medium px-2 py-1 rounded-full text-xs
-                    ${selectedBookingForDetails.status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 
-                     selectedBookingForDetails.status === 'confirmed' ? 'bg-green-100 text-green-800' : 
-                     selectedBookingForDetails.status === 'in_progress' ? 'bg-blue-100 text-blue-800' : 
+                    ${selectedBookingForDetails.status === 'pending' ? 'bg-gray-200 text-yellow-800' : 
+                     selectedBookingForDetails.status === 'confirmed' ? 'bg-gray-200 text-green-800' : 
+                     selectedBookingForDetails.status === 'in_progress' ? 'bg-gray-200 text-blue-800' : 
                      selectedBookingForDetails.status === 'completed' ? 'bg-gray-100 text-gray-800' : 
-                     selectedBookingForDetails.status === 'cancelled' ? 'bg-red-100 text-red-800' : 
-                     'bg-purple-100 text-purple-800'}`}
+                     selectedBookingForDetails.status === 'cancelled' ? 'bg-gray-200 text-gray-800' : 
+                     'bg-gray-200 text-purple-800'}`}
                   >
                     {selectedBookingForDetails.status === 'pending' ? 'Pendiente' :
                      selectedBookingForDetails.status === 'confirmed' ? 'Confirmado' :
@@ -169,10 +169,10 @@ const BookingDetailsModal = ({
             <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
               Imprimir
             </button>
-            <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-blue-600 hover:bg-blue-50">
+            <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100">
               Editar
             </button>
-            <button className="px-4 py-2 border border-red-300 rounded-md text-sm font-medium text-red-600 hover:bg-red-50">
+            <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100">
               Cancelar Reserva
             </button>
           </div>

@@ -58,7 +58,7 @@ interface VehicleDetailsViewProps {
 
 const DetailRow: React.FC<{ icon: React.ReactNode; label: string; value: React.ReactNode; className?: string }> = ({ icon, label, value, className }) => (
   <div className={cn("flex items-start py-2.5", className)}>
-    <span className="text-red-600 mr-2 mt-0.5 flex-shrink-0">{icon}</span>
+    <span className="text-gray-600 mr-2 mt-0.5 flex-shrink-0">{icon}</span>
     <div className="flex-1">
       <p className="text-sm font-medium text-gray-500 text-left">{label}</p>
       <div className="text-md text-gray-800 mt-0.5 text-left">{value || '-'}</div>
@@ -73,7 +73,7 @@ const DetailSection: React.FC<{
   className?: string;
 }> = ({ title, icon, children, className }) => (
   <div className={cn("border rounded-lg p-5 bg-white shadow-sm", className)}>
-    <h4 className="text-md font-semibold text-red-700 mb-4 flex items-center border-b pb-2">
+    <h4 className="text-md font-semibold text-gray-700 mb-4 flex items-center border-b pb-2">
       {icon}
       <span className="ml-2">{title}</span>
     </h4>
@@ -157,8 +157,8 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
         {/* Header */}
         <div className="flex justify-between items-center p-5 border-b border-gray-200 bg-white sticky top-0 z-10">
           <div className="flex items-center">
-            <div className="bg-red-50 p-2 rounded-lg mr-3">
-              <Car size={24} className="text-red-600" />
+            <div className="bg-gray-100 p-2 rounded-lg mr-3">
+              <Car size={24} className="text-gray-600" />
             </div>
             <div>
               <h2 className="text-xl font-semibold text-gray-800">{vehicle.brand} {vehicle.model}</h2>
@@ -191,7 +191,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
             <div className="w-full md:w-1/2 p-5 border rounded-lg bg-white shadow-sm">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">{vehicle.brand} {vehicle.model} <span className="text-gray-500">({vehicle.year})</span></h3>
-                <Badge variant={vehicle.available ? "default" : "destructive"} className={vehicle.available ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}>
+                <Badge variant={vehicle.available ? "default" : "destructive"} className={vehicle.available ? "bg-gray-200 text-green-700" : "bg-gray-200 text-gray-700"}>
                   {vehicle.available ? "Disponible" : "No Disponible"}
                 </Badge>
               </div>
@@ -218,7 +218,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <DetailSection 
                   title="Información Básica" 
-                  icon={<Info size={18} className="text-red-600" />}
+                  icon={<Info size={18} className="text-gray-600" />}
                 >
                   <div className="grid grid-cols-1 gap-y-3">
                     <DetailRow icon={<Users size={16} />} label="Asientos" value={vehicle.seats.toString()} />
@@ -235,7 +235,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
                 
                 <DetailSection 
                   title="Propietario" 
-                  icon={vehicle.ownerType === 'company' ? <Building size={18} className="text-red-600" /> : <UserCircle size={18} className="text-red-600" />}
+                  icon={vehicle.ownerType === 'company' ? <Building size={18} className="text-gray-600" /> : <UserCircle size={18} className="text-gray-600" />}
                 >
                   <div className="grid grid-cols-1 gap-y-3">
                     <DetailRow icon={<Tag size={16} />} label="Tipo de Propietario" value={vehicle.ownerType === 'company' ? 'Empresa' : 'Chófer Privado'} />
@@ -258,7 +258,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <DetailSection 
                   title="Características" 
-                  icon={<Layers size={18} className="text-red-600" />}
+                  icon={<Layers size={18} className="text-gray-600" />}
                 >
                   <DetailRow 
                     icon={<Layers size={16} />} 
@@ -287,7 +287,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
                 {vehicle.location && (
                   <DetailSection 
                     title="Ubicación" 
-                    icon={<Compass size={18} className="text-red-600" />}
+                    icon={<Compass size={18} className="text-gray-600" />}
                   >
                     {vehicle.location.coordinates && vehicle.location.coordinates.length >= 2 && (
                       <>
@@ -320,7 +320,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <DetailSection 
                   title="Disponibilidad" 
-                  icon={<MapPin size={18} className="text-red-600" />}
+                  icon={<MapPin size={18} className="text-gray-600" />}
                 >
                   <DetailRow icon={<Tag size={16} />} label="Tipo Disponibilidad" value={renderAvailabilityTypes()} />
                   <DetailRow icon={<Info size={16} />} label="Detalles Disponibilidad" value={<p className="whitespace-pre-line">{vehicle.availabilityDetails}</p>} />
@@ -328,7 +328,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
                 
                 <DetailSection 
                   title="Conductores Asignados" 
-                  icon={<Users size={18} className="text-red-600" />}
+                  icon={<Users size={18} className="text-gray-600" />}
                 >
                   <DetailRow icon={<Users size={16} />} label="Chófer(es)" value={renderAssociatedDrivers()} />
                 </DetailSection>
@@ -336,7 +336,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
               
               <DetailSection 
                 title="Documentación y Mantenimiento" 
-                icon={<FileText size={18} className="text-red-600" />}
+                icon={<FileText size={18} className="text-gray-600" />}
               >
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4">
                   <DetailRow icon={<Shield size={16} />} label="Nº Póliza de Seguro" value={vehicle.insurancePolicyNumber} />
@@ -351,7 +351,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
               {vehicle.pricing && (
                 <DetailSection 
                   title="Información de Precios" 
-                  icon={<DollarSign size={18} className="text-red-600" />}
+                  icon={<DollarSign size={18} className="text-gray-600" />}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <DetailRow 
@@ -380,7 +380,7 @@ const VehicleDetailsView: React.FC<VehicleDetailsViewProps> = ({ vehicle, onClos
               {(vehicle.notes || vehicle.description) && (
                 <DetailSection 
                   title="Notas Adicionales" 
-                  icon={<FileText size={18} className="text-red-600" />}
+                  icon={<FileText size={18} className="text-gray-600" />}
                 >
                   <p className="text-gray-700 whitespace-pre-line p-2">
                     {vehicle.notes || vehicle.description}

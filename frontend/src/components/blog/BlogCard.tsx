@@ -83,7 +83,7 @@ export const BlogCard = ({ post, variant = "default" }: BlogCardProps) => {
             </div>
             
             {/* Título */}
-            <Link to={`/blog/${post.slug}`} className="block group-hover:text-red-600 transition-colors">
+            <Link to={`/blog/${post.slug}`} className="block group-hover:text-gray-600 transition-colors">
               <h3 className="text-2xl font-bold mb-3 leading-tight">
                 {post.title}
               </h3>
@@ -97,11 +97,11 @@ export const BlogCard = ({ post, variant = "default" }: BlogCardProps) => {
             {/* Footer */}
             <div className="flex items-center justify-between w-full text-sm text-gray-500 mt-auto">
               <div className="flex items-center gap-2">
-                <User size={16} className="text-red-500" />
+                <User size={16} className="text-black" />
                 <span>{post.author}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CalendarIcon size={16} className="text-red-500" />
+                <CalendarIcon size={16} className="text-black" />
                 <span>{formattedDate}</span>
               </div>
             </div>
@@ -139,7 +139,7 @@ export const BlogCard = ({ post, variant = "default" }: BlogCardProps) => {
         </div>
         
         {/* Título */}
-        <Link to={`/blog/${post.slug}`} className="block group-hover:text-red-600 transition-colors">
+        <Link to={`/blog/${post.slug}`} className="block group-hover:text-gray-600 transition-colors">
           <h3 className="text-xl font-bold mb-2 leading-tight">
             {post.title}
           </h3>
@@ -154,11 +154,11 @@ export const BlogCard = ({ post, variant = "default" }: BlogCardProps) => {
         <div className="mt-auto">
           <div className="flex items-center justify-between w-full text-sm text-gray-500">
             <div className="flex items-center gap-1">
-              <User size={14} className="text-red-500" />
+              <User size={14} className="text-black" />
               <span className="text-xs">{post.author}</span>
             </div>
             <div className="flex items-center gap-1">
-              <CalendarIcon size={14} className="text-red-500" />
+              <CalendarIcon size={14} className="text-black" />
               <span className="text-xs">{formattedDate}</span>
             </div>
           </div>

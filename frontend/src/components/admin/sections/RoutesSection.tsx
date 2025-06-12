@@ -783,7 +783,7 @@ const RoutesSection = () => {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh]">
-        <Loader2 className="h-12 w-12 text-red-500 animate-spin mb-4" />
+        <Loader2 className="h-12 w-12 text-black animate-spin mb-4" />
         <h2 className="text-xl font-medium text-gray-600">Cargando datos...</h2>
       </div>
     );
@@ -792,11 +792,11 @@ const RoutesSection = () => {
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh]">
-        <AlertTriangle className="h-12 w-12 text-red-500 mb-4" />
+        <AlertTriangle className="h-12 w-12 text-black mb-4" />
         <h2 className="text-xl font-medium text-gray-600">{error}</h2>
         <Button 
           onClick={() => activeTab === "fixed" ? fetchFixedRoutes() : fetchFlexibleZones()} 
-          className="mt-4 bg-red-600 hover:bg-red-700 text-white"
+          className="mt-4 bg-black hover:bg-gray-800 text-white"
         >
           Reintentar
         </Button>

@@ -114,7 +114,7 @@ const LimousineService = () => {
       question: "Do you tip a private limo driver?",
       answer: (
         <p className="text-gray-600">
-          Depende de dónde se encuentre en el mundo, pero si cree que hicieron un trabajo particularmente bueno, entonces sí, puede dar propina a su conductor de limusina privada. En Operiq, sin embargo, las propinas y gratificaciones están incluidas en el precio que paga, por lo que no tiene que preocuparse por ese cálculo. En lugares como Nueva York, tiene la opción de añadir una propina extra para su conductor de limusina privada.
+          Depende de dónde se encuentre en el mundo, pero si cree que hicieron un trabajo particularmente bueno, entonces sí, puede dar propina a su conductor de limusina privada. En Privyde, sin embargo, las propinas y gratificaciones están incluidas en el precio que paga, por lo que no tiene que preocuparse por ese cálculo. En lugares como Nueva York, tiene la opción de añadir una propina extra para su conductor de limusina privada.
         </p>
       ),
     },
@@ -171,7 +171,7 @@ const LimousineService = () => {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <DollarSign className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Precios competitivos</h3>
@@ -181,7 +181,7 @@ const LimousineService = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Clock className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Viaje al aeropuerto sin problemas</h3>
@@ -191,7 +191,7 @@ const LimousineService = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <TimerReset className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Flexibilidad de viaje</h3>
@@ -247,7 +247,7 @@ const LimousineService = () => {
                             key={index}
                             onClick={() => setActiveServiceClass(index)}
                             className={`w-2 h-2 rounded-full ${
-                              activeServiceClass === index ? 'bg-red-500' : 'bg-white bg-opacity-70'
+                              activeServiceClass === index ? 'bg-gray-1000' : 'bg-white bg-opacity-70'
                             }`}
                             aria-label={`Ir a diapositiva ${index + 1}`}
                           />
@@ -262,15 +262,15 @@ const LimousineService = () => {
                       <div className="border-t border-gray-200 pt-4">
                         <ul className="space-y-3">
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].capacity}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].luggage}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].availability}</span>
                           </li>
                         </ul>
@@ -307,7 +307,7 @@ const LimousineService = () => {
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Servicio de limusinas en la ciudad</h2>
               <p className="text-gray-600 mb-0 leading-relaxed">
-                Vaya a donde vaya, una vez que se haya decantado por el lugar en el que alojarse necesitará decidir cómo va a explorar su nuevo entorno. Un servicio de limusina de Operiq le asegura tener un conductor profesional a mano, y cerciorarse así de que no se pierde de camino a la ciudad. Operiq puede contratarse como servicio por horas, lo cual le confiere un grado más alto de flexibilidad a su día sabiendo que tiene en la zona a un conductor de guardia esperándole. Otra alternativa es utilizar Operiq para un viaje sencillo de ida, y asegurarse de que llega a su destino con las pilas cargadas, relajado y listo. Justo lo contrario de una empresa de taxis local. Operiq está presente en ciudades de todo el mundo, así que, vaya donde vaya, ténganos en mente.
+                Vaya a donde vaya, una vez que se haya decantado por el lugar en el que alojarse necesitará decidir cómo va a explorar su nuevo entorno. Un servicio de limusina de Privyde le asegura tener un conductor profesional a mano, y cerciorarse así de que no se pierde de camino a la ciudad. Privyde puede contratarse como servicio por horas, lo cual le confiere un grado más alto de flexibilidad a su día sabiendo que tiene en la zona a un conductor de guardia esperándole. Otra alternativa es utilizar Privyde para un viaje sencillo de ida, y asegurarse de que llega a su destino con las pilas cargadas, relajado y listo. Justo lo contrario de una empresa de taxis local. Privyde está presente en ciudades de todo el mundo, así que, vaya donde vaya, ténganos en mente.
               </p>
             </div>
           </div>
@@ -330,10 +330,10 @@ const LimousineService = () => {
             </div>
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Desplácese con un servicio de limusina de Operiq
+                Desplácese con un servicio de limusina de Privyde
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Con un servicio de limusina de Operiq usted puede explorar con sofisticación y facilidad cualquier evento que la ciudad pueda ofrecerle. La flota del servicio de limusinas de Operiq puede adecuarse a una gran variedad de necesidades: nuestro vehículo estándar de clase Business puede utilizarse tanto para viajes sencillos desde un punto a otro, como contratarse por horas para una flexibilidad máxima para el pasajero. Nuestro servicio Primera Clase existe para cuando un pasajero realmente necesite impactar con su llegada: quizás en una boda o cita especial tras el trabajo. La opción de una furgoneta Business de Operiq le permite tanto a usted como a su grupo viajar como uno solo al aeropuerto, y contará con un montón de espacio para su equipaje y pertenencias. Escoja lo que escoja, utilizar el servicio de chófer de Operiq significa llegar con estilo.
+                Con un servicio de limusina de Privyde usted puede explorar con sofisticación y facilidad cualquier evento que la ciudad pueda ofrecerle. La flota del servicio de limusinas de Privyde puede adecuarse a una gran variedad de necesidades: nuestro vehículo estándar de clase Business puede utilizarse tanto para viajes sencillos desde un punto a otro, como contratarse por horas para una flexibilidad máxima para el pasajero. Nuestro servicio Primera Clase existe para cuando un pasajero realmente necesite impactar con su llegada: quizás en una boda o cita especial tras el trabajo. La opción de una furgoneta Business de Privyde le permite tanto a usted como a su grupo viajar como uno solo al aeropuerto, y contará con un montón de espacio para su equipaje y pertenencias. Escoja lo que escoja, utilizar el servicio de chófer de Privyde significa llegar con estilo.
               </p>
             </div>
           </div>
@@ -347,7 +347,7 @@ const LimousineService = () => {
                 Servicio de limusinas en aeropuertos
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                ¿Necesita un traslado en aeropuertos para hasta cinco personas? Reserve nuestro servicio de traslados en aeropuertos para disfrutar de un servicio de limusina de alta calidad, de día o de noche. Escoja lo que escoja, el servicio de limusinas de Operiq da prioridad a la profesionalidad, comodidad y estilo. Nuestro proceso de reserva es sencillo, así que utilice nuestra accesible página web o nuestra elegante aplicación móvil para reservar su viaje en unos segundos. En Operiq creemos en la transparencia total y la honestidad, y es por ello que cuando usted reserva con nosotros, el precio final que ve es el precio que paga. No hay cargos ocultos que se vayan acumulando durante el proceso de reserva, lo que significa que puede calcular de forma precisa y con antelación los gastos de viaje (lo que resulta particularmente útil para los pasajeros corporativos).
+                ¿Necesita un traslado en aeropuertos para hasta cinco personas? Reserve nuestro servicio de traslados en aeropuertos para disfrutar de un servicio de limusina de alta calidad, de día o de noche. Escoja lo que escoja, el servicio de limusinas de Privyde da prioridad a la profesionalidad, comodidad y estilo. Nuestro proceso de reserva es sencillo, así que utilice nuestra accesible página web o nuestra elegante aplicación móvil para reservar su viaje en unos segundos. En Privyde creemos en la transparencia total y la honestidad, y es por ello que cuando usted reserva con nosotros, el precio final que ve es el precio que paga. No hay cargos ocultos que se vayan acumulando durante el proceso de reserva, lo que significa que puede calcular de forma precisa y con antelación los gastos de viaje (lo que resulta particularmente útil para los pasajeros corporativos).
               </p>
             </div>
             <div>
@@ -369,21 +369,21 @@ const LimousineService = () => {
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
             Frequently Asked Questions
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
               >
                 <button
                   className="flex justify-between items-center w-full p-6 text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                  <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                  <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                     {openFaqIndex === index ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (

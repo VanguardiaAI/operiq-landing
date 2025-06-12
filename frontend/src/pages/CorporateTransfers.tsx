@@ -109,7 +109,7 @@ const CorporateTransfers = () => {
   const corporateBenefits = {
     time: {
       title: "Optimización del tiempo",
-      icon: <Clock className="h-8 w-8 text-red-500" />,
+      icon: <Clock className="h-8 w-8 text-black" />,
       points: [
         "Servicio puntual garantizado para nunca perder una reunión",
         "Monitoreo constante del tráfico para seleccionar las rutas más eficientes",
@@ -120,7 +120,7 @@ const CorporateTransfers = () => {
     },
     security: {
       title: "Seguridad y confidencialidad",
-      icon: <ShieldCheck className="h-8 w-8 text-red-500" />,
+      icon: <ShieldCheck className="h-8 w-8 text-black" />,
       points: [
         "Conductores verificados con experiencia en transporte ejecutivo",
         "Vehículos con mantenimiento premium y sistemas de seguridad avanzados",
@@ -131,7 +131,7 @@ const CorporateTransfers = () => {
     },
     image: {
       title: "Imagen corporativa",
-      icon: <Building className="h-8 w-8 text-red-500" />,
+      icon: <Building className="h-8 w-8 text-black" />,
       points: [
         "Flota impecable que refleja la excelencia de su empresa",
         "Chóferes profesionales con vestimenta formal o corporativa",
@@ -142,7 +142,7 @@ const CorporateTransfers = () => {
     },
     management: {
       title: "Gestión centralizada",
-      icon: <Briefcase className="h-8 w-8 text-red-500" />,
+      icon: <Briefcase className="h-8 w-8 text-black" />,
       points: [
         "Portal corporativo exclusivo para gestionar reservas",
         "Facturación unificada adaptada a sus procesos internos",
@@ -158,19 +158,19 @@ const CorporateTransfers = () => {
     {
       name: "María González",
       position: "Directora de Operaciones, Global Enterprises",
-      text: "Operiq ha transformado nuestra logística ejecutiva. Su servicio es consistente, puntual y verdaderamente premium. Los directivos ahora pueden prepararse para reuniones en el trayecto, aprovechando al máximo cada minuto. Su plataforma de gestión nos permite un control completo sobre gastos y asignaciones.",
+      text: "Privyde ha transformado nuestra logística ejecutiva. Su servicio es consistente, puntual y verdaderamente premium. Los directivos ahora pueden prepararse para reuniones en el trayecto, aprovechando al máximo cada minuto. Su plataforma de gestión nos permite un control completo sobre gastos y asignaciones.",
       stars: 5,
     },
     {
       name: "Carlos Mendoza",
       position: "CFO, Tech Innovations Inc.",
-      text: "Como empresa con operaciones en 8 países, necesitábamos un servicio de transporte que mantuviera el mismo estándar de calidad en todas nuestras ubicaciones. Operiq no solo cumplió esa expectativa sino que la superó. Su sistema centralizado de facturación ha simplificado enormemente nuestra administración.",
+      text: "Como empresa con operaciones en 8 países, necesitábamos un servicio de transporte que mantuviera el mismo estándar de calidad en todas nuestras ubicaciones. Privyde no solo cumplió esa expectativa sino que la superó. Su sistema centralizado de facturación ha simplificado enormemente nuestra administración.",
       stars: 5,
     },
     {
       name: "Ana Ramírez",
       position: "Directora de Eventos, Premium Consultants",
-      text: "Organizamos más de 50 eventos corporativos al año y la logística de traslados siempre era un dolor de cabeza hasta que encontramos Operiq. Su capacidad para gestionar múltiples recogidas y traslados simultáneos es impresionante. Los asistentes siempre destacan el nivel de servicio como un diferencial de nuestros eventos.",
+      text: "Organizamos más de 50 eventos corporativos al año y la logística de traslados siempre era un dolor de cabeza hasta que encontramos Privyde. Su capacidad para gestionar múltiples recogidas y traslados simultáneos es impresionante. Los asistentes siempre destacan el nivel de servicio como un diferencial de nuestros eventos.",
       stars: 5,
     },
   ];
@@ -313,7 +313,7 @@ const CorporateTransfers = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Nuestra flota corporativa
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           {/* Slider con flechas de navegación */}
@@ -355,7 +355,7 @@ const CorporateTransfers = () => {
                             key={index}
                             onClick={() => setActiveServiceClass(index)}
                             className={`w-2 h-2 rounded-full ${
-                              activeServiceClass === index ? 'bg-red-500' : 'bg-white bg-opacity-70'
+                              activeServiceClass === index ? 'bg-gray-1000' : 'bg-white bg-opacity-70'
                             }`}
                             aria-label={`Ir a diapositiva ${index + 1}`}
                           />
@@ -370,15 +370,15 @@ const CorporateTransfers = () => {
                       <div className="border-t border-gray-200 pt-4">
                         <ul className="space-y-3">
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].capacity}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].luggage}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].availability}</span>
                           </li>
                         </ul>
@@ -412,7 +412,7 @@ const CorporateTransfers = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Beneficios para su empresa
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
 
           {/* Selector de beneficios */}
@@ -422,7 +422,7 @@ const CorporateTransfers = () => {
                 key={key}
                 className={`flex items-center px-6 py-3 m-2 rounded-full transition-all ${
                   activeBenefitIndex === key
-                    ? "bg-red-500 text-white shadow-md"
+                    ? "bg-gray-1000 text-white shadow-md"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => setActiveBenefitIndex(key)}
@@ -452,7 +452,7 @@ const CorporateTransfers = () => {
                     <ul className="space-y-3">
                       {benefit.points.map((point, index) => (
                         <li key={index} className="flex items-start">
-                          <Star className="h-5 w-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <Star className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700">{point}</span>
                         </li>
                       ))}
@@ -533,15 +533,15 @@ const CorporateTransfers = () => {
                 <h3 className="font-semibold text-xl text-gray-900 mb-3">Ventajas globales</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">Gestión centralizada con facturación en su moneda</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">Tarifas corporativas aplicables en todos los destinos</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">Soporte 24/7 en múltiples idiomas</span>
                   </li>
                 </ul>
@@ -554,7 +554,7 @@ const CorporateTransfers = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Lo que dicen nuestros clientes corporativos
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -562,7 +562,7 @@ const CorporateTransfers = () => {
               <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.stars)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-gray-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
@@ -579,21 +579,21 @@ const CorporateTransfers = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Preguntas frecuentes sobre traslados corporativos
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
               >
                 <button
                   className="flex justify-between items-center w-full p-6 text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                  <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                  <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                     {openFaqIndex === index ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (
@@ -630,7 +630,7 @@ const CorporateTransfers = () => {
                 Nuestro equipo de cuentas corporativas está listo para diseñar un programa de transporte ejecutivo que se adapte perfectamente a las necesidades de su organización.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-red-500 hover:bg-red-600 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">
+                <button className="bg-gray-1000 hover:bg-black text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">
                   Solicitar una demostración
                 </button>
                 <button className="bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">

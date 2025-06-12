@@ -230,7 +230,7 @@ export default function RegisterCompaniesPage() {
             <Card className="w-full shadow-lg bg-white rounded-xl overflow-hidden border-0 relative z-20">
               <CardContent className="p-6 md:p-8">
                 {error && (
-                  <div className="bg-red-50 p-3 rounded border border-red-200 text-red-600 text-sm mb-6">
+                  <div className="bg-gray-100 p-3 rounded border border-gray-200 text-gray-600 text-sm mb-6">
                     {error}
                   </div>
                 )}
@@ -249,32 +249,32 @@ export default function RegisterCompaniesPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                        Nombre <span className="text-red-500">*</span>
+                        Nombre <span className="text-black">*</span>
                       </Label>
                       <Input 
                         id="firstName"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className={`w-full ${validationErrors.firstName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+                        className={`w-full ${validationErrors.firstName ? 'border-gray-300 focus:border-gray-500 focus:ring-red-500' : ''}`}
                       />
                       {validationErrors.firstName && (
-                        <p className="mt-1 text-xs text-red-600">{validationErrors.firstName}</p>
+                        <p className="mt-1 text-xs text-gray-600">{validationErrors.firstName}</p>
                       )}
                     </div>
                     <div>
                       <Label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                        Apellido <span className="text-red-500">*</span>
+                        Apellido <span className="text-black">*</span>
                       </Label>
                       <Input 
                         id="lastName"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className={`w-full ${validationErrors.lastName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+                        className={`w-full ${validationErrors.lastName ? 'border-gray-300 focus:border-gray-500 focus:ring-red-500' : ''}`}
                       />
                       {validationErrors.lastName && (
-                        <p className="mt-1 text-xs text-red-600">{validationErrors.lastName}</p>
+                        <p className="mt-1 text-xs text-gray-600">{validationErrors.lastName}</p>
                       )}
                     </div>
                   </div>
@@ -282,7 +282,7 @@ export default function RegisterCompaniesPage() {
                   <div className="space-y-4">
                     <div>
                       <Label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email Corporativo <span className="text-red-500">*</span>
+                        Email Corporativo <span className="text-black">*</span>
                       </Label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
@@ -293,17 +293,17 @@ export default function RegisterCompaniesPage() {
                           placeholder="empresa@dominio.com"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className={`pl-10 ${validationErrors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+                          className={`pl-10 ${validationErrors.email ? 'border-gray-300 focus:border-gray-500 focus:ring-red-500' : ''}`}
                         />
                       </div>
                       {validationErrors.email && (
-                        <p className="mt-1 text-xs text-red-600">{validationErrors.email}</p>
+                        <p className="mt-1 text-xs text-gray-600">{validationErrors.email}</p>
                       )}
                     </div>
 
                     <div>
                       <Label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-                        Contraseña <span className="text-red-500">*</span>
+                        Contraseña <span className="text-black">*</span>
                       </Label>
                       <div className="relative">
                         <Lock className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
@@ -314,17 +314,17 @@ export default function RegisterCompaniesPage() {
                           placeholder="Mínimo 8 caracteres"
                           value={formData.password}
                           onChange={handleInputChange}
-                          className={`pl-10 ${validationErrors.password ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+                          className={`pl-10 ${validationErrors.password ? 'border-gray-300 focus:border-gray-500 focus:ring-red-500' : ''}`}
                         />
                       </div>
                       {validationErrors.password && (
-                        <p className="mt-1 text-xs text-red-600">{validationErrors.password}</p>
+                        <p className="mt-1 text-xs text-gray-600">{validationErrors.password}</p>
                       )}
                     </div>
 
                     <div>
                       <Label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
-                        Confirmar Contraseña <span className="text-red-500">*</span>
+                        Confirmar Contraseña <span className="text-black">*</span>
                       </Label>
                       <div className="relative">
                         <Lock className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
@@ -335,11 +335,11 @@ export default function RegisterCompaniesPage() {
                           placeholder="Repite tu contraseña"
                           value={formData.confirmPassword}
                           onChange={handleInputChange}
-                          className={`pl-10 ${validationErrors.confirmPassword ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+                          className={`pl-10 ${validationErrors.confirmPassword ? 'border-gray-300 focus:border-gray-500 focus:ring-red-500' : ''}`}
                         />
                       </div>
                       {validationErrors.confirmPassword && (
-                        <p className="mt-1 text-xs text-red-600">{validationErrors.confirmPassword}</p>
+                        <p className="mt-1 text-xs text-gray-600">{validationErrors.confirmPassword}</p>
                       )}
                     </div>
                   </div>
@@ -356,24 +356,24 @@ export default function RegisterCompaniesPage() {
 
                   <div>
                     <Label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-1">
-                      Nombre de la empresa <span className="text-red-500">*</span>
+                      Nombre de la empresa <span className="text-black">*</span>
                     </Label>
                     <Input 
                       id="companyName"
                       name="companyName"
                       value={formData.companyName}
                       onChange={handleInputChange}
-                      className={`w-full ${validationErrors.companyName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+                      className={`w-full ${validationErrors.companyName ? 'border-gray-300 focus:border-gray-500 focus:ring-red-500' : ''}`}
                     />
                     {validationErrors.companyName && (
-                      <p className="mt-1 text-xs text-red-600">{validationErrors.companyName}</p>
+                      <p className="mt-1 text-xs text-gray-600">{validationErrors.companyName}</p>
                     )}
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <Label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">
-                        País <span className="text-red-500">*</span>
+                        País <span className="text-black">*</span>
                       </Label>
                       <select 
                         id="country"
@@ -395,7 +395,7 @@ export default function RegisterCompaniesPage() {
                     
                     <div>
                       <Label htmlFor="phonePrefix" className="block text-sm font-medium text-gray-700 mb-1">
-                        Prefijo <span className="text-red-500">*</span>
+                        Prefijo <span className="text-black">*</span>
                       </Label>
                       <select 
                         id="phonePrefix"
@@ -416,7 +416,7 @@ export default function RegisterCompaniesPage() {
                     
                     <div>
                       <Label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">
-                        Número de teléfono <span className="text-red-500">*</span>
+                        Número de teléfono <span className="text-black">*</span>
                       </Label>
                       <div className="relative">
                         <Phone className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
@@ -427,18 +427,18 @@ export default function RegisterCompaniesPage() {
                           placeholder="912345678"
                           value={formData.phoneNumber}
                           onChange={handleInputChange}
-                          className={`pl-10 ${validationErrors.phoneNumber ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+                          className={`pl-10 ${validationErrors.phoneNumber ? 'border-gray-300 focus:border-gray-500 focus:ring-red-500' : ''}`}
                         />
                       </div>
                       {validationErrors.phoneNumber && (
-                        <p className="mt-1 text-xs text-red-600">{validationErrors.phoneNumber}</p>
+                        <p className="mt-1 text-xs text-gray-600">{validationErrors.phoneNumber}</p>
                       )}
                     </div>
                   </div>
 
                   <div>
                     <Label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">
-                      Ciudad / Ubicación <span className="text-red-500">*</span>
+                      Ciudad / Ubicación <span className="text-black">*</span>
                     </Label>
                     <Input 
                       id="location"
@@ -446,10 +446,10 @@ export default function RegisterCompaniesPage() {
                       placeholder="Ej: Madrid, Barcelona, etc."
                       value={formData.location}
                       onChange={handleInputChange}
-                      className={`w-full ${validationErrors.location ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+                      className={`w-full ${validationErrors.location ? 'border-gray-300 focus:border-gray-500 focus:ring-red-500' : ''}`}
                     />
                     {validationErrors.location && (
-                      <p className="mt-1 text-xs text-red-600">{validationErrors.location}</p>
+                      <p className="mt-1 text-xs text-gray-600">{validationErrors.location}</p>
                     )}
                   </div>
 
@@ -512,17 +512,17 @@ export default function RegisterCompaniesPage() {
                       id="termsAccepted"
                       checked={formData.termsAccepted}
                       onCheckedChange={handleCheckboxChange}
-                      className={validationErrors.termsAccepted ? 'border-red-300 data-[state=checked]:bg-red-500' : ''}
+                      className={validationErrors.termsAccepted ? 'border-gray-300 data-[state=checked]:bg-gray-1000' : ''}
                     />
                     <div>
                       <label 
                         htmlFor="termsAccepted" 
-                        className={`block text-sm ${validationErrors.termsAccepted ? 'text-red-600' : 'text-gray-500'}`}
+                        className={`block text-sm ${validationErrors.termsAccepted ? 'text-gray-600' : 'text-gray-500'}`}
                       >
-                        Acepto los <a href="#" className="text-primary underline">Términos y Condiciones</a> y la <a href="#" className="text-primary underline">Política de Privacidad</a> <span className="text-red-500">*</span>
+                        Acepto los <a href="#" className="text-primary underline">Términos y Condiciones</a> y la <a href="#" className="text-primary underline">Política de Privacidad</a> <span className="text-black">*</span>
                       </label>
                       {validationErrors.termsAccepted && (
-                        <p className="mt-1 text-xs text-red-600">{validationErrors.termsAccepted}</p>
+                        <p className="mt-1 text-xs text-gray-600">{validationErrors.termsAccepted}</p>
                       )}
                     </div>
                   </div>

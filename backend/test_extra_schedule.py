@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Script de prueba para verificar las funcionalidades de horarios extras
-Sistema de Horarios Alternativos - Operiq VIP
+Sistema de Horarios Alternativos - Privyde VIP
 """
 
 import sys
@@ -17,10 +17,10 @@ def test_extra_schedule_endpoints():
     """Prueba los endpoints relacionados con horarios extras"""
     
     print("🚗 PRUEBAS DE HORARIOS EXTRAS")
-    print("Sistema de Horarios Alternativos - Operiq VIP")
+    print("Sistema de Horarios Alternativos - Privyde VIP")
     print("=" * 60)
     
-    base_url = "http://localhost:5000"  # Ajustar según tu configuración
+    base_url = "http://localhost:5001"  # Ajustar según tu configuración
     
     # Datos de prueba
     driver_id = "68280ac23378369e956135c5"  # Usar un ID real de tu base de datos

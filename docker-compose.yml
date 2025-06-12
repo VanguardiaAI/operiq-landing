@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Backend Flask
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: privyde-backend
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
+      - MONGODB_URI=${MONGO_URI}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - STRIPE_PUBLISHABLE_KEY=${STRIPE_PUBLISHABLE_KEY}
+      - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - backend_uploads:/app/uploads
+    networks:
+      - privyde-network
+    ports:
+      - "5002:5000"  # Cambiado para evitar conflictos
+
+  # Frontend React con Nginx
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: privyde-frontend
+    restart: unless-stopped
+    environment:
+      - VITE_API_URL=https://privyde.com/api
+      - VITE_STRIPE_PUBLISHABLE_KEY=${STRIPE_PUBLISHABLE_KEY}
+      - VITE_GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
+    depends_on:
+      - backend
+    networks:
+      - privyde-network
+    ports:
+      - "8081:80"  # Cambiado para evitar conflicto con OpenResty
+
+volumes:
+  backend_uploads:
+    driver: local
+
+networks:
+  privyde-network:
+    driver: bridge 

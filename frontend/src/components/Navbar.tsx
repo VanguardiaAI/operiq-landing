@@ -134,7 +134,7 @@ export default function Navbar() {
     <>
       {/* Navigation */}
       <nav className="nav-container bg-white shadow-md py-2 px-4 md:px-6 flex items-center justify-between text-gray-700 font-sans">
-        <Link to="/" className="nav-logo text-xl font-bold text-black">OPERIQ</Link>
+        <Link to="/" className="nav-logo text-xl font-bold text-black">PRIVYDE</Link>
         <div className="hidden md:flex nav-menu items-center">
           <div 
             className="nav-menu-item group relative px-3"

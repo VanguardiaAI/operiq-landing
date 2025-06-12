@@ -2526,4 +2526,4 @@ setup_drivers_agenda_collection(db)
 setup_fixed_routes_collection(db)
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, host='0.0.0.0', port=5000) 
+    socketio.run(app, debug=True, host='0.0.0.0', port=5001) 

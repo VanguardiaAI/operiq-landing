@@ -194,8 +194,8 @@ export default function BookingWizard() {
       return (
         <Card className="max-w-3xl mx-auto mt-8">
           <CardContent className="pt-6 text-center">
-            <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-            <h2 className="text-xl font-bold text-red-600">Error al cargar la sesión</h2>
+            <AlertCircle className="h-12 w-12 text-black mx-auto mb-4" />
+            <h2 className="text-xl font-bold text-gray-600">Error al cargar la sesión</h2>
             <p className="mt-2 text-gray-600">{error}</p>
             <button 
               className="mt-6 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90"
@@ -221,8 +221,8 @@ export default function BookingWizard() {
       return (
         <Card className="max-w-3xl mx-auto mt-8">
           <CardContent className="pt-6 text-center">
-            <AlertCircle className="h-12 w-12 text-orange-500 mx-auto mb-4" />
-            <h2 className="text-xl font-bold text-orange-600">Datos de la reserva no disponibles</h2>
+            <AlertCircle className="h-12 w-12 text-gray-500 mx-auto mb-4" />
+            <h2 className="text-xl font-bold text-gray-600">Datos de la reserva no disponibles</h2>
             <p className="mt-2 text-gray-600">
               No se pudieron cargar completamente los detalles de la reserva. 
               Esto puede ser un problema temporal.
@@ -274,8 +274,8 @@ export default function BookingWizard() {
         console.error(`RenderCurrentStep: Paso desconocido: '${session.current_step}'.`);
         return (
             <div className="text-center py-8">
-                <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-                <h2 className="text-xl font-bold text-red-600">Paso no reconocido</h2>
+                <AlertCircle className="h-12 w-12 text-black mx-auto mb-4" />
+                <h2 className="text-xl font-bold text-gray-600">Paso no reconocido</h2>
                 <p className="mt-2 text-gray-600">El sistema encontró un paso inesperado: {session.current_step}</p>
             </div>
         );
@@ -303,7 +303,7 @@ export default function BookingWizard() {
         <Card className="max-w-3xl mx-auto mt-8">
           <CardContent className="pt-6">
             <div className="text-center">
-              <h2 className="text-xl font-bold text-red-600">Error</h2>
+              <h2 className="text-xl font-bold text-gray-600">Error</h2>
               <p className="mt-2">{error}</p>
               <button 
                 className="mt-4 px-4 py-2 bg-primary text-white rounded-md"
@@ -376,7 +376,7 @@ function NavHeader({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: 
     <header className="bg-white border-b border-gray-200 py-3 px-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="font-bold text-xl">OPERIQ</div>
+        <div className="font-bold text-xl">PRIVYDE</div>
         
         {/* Menú de hamburguesa */}
         <div className="relative">

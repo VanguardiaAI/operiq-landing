@@ -243,6 +243,6 @@ def format_whatsapp_message(driver_name: str, client_name: str, pickup_date: str
 ¿Podrías confirmar disponibilidad? ¡Gracias!
 
 ---
-Operiq VIP Transport"""
+Privyde VIP Transport"""
     
     return base_message 

@@ -31,10 +31,10 @@ const TravelAgencies = () => {
   // Datos de las preguntas frecuentes
   const faqData = [
     {
-      question: "¿Pueden las agencias de viajes ganar comisiones a través de Operiq?",
+      question: "¿Pueden las agencias de viajes ganar comisiones a través de Privyde?",
       answer: (
         <p className="text-gray-600">
-          Sí, las agencias de viajes pueden ganar comisiones por viajes reservados a través de su agencia con Operiq. Se puede ganar más comisiones. Hable con nuestro equipo para obtener más información.
+          Sí, las agencias de viajes pueden ganar comisiones por viajes reservados a través de su agencia con Privyde. Se puede ganar más comisiones. Hable con nuestro equipo para obtener más información.
         </p>
       ),
     },
@@ -47,10 +47,10 @@ const TravelAgencies = () => {
       ),
     },
     {
-      question: "¿Qué vehículos usa Operiq?",
+      question: "¿Qué vehículos usa Privyde?",
       answer: (
         <p className="text-gray-600">
-          Operiq ofrece varios servicios según la lista de vehículos aprobados de la ciudad. Estos pueden incluir: • Business Class: Mercedes-Benz E-Class, BMW Serie 5, Cadillac XTS o similar • Business Van/SUV: Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac Escalade, Toyota Alphard o similar • First Class: Mercedes-Benz S-Class, BMW Serie 7, Audi A8 o similar • Electric Class (disponible en ciudades seleccionadas): Jaguar I-PACE, Tesla Model S, Tesla Model X o similar • Sprinter Class (disponible en ciudades seleccionadas): Mercedes-Benz Sprinter o similar Otros tipos de vehículos pueden ser aprobados para diferentes ciudades si cumplen con el estándar de Operiq.
+          Privyde ofrece varios servicios según la lista de vehículos aprobados de la ciudad. Estos pueden incluir: • Business Class: Mercedes-Benz E-Class, BMW Serie 5, Cadillac XTS o similar • Business Van/SUV: Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac Escalade, Toyota Alphard o similar • First Class: Mercedes-Benz S-Class, BMW Serie 7, Audi A8 o similar • Electric Class (disponible en ciudades seleccionadas): Jaguar I-PACE, Tesla Model S, Tesla Model X o similar • Sprinter Class (disponible en ciudades seleccionadas): Mercedes-Benz Sprinter o similar Otros tipos de vehículos pueden ser aprobados para diferentes ciudades si cumplen con el estándar de Privyde.
         </p>
       ),
     },
@@ -58,23 +58,23 @@ const TravelAgencies = () => {
       question: "¿Con cuánta antelación puedo reservar un viaje?",
       answer: (
         <p className="text-gray-600">
-          Puede reservar viajes con meses de antelación o tan pronto como 60 minutos antes de que lo necesite. Recomendamos reservar con la mayor antelación posible. Operiq cuenta con la política de cancelación más flexible del sector, ya que los pasajeros pueden cancelar viajes de forma gratuita hasta una hora antes de la hora de recogida. También puede realizar cambios en su reserva hasta 60 minutos antes de la hora de recogida.
+          Puede reservar viajes con meses de antelación o tan pronto como 60 minutos antes de que lo necesite. Recomendamos reservar con la mayor antelación posible. Privyde cuenta con la política de cancelación más flexible del sector, ya que los pasajeros pueden cancelar viajes de forma gratuita hasta una hora antes de la hora de recogida. También puede realizar cambios en su reserva hasta 60 minutos antes de la hora de recogida.
         </p>
       ),
     },
     {
-      question: "¿Cómo contribuye Operiq a las opciones de viaje sostenibles?",
+      question: "¿Cómo contribuye Privyde a las opciones de viaje sostenibles?",
       answer: (
         <p className="text-gray-600">
-          Operiq contribuye a los viajes sostenibles al ofrecer opciones de vehículos eléctricos, incorporar vehículos eléctricos en nuestra oferta de Business Class en muchas más ciudades y trabajar activamente para compensar su huella de carbono.
+          Privyde contribuye a los viajes sostenibles al ofrecer opciones de vehículos eléctricos, incorporar vehículos eléctricos en nuestra oferta de Business Class en muchas más ciudades y trabajar activamente para compensar su huella de carbono.
         </p>
       ),
     },
     {
-      question: "¿Cómo son los precios de Operiq frente a los proveedores tradicionales?",
+      question: "¿Cómo son los precios de Privyde frente a los proveedores tradicionales?",
       answer: (
         <p className="text-gray-600">
-          El modelo de precios competitivo de Operiq es más transparente en comparación con los proveedores tradicionales, lo que garantiza una buena relación calidad-precio sin comprometer la calidad del servicio.
+          El modelo de precios competitivo de Privyde es más transparente en comparación con los proveedores tradicionales, lo que garantiza una buena relación calidad-precio sin comprometer la calidad del servicio.
         </p>
       ),
     },
@@ -108,7 +108,7 @@ const TravelAgencies = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Servicios globales de chófer para 
               <motion.span 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text text-black"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -143,7 +143,7 @@ const TravelAgencies = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
               Mejore sus servicios de agencia de viajes
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -189,7 +189,7 @@ const TravelAgencies = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
               Calidad galardonada
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             <p className="text-center text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
               Ganaron el premio a la "Mejor compañía global de servicios de chófer" en los Premios Magellan y el premio a la "Mejor en la carretera" en los Premios Travolution.
@@ -323,7 +323,7 @@ const TravelAgencies = () => {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Transforme los viajes de sus clientes</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-              Asóciese con Operiq y mejore las ofertas de viajes de su agencia.
+              Asóciese con Privyde y mejore las ofertas de viajes de su agencia.
             </p>
             <motion.button 
               className="select-button h-12 px-8 py-3 rounded-md text-white font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 mb-6"
@@ -345,14 +345,14 @@ const TravelAgencies = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
               Preguntas frecuentes
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             
             <div className="space-y-4 max-w-4xl mx-auto">
               {faqData.map((faq, index) => (
                 <motion.div 
                   key={index} 
-                  className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                  className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -362,8 +362,8 @@ const TravelAgencies = () => {
                     className="flex justify-between items-center w-full p-6 text-left"
                     onClick={() => toggleFaq(index)}
                   >
-                    <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                    <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                    <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                    <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                       {openFaqIndex === index ? (
                         <ChevronUp className="h-5 w-5" />
                       ) : (

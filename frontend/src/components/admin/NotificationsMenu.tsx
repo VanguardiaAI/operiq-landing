@@ -304,19 +304,19 @@ const NotificationsMenu: React.FC<NotificationsMenuProps> = ({
   const getNotificationIcon = (type: string) => {
     switch (type) {
       case 'support_message':
-        return <div className="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+        return <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
           <span className="text-xs">CS</span>
         </div>;
       case 'new_booking':
-        return <div className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+        return <div className="w-8 h-8 rounded-full bg-gray-200 text-green-600 flex items-center justify-center">
           <span className="text-xs">NR</span>
         </div>;
       case 'booking_canceled':
-        return <div className="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
+        return <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
           <span className="text-xs">RC</span>
         </div>;
       case 'payment_success':
-        return <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+        return <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
           <span className="text-xs">PO</span>
         </div>;
       default:
@@ -338,7 +338,7 @@ const NotificationsMenu: React.FC<NotificationsMenuProps> = ({
         
         {/* Indicador de notificaciones no leídas */}
         {unreadCount > 0 && (
-          <span className="absolute top-1 right-1 h-5 w-5 flex items-center justify-center text-xs font-semibold text-white bg-red-500 rounded-full">
+          <span className="absolute top-1 right-1 h-5 w-5 flex items-center justify-center text-xs font-semibold text-white bg-gray-1000 rounded-full">
             {unreadCount > 9 ? '9+' : unreadCount}
           </span>
         )}
@@ -352,7 +352,7 @@ const NotificationsMenu: React.FC<NotificationsMenuProps> = ({
             <div className="flex space-x-2">
               {unreadCount > 0 && (
                 <button
-                  className="text-xs text-blue-600 hover:text-blue-800 flex items-center"
+                  className="text-xs text-gray-600 hover:text-blue-800 flex items-center"
                   onClick={handleMarkAllAsRead}
                 >
                   <CheckIcon className="h-3 w-3 mr-1" />
@@ -384,7 +384,7 @@ const NotificationsMenu: React.FC<NotificationsMenuProps> = ({
                   <div 
                     key={notification.id}
                     className={`p-3 hover:bg-gray-50 transition-colors cursor-pointer flex justify-between ${
-                      notification.read ? 'bg-white' : 'bg-blue-50'
+                      notification.read ? 'bg-white' : 'bg-gray-100'
                     }`}
                     onClick={() => handleNotificationClick(notification)}
                   >
@@ -405,7 +405,7 @@ const NotificationsMenu: React.FC<NotificationsMenuProps> = ({
                     <div className="flex flex-col space-y-1 ml-2">
                       {!notification.read && (
                         <button
-                          className="text-blue-500 hover:text-blue-700"
+                          className="text-black hover:text-blue-700"
                           onClick={(e) => {
                             e.stopPropagation();
                             handleMarkAsRead(notification);
@@ -435,7 +435,7 @@ const NotificationsMenu: React.FC<NotificationsMenuProps> = ({
             {hasMore && notifications.length > 0 && (
               <div className="p-2 text-center">
                 <button
-                  className="text-sm text-blue-600 hover:text-blue-800"
+                  className="text-sm text-gray-600 hover:text-blue-800"
                   onClick={handleLoadMore}
                   disabled={loading}
                 >
@@ -449,7 +449,7 @@ const NotificationsMenu: React.FC<NotificationsMenuProps> = ({
           <div className="p-2 border-t text-center">
             <Link 
               to="/admin/notifications"
-              className="text-xs text-blue-600 hover:text-blue-800"
+              className="text-xs text-gray-600 hover:text-blue-800"
               onClick={() => setIsOpen(false)}
             >
               Ver todas las notificaciones

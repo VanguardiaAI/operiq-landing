@@ -100,7 +100,7 @@ const SecurityServices = () => {
   const securityLevels = {
     standard: {
       title: "Protección estándar",
-      icon: <ShieldCheck className="h-8 w-8 text-red-500" />,
+      icon: <ShieldCheck className="h-8 w-8 text-black" />,
       points: [
         "Chófer con capacitación en conducción defensiva",
         "Vehículo con elementos básicos de seguridad pasiva",
@@ -111,7 +111,7 @@ const SecurityServices = () => {
     },
     enhanced: {
       title: "Protección reforzada",
-      icon: <Lock className="h-8 w-8 text-red-500" />,
+      icon: <Lock className="h-8 w-8 text-black" />,
       points: [
         "Vehículo blindado nivel B4 o superior con vidrios anti-balas",
         "Chófer con formación avanzada en conducción evasiva",
@@ -122,7 +122,7 @@ const SecurityServices = () => {
     },
     executive: {
       title: "Protección ejecutiva",
-      icon: <UserCheck className="h-8 w-8 text-red-500" />,
+      icon: <UserCheck className="h-8 w-8 text-black" />,
       points: [
         "Vehículo blindado de alta resistencia (B6/B7)",
         "Equipo de seguridad personal discreta",
@@ -133,7 +133,7 @@ const SecurityServices = () => {
     },
     complete: {
       title: "Solución integral",
-      icon: <Layers className="h-8 w-8 text-red-500" />,
+      icon: <Layers className="h-8 w-8 text-black" />,
       points: [
         "Convoy de varios vehículos con escolta",
         "Equipo completo de protección personal",
@@ -149,19 +149,19 @@ const SecurityServices = () => {
     {
       name: "Ricardo Velázquez",
       position: "Director de Seguridad, Multinacional Energética",
-      text: "Operiq ha redefinido nuestros estándares de seguridad ejecutiva. Su enfoque discreto pero altamente efectivo permite que nuestros directivos viajen con total tranquilidad sin llamar la atención. La combinación de vehículos de lujo con medidas de seguridad avanzadas es exactamente lo que buscábamos.",
+      text: "Privyde ha redefinido nuestros estándares de seguridad ejecutiva. Su enfoque discreto pero altamente efectivo permite que nuestros directivos viajen con total tranquilidad sin llamar la atención. La combinación de vehículos de lujo con medidas de seguridad avanzadas es exactamente lo que buscábamos.",
       stars: 5,
     },
     {
       name: "Elena Domínguez",
       position: "Jefa de Operaciones, Grupo Financiero Internacional",
-      text: "Después de incidentes de seguridad en uno de nuestros mercados emergentes, contratamos los servicios de Operiq. La diferencia fue inmediata: mantuvieron un perfil bajo pero con protección de primer nivel. Pudimos continuar con nuestras operaciones sin interrupción y con la tranquilidad de contar con profesionales experimentados.",
+      text: "Después de incidentes de seguridad en uno de nuestros mercados emergentes, contratamos los servicios de Privyde. La diferencia fue inmediata: mantuvieron un perfil bajo pero con protección de primer nivel. Pudimos continuar con nuestras operaciones sin interrupción y con la tranquilidad de contar con profesionales experimentados.",
       stars: 5,
     },
     {
       name: "Alejandro Méndez",
       position: "Empresario y Figura Pública",
-      text: "Como figura mediática, necesitaba un servicio que me permitiera mantener mi privacidad sin sacrificar la seguridad. El enfoque personalizado de Operiq y su capacidad para adaptarse a diferentes niveles de amenaza según las circunstancias ha sido invaluable. Su discreción es tan impecable como su servicio.",
+      text: "Como figura mediática, necesitaba un servicio que me permitiera mantener mi privacidad sin sacrificar la seguridad. El enfoque personalizado de Privyde y su capacidad para adaptarse a diferentes niveles de amenaza según las circunstancias ha sido invaluable. Su discreción es tan impecable como su servicio.",
       stars: 5,
     },
   ];
@@ -303,7 +303,7 @@ const SecurityServices = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Flota de seguridad exclusiva
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           {/* Slider con flechas de navegación */}
@@ -345,7 +345,7 @@ const SecurityServices = () => {
                             key={index}
                             onClick={() => setActiveServiceClass(index)}
                             className={`w-2 h-2 rounded-full ${
-                              activeServiceClass === index ? 'bg-red-500' : 'bg-white bg-opacity-70'
+                              activeServiceClass === index ? 'bg-gray-1000' : 'bg-white bg-opacity-70'
                             }`}
                             aria-label={`Ir a diapositiva ${index + 1}`}
                           />
@@ -360,15 +360,15 @@ const SecurityServices = () => {
                       <div className="border-t border-gray-200 pt-4">
                         <ul className="space-y-3">
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{securityVehicles[activeServiceClass].capacity}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{securityVehicles[activeServiceClass].security}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{securityVehicles[activeServiceClass].availability}</span>
                           </li>
                         </ul>
@@ -402,7 +402,7 @@ const SecurityServices = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Niveles de protección personalizados
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
 
           {/* Selector de niveles de seguridad */}
@@ -412,7 +412,7 @@ const SecurityServices = () => {
                 key={key}
                 className={`flex items-center px-6 py-3 m-2 rounded-full transition-all ${
                   activeSecurityLevel === key
-                    ? "bg-red-500 text-white shadow-md"
+                    ? "bg-gray-1000 text-white shadow-md"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => setActiveSecurityLevel(key)}
@@ -442,7 +442,7 @@ const SecurityServices = () => {
                     <ul className="space-y-3">
                       {level.points.map((point, index) => (
                         <li key={index} className="flex items-start">
-                          <Star className="h-5 w-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <Star className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700">{point}</span>
                         </li>
                       ))}
@@ -470,7 +470,7 @@ const SecurityServices = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             La confianza de nuestros clientes
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -478,7 +478,7 @@ const SecurityServices = () => {
               <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.stars)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-gray-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
@@ -495,21 +495,21 @@ const SecurityServices = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Preguntas frecuentes sobre seguridad ejecutiva
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
               >
                 <button
                   className="flex justify-between items-center w-full p-6 text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                  <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                  <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                     {openFaqIndex === index ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (

@@ -72,7 +72,7 @@ export function TimePicker({ value, onChange, className }: TimePickerProps) {
                       key={hour}
                       value={hour.toString()}
                       className={
-                        hour === hours ? "bg-gradient-to-r from-[#ff7c1a] to-[#ff3c1a] text-white font-bold" : ""
+                        hour === hours ? "bg-black text-white font-bold" : ""
                       }
                     >
                       {hour.toString().padStart(2, "0")}
@@ -93,7 +93,7 @@ export function TimePicker({ value, onChange, className }: TimePickerProps) {
                       key={minute}
                       value={minute.toString()}
                       className={
-                        minute === minutes ? "bg-gradient-to-r from-[#ff7c1a] to-[#ff3c1a] text-white font-bold" : ""
+                        minute === minutes ? "bg-black text-white font-bold" : ""
                       }
                     >
                       {minute.toString().padStart(2, "0")}

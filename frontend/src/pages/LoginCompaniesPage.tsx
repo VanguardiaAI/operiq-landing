@@ -64,7 +64,7 @@ export default function LoginCompaniesPage() {
             <Card className="w-full shadow-lg bg-white rounded-xl overflow-hidden border-0 relative z-20">
               <CardContent className="p-6">
                 {error && (
-                  <div className="bg-red-50 p-3 rounded border border-red-200 text-red-600 text-sm mb-4">
+                  <div className="bg-gray-100 p-3 rounded border border-gray-200 text-gray-600 text-sm mb-4">
                     {error}
                   </div>
                 )}

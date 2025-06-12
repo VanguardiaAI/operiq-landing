@@ -60,7 +60,7 @@ export default function VehicleSelectionStep({ sessionData, onComplete }: Vehicl
     return (
       <Card className="max-w-3xl mx-auto shadow-sm">
         <CardContent className="p-6 text-center">
-          <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-4" />
+          <AlertCircle className="h-10 w-10 text-black mx-auto mb-4" />
           <h3 className="font-semibold text-lg mb-2">Error de datos</h3>
           <p className="text-gray-600 mb-4">No se han podido cargar los datos de la sesión</p>
         </CardContent>
@@ -132,7 +132,7 @@ export default function VehicleSelectionStep({ sessionData, onComplete }: Vehicl
   if (error) {
     return (
       <div className="text-center py-8">
-        <h3 className="text-lg font-medium text-red-600">Error</h3>
+        <h3 className="text-lg font-medium text-gray-600">Error</h3>
         <p className="mt-2">{error}</p>
         <button 
           className="mt-4 px-4 py-2 bg-gray-800 text-white rounded-md"
@@ -154,11 +154,11 @@ export default function VehicleSelectionStep({ sessionData, onComplete }: Vehicl
             <p className="text-sm font-medium">sáb, may 10, 2025 a las 10:32 a. m. (CEST)</p>
           </div>
           <div className="flex items-center gap-1 mb-1">
-            <p className="text-sm text-blue-600">{sessionData.from.description}</p>
+            <p className="text-sm text-gray-600">{sessionData.from.description}</p>
             {sessionData.tripType === 'ida' && sessionData.to && (
               <>
                 <span className="text-xs">→</span>
-                <p className="text-sm text-blue-600">{sessionData.to.description}</p>
+                <p className="text-sm text-gray-600">{sessionData.to.description}</p>
               </>
             )}
           </div>
@@ -251,7 +251,7 @@ export default function VehicleSelectionStep({ sessionData, onComplete }: Vehicl
           <button 
             className="w-full py-3 px-4 rounded-md text-white font-semibold relative z-20"
             style={{
-              background: "linear-gradient(90deg, #ff7c1a 0%, #ff3c1a 100%)",
+                              background: "#000000",
             }}
             disabled={!selectedVehicle}
             onClick={handleContinue}

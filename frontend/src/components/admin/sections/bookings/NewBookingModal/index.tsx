@@ -157,28 +157,28 @@ const NewBookingModal = ({
           <div className="mb-6">
             <div className="flex border-b">
               <button 
-                className={`px-4 py-3 text-sm font-medium flex items-center ${activeTab === 'client' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`px-4 py-3 text-sm font-medium flex items-center ${activeTab === 'client' ? 'text-gray-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`}
                 onClick={() => setActiveTab('client')}
               >
                 <span className="bg-gray-200 text-gray-700 rounded-full h-5 w-5 inline-flex items-center justify-center mr-2 text-xs">1</span>
                 Cliente
               </button>
               <button 
-                className={`px-4 py-3 text-sm font-medium flex items-center ${activeTab === 'service' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`px-4 py-3 text-sm font-medium flex items-center ${activeTab === 'service' ? 'text-gray-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`}
                 onClick={() => setActiveTab('service')}
               >
                 <span className="bg-gray-200 text-gray-700 rounded-full h-5 w-5 inline-flex items-center justify-center mr-2 text-xs">2</span>
                 Servicio
               </button>
               <button 
-                className={`px-4 py-3 text-sm font-medium flex items-center ${activeTab === 'details' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`px-4 py-3 text-sm font-medium flex items-center ${activeTab === 'details' ? 'text-gray-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`}
                 onClick={() => setActiveTab('details')}
               >
                 <span className="bg-gray-200 text-gray-700 rounded-full h-5 w-5 inline-flex items-center justify-center mr-2 text-xs">3</span>
                 Detalles
               </button>
               <button 
-                className={`px-4 py-3 text-sm font-medium flex items-center ${activeTab === 'payment' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`px-4 py-3 text-sm font-medium flex items-center ${activeTab === 'payment' ? 'text-gray-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`}
                 onClick={() => setActiveTab('payment')}
               >
                 <span className="bg-gray-200 text-gray-700 rounded-full h-5 w-5 inline-flex items-center justify-center mr-2 text-xs">4</span>

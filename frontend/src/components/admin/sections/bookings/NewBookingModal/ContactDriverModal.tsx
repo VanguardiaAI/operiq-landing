@@ -173,7 +173,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
                 <div className="flex-1">
                   <h3 className="font-semibold text-gray-800">{driverInfo.name}</h3>
                   <div className="flex items-center text-sm text-gray-600 mt-1">
-                    <Star className="h-4 w-4 text-yellow-500 mr-1" />
+                    <Star className="h-4 w-4 text-gray-500 mr-1" />
                     <span>{driverInfo.rating}/5</span>
                     <span className="mx-2">•</span>
                     <span>{driverInfo.total_trips} viajes</span>
@@ -185,7 +185,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
               </div>
 
               {/* Vehicle Info */}
-              <div className="p-4 bg-blue-50 rounded-lg">
+              <div className="p-4 bg-gray-100 rounded-lg">
                 <h4 className="font-medium text-gray-800 mb-2">Detalles del Vehículo</h4>
                 <div className="text-sm text-gray-600 space-y-1">
                   <div><strong>Modelo:</strong> {vehicle.vehicle_data?.model || vehicle.model || 'N/A'}</div>
@@ -233,7 +233,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
                         </button>
                         <button
                           onClick={() => handleContact('phone')}
-                          className="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700 transition-colors"
+                          className="px-3 py-1 bg-black text-white text-sm rounded hover:bg-gray-800 transition-colors"
                         >
                           Llamar
                         </button>
@@ -244,7 +244,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
                   {driverInfo.available_contact_methods?.includes('whatsapp') && (
                     <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
                       <div className="flex items-center">
-                        <MessageCircle className="h-5 w-5 text-green-500 mr-3" />
+                        <MessageCircle className="h-5 w-5 text-gray-600 mr-3" />
                         <div>
                           <div className="font-medium">WhatsApp</div>
                           <div className="text-sm text-gray-600">{driverInfo.whatsapp}</div>
@@ -252,7 +252,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
                       </div>
                       <button
                         onClick={() => handleContact('whatsapp')}
-                        className="px-3 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors flex items-center"
+                        className="px-3 py-1 bg-gray-600 text-white text-sm rounded hover:bg-black transition-colors flex items-center"
                       >
                         <ExternalLink className="h-3 w-3 mr-1" />
                         Enviar
@@ -263,7 +263,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
                   {driverInfo.available_contact_methods?.includes('email') && (
                     <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
                       <div className="flex items-center">
-                        <Mail className="h-5 w-5 text-blue-600 mr-3" />
+                        <Mail className="h-5 w-5 text-gray-600 mr-3" />
                         <div>
                           <div className="font-medium">Email</div>
                           <div className="text-sm text-gray-600">{driverInfo.email}</div>
@@ -279,7 +279,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
                         </button>
                         <button
                           onClick={() => handleContact('email')}
-                          className="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors"
+                          className="px-3 py-1 bg-black text-white text-sm rounded hover:bg-gray-800 transition-colors"
                         >
                           Email
                         </button>
@@ -297,7 +297,7 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
                     {driverInfo.languages.map((lang, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
+                        className="px-2 py-1 bg-gray-200 text-blue-800 text-xs rounded"
                       >
                         {lang}
                       </span>
@@ -322,10 +322,10 @@ const ContactDriverModal: React.FC<ContactDriverModalProps> = ({
             </div>
           ) : (
             <div className="text-center py-8">
-              <div className="text-red-600 mb-2">Error al cargar información del conductor</div>
+              <div className="text-gray-600 mb-2">Error al cargar información del conductor</div>
               <button
                 onClick={fetchDriverContactInfo}
-                className="text-blue-600 hover:text-blue-800 text-sm"
+                className="text-gray-600 hover:text-blue-800 text-sm"
               >
                 Intentar de nuevo
               </button>

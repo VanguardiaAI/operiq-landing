@@ -79,7 +79,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
             <Button
               key={`page-${page}`}
               variant={currentPage === page ? "default" : "outline"}
-              className={currentPage === page ? "bg-red-600 hover:bg-red-700" : ""}
+              className={currentPage === page ? "bg-black hover:bg-gray-800" : ""}
               onClick={() => typeof page === 'number' && onPageChange(page)}
             >
               {page}

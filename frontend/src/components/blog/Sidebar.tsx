@@ -66,7 +66,7 @@ export const Sidebar = ({ onSearch }: SidebarProps) => {
               <li key={idx}>
                 <Link 
                   to={`/blog/categoria/${category.toLowerCase()}`}
-                  className="flex items-center justify-between text-gray-700 hover:text-red-600 transition-colors py-2"
+                  className="flex items-center justify-between text-gray-700 hover:text-gray-600 transition-colors py-2"
                 >
                   <span>{category}</span>
                 </Link>
@@ -86,7 +86,7 @@ export const Sidebar = ({ onSearch }: SidebarProps) => {
             {recentPosts.map(post => (
               <li key={post.id} className="pt-5 first:pt-0 pb-1">
                 <Link to={`/blog/${post.slug}`} className="group block">
-                  <h3 className="text-sm font-medium text-gray-900 group-hover:text-red-600 line-clamp-2 transition-colors">
+                  <h3 className="text-sm font-medium text-gray-900 group-hover:text-gray-600 line-clamp-2 transition-colors">
                     {post.title}
                   </h3>
                   <div className="flex items-center text-xs text-gray-500 mt-2 space-x-2">

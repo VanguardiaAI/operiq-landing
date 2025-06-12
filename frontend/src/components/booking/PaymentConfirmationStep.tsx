@@ -172,7 +172,7 @@ export default function PaymentConfirmationStep({ sessionData }: PaymentConfirma
     return (
       <Card className="max-w-3xl mx-auto shadow-sm">
         <CardContent className="p-6 text-center">
-          <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-4" />
+          <AlertCircle className="h-10 w-10 text-black mx-auto mb-4" />
           <h3 className="font-semibold text-lg mb-2">Error de datos</h3>
           <p className="text-gray-600 mb-4">No se han podido cargar los datos de la sesión</p>
         </CardContent>
@@ -210,7 +210,7 @@ export default function PaymentConfirmationStep({ sessionData }: PaymentConfirma
     return (
       <Card className="max-w-3xl mx-auto shadow-sm">
         <CardContent className="p-6 flex flex-col items-center justify-center min-h-[400px]">
-          <XCircle className="h-12 w-12 text-red-500 mb-4" />
+          <XCircle className="h-12 w-12 text-black mb-4" />
           <h2 className="text-xl font-semibold mb-2">Error al confirmar la reserva</h2>
           <p className="text-gray-500 mb-4">{error}</p>
           <div className="flex gap-4">

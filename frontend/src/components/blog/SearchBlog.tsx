@@ -29,7 +29,7 @@ export const SearchBlog = ({ onSearch, initialQuery = "" }: SearchBlogProps) => 
         type="submit" 
         size="icon" 
         variant="ghost" 
-        className="absolute right-0 top-0 h-full text-gray-400 hover:text-red-600"
+        className="absolute right-0 top-0 h-full text-gray-400 hover:text-gray-600"
       >
         <Search size={18} />
       </Button>

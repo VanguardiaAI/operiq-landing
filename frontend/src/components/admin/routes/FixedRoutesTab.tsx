@@ -116,7 +116,7 @@ const GoogleRouteMap = ({ origin, destination }: {
           <span><span className="font-bold">Ruta:</span> {origin.name} → {destination.name}</span>
           <div className="flex items-center">
             {error && (
-              <span className="text-xs bg-red-100 text-red-600 p-1 rounded mr-2">
+              <span className="text-xs bg-gray-200 text-gray-600 p-1 rounded mr-2">
                 {error}
               </span>
             )}
@@ -153,19 +153,19 @@ const GoogleRouteMap = ({ origin, destination }: {
                   <div>
                     <div className="font-bold text-lg mb-1">Ruta</div>
                     <div className="flex items-start">
-                      <MapPin className="h-4 w-4 text-red-500 mt-0.5 mr-1 flex-shrink-0" />
+                      <MapPin className="h-4 w-4 text-black mt-0.5 mr-1 flex-shrink-0" />
                       <span className="font-medium">Origen:</span>
                       <span className="ml-1">{origin.name}</span>
                     </div>
                     <div className="flex items-start mt-1">
-                      <MapPin className="h-4 w-4 text-blue-500 mt-0.5 mr-1 flex-shrink-0" />
+                      <MapPin className="h-4 w-4 text-black mt-0.5 mr-1 flex-shrink-0" />
                       <span className="font-medium">Destino:</span>
                       <span className="ml-1">{destination.name}</span>
                     </div>
                   </div>
                   <Button
                     variant="default"
-                    className="bg-red-600 hover:bg-red-700 text-white"
+                    className="bg-black hover:bg-gray-800 text-white"
                     onClick={() => setShowFullscreen(false)}
                   >
                     <X className="h-4 w-4 mr-2" />
@@ -438,7 +438,7 @@ const FixedRoutesTab = ({
               </select>
               <Button 
                 onClick={handleAddRoute}
-                className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
                 <PlusCircle size={18} className="mr-2" />
                 Nueva Ruta Fija
@@ -496,19 +496,19 @@ const FixedRoutesTab = ({
                       <td className="px-6 py-4">
                         <div className="text-sm text-gray-900 flex flex-col">
                           <div className="flex items-start">
-                            <MapPin className="h-4 w-4 text-red-500 mt-0.5 mr-1 flex-shrink-0" />
+                            <MapPin className="h-4 w-4 text-black mt-0.5 mr-1 flex-shrink-0" />
                             <span>{truncateAddressForTable(route.origin.name)}</span>
                           </div>
                           <div className="flex items-start mt-2">
-                            <MapPin className="h-4 w-4 text-blue-500 mt-0.5 mr-1 flex-shrink-0" />
+                            <MapPin className="h-4 w-4 text-black mt-0.5 mr-1 flex-shrink-0" />
                             <span>{truncateAddressForTable(route.destination.name)}</span>
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                            <Building className="h-4 w-4 text-blue-600" />
+                          <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <Building className="h-4 w-4 text-gray-600" />
                           </div>
                           <div className="text-sm text-gray-900">
                             {getCollaboratorName(route.collaboratorId)}
@@ -539,7 +539,7 @@ const FixedRoutesTab = ({
                             
                             {/* Mostrar contador si hay más vehículos */}
                             {route.vehicles.length > 1 && (
-                              <div className="ml-2 text-xs text-blue-600">
+                              <div className="ml-2 text-xs text-gray-600">
                                 +{route.vehicles.length - 1} vehículo{route.vehicles.length - 1 > 1 ? 's' : ''} más
                               </div>
                             )}
@@ -623,7 +623,7 @@ const FixedRoutesTab = ({
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <Badge className={`
-                          ${route.status === 'active' ? 'bg-green-100 text-green-800 hover:bg-green-100' : 
+                          ${route.status === 'active' ? 'bg-gray-200 text-green-800 hover:bg-gray-200' : 
                             route.status === 'inactive' ? 'bg-gray-100 text-gray-800 hover:bg-gray-100' : 
                             'bg-amber-100 text-amber-800 hover:bg-amber-100'}
                         `}>
@@ -685,7 +685,7 @@ const FixedRoutesTab = ({
                           className="text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                         >
                           {route.status === 'active' ? (
-                            <ToggleRight className="h-5 w-5 text-green-500" />
+                            <ToggleRight className="h-5 w-5 text-gray-600" />
                           ) : (
                             <ToggleLeft className="h-5 w-5 text-gray-400" />
                           )}
@@ -697,7 +697,7 @@ const FixedRoutesTab = ({
                             e.stopPropagation(); 
                             handleEditRoute(route); 
                           }}
-                          className="text-blue-600 hover:text-blue-800 hover:bg-blue-50"
+                          className="text-gray-600 hover:text-blue-800 hover:bg-gray-100"
                         >
                           <Edit className="h-4 w-4" />
                         </Button>
@@ -708,7 +708,7 @@ const FixedRoutesTab = ({
                             e.stopPropagation();
                             handleDeleteRoute(route.id, e);
                           }}
-                          className="text-red-600 hover:text-red-800 hover:bg-red-50"
+                          className="text-gray-600 hover:text-gray-800 hover:bg-gray-100"
                         >
                           <Trash2 className="h-4 w-4" />
                         </Button>
@@ -726,7 +726,7 @@ const FixedRoutesTab = ({
                   <p className="text-gray-500">No se encontraron rutas fijas que coincidan con los criterios de búsqueda</p>
                   <Button 
                     onClick={handleAddRoute}
-                    className="mt-4 flex items-center mx-auto px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                    className="mt-4 flex items-center mx-auto px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
                   >
                     <PlusCircle size={18} className="mr-2" />
                     Crear Nueva Ruta
@@ -745,7 +745,7 @@ const FixedRoutesTab = ({
             <DialogTitle className="text-xl flex items-center gap-2">
               {selectedRoute?.name}
               <Badge className={`ml-2 ${
-                selectedRoute?.status === 'active' ? 'bg-green-100 text-green-800' : 
+                selectedRoute?.status === 'active' ? 'bg-gray-200 text-green-800' : 
                 selectedRoute?.status === 'inactive' ? 'bg-gray-100 text-gray-800' : 
                 'bg-amber-100 text-amber-800'
               }`}>
@@ -768,7 +768,7 @@ const FixedRoutesTab = ({
                   <div>
                     <div className="text-sm font-medium text-gray-500">Origen</div>
                     <div className="flex items-start mt-1">
-                      <MapPin className="h-4 w-4 text-red-500 mt-0.5 mr-1 flex-shrink-0" />
+                      <MapPin className="h-4 w-4 text-black mt-0.5 mr-1 flex-shrink-0" />
                       <span className="text-base">{selectedRoute.origin.name}</span>
                     </div>
                   </div>
@@ -776,7 +776,7 @@ const FixedRoutesTab = ({
                   <div>
                     <div className="text-sm font-medium text-gray-500">Destino</div>
                     <div className="flex items-start mt-1">
-                      <MapPin className="h-4 w-4 text-blue-500 mt-0.5 mr-1 flex-shrink-0" />
+                      <MapPin className="h-4 w-4 text-black mt-0.5 mr-1 flex-shrink-0" />
                       <span className="text-base">{selectedRoute.destination.name}</span>
                     </div>
                   </div>
@@ -799,8 +799,8 @@ const FixedRoutesTab = ({
                 <div>
                   <h3 className="font-medium text-gray-900 text-base mb-2">Colaborador</h3>
                   <div className="flex items-center bg-gray-50 p-4 rounded-lg">
-                    <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                      <Building className="h-5 w-5 text-blue-600" />
+                    <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                      <Building className="h-5 w-5 text-gray-600" />
                     </div>
                     <div>
                       <div className="font-medium">
@@ -975,7 +975,7 @@ const FixedRoutesTab = ({
               Cerrar
             </Button>
             <Button
-              className="bg-blue-600 text-white hover:bg-blue-700"
+              className="bg-black text-white hover:bg-gray-800"
               onClick={() => {
                 if (selectedRoute) {
                   setShowDetailsDialog(false);
@@ -1000,7 +1000,7 @@ const FixedRoutesTab = ({
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancelar</AlertDialogCancel>
-            <AlertDialogAction onClick={confirmDelete} className="bg-red-600 hover:bg-red-700">
+            <AlertDialogAction onClick={confirmDelete} className="bg-black hover:bg-gray-800">
               Eliminar
             </AlertDialogAction>
           </AlertDialogFooter>

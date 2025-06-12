@@ -8,7 +8,7 @@ print("🌐 PROBANDO ENDPOINT DE DISPONIBILIDAD")
 print("=" * 50)
 
 # Configuración de la prueba
-api_url = "http://localhost:5000/api/admin/reservations/search-vehicles"
+api_url = "http://localhost:5001/api/admin/reservations/search-vehicles"
 
 # Datos de la solicitud (simulando lo que hace el frontend)
 request_data = {
@@ -82,7 +82,7 @@ try:
         
 except requests.exceptions.RequestException as e:
     print(f"❌ Error de conexión: {str(e)}")
-    print("   ¿Está corriendo el servidor backend en localhost:5000?")
+    print("   ¿Está corriendo el servidor backend en localhost:5001?")
 except Exception as e:
     print(f"❌ Error inesperado: {str(e)}")
 

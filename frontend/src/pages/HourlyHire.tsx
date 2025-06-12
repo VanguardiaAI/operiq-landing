@@ -68,7 +68,7 @@ const HourlyHire = () => {
       question: "¿El chófer habla inglés?",
       answer: (
         <p className="text-gray-600">
-          Los chóferes de Operiq hablan inglés básico, así como el idioma local del país en el que se realiza el viaje.
+          Los chóferes de Privyde hablan inglés básico, así como el idioma local del país en el que se realiza el viaje.
         </p>
       ),
     },
@@ -78,7 +78,7 @@ const HourlyHire = () => {
         <div className="text-gray-600">
           <p className="mb-2">Sí, esto es posible.</p>
           <p className="mb-2">Sin embargo, si tu reserva por hora termina en una ciudad diferente a aquella en la que comenzaste, se aplicará un cargo por devolución del vehículo. Esto tiene en cuenta el tiempo y la distancia que el chófer debe recorrer para volver al lugar original. Si planeas viajar entre ciudades, te recomendamos reservar un viaje de ciudad a ciudad.</p>
-          <p>Si necesitas un chófer durante varios días, ponte en contacto con el servicio de atención al cliente a través de chat o correo electrónico en service@operiq.com.</p>
+          <p>Si necesitas un chófer durante varios días, ponte en contacto con el servicio de atención al cliente a través de chat o correo electrónico en service@privyde.com.</p>
         </div>
       ),
     },
@@ -127,13 +127,13 @@ const HourlyHire = () => {
     },
     {
       country: "Portugal",
-      text: "The chauffeurs are not mere drivers but highly trained professionals, making every journey a delight. Whether you're off to a crucial meeting or heading to the airport, Operiq ensures you arrive relaxed and on time.",
+      text: "The chauffeurs are not mere drivers but highly trained professionals, making every journey a delight. Whether you're off to a crucial meeting or heading to the airport, Privyde ensures you arrive relaxed and on time.",
       stars: 5,
       source: "iOS app store"
     },
     {
       country: "Canadá",
-      text: "Operiq… the app all travelers need to know about! I am delighted by this app and the service it provides. Hourly or point-to-point service at the touch of a button. Haven't found a place where it doesn't work yet.",
+      text: "Privyde… the app all travelers need to know about! I am delighted by this app and the service it provides. Hourly or point-to-point service at the touch of a button. Haven't found a place where it doesn't work yet.",
       stars: 5,
       source: "iOS app store"
     }
@@ -207,8 +207,8 @@ const HourlyHire = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-red-50 p-2 rounded-full mt-1 mr-4">
-                    <CalendarCheck className="h-5 w-5 text-red-500" />
+                  <div className="bg-gray-100 p-2 rounded-full mt-1 mr-4">
+                    <CalendarCheck className="h-5 w-5 text-black" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Establece el itinerario</h3>
@@ -217,8 +217,8 @@ const HourlyHire = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-red-50 p-2 rounded-full mt-1 mr-4">
-                    <Clock className="h-5 w-5 text-red-500" />
+                  <div className="bg-gray-100 p-2 rounded-full mt-1 mr-4">
+                    <Clock className="h-5 w-5 text-black" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Ahorra tiempo</h3>
@@ -227,8 +227,8 @@ const HourlyHire = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-red-50 p-2 rounded-full mt-1 mr-4">
-                    <Shield className="h-5 w-5 text-red-500" />
+                  <div className="bg-gray-100 p-2 rounded-full mt-1 mr-4">
+                    <Shield className="h-5 w-5 text-black" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Disfruta de tu tranquilidad</h3>
@@ -237,8 +237,8 @@ const HourlyHire = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-red-50 p-2 rounded-full mt-1 mr-4">
-                    <DollarSign className="h-5 w-5 text-red-500" />
+                  <div className="bg-gray-100 p-2 rounded-full mt-1 mr-4">
+                    <DollarSign className="h-5 w-5 text-black" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Tarifas competitivas</h3>
@@ -247,8 +247,8 @@ const HourlyHire = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-red-50 p-2 rounded-full mt-1 mr-4">
-                    <Star className="h-5 w-5 text-red-500" />
+                  <div className="bg-gray-100 p-2 rounded-full mt-1 mr-4">
+                    <Star className="h-5 w-5 text-black" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Fiabilidad</h3>
@@ -257,8 +257,8 @@ const HourlyHire = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-red-50 p-2 rounded-full mt-1 mr-4">
-                    <Shield className="h-5 w-5 text-red-500" />
+                  <div className="bg-gray-100 p-2 rounded-full mt-1 mr-4">
+                    <Shield className="h-5 w-5 text-black" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Sostenibilidad</h3>
@@ -267,8 +267,8 @@ const HourlyHire = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-red-50 p-2 rounded-full mt-1 mr-4">
-                    <Wifi className="h-5 w-5 text-red-500" />
+                  <div className="bg-gray-100 p-2 rounded-full mt-1 mr-4">
+                    <Wifi className="h-5 w-5 text-black" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Wi-Fi disponible</h3>
@@ -294,7 +294,7 @@ const HourlyHire = () => {
             <div>
               <img 
                 src="/images/white-suite.png" 
-                alt="A Operiq chauffeur opens the door for his guest who steps out in a white suit."
+                alt="A Privyde chauffeur opens the door for his guest who steps out in a white suit."
                 className="w-full h-auto rounded-xl shadow-lg object-cover"
               />
             </div>
@@ -343,7 +343,7 @@ const HourlyHire = () => {
           <div className="flex justify-center mb-12">
             <img 
               src="/images/futuristic-city-choffer.jpeg" 
-              alt="A map showing the many countries where Operiq in available."
+              alt="A map showing the many countries where Privyde in available."
               className="max-w-full h-auto rounded-lg shadow-md"
             />
           </div>
@@ -354,7 +354,7 @@ const HourlyHire = () => {
               <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.stars)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-gray-400 fill-current" />
                   ))}
                   <span className="ml-2 text-gray-500 text-sm">{testimonial.source}</span>
                 </div>
@@ -369,21 +369,21 @@ const HourlyHire = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Preguntas frecuentes
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
               >
                 <button
                   className="flex justify-between items-center w-full p-6 text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                  <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                  <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                     {openFaqIndex === index ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (
@@ -415,7 +415,7 @@ const HourlyHire = () => {
             <div>
               <img 
                 src="/images/woman-in-a-suit-walking.jpeg" 
-                alt="A woman in a suit walking away from her Operiq ride."
+                alt="A woman in a suit walking away from her Privyde ride."
                 className="w-full h-auto rounded-xl shadow-lg object-cover"
               />
             </div>
@@ -431,7 +431,7 @@ const HourlyHire = () => {
               <div className="flex justify-center md:justify-start">
                 <img 
                   src="/images/app-screen.png" 
-                  alt="Pantalla de inicio de la aplicación Operiq"
+                  alt="Pantalla de inicio de la aplicación Privyde"
                   className="max-w-xs h-auto rounded-lg shadow-lg"
                 />
               </div>

@@ -79,7 +79,7 @@ const BlogPostPage = () => {
   return (
     <>
       <header>
-        <title>{post.title} | Blog Operiq</title>
+        <title>{post.title} | Blog Privyde</title>
         <meta name="description" content={post.excerpt} />
         {post.seoData && (
           <>
@@ -113,7 +113,7 @@ const BlogPostPage = () => {
                     <Link 
                       key={idx} 
                       to={`/blog/categoria/${category.toLowerCase()}`} 
-                      className="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition-colors hover:bg-red-700"
+                      className="inline-block bg-black text-white px-3 py-1 rounded-full text-sm font-medium transition-colors hover:bg-gray-800"
                     >
                       {category}
                     </Link>
@@ -157,7 +157,7 @@ const BlogPostPage = () => {
             <div className="lg:w-2/3">
               {/* Navegación de regreso */}
               <div className="mb-8">
-                <Button variant="ghost" asChild className="flex items-center text-gray-600 hover:text-red-600">
+                <Button variant="ghost" asChild className="flex items-center text-gray-600 hover:text-gray-600">
                   <Link to="/blog">
                     <ArrowLeft size={18} className="mr-2" />
                     Volver al blog
@@ -176,7 +176,7 @@ const BlogPostPage = () => {
                         <Link 
                           key={idx} 
                           to={`/blog/categoria/${category.toLowerCase()}`} 
-                          className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium transition-colors hover:bg-red-200"
+                          className="inline-block bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium transition-colors hover:bg-red-200"
                         >
                           {category}
                         </Link>
@@ -191,11 +191,11 @@ const BlogPostPage = () => {
                     {/* Meta información */}
                     <div className="flex flex-wrap items-center text-gray-500 text-sm mb-8 gap-6">
                       <div className="flex items-center">
-                        <User size={16} className="mr-2 text-red-500" />
+                        <User size={16} className="mr-2 text-black" />
                         <span>{post.author}</span>
                       </div>
                       <div className="flex items-center">
-                        <CalendarIcon size={16} className="mr-2 text-red-500" />
+                        <CalendarIcon size={16} className="mr-2 text-black" />
                         <span>{new Date(post.publishDate).toLocaleDateString('es-ES', {
                           year: 'numeric',
                           month: 'long',
@@ -203,7 +203,7 @@ const BlogPostPage = () => {
                         })}</span>
                       </div>
                       <div className="flex items-center">
-                        <Clock size={16} className="mr-2 text-red-500" />
+                        <Clock size={16} className="mr-2 text-black" />
                         <span>{readingTime} min de lectura</span>
                       </div>
                     </div>

@@ -207,7 +207,7 @@ const SuggestScheduleModal: React.FC<SuggestScheduleModalProps> = ({
         <div className="p-6 space-y-6">
           {/* Vehicle and Trip Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-blue-50 rounded-lg">
+            <div className="p-4 bg-gray-100 rounded-lg">
               <h3 className="font-medium text-gray-800 mb-2">Vehículo</h3>
               <div className="text-sm space-y-1">
                 <div><strong>Modelo:</strong> {vehicle.vehicle_data?.model || vehicle.model || 'N/A'}</div>
@@ -299,7 +299,7 @@ const SuggestScheduleModal: React.FC<SuggestScheduleModalProps> = ({
                       onClick={() => handleSlotToggle(formattedSlot)}
                       className={`p-2 text-sm border rounded-md transition-colors ${
                         isSelected
-                          ? 'bg-blue-500 text-white border-blue-500'
+                          ? 'bg-gray-1000 text-white border-blue-500'
                           : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
                       }`}
                     >
@@ -410,7 +410,7 @@ const SuggestScheduleModal: React.FC<SuggestScheduleModalProps> = ({
           <Button
             onClick={handleSubmitSuggestion}
             disabled={isSubmitting || selectedSlots.length === 0}
-            className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+            className="bg-black hover:bg-gray-800 disabled:opacity-50"
           >
             {isSubmitting ? (
               <>

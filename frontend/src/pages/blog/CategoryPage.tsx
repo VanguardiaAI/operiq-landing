@@ -66,10 +66,10 @@ const CategoryPage = () => {
   return (
     <>
       <header>
-        <title>{categoryName ? `${categoryName} - Blog Operiq` : "Blog | Operiq"}</title>
+                <title>{categoryName ? `${categoryName} - Blog Privyde` : "Blog | Privyde"}</title>
         <meta 
           name="description" 
-          content={categoryName ? `Artículos sobre ${categoryName} en el blog de Operiq` : "Blog de Operiq"} 
+          content={categoryName ? `Artículos sobre ${categoryName} en el blog de Privyde` : "Blog de Privyde"}
         />
       </header>
       
@@ -79,7 +79,7 @@ const CategoryPage = () => {
         {/* Hero de categoría */}
         <section className="relative py-16 bg-gradient-to-r from-gray-900 to-black overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-20">
-            <div className="absolute -top-20 -left-20 w-72 h-72 bg-red-500 rounded-full blur-3xl"></div>
+            <div className="absolute -top-20 -left-20 w-72 h-72 bg-gray-1000 rounded-full blur-3xl"></div>
           </div>
           <div className="container relative mx-auto px-4 z-10">
             <div className="max-w-3xl">
@@ -96,7 +96,7 @@ const CategoryPage = () => {
               </div>
               
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-red-600 p-2.5 rounded-lg">
+                <div className="bg-black p-2.5 rounded-lg">
                   <FolderOpen size={22} className="text-white" />
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
@@ -106,7 +106,7 @@ const CategoryPage = () => {
               
               {category && (
                 <p className="text-xl text-white/80 mb-6 max-w-2xl">
-                  Explora nuestros artículos sobre <span className="text-red-400 font-medium">{categoryName}</span>, con información valiosa para mejorar tu experiencia en transporte ejecutivo.
+                  Explora nuestros artículos sobre <span className="text-gray-400 font-medium">{categoryName}</span>, con información valiosa para mejorar tu experiencia en transporte ejecutivo.
                 </p>
               )}
             </div>
@@ -152,7 +152,7 @@ const CategoryPage = () => {
                   </>
                 ) : (
                   <div className="text-center py-16 px-6 bg-white rounded-lg shadow-sm border border-gray-100">
-                    <div className="inline-flex justify-center items-center w-16 h-16 bg-red-100 rounded-full text-red-500 mb-6">
+                    <div className="inline-flex justify-center items-center w-16 h-16 bg-gray-200 rounded-full text-black mb-6">
                       <FolderOpen size={28} />
                     </div>
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">Categoría vacía</h2>

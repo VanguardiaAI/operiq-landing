@@ -172,7 +172,7 @@ def create_conversation():
                 "timestamp": current_time,
                 "isAdmin": True,
                 "senderId": "admin",
-                "senderName": "Soporte Operiq"
+                "senderName": "Soporte Privyde"
             },
             "unreadCount": 0,
             "status": "open",
@@ -192,7 +192,7 @@ def create_conversation():
             "timestamp": current_time,
             "sender": {
                 "id": "admin",
-                "name": "Soporte Operiq",
+                "name": "Soporte Privyde",
                 "isAdmin": True
             },
             "recipient": {
@@ -295,7 +295,7 @@ def send_message():
             },
             "recipient": {
                 "id": "admin" if not data["sender"].get("isAdmin") else conversation["userId"],
-                "name": "Soporte Operiq" if not data["sender"].get("isAdmin") else conversation["userName"],
+                "name": "Soporte Privyde" if not data["sender"].get("isAdmin") else conversation["userName"],
             },
             "read": False,
             "status": data.get("status", conversation["status"]),

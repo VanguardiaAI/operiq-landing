@@ -112,7 +112,7 @@ export default function CheckoutForm({
         </div>
         
         {error && (
-          <div className="bg-red-50 p-4 rounded-md text-red-700 text-sm">
+                          <div className="bg-gray-100 p-4 rounded-md text-gray-700 text-sm">
             {error}
           </div>
         )}
@@ -156,7 +156,7 @@ export default function CheckoutForm({
               type="submit" 
               className="w-48 py-3 px-4 rounded-md text-white font-semibold relative z-20"
               style={{
-                background: "linear-gradient(90deg, #ff7c1a 0%, #ff3c1a 100%)",
+                background: "#000000",
               }}
               disabled={loading || !stripe || !ready}
             >

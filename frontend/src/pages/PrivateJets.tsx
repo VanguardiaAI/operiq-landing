@@ -201,7 +201,7 @@ const PrivateJets = () => {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Clock className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Ahorre tiempo valioso</h3>
@@ -211,7 +211,7 @@ const PrivateJets = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Shield className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Privacidad y seguridad</h3>
@@ -221,7 +221,7 @@ const PrivateJets = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Plane className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Acceso global</h3>
@@ -277,7 +277,7 @@ const PrivateJets = () => {
                             key={index}
                             onClick={() => setActiveServiceClass(index)}
                             className={`w-2 h-2 rounded-full ${
-                              activeServiceClass === index ? 'bg-red-500' : 'bg-white bg-opacity-70'
+                              activeServiceClass === index ? 'bg-gray-1000' : 'bg-white bg-opacity-70'
                             }`}
                             aria-label={`Ir a diapositiva ${index + 1}`}
                           />
@@ -292,19 +292,19 @@ const PrivateJets = () => {
                       <div className="border-t border-gray-200 pt-4">
                         <ul className="space-y-3">
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].capacity}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].luggage}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].availability}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].range}</span>
                           </li>
                         </ul>
@@ -383,13 +383,13 @@ const PrivateJets = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             El proceso de reserva simplificado
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-red-500">1</span>
+                <span className="text-2xl font-bold text-black">1</span>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Solicitud</h3>
               <p className="text-gray-600">
@@ -399,7 +399,7 @@ const PrivateJets = () => {
             
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-red-500">2</span>
+                <span className="text-2xl font-bold text-black">2</span>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Propuesta</h3>
               <p className="text-gray-600">
@@ -409,7 +409,7 @@ const PrivateJets = () => {
             
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-red-500">3</span>
+                <span className="text-2xl font-bold text-black">3</span>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Confirmación</h3>
               <p className="text-gray-600">
@@ -419,7 +419,7 @@ const PrivateJets = () => {
             
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-red-500">4</span>
+                <span className="text-2xl font-bold text-black">4</span>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Experiencia</h3>
               <p className="text-gray-600">
@@ -433,7 +433,7 @@ const PrivateJets = () => {
         <section className="mb-20 bg-gray-50 py-12 rounded-xl">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Lo que dicen nuestros clientes
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="max-w-5xl mx-auto px-4">
@@ -441,7 +441,7 @@ const PrivateJets = () => {
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-gray-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">"Como CEO que viaja constantemente, el servicio de jets privados ha transformado radicalmente mi productividad. Puedo visitar tres ciudades en un día y seguir llegando a casa para cenar con mi familia. La flexibilidad y el tiempo ahorrado justifican completamente la inversión."</p>
@@ -454,7 +454,7 @@ const PrivateJets = () => {
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-gray-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">"Viajamos con nuestra familia extendida, incluidos niños pequeños y nuestra mascota. La experiencia fue incomparable: sin estrés, sin esperas y con un servicio absolutamente personalizado. Los niños disfrutaron enormemente y pudimos comenzar nuestras vacaciones desde el momento en que abordamos."</p>
@@ -471,21 +471,21 @@ const PrivateJets = () => {
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
             Preguntas frecuentes
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
               >
                 <button
                   className="flex justify-between items-center w-full p-6 text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                  <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                  <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                     {openFaqIndex === index ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (
@@ -522,7 +522,7 @@ const PrivateJets = () => {
                 Permítanos mostrarle cómo nuestro servicio de jets privados puede transformar su experiencia de viaje. Hable con nuestros especialistas para recibir un presupuesto personalizado o solicitar más información.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-red-500 hover:bg-red-600 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">
+                <button className="bg-gray-1000 hover:bg-black text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">
                   Solicitar presupuesto
                 </button>
                 <button className="bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">

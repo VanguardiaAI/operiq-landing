@@ -5,7 +5,7 @@ import DownloadSection from "@/components/download-section"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import SupportChat from "@/components/SupportChat"
-import "../styles/operiq.css"
+import "../styles/privyde.css"
 import { Link } from "react-router-dom"
 
 const servicesData = [
@@ -201,7 +201,7 @@ export default function Home() {
                     className="object-cover"
                   />
                   {/* {service.isNew && (
-                    <span className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-semibold px-2.5 py-1 rounded">
+                    <span className="absolute top-3 right-3 bg-gray-600 text-white text-xs font-semibold px-2.5 py-1 rounded">
                       NUEVO
                     </span>
                   )} */}
@@ -209,7 +209,7 @@ export default function Home() {
                 <div className="p-5 flex flex-col flex-grow">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-gray-600 text-sm mb-4 flex-grow">{service.description}</p>
-                  <Link to={service.linkHref || "#"} className="text-blue-600 hover:text-blue-700 font-medium self-start mt-auto">
+                  <Link to={service.linkHref || "#"} className="text-gray-600 hover:text-blue-700 font-medium self-start mt-auto">
                     {service.linkText}
                   </Link>
                 </div>
@@ -230,7 +230,7 @@ export default function Home() {
           <div className="mb-12 md:mb-16">
             <div className="flex justify-between items-center mb-6 md:mb-8">
               <h3 className="text-2xl font-semibold text-gray-700">Principales ciudades</h3>
-              <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
+              <a href="#" className="text-gray-600 hover:text-blue-700 font-medium">
                 Ver todo
               </a>
             </div>
@@ -258,7 +258,7 @@ export default function Home() {
           <div className="mb-12 md:mb-16">
             <div className="flex justify-between items-center mb-6 md:mb-8">
               <h3 className="text-2xl font-semibold text-gray-700">Principales rutas</h3>
-              <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
+              <a href="#" className="text-gray-600 hover:text-blue-700 font-medium">
                 Ver todo
               </a>
             </div>
@@ -282,7 +282,7 @@ export default function Home() {
               <h4 className="text-lg font-semibold text-gray-800 mb-1">¿Tiene en mente ruta?</h4>
               <p className="text-gray-600">Introduzca sus destinos ideales para ver el precio.</p>
             </div>
-            <Link to="/city-to-city" className="mt-4 md:mt-0 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-150 ease-in-out">
+            <Link to="/city-to-city" className="mt-4 md:mt-0 bg-black hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-150 ease-in-out">
               Reservar un viaje de ciudad a ciudad
             </Link>
           </div>
@@ -299,7 +299,7 @@ export default function Home() {
               return (
                 <div key={index} className="border border-gray-200 rounded-lg p-6 flex flex-col text-left">
                   <div className="flex items-center mb-3">
-                    <IconComponent className="h-7 w-7 text-red-500 mr-3 flex-shrink-0" />
+                    <IconComponent className="h-7 w-7 text-black mr-3 flex-shrink-0" />
                     <h3 className="text-lg font-semibold text-gray-800">{feature.title}</h3>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>

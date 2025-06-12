@@ -116,7 +116,7 @@ const PaymentTab = ({
               
               {/* Mensaje especial para ida y vuelta */}
               {newBookingFormData.payment.priceBreakdown.is_round_trip && (
-                <div className="mb-4 p-3 bg-blue-50 rounded border-l-4 border-blue-400 text-sm">
+                <div className="mb-4 p-3 bg-gray-100 rounded border-l-4 border-blue-400 text-sm">
                   <div className="font-medium text-blue-800 mb-1">Viaje de ida y vuelta</div>
                   <div className="text-blue-700">
                     El precio incluye tanto el trayecto de ida como el de vuelta. La distancia total calculada 
@@ -156,7 +156,7 @@ const PaymentTab = ({
               
               <div className="flex justify-between items-center border-t pt-3 mt-2">
                 <span className="font-bold text-lg">Total:</span>
-                <span className="font-bold text-lg text-red-600">
+                <span className="font-bold text-lg text-gray-600">
                   {priceCalculationService.formatPrice(newBookingFormData.payment.priceBreakdown.total)}
                 </span>
               </div>
@@ -169,7 +169,7 @@ const PaymentTab = ({
                 <label className="flex items-center p-3 border rounded-md cursor-pointer hover:bg-gray-50">
                   <input 
                     type="radio" 
-                    className="form-radio text-red-600" 
+                    className="form-radio text-gray-600" 
                     name="payment_method"
                     checked={newBookingFormData.payment.method === 'credit_card'}
                     onChange={() => handleFormChange('payment', 'method', 'credit_card')}
@@ -183,7 +183,7 @@ const PaymentTab = ({
                 <label className="flex items-center p-3 border rounded-md cursor-pointer hover:bg-gray-50">
                   <input 
                     type="radio" 
-                    className="form-radio text-red-600" 
+                    className="form-radio text-gray-600" 
                     name="payment_method"
                     checked={newBookingFormData.payment.method === 'cash'}
                     onChange={() => handleFormChange('payment', 'method', 'cash')}
@@ -197,7 +197,7 @@ const PaymentTab = ({
                 <label className="flex items-center p-3 border rounded-md cursor-pointer hover:bg-gray-50">
                   <input 
                     type="radio" 
-                    className="form-radio text-red-600" 
+                    className="form-radio text-gray-600" 
                     name="payment_method"
                     checked={newBookingFormData.payment.method === 'invoice'}
                     onChange={() => handleFormChange('payment', 'method', 'invoice')}
@@ -211,7 +211,7 @@ const PaymentTab = ({
                 <label className="flex items-center p-3 border rounded-md cursor-pointer hover:bg-gray-50">
                   <input 
                     type="radio" 
-                    className="form-radio text-red-600" 
+                    className="form-radio text-gray-600" 
                     name="payment_method" 
                     checked={newBookingFormData.payment.method === 'corporate_account'}
                     onChange={() => handleFormChange('payment', 'method', 'corporate_account')}
@@ -256,7 +256,7 @@ const PaymentTab = ({
           Anterior: Detalles
         </Button>
         <Button 
-          className="bg-red-600 hover:bg-red-700 text-sm"
+          className="bg-black hover:bg-gray-800 text-sm"
           onClick={handleSubmitNewBooking}
           disabled={!hasPriceCalculated}
         >

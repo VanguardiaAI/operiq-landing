@@ -174,7 +174,7 @@ export default function AdminPage() {
       <div className="hidden md:flex flex-col w-64 border-r bg-white">
         <div className="p-5 border-b">
           <h1 className="text-xl font-bold text-gray-800">Panel Admin</h1>
-          <p className="text-sm text-gray-500 mt-1">Operiq Transport</p>
+          <p className="text-sm text-gray-500 mt-1">Privyde Transport</p>
         </div>
         
         <div className="flex-1 overflow-y-auto py-4">
@@ -184,7 +184,7 @@ export default function AdminPage() {
                 key={item.id}
                 className={`w-full flex items-center px-4 py-3 text-sm rounded-lg transition-colors ${
                   activeSection === item.id 
-                    ? "bg-red-50 text-red-600" 
+                    ? "bg-gray-100 text-gray-600" 
                     : "text-gray-700 hover:bg-gray-100"
                 }`}
                 onClick={() => setActiveSection(item.id)}
@@ -224,7 +224,7 @@ export default function AdminPage() {
                   key={item.id}
                   className={`w-full flex items-center px-4 py-3 text-sm rounded-lg transition-colors ${
                     activeSection === item.id 
-                      ? "bg-red-50 text-red-600" 
+                      ? "bg-gray-100 text-gray-600" 
                       : "text-gray-700 hover:bg-gray-100"
                   }`}
                   onClick={() => {
@@ -304,7 +304,7 @@ export default function AdminPage() {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
-                <button className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                <button className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
                   <PlusCircle size={18} className="mr-2" />
                   Nueva acción
                 </button>
@@ -315,19 +315,19 @@ export default function AdminPage() {
                 <StatCard 
                   title="Usuarios activos" 
                   value="245" 
-                  icon={<Users size={24} className="text-blue-500" />} 
-                  color="bg-blue-50" 
+                  icon={<Users size={24} className="text-black" />} 
+                  color="bg-gray-100" 
                 />
                 <StatCard 
                   title="Reservas hoy" 
                   value="12" 
-                  icon={<CalendarClock size={24} className="text-green-500" />} 
+                  icon={<CalendarClock size={24} className="text-gray-600" />} 
                   color="bg-green-50" 
                 />
                 <StatCard 
                   title="Vehículos disponibles" 
                   value="18" 
-                  icon={<Car size={24} className="text-purple-500" />} 
+                  icon={<Car size={24} className="text-gray-500" />} 
                   color="bg-purple-50" 
                 />
                 <StatCard 
@@ -344,7 +344,7 @@ export default function AdminPage() {
                 <div className="lg:col-span-2 bg-white rounded-xl shadow-md p-6">
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-lg font-semibold text-gray-800">Últimas reservas</h2>
-                    <button className="text-sm text-red-600 hover:text-red-700">Ver todas</button>
+                    <button className="text-sm text-gray-600 hover:text-gray-700">Ver todas</button>
                   </div>
                   
                   <div className="overflow-x-auto">
@@ -367,9 +367,9 @@ export default function AdminPage() {
                             <td className="py-4 text-sm text-gray-500">23/06/2024</td>
                             <td className="py-4">
                               <span className={`px-2 py-1 text-xs rounded-full ${
-                                i % 3 === 0 ? "bg-yellow-100 text-yellow-800" : 
-                                i % 3 === 1 ? "bg-green-100 text-green-800" : 
-                                "bg-blue-100 text-blue-800"
+                                i % 3 === 0 ? "bg-gray-200 text-yellow-800" : 
+                                i % 3 === 1 ? "bg-gray-200 text-green-800" : 
+                                "bg-gray-200 text-blue-800"
                               }`}>
                                 {i % 3 === 0 ? "Pendiente" : i % 3 === 1 ? "Completado" : "En proceso"}
                               </span>
@@ -385,16 +385,16 @@ export default function AdminPage() {
                 <div className="bg-white rounded-xl shadow-md p-6">
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-lg font-semibold text-gray-800">Actividad reciente</h2>
-                    <button className="text-sm text-red-600 hover:text-red-700">Ver todo</button>
+                    <button className="text-sm text-gray-600 hover:text-gray-700">Ver todo</button>
                   </div>
                   
                   <div className="space-y-5">
                     {[
-                      { icon: <Users size={16} />, text: "Nuevo usuario registrado", time: "Hace 5 min", color: "bg-blue-100 text-blue-600" },
-                      { icon: <Car size={16} />, text: "Reserva completada #OP-1005", time: "Hace 30 min", color: "bg-green-100 text-green-600" },
+                      { icon: <Users size={16} />, text: "Nuevo usuario registrado", time: "Hace 5 min", color: "bg-gray-200 text-gray-600" },
+                      { icon: <Car size={16} />, text: "Reserva completada #OP-1005", time: "Hace 30 min", color: "bg-gray-200 text-green-600" },
                       { icon: <MessageSquare size={16} />, text: "Nuevo mensaje de soporte", time: "Hace 1 hora", color: "bg-amber-100 text-amber-600" },
-                      { icon: <Settings size={16} />, text: "Mantenimiento programado", time: "Hace 2 horas", color: "bg-purple-100 text-purple-600" },
-                      { icon: <Users size={16} />, text: "Nueva empresa registrada", time: "Hace 3 horas", color: "bg-indigo-100 text-indigo-600" }
+                      { icon: <Settings size={16} />, text: "Mantenimiento programado", time: "Hace 2 horas", color: "bg-gray-200 text-purple-600" },
+                      { icon: <Users size={16} />, text: "Nueva empresa registrada", time: "Hace 3 horas", color: "bg-gray-200 text-indigo-600" }
                     ].map((item, i) => (
                       <div key={i} className="flex items-start">
                         <div className={`p-2 rounded-full ${item.color} mr-3 flex-shrink-0`}>
@@ -457,7 +457,7 @@ export default function AdminPage() {
                 <p className="text-gray-600 mb-6">
                   Esta sección está en desarrollo. Aquí se implementará la gestión de {activeSection}.
                 </p>
-                <button className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                <button className="inline-flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
                   <PlusCircle size={18} className="mr-2" />
                   Continuar desarrollo
                 </button>

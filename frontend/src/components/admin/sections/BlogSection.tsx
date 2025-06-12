@@ -544,7 +544,7 @@ const BlogSection = () => {
         title: generatedPost.title || '',
         slug: generatedPost.slug || '',
         excerpt: generatedPost.excerpt || '',
-        author: generatedPost.author || 'IA Operiq',
+        author: generatedPost.author || 'IA Privyde',
         content: generatedPost.content || '',
         categories: generatedPost.categories || [],
         tags: generatedPost.tags || [],
@@ -613,7 +613,7 @@ const BlogSection = () => {
               </Button>
               <Button 
                 onClick={handleAddPost}
-                className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
                 <Plus size={18} className="mr-2" />
                 Nuevo Artículo
@@ -730,7 +730,7 @@ const BlogSection = () => {
                 <input 
                   type="checkbox" 
                   id="featured"
-                  className="mr-2 h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded"
+                  className="mr-2 h-4 w-4 text-gray-600 focus:ring-red-500 border-gray-300 rounded"
                   checked={formData.featured}
                   onChange={handleFeaturedChange}
                 />
@@ -781,14 +781,14 @@ const BlogSection = () => {
                     />
                     <button 
                       onClick={() => setFormData(prev => ({ ...prev, featuredImage: "" }))}
-                      className="absolute top-2 right-2 bg-red-600 p-1 rounded-full text-white hover:bg-red-700"
+                      className="absolute top-2 right-2 bg-black p-1 rounded-full text-white hover:bg-gray-800"
                     >
                       <Trash2 size={16} />
                     </button>
                   </div>
                 </div>
               ) : (
-                <div {...getRootProps()} className="border-2 border-dashed border-gray-300 rounded-md p-6 text-center cursor-pointer hover:border-red-500 transition-colors">
+                <div {...getRootProps()} className="border-2 border-dashed border-gray-300 rounded-md p-6 text-center cursor-pointer hover:border-gray-500 transition-colors">
                   <input {...getInputProps()} />
                   {uploadingImage ? (
                     <div className="flex flex-col items-center justify-center">
@@ -857,7 +857,7 @@ const BlogSection = () => {
               </Button>
               <Button 
                 onClick={handleSubmitPost}
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
                 {editingPost ? 'Actualizar' : 'Publicar'}
               </Button>
@@ -931,7 +931,7 @@ const BlogSection = () => {
                 <div className="flex justify-end mt-4">
                   <Button 
                     onClick={handleUseGeneratedContent}
-                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                    className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
                   >
                     Usar este contenido
                   </Button>
@@ -961,7 +961,7 @@ const BlogSection = () => {
           <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
             {loading ? (
               <div className="p-8 text-center">
-                <RefreshCw size={36} className="mx-auto animate-spin text-red-500" />
+                <RefreshCw size={36} className="mx-auto animate-spin text-black" />
                 <p className="mt-2 text-gray-600">Cargando artículos...</p>
               </div>
             ) : (
@@ -1008,9 +1008,9 @@ const BlogSection = () => {
                         </td>
                         <td className="px-6 py-4">
                           <span className={`px-2 py-1 text-xs rounded-full ${
-                            post.status === 'published' ? "bg-green-100 text-green-800" : 
-                            post.status === 'draft' ? "bg-yellow-100 text-yellow-800" : 
-                            "bg-blue-100 text-blue-800"
+                            post.status === 'published' ? "bg-gray-200 text-green-800" : 
+                            post.status === 'draft' ? "bg-gray-200 text-yellow-800" : 
+                            "bg-gray-200 text-blue-800"
                           }`}>
                             {post.status === 'published' ? 'Publicado' : 
                              post.status === 'draft' ? 'Borrador' : 
@@ -1024,7 +1024,7 @@ const BlogSection = () => {
                           <div className="flex justify-end space-x-2">
                             <button 
                               onClick={() => handleViewPost(post.slug)}
-                              className="text-blue-600 hover:text-blue-900"
+                              className="text-gray-600 hover:text-blue-900"
                             >
                               <Eye size={18} />
                             </button>
@@ -1036,7 +1036,7 @@ const BlogSection = () => {
                             </button>
                             <button 
                               onClick={() => handleDeletePost(post._id!)}
-                              className="text-red-600 hover:text-red-900"
+                              className="text-gray-600 hover:text-red-900"
                             >
                               <Trash2 size={18} />
                             </button>

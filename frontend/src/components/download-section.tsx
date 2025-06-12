@@ -11,7 +11,7 @@ export default function DownloadSection() {
         <div className="max-w-3xl">
           <h2 className="text-4xl font-bold mb-4">Chóferes al alcance de su mano</h2>
           <p className="text-lg mb-8">
-            Descargue la aplicación de Operiq para reservar fácilmente viajes seguros y privados mientras se
+            Descargue la aplicación de Privyde para reservar fácilmente viajes seguros y privados mientras se
             desplaza.
           </p>
 

@@ -36,7 +36,7 @@ const StrategicPartnerships = () => {
             <div className="max-w-3xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight">
                 Conviértase en socio de 
-                <span className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300"> Operiq</span>
+                <span className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black"> Privyde</span>
               </h1>
               
               <motion.button 
@@ -64,22 +64,22 @@ const StrategicPartnerships = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                 Aviación
-                <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                <span className="block w-16 h-1 bg-black mt-4"></span>
               </h2>
               <p className="text-lg text-gray-700 mb-6">
                 Ofrezca un servicio de chófer de primera clase para sus invitados de Primera y Clase Ejecutiva.
               </p>
               <ul className="space-y-6 mb-8">
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Confíe en un socio de confianza para las principales aerolíneas comerciales</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Atienda a sus pasajeros VIP de aerolíneas a nivel mundial</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Trabaje con soluciones personalizadas para servicios de cortesía, complementarios y para la tripulación</span>
                 </li>
               </ul>
@@ -100,22 +100,22 @@ const StrategicPartnerships = () => {
             <div className="order-2 md:order-1">
               <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                 Cruceros
-                <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                <span className="block w-16 h-1 bg-black mt-4"></span>
               </h2>
               <p className="text-lg text-gray-700 mb-6">
                 Eleve la experiencia de sus invitados con un traslado con chófer.
               </p>
               <ul className="space-y-6 mb-8">
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Ofrezca a sus invitados una experiencia fluida de puerta a puerta</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Aproveche nuestra experiencia local con recogidas en puertos y aeropuertos</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Solución de reserva de viajes de cortesía con marca blanca disponible</span>
                 </li>
               </ul>
@@ -136,22 +136,22 @@ const StrategicPartnerships = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                 Servicios financieros
-                <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                <span className="block w-16 h-1 bg-black mt-4"></span>
               </h2>
               <p className="text-lg text-gray-700 mb-6">
                 Ofrezca beneficios de valor añadido a sus miembros titulares de tarjetas de alto poder adquisitivo.
               </p>
               <ul className="space-y-6 mb-8">
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Reserva de traslado de cortesía para viajes aéreos</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Ofertas mejoradas para servicios pagados por miembros titulares de tarjetas</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Equipo de soporte con experiencia en atención a clientes de alto valor en el sector financiero</span>
                 </li>
               </ul>
@@ -172,22 +172,22 @@ const StrategicPartnerships = () => {
             <div className="order-2 md:order-1">
               <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                 Hoteles
-                <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                <span className="block w-16 h-1 bg-black mt-4"></span>
               </h2>
               <p className="text-lg text-gray-700 mb-6">
                 Extienda la hospitalidad y brinde experiencias de viaje excepcionales más allá de las puertas del hotel.
               </p>
               <ul className="space-y-6 mb-8">
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Ofrezca a sus huéspedes de alto valor traslados gratuitos al aeropuerto</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Proporcione a los huéspedes excursiones y visitas por la ciudad utilizando nuestro servicio por horas</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Confíe en nuestra experiencia global en la atención a viajeros de todo el mundo</span>
                 </li>
               </ul>
@@ -206,11 +206,11 @@ const StrategicPartnerships = () => {
         <section className="mb-32">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
             Experimente nuestros beneficios para empresas
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Globe className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Cobertura global</h3>
@@ -220,7 +220,7 @@ const StrategicPartnerships = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Shield className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Cumplimiento y seguridad</h3>
@@ -230,7 +230,7 @@ const StrategicPartnerships = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Users className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Soporte prioritario</h3>
@@ -242,7 +242,7 @@ const StrategicPartnerships = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <DollarSign className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Precios competitivos</h3>
@@ -252,7 +252,7 @@ const StrategicPartnerships = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Key className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Soluciones empresariales personalizadas</h3>
@@ -262,7 +262,7 @@ const StrategicPartnerships = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Leaf className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Viajes sostenibles</h3>
@@ -277,11 +277,11 @@ const StrategicPartnerships = () => {
         <section className="mb-32 bg-gradient-to-br from-gray-50 to-gray-100 p-10 rounded-2xl shadow-sm">
           <div className="max-w-4xl mx-auto">
             <blockquote className="text-xl text-gray-700 mb-8 relative italic">
-              <span className="text-5xl text-red-400 absolute -top-6 -left-2">"</span>
+              <span className="text-5xl text-gray-400 absolute -top-6 -left-2">"</span>
               <p className="ml-8">
-                Emirates está comprometida a extender su calidad premium. Ofrecemos servicio de chófer gratuito a nuestros clientes de Primera y Clase Ejecutiva en más de 75 ciudades en todo el mundo y, gracias a la presencia global de Operiq, podemos ofrecer esto en más destinos.
+                Emirates está comprometida a extender su calidad premium. Ofrecemos servicio de chófer gratuito a nuestros clientes de Primera y Clase Ejecutiva en más de 75 ciudades en todo el mundo y, gracias a la presencia global de Privyde, podemos ofrecer esto en más destinos.
               </p>
-              <span className="text-5xl text-red-400 absolute -bottom-10 -right-2">"</span>
+              <span className="text-5xl text-gray-400 absolute -bottom-10 -right-2">"</span>
             </blockquote>
             <div className="text-right mt-6">
               <p className="font-medium text-gray-900">Bill McPherson</p>
@@ -296,22 +296,22 @@ const StrategicPartnerships = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                 Explore nuestras integraciones API
-                <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                <span className="block w-16 h-1 bg-black mt-4"></span>
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Desde reservas instantáneas hasta cancelaciones simplificadas, nuestras integraciones de vanguardia con plataformas de reserva globales hacen que los viajes corporativos sean sin esfuerzo. Sincronice, escale y simplifique, sin perder el ritmo.
               </p>
               <ul className="space-y-6 mb-8">
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Integración global GDS: Reserve y gestione viajes a través de Sabre, Amadeus y Travelport con funcionalidad completa.</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Compatibilidad con OBT principales: Aproveche herramientas como SAP Concur y Navan para reservas en tiempo real, integradas directamente en sus flujos de trabajo existentes.</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-left">Acceso instantáneo, actualizaciones en tiempo real: Precios en vivo, disponibilidad y detalles del viaje lo mantienen en control y a sus clientes en curso, sin importar el destino.</span>
                 </li>
               </ul>
@@ -334,7 +334,7 @@ const StrategicPartnerships = () => {
         <section className="mb-32 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 relative">
             Servicio de chófer premiado
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300 flex flex-col items-center">

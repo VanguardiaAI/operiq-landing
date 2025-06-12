@@ -481,7 +481,7 @@ const CollaboratorsSection = () => {
               <div className="flex flex-col">
                 <h2 className="text-2xl font-bold text-gray-800">
                   {selectedCollaboratorForDetails.name}
-                  <span className="ml-3 text-sm font-medium px-3 py-1 rounded-full bg-blue-100 text-blue-700 inline-flex items-center">
+                  <span className="ml-3 text-sm font-medium px-3 py-1 rounded-full bg-gray-200 text-blue-700 inline-flex items-center">
                     {selectedCollaboratorForDetails.type === 'company' ? 'Empresa' : 'Particular'}
                   </span>
                 </h2>
@@ -512,7 +512,7 @@ const CollaboratorsSection = () => {
                     variant="default"
                     onClick={handleSaveChanges}
                     disabled={isSaving}
-                    className="flex items-center bg-red-600 hover:bg-red-700 transition-colors"
+                    className="flex items-center bg-black hover:bg-gray-800 transition-colors"
                   >
                     {isSaving ? (
                       <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
@@ -541,7 +541,7 @@ const CollaboratorsSection = () => {
           <Card className="shadow-lg hover:shadow-xl transition-shadow overflow-hidden border-0 rounded-xl">
             <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100 border-b py-5">
               <CardTitle className="text-lg text-gray-800 flex items-center">
-                <span className="bg-red-100 p-1.5 rounded-md text-red-700 mr-3">
+                <span className="bg-gray-200 p-1.5 rounded-md text-gray-700 mr-3">
                   <FileText className="h-5 w-5" />
                 </span>
                 Información del Colaborador
@@ -570,14 +570,14 @@ const CollaboratorsSection = () => {
                       </div>
                       <span className={`mb-3 px-4 py-1.5 text-sm font-medium rounded-full shadow-sm ${
                         selectedCollaboratorForDetails.status === 'active' 
-                          ? 'bg-green-100 text-green-800 border border-green-200' 
+                          ? 'bg-gray-200 text-green-800 border border-green-200' 
                           : selectedCollaboratorForDetails.status === 'inactive'
                           ? 'bg-gray-100 text-gray-800 border border-gray-200'
                           : 'bg-amber-100 text-amber-800 border border-amber-200'
                       }`}>
                         <span className={`inline-block h-2 w-2 rounded-full mr-2 ${
                           selectedCollaboratorForDetails.status === 'active' 
-                            ? 'bg-green-500' 
+                            ? 'bg-gray-600' 
                             : selectedCollaboratorForDetails.status === 'inactive'
                             ? 'bg-gray-500'
                             : 'bg-amber-500'
@@ -645,7 +645,7 @@ const CollaboratorsSection = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-white rounded-lg border border-gray-100 shadow-sm p-5">
                       <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4 flex items-center">
-                        <Mail className="h-4 w-4 mr-2 text-red-500" />
+                        <Mail className="h-4 w-4 mr-2 text-black" />
                         Información de contacto
                       </h4>
                       {!isEditing ? (
@@ -656,7 +656,7 @@ const CollaboratorsSection = () => {
                           </div>
                           <div className="flex items-center">
                             <div className="w-28 text-sm text-gray-500">Email:</div>
-                            <div className="font-medium text-blue-600">{selectedCollaboratorForDetails.contactEmail}</div>
+                            <div className="font-medium text-gray-600">{selectedCollaboratorForDetails.contactEmail}</div>
                           </div>
                           <div className="flex items-center">
                             <div className="w-28 text-sm text-gray-500">Teléfono:</div>
@@ -744,7 +744,7 @@ const CollaboratorsSection = () => {
                     
                     <div className="bg-white rounded-lg border border-gray-100 shadow-sm p-5">
                       <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4 flex items-center">
-                        <FileText className="h-4 w-4 mr-2 text-red-500" />
+                        <FileText className="h-4 w-4 mr-2 text-black" />
                         Información fiscal
                       </h4>
                       {!isEditing ? (
@@ -828,7 +828,7 @@ const CollaboratorsSection = () => {
 
                   <div className="mt-6 bg-white rounded-lg border border-gray-100 shadow-sm p-5">
                     <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4 flex items-center">
-                      <MapPin className="h-4 w-4 mr-2 text-red-500" />
+                      <MapPin className="h-4 w-4 mr-2 text-black" />
                       Zonas y Especialidades
                     </h4>
                     {!isEditing ? (
@@ -837,7 +837,7 @@ const CollaboratorsSection = () => {
                           <p className="text-sm font-medium mb-2 text-gray-600">Zonas de servicio:</p>
                           <div className="flex flex-wrap gap-2">
                             {selectedCollaboratorForDetails.serviceAreas.map(area => (
-                              <span key={area} className="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 text-sm rounded-full shadow-sm">{area}</span>
+                              <span key={area} className="px-3 py-1 bg-gray-100 text-blue-700 border border-blue-100 text-sm rounded-full shadow-sm">{area}</span>
                             ))}
                           </div>
                         </div>
@@ -906,7 +906,7 @@ const CollaboratorsSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 pt-0">
                   <div className="bg-white rounded-lg border border-gray-100 shadow-sm p-5">
                     <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4 flex items-center">
-                      <User className="h-4 w-4 mr-2 text-red-500" />
+                      <User className="h-4 w-4 mr-2 text-black" />
                       Chóferes asociados
                     </h4>
                     {selectedCollaboratorForDetails.associatedDrivers.length > 0 ? (
@@ -927,7 +927,7 @@ const CollaboratorsSection = () => {
                                       className="w-10 h-10 rounded-full object-cover"
                                     />
                                   ) : (
-                                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-medium">
+                                    <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-medium">
                                       <User className="h-5 w-5" />
                                     </div>
                                   )}
@@ -949,7 +949,7 @@ const CollaboratorsSection = () => {
                                       </span>
                                     )}
                                     {driver.city && (
-                                      <span className="px-2 py-0.5 bg-blue-50 text-blue-700 text-xs rounded-full">
+                                      <span className="px-2 py-0.5 bg-gray-100 text-blue-700 text-xs rounded-full">
                                         {driver.city}
                                       </span>
                                     )}
@@ -986,7 +986,7 @@ const CollaboratorsSection = () => {
                   
                   <div className="bg-white rounded-lg border border-gray-100 shadow-sm p-5">
                     <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4 flex items-center">
-                      <Car className="h-4 w-4 mr-2 text-red-500" />
+                      <Car className="h-4 w-4 mr-2 text-black" />
                       Vehículos asociados
                     </h4>
                     {selectedCollaboratorForDetails.associatedVehicles.length > 0 ? (
@@ -1007,7 +1007,7 @@ const CollaboratorsSection = () => {
                                       className="w-12 h-12 rounded-md object-cover"
                                     />
                                   ) : (
-                                    <div className="h-12 w-12 bg-red-100 rounded-md flex items-center justify-center text-red-600">
+                                    <div className="h-12 w-12 bg-gray-200 rounded-md flex items-center justify-center text-gray-600">
                                       <Car className="h-6 w-6" />
                                     </div>
                                   )}
@@ -1024,7 +1024,7 @@ const CollaboratorsSection = () => {
                                     )}
                                   </div>
                                   <div className="flex items-center gap-2 mt-1">
-                                    <span className="px-2 py-0.5 bg-blue-50 text-blue-700 text-xs rounded-full">
+                                    <span className="px-2 py-0.5 bg-gray-100 text-blue-700 text-xs rounded-full">
                                       {vehicle.type.charAt(0).toUpperCase() + vehicle.type.slice(1)}
                                     </span>
                                     <span className="px-2 py-0.5 bg-purple-50 text-purple-700 text-xs rounded-full">
@@ -1033,7 +1033,7 @@ const CollaboratorsSection = () => {
                                     <span className={`px-2 py-0.5 text-xs rounded-full ${
                                       vehicle.available 
                                         ? 'bg-green-50 text-green-700' 
-                                        : 'bg-red-50 text-red-700'
+                                        : 'bg-gray-100 text-gray-700'
                                     }`}>
                                       {vehicle.available ? 'Disponible' : 'No disponible'}
                                     </span>
@@ -1060,7 +1060,7 @@ const CollaboratorsSection = () => {
               <div className="p-6 pt-0">
                 <div className="bg-white rounded-lg border border-gray-100 shadow-sm p-5">
                   <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4 flex items-center">
-                    <FileText className="h-4 w-4 mr-2 text-red-500" />
+                    <FileText className="h-4 w-4 mr-2 text-black" />
                     Notas
                   </h4>
                   {!isEditing ? (
@@ -1096,7 +1096,7 @@ const CollaboratorsSection = () => {
               setEditingCollaborator(null);
               setShowCollaboratorForm(true);
             }}
-            className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
           >
             <PlusCircle size={18} className="mr-2" />
             Añadir Colaborador
@@ -1421,7 +1421,7 @@ const CollaboratorsSection = () => {
                 </Button>
                 <Button 
                   type="submit"
-                  className="bg-red-600 hover:bg-red-700"
+                  className="bg-black hover:bg-gray-800"
                 >
                   {editingCollaborator ? 'Actualizar' : 'Crear'} Colaborador
                 </Button>
@@ -1514,7 +1514,7 @@ const CollaboratorsSection = () => {
                               />
                               <div className={`absolute -bottom-1 -right-1 p-1 rounded-full ${
                                 collaborator.type === 'company' 
-                                  ? 'bg-blue-100 text-blue-600 border border-blue-200' 
+                                  ? 'bg-gray-200 text-gray-600 border border-blue-200' 
                                   : 'bg-amber-100 text-amber-600 border border-amber-200'
                               }`}>
                                 {collaborator.type === 'company' 
@@ -1528,7 +1528,7 @@ const CollaboratorsSection = () => {
                               <div className="text-xs text-gray-500 mt-1 flex items-center">
                                 <span className={`px-2 py-0.5 rounded-sm text-xs font-medium inline-flex items-center ${
                                   collaborator.type === 'company' 
-                                    ? 'bg-blue-50 text-blue-700' 
+                                    ? 'bg-gray-100 text-blue-700' 
                                     : 'bg-amber-50 text-amber-700'
                                 }`}>
                                   {collaborator.type === 'company' ? 'Empresa' : 'Particular'}
@@ -1553,13 +1553,13 @@ const CollaboratorsSection = () => {
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
                             collaborator.status === 'active' 
-                              ? 'bg-green-100 text-green-800' 
+                              ? 'bg-gray-200 text-green-800' 
                               : collaborator.status === 'inactive'
                               ? 'bg-gray-100 text-gray-800'
-                              : 'bg-yellow-100 text-yellow-800'
+                              : 'bg-gray-200 text-yellow-800'
                           }`}>
                             <span className={`h-1.5 w-1.5 rounded-full mr-1.5 mt-0.5 ${
-                              collaborator.status === 'active' ? 'bg-green-600' : 
+                              collaborator.status === 'active' ? 'bg-black' : 
                               collaborator.status === 'inactive' ? 'bg-gray-600' : 'bg-yellow-600'
                             }`}></span>
                             {collaborator.status === 'active' 
@@ -1574,7 +1574,7 @@ const CollaboratorsSection = () => {
                             variant="outline"
                             size="sm"
                             onClick={(e) => handleDeleteCollaborator(e, collaborator.id)}
-                            className="text-red-600 border-red-200 hover:bg-red-50"
+                            className="text-gray-600 border-gray-200 hover:bg-gray-100"
                           >
                             <Trash2 size={16} />
                           </Button>

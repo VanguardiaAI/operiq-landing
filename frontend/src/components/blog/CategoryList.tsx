@@ -12,7 +12,7 @@ export const CategoryList = ({ categories, activeCategory }: CategoryListProps) 
       <Link to="/blog">
         <Badge 
           variant={!activeCategory ? "default" : "outline"}
-          className={`text-sm px-4 py-2 cursor-pointer ${!activeCategory ? 'bg-red-600 hover:bg-red-700' : 'hover:bg-gray-100'}`}
+          className={`text-sm px-4 py-2 cursor-pointer ${!activeCategory ? 'bg-black hover:bg-gray-800' : 'hover:bg-gray-100'}`}
         >
           Todos
         </Badge>
@@ -24,7 +24,7 @@ export const CategoryList = ({ categories, activeCategory }: CategoryListProps) 
             variant={activeCategory === category.toLowerCase() ? "default" : "outline"}
             className={`text-sm px-4 py-2 cursor-pointer ${
               activeCategory === category.toLowerCase() 
-                ? 'bg-red-600 hover:bg-red-700' 
+                ? 'bg-black hover:bg-gray-800' 
                 : 'hover:bg-gray-100'
             }`}
           >

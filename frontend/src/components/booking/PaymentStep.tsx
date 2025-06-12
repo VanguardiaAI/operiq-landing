@@ -253,8 +253,8 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
   const renderStripeElements = () => {
     if (!STRIPE_PUBLISHABLE_KEY) {
       return (
-        <div className="bg-red-50 p-6 rounded-md text-center">
-          <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-4" />
+        <div className="bg-gray-100 p-6 rounded-md text-center">
+          <AlertCircle className="h-10 w-10 text-black mx-auto mb-4" />
           <h3 className="font-semibold text-lg mb-2">Error de configuración</h3>
           <p className="text-gray-600 mb-4">No se ha configurado correctamente la clave de Stripe. Por favor, contacte al soporte técnico.</p>
         </div>
@@ -271,7 +271,7 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
             appearance: {
               theme: 'stripe',
               variables: {
-                colorPrimary: '#ff5a1f',
+                colorPrimary: '#000000',
               }
             }
           }}
@@ -330,8 +330,8 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
     
     if (stripeError) {
       return (
-        <div className="bg-red-50 p-6 rounded-md text-center">
-          <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-4" />
+        <div className="bg-gray-100 p-6 rounded-md text-center">
+          <AlertCircle className="h-10 w-10 text-black mx-auto mb-4" />
           <h3 className="font-semibold text-lg mb-2">Error al inicializar el pago</h3>
           <p className="text-gray-600 mb-4">{stripeError}</p>
           <button 
@@ -369,7 +369,7 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
     return (
       <Card className="max-w-3xl mx-auto shadow-sm">
         <CardContent className="p-6 text-center">
-          <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-4" />
+          <AlertCircle className="h-10 w-10 text-black mx-auto mb-4" />
           <h3 className="font-semibold text-lg mb-2">Error de datos</h3>
           <p className="text-gray-600 mb-4">No se han podido cargar los datos de la sesión</p>
         </CardContent>
@@ -382,7 +382,7 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
     return (
       <Card className="max-w-3xl mx-auto shadow-sm">
         <CardContent className="p-6 text-center">
-          <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-4" />
+          <AlertCircle className="h-10 w-10 text-black mx-auto mb-4" />
           <h3 className="font-semibold text-lg mb-2">Datos de vehículo incompletos</h3>
           <p className="text-gray-600 mb-4">No se ha seleccionado un vehículo válido. Por favor, vuelva al paso anterior.</p>
           <button 
@@ -414,11 +414,11 @@ export default function PaymentStep({ sessionData, onComplete }: PaymentStepProp
             <p className="text-sm font-medium">{tripDate} a las {tripTime} (CEST)</p>
           </div>
           <div className="flex items-center gap-1 mb-1">
-            <p className="text-sm text-blue-600">{originName}</p>
+            <p className="text-sm text-gray-600">{originName}</p>
             {initializedData.tripType === 'ida' && (
               <>
                 <span className="text-xs">→</span>
-                <p className="text-sm text-blue-600">{destinationName}</p>
+                <p className="text-sm text-gray-600">{destinationName}</p>
               </>
             )}
             {initializedData.tripType === 'horas' && (

@@ -67,7 +67,7 @@ const CustomAlertDialog = (props: {
             {cancelText}
           </Button>
           <Button
-            className="bg-red-600 hover:bg-red-700 text-white"
+            className="bg-black hover:bg-gray-800 text-white"
             onClick={() => {
               onConfirm();
               onOpenChange(false);
@@ -568,8 +568,8 @@ const UsersManager = () => {
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh]">
-        <AlertTriangle className="h-12 w-12 text-red-500 mb-4" />
-        <h2 className="text-2xl font-bold text-red-500">Error</h2>
+        <AlertTriangle className="h-12 w-12 text-black mb-4" />
+        <h2 className="text-2xl font-bold text-black">Error</h2>
         <p className="text-gray-600 mt-2">{error}</p>
       </div>
     );
@@ -578,7 +578,7 @@ const UsersManager = () => {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh]">
-        <Loader2 className="h-12 w-12 text-red-500 animate-spin mb-4" />
+        <Loader2 className="h-12 w-12 text-black animate-spin mb-4" />
         <h2 className="text-xl font-medium text-gray-600">Cargando usuarios...</h2>
       </div>
     );
@@ -603,7 +603,7 @@ const UsersManager = () => {
         <h1 className="text-2xl font-bold text-gray-800">Gestión de Usuarios</h1>
         <Button 
           onClick={handleAddUser}
-          className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+          className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
         >
           <Plus size={18} className="mr-2" />
           Añadir Usuario
@@ -679,7 +679,7 @@ const UsersManager = () => {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center">
-              <div className="p-2 rounded-full bg-blue-100 text-blue-600 mr-4">
+              <div className="p-2 rounded-full bg-gray-200 text-gray-600 mr-4">
                 <BadgeCheck size={20} />
               </div>
               <div>
@@ -694,7 +694,7 @@ const UsersManager = () => {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center">
-                            <div className="p-2 rounded-full bg-indigo-100 text-indigo-600 mr-4">                <Building2 size={20} />              </div>
+                            <div className="p-2 rounded-full bg-gray-200 text-indigo-600 mr-4">                <Building2 size={20} />              </div>
               <div>
                 <p className="text-sm text-gray-500">Empresas registradas</p>
                 <h3 className="text-2xl font-bold">
@@ -707,7 +707,7 @@ const UsersManager = () => {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center">
-              <div className="p-2 rounded-full bg-purple-100 text-purple-600 mr-4">
+              <div className="p-2 rounded-full bg-gray-200 text-purple-600 mr-4">
                 <BarChart size={20} />
               </div>
               <div>
@@ -739,7 +739,7 @@ const UsersManager = () => {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center">
-              <div className="p-2 rounded-full bg-red-100 text-red-600 mr-4">
+              <div className="p-2 rounded-full bg-gray-200 text-gray-600 mr-4">
                 <AlertTriangle size={20} />
               </div>
               <div>
@@ -782,7 +782,7 @@ const UsersManager = () => {
                           {user.avatar ? (
                             <img className="h-10 w-10 rounded-full" src={user.avatar} alt={user.name} />
                           ) : (
-                            <div className="h-10 w-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-medium">
+                            <div className="h-10 w-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-medium">
                               {user.name[0].toUpperCase()}
                             </div>
                           )}
@@ -798,8 +798,8 @@ const UsersManager = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 py-1 text-xs rounded-full ${
-                        user.role === 'admin' ? 'bg-purple-100 text-purple-800' :
-                        user.role === 'company' ? 'bg-blue-100 text-blue-800' :
+                        user.role === 'admin' ? 'bg-gray-200 text-purple-800' :
+                        user.role === 'company' ? 'bg-gray-200 text-blue-800' :
                         'bg-gray-100 text-gray-800'
                       }`}>
                         {user.role === 'admin' ? 'Administrador' :
@@ -833,13 +833,13 @@ const UsersManager = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 py-1 text-xs rounded-full flex items-center w-fit ${
-                        user.status === 'active' ? 'bg-green-100 text-green-800' : 
-                        user.status === 'inactive' ? 'bg-red-100 text-red-800' :
-                        'bg-yellow-100 text-yellow-800'
+                        user.status === 'active' ? 'bg-gray-200 text-green-800' : 
+                        user.status === 'inactive' ? 'bg-gray-200 text-gray-800' :
+                        'bg-gray-200 text-yellow-800'
                       }`}>
                         <span className={`h-1.5 w-1.5 rounded-full mr-1.5 ${
-                          user.status === 'active' ? 'bg-green-600' : 
-                          user.status === 'inactive' ? 'bg-red-600' :
+                          user.status === 'active' ? 'bg-black' : 
+                          user.status === 'inactive' ? 'bg-black' :
                           'bg-yellow-600'
                         }`}></span>
                         {user.status === 'active' ? 'Activo' : 
@@ -855,7 +855,7 @@ const UsersManager = () => {
                             e.stopPropagation(); // Evitar que se abra el detalle al hacer clic aquí
                             handleDeleteUser(user.id);
                           }}
-                          className="text-red-600 border-red-200 hover:bg-red-50"
+                          className="text-gray-600 border-gray-200 hover:bg-gray-100"
                         >
                           <Trash2 size={16} />
                         </Button>
@@ -979,8 +979,8 @@ const UsersManager = () => {
                   </label>
                   <div className="col-span-3">
                     <span className={`px-2 py-1 text-xs rounded-full ${
-                      editingUser.role === 'admin' ? 'bg-purple-100 text-purple-800' :
-                      editingUser.role === 'company' ? 'bg-blue-100 text-blue-800' :
+                      editingUser.role === 'admin' ? 'bg-gray-200 text-purple-800' :
+                      editingUser.role === 'company' ? 'bg-gray-200 text-blue-800' :
                       'bg-gray-100 text-gray-800'
                     }`}>
                       {editingUser.role === 'admin' ? 'Administrador' :

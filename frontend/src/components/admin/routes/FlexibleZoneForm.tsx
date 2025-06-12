@@ -555,7 +555,7 @@ const FlexibleZoneForm = ({
               <Button 
                 onClick={handleSubmit}
                 disabled={loading}
-                className="flex items-center bg-red-600 hover:bg-red-700"
+                className="flex items-center bg-black hover:bg-gray-800"
               >
                 {loading ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
@@ -784,7 +784,7 @@ const FlexibleZoneForm = ({
                 </div>
               ) : loadingVehicles ? (
                 <div className="flex items-center justify-center p-6">
-                  <Loader2 className="h-6 w-6 text-red-500 animate-spin" />
+                  <Loader2 className="h-6 w-6 text-black animate-spin" />
                   <span className="ml-2">Cargando vehículos...</span>
                 </div>
               ) : vehicles.length === 0 ? (
@@ -800,7 +800,7 @@ const FlexibleZoneForm = ({
                       className={`
                         flex items-center p-3 border rounded-md cursor-pointer transition-colors
                         ${selectedVehicles.includes(vehicle.id) 
-                          ? 'border-red-300 bg-red-50' 
+                          ? 'border-gray-300 bg-gray-100' 
                           : 'border-gray-200 hover:border-gray-300 bg-white'}
                       `}
                       onClick={() => handleVehicleToggle(vehicle.id)}

@@ -755,7 +755,7 @@ const FixedRouteForm = ({
             className={`
               px-3 py-1 rounded-full text-sm cursor-pointer transition-colors
               ${formValues.days.includes(day) 
-                ? 'bg-red-100 text-red-800 border border-red-300' 
+                ? 'bg-gray-200 text-gray-800 border border-gray-300' 
                 : 'bg-gray-100 text-gray-600 border border-gray-200 hover:bg-gray-200'}
             `}
           >
@@ -787,7 +787,7 @@ const FixedRouteForm = ({
               <Button 
                 onClick={handleSubmit}
                 disabled={loading}
-                className="flex items-center bg-red-600 hover:bg-red-700"
+                className="flex items-center bg-black hover:bg-gray-800"
               >
                 {loading ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
@@ -866,7 +866,7 @@ const FixedRouteForm = ({
                 {selectedOrigin && selectedDestination && 
                  formValues.origin.place_id && formValues.destination.place_id &&
                  formValues.origin.place_id === formValues.destination.place_id && (
-                  <div className="flex items-center mt-2 text-red-500 text-sm">
+                  <div className="flex items-center mt-2 text-black text-sm">
                     <AlertTriangle className="h-4 w-4 mr-1" />
                     El origen y destino no pueden ser iguales
                   </div>
@@ -884,7 +884,7 @@ const FixedRouteForm = ({
                 </div>
               ) : loadingVehicles ? (
                 <div className="flex items-center justify-center p-6">
-                  <Loader2 className="h-6 w-6 text-red-500 animate-spin" />
+                  <Loader2 className="h-6 w-6 text-black animate-spin" />
                   <span className="ml-2">Cargando vehículos...</span>
                 </div>
               ) : vehicles.length === 0 ? (
@@ -900,7 +900,7 @@ const FixedRouteForm = ({
                       className={`
                         flex items-center p-3 border rounded-md cursor-pointer transition-colors
                         ${formValues.vehicleIds.includes(vehicle.id) 
-                          ? 'border-red-300 bg-red-50' 
+                          ? 'border-gray-300 bg-gray-100' 
                           : 'border-gray-200 hover:border-gray-300 bg-white'}
                       `}
                       onClick={() => handleVehicleToggle(vehicle.id)}
@@ -1060,7 +1060,7 @@ const FixedRouteForm = ({
                           variant="ghost" 
                           size="icon"
                           onClick={() => removeTimeSlot(index)}
-                          className="text-red-500 hover:bg-red-50 hover:text-red-600"
+                          className="text-black hover:bg-gray-100 hover:text-gray-600"
                         >
                           <MinusCircle className="h-5 w-5" />
                         </Button>

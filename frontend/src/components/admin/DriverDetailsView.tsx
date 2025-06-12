@@ -512,7 +512,7 @@ const DriverDetailsView = ({
                   variant="default"
                   onClick={handleSaveChanges}
                   disabled={isSaving}
-                  className="flex items-center bg-green-600 hover:bg-green-700 transition-colors"
+                  className="flex items-center bg-black hover:bg-gray-800 transition-colors"
                 >
                   {isSaving ? (
                     <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
@@ -560,7 +560,7 @@ const DriverDetailsView = ({
                           className="h-24 w-24 rounded-full border-4 border-gray-100 shadow-sm object-cover"
                         />
                       ) : (
-                        <div className="h-24 w-24 rounded-full bg-gradient-to-br from-red-100 to-red-200 text-red-600 flex items-center justify-center text-2xl font-bold border-4 border-gray-100 shadow-sm">
+                        <div className="h-24 w-24 rounded-full bg-gradient-to-br from-red-100 to-red-200 text-gray-600 flex items-center justify-center text-2xl font-bold border-4 border-gray-100 shadow-sm">
                           {driver.name[0].toUpperCase()}
                         </div>
                       )}
@@ -581,7 +581,7 @@ const DriverDetailsView = ({
                                 setImagePreview(null);
                                 setFormData({...formData, photo: ''});
                               }}
-                              className="absolute -top-2 -right-2 bg-red-100 text-red-600 rounded-full p-1"
+                              className="absolute -top-2 -right-2 bg-gray-200 text-gray-600 rounded-full p-1"
                             >
                               <X size={16} />
                             </button>
@@ -615,8 +615,8 @@ const DriverDetailsView = ({
                         <Badge 
                           className={cn(
                             "px-3 py-1 flex items-center",
-                            driver.type === 'private' ? 'bg-blue-100 text-blue-800 hover:bg-blue-100' : 
-                            'bg-purple-100 text-purple-800 hover:bg-purple-100'
+                            driver.type === 'private' ? 'bg-gray-200 text-blue-800 hover:bg-gray-200' : 
+                            'bg-gray-200 text-purple-800 hover:bg-gray-200'
                           )}
                         >
                           {driver.type === 'private' ? 'Chófer Privado' : 'Chófer de Empresa'}
@@ -625,15 +625,15 @@ const DriverDetailsView = ({
                           className={cn(
                             "px-3 py-1 flex items-center",
                             driver.status === 'active' 
-                              ? 'bg-green-100 text-green-800 hover:bg-green-100' 
+                              ? 'bg-gray-200 text-green-800 hover:bg-gray-200' 
                               : driver.status === 'inactive'
-                              ? 'bg-red-100 text-red-800 hover:bg-red-100'
-                              : 'bg-yellow-100 text-yellow-800 hover:bg-yellow-100'
+                              ? 'bg-gray-200 text-gray-800 hover:bg-gray-200'
+                              : 'bg-gray-200 text-yellow-800 hover:bg-gray-200'
                           )}
                         >
                           <span className={`h-2 w-2 rounded-full mr-1.5 ${
-                            driver.status === 'active' ? 'bg-green-600' : 
-                            driver.status === 'inactive' ? 'bg-red-600' : 
+                            driver.status === 'active' ? 'bg-black' : 
+                            driver.status === 'inactive' ? 'bg-black' : 
                             'bg-yellow-600'
                           }`}></span>
                           {driver.status === 'active' ? 'Activo' : 
@@ -649,7 +649,7 @@ const DriverDetailsView = ({
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       <div className="w-full space-y-2">
@@ -659,7 +659,7 @@ const DriverDetailsView = ({
                           value={formData.status}
                           onValueChange={(value) => setFormData({...formData, status: value})}
                         >
-                          <SelectTrigger className="border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
+                          <SelectTrigger className="border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
                             <SelectValue placeholder="Seleccionar estado" />
                           </SelectTrigger>
                           <SelectContent>
@@ -676,7 +676,7 @@ const DriverDetailsView = ({
                           value={formData.type}
                           onValueChange={(value) => setFormData({...formData, type: value})}
                         >
-                          <SelectTrigger className="border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
+                          <SelectTrigger className="border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
                             <SelectValue placeholder="Seleccionar tipo" />
                           </SelectTrigger>
                           <SelectContent>
@@ -698,7 +698,7 @@ const DriverDetailsView = ({
                   {!isEditing ? (
                     <div className="flex items-center">
                       {driver.available ? (
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-gray-600 mr-2 flex-shrink-0" />
                       ) : (
                         <AlertTriangle className="h-5 w-5 text-amber-500 mr-2 flex-shrink-0" />
                       )}
@@ -716,7 +716,7 @@ const DriverDetailsView = ({
                         name="available"
                         checked={formData.available}
                         onChange={handleCheckboxChange}
-                        className="mr-2 h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500"
+                        className="mr-2 h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-red-500"
                       />
                       <label htmlFor="available" className="text-sm font-medium text-gray-700">
                         Disponible para servicios
@@ -728,7 +728,7 @@ const DriverDetailsView = ({
                 {/* Colaborador asociado */}
                 <div className="mt-4 p-3 border border-gray-200 rounded-md">
                   <div className="flex items-center">
-                    <Building className="h-5 w-5 text-blue-500 mr-2 flex-shrink-0" />
+                    <Building className="h-5 w-5 text-black mr-2 flex-shrink-0" />
                     <p className="text-sm text-gray-700">Colaborador asociado</p>
                   </div>
                   {!isEditing ? (
@@ -742,7 +742,7 @@ const DriverDetailsView = ({
                         value={formData.collaboratorId}
                         onValueChange={(value) => setFormData({...formData, collaboratorId: value})}
                       >
-                        <SelectTrigger className="border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
+                        <SelectTrigger className="border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
                           <SelectValue placeholder="Seleccionar colaborador" />
                         </SelectTrigger>
                         <SelectContent>
@@ -783,7 +783,7 @@ const DriverDetailsView = ({
                         min="0"
                         max="5"
                         step="0.1"
-                        className="border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                        className="border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                       />
                     </div>
                   )}
@@ -804,7 +804,7 @@ const DriverDetailsView = ({
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                        className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                       />
                     ) : (
                       <p className="text-sm font-medium pl-6">{driver.email}</p>
@@ -821,7 +821,7 @@ const DriverDetailsView = ({
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                        className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                       />
                     ) : (
                       <p className="text-sm font-medium pl-6">{driver.phone}</p>
@@ -890,7 +890,7 @@ const DriverDetailsView = ({
                           name="documentId"
                           value={formData.documentId}
                           onChange={handleInputChange}
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       <div>
@@ -899,7 +899,7 @@ const DriverDetailsView = ({
                           name="licenseNumber"
                           value={formData.licenseNumber}
                           onChange={handleInputChange}
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       <div>
@@ -909,7 +909,7 @@ const DriverDetailsView = ({
                           type="date"
                           value={formData.licenseExpiry}
                           onChange={handleInputChange}
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       {formData.type === 'company' && (
@@ -919,7 +919,7 @@ const DriverDetailsView = ({
                             name="companyName"
                             value={formData.companyName}
                             onChange={handleInputChange}
-                            className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                            className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                           />
                         </div>
                       )}
@@ -930,7 +930,7 @@ const DriverDetailsView = ({
                           type="number"
                           value={formData.experience}
                           onChange={handleInputChange}
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       <div>
@@ -940,7 +940,7 @@ const DriverDetailsView = ({
                           value={formData.languages}
                           onChange={handleInputChange}
                           placeholder="Español, Inglés, Francés..."
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       <div>
@@ -949,7 +949,7 @@ const DriverDetailsView = ({
                           name="country"
                           value={formData.country}
                           onChange={handleInputChange}
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       <div>
@@ -958,7 +958,7 @@ const DriverDetailsView = ({
                           name="city"
                           value={formData.city}
                           onChange={handleInputChange}
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       <div>
@@ -968,7 +968,7 @@ const DriverDetailsView = ({
                           value={formData.specialty}
                           onChange={handleInputChange}
                           placeholder="Eventos VIP, Traslados aeropuerto..."
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       {/* Eliminado el campo de URL de foto ya que ahora se maneja con el selector de archivos */}
@@ -979,7 +979,7 @@ const DriverDetailsView = ({
                           value={formData.notes}
                           onChange={handleInputChange}
                           rows={3}
-                          className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                     </div>
@@ -1029,7 +1029,7 @@ const DriverDetailsView = ({
                           <Badge 
                             className={`px-2 py-1 text-xs ${
                               vehicle.available 
-                                ? 'bg-green-100 text-green-800 hover:bg-green-100' 
+                                ? 'bg-gray-200 text-green-800 hover:bg-gray-200' 
                                 : 'bg-amber-100 text-amber-800 hover:bg-amber-100'
                             }`}
                           >
@@ -1102,7 +1102,7 @@ const DriverDetailsView = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border rounded-md p-4 flex flex-col">
                 <div className="flex items-center mb-2">
-                  <Book className="h-5 w-5 text-blue-600 mr-2" />
+                  <Book className="h-5 w-5 text-gray-600 mr-2" />
                   <h3 className="font-medium">Licencia de conducir</h3>
                 </div>
                 <p className="text-sm text-gray-600 mb-2">Número: {driver.licenseNumber}</p>
@@ -1115,7 +1115,7 @@ const DriverDetailsView = ({
               
               <div className="border rounded-md p-4 flex flex-col">
                 <div className="flex items-center mb-2">
-                  <CreditCard className="h-5 w-5 text-blue-600 mr-2" />
+                  <CreditCard className="h-5 w-5 text-gray-600 mr-2" />
                   <h3 className="font-medium">Documento de identidad</h3>
                 </div>
                 <p className="text-sm text-gray-600 mb-2">Número: {driver.documentId}</p>

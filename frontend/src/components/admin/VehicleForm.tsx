@@ -798,7 +798,7 @@ const VehicleForm = ({ editMode = false, vehicleData, onSubmit, onCancel }: Vehi
                           {feature}
                           <button 
                             type="button" 
-                            className="ml-2 text-gray-600 hover:text-red-600" 
+                            className="ml-2 text-gray-600 hover:text-gray-600" 
                             onClick={() => handleRemoveFeature(index)}
                           >
                             <X size={14} />
@@ -977,12 +977,12 @@ const VehicleForm = ({ editMode = false, vehicleData, onSubmit, onCancel }: Vehi
                         return driverInfo ? (
                           <Badge 
                             key={driverId} 
-                            className="py-1.5 pl-2 pr-1 flex items-center bg-blue-100 text-blue-800 hover:bg-blue-200"
+                            className="py-1.5 pl-2 pr-1 flex items-center bg-gray-200 text-blue-800 hover:bg-blue-200"
                           >
                             {driverInfo.name}
                             <button 
                               type="button"
-                              className="ml-1 text-blue-600 hover:text-blue-800 focus:outline-none"
+                              className="ml-1 text-gray-600 hover:text-blue-800 focus:outline-none"
                               onClick={() => {
                                 setFormData({
                                   ...formData,
@@ -1029,7 +1029,7 @@ const VehicleForm = ({ editMode = false, vehicleData, onSubmit, onCancel }: Vehi
                           id={`availability-${type.id}`}
                           checked={formData.availabilityType.includes(type.id)}
                           onChange={() => handleAvailabilityTypeChange(type.id)}
-                          className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500"
+                          className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-red-500"
                         />
                         <label 
                           htmlFor={`availability-${type.id}`}
@@ -1198,7 +1198,7 @@ const VehicleForm = ({ editMode = false, vehicleData, onSubmit, onCancel }: Vehi
                             setImagePreview(null);
                             setFormData({...formData, image: ""});
                           }}
-                          className="absolute -top-2 -right-2 bg-red-100 text-red-600 rounded-full p-1"
+                          className="absolute -top-2 -right-2 bg-gray-200 text-gray-600 rounded-full p-1"
                         >
                           <X size={16} />
                         </button>

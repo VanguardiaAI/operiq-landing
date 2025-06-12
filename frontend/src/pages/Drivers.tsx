@@ -31,7 +31,7 @@ const Drivers = () => {
   // Datos de las preguntas frecuentes
   const faqData = [
     {
-      question: "¿Puede cualquiera convertirse en socio de Operiq?",
+      question: "¿Puede cualquiera convertirse en socio de Privyde?",
       answer: (
         <>
           <p className="text-gray-600 mb-4">
@@ -48,7 +48,7 @@ const Drivers = () => {
       ),
     },
     {
-      question: "¿Cuántos viajes puedo hacer al mes con Operiq?",
+      question: "¿Cuántos viajes puedo hacer al mes con Privyde?",
       answer: (
         <p className="text-gray-600">
           La cantidad de viajes que realice depende totalmente de usted. Puede aceptar tantos viajes como su capacidad permita. El volumen de viajes ofrecido depende de la demanda regional y estacional.
@@ -69,10 +69,10 @@ const Drivers = () => {
       ),
     },
     {
-      question: "¿Qué vehículos puedo usar para trabajar con Operiq?",
+      question: "¿Qué vehículos puedo usar para trabajar con Privyde?",
       answer: (
         <p className="text-gray-600">
-          Solo pueden usarse determinados vehículos para los viajes de Operiq. Los requisitos del vehículo pueden variar según la ciudad en la que trabaje, y puede encontrar la lista de vehículos que necesita aquí. No tiene más que seleccionar el país y la ciudad sobre los que desea obtener más información.
+          Solo pueden usarse determinados vehículos para los viajes de Privyde. Los requisitos del vehículo pueden variar según la ciudad en la que trabaje, y puede encontrar la lista de vehículos que necesita aquí. No tiene más que seleccionar el país y la ciudad sobre los que desea obtener más información.
         </p>
       ),
     },
@@ -93,7 +93,7 @@ const Drivers = () => {
       ),
     },
     {
-      question: "¿Funciona Operiq con vehículos eléctricos?",
+      question: "¿Funciona Privyde con vehículos eléctricos?",
       answer: (
         <>
           <p className="text-gray-600">
@@ -138,7 +138,7 @@ const Drivers = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Conviértase en socio de 
               <motion.span 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text text-black"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -172,11 +172,11 @@ const Drivers = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-              Haga crecer su negocio con Operiq
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              Haga crecer su negocio con Privyde
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             <p className="text-lg text-gray-600 mb-10 max-w-4xl mx-auto leading-relaxed">
-              La aplicación y el portal web de Operiq conectan a los socios de servicio chófer con licencia y seguro con una base de clientes global de viajeros de negocios y ocio. Puede completar algún hueco de su horario o incluso podríamos convertirnos en su principal fuente de viajes. Nuestros precios competitivos normalmente se ajustan a las tarifas del mercado local, y nuestro compromiso inquebrantable con la calidad nos permite ofrecer tarifas justas a los chóferes, al tiempo que garantiza un servicio excepcional a los pasajeros.
+              La aplicación y el portal web de Privyde conectan a los socios de servicio chófer con licencia y seguro con una base de clientes global de viajeros de negocios y ocio. Puede completar algún hueco de su horario o incluso podríamos convertirnos en su principal fuente de viajes. Nuestros precios competitivos normalmente se ajustan a las tarifas del mercado local, y nuestro compromiso inquebrantable con la calidad nos permite ofrecer tarifas justas a los chóferes, al tiempo que garantiza un servicio excepcional a los pasajeros.
             </p>
             <motion.div 
               className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-xl mb-10 max-w-4xl mx-auto shadow-sm border border-gray-200 transform transition-all duration-300 hover:shadow-md"
@@ -186,11 +186,11 @@ const Drivers = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <blockquote className="italic text-xl text-gray-700 mb-4 relative">
-                <span className="text-5xl text-red-400 absolute -top-6 -left-2">"</span>
-                Operiq is 60% of my revenue. I've grown from 2 to 20 chauffeurs and have 10 vehicles from working with them.
-                <span className="text-5xl text-red-400 absolute -bottom-10 -right-2">"</span>
+                <span className="text-5xl text-gray-400 absolute -top-6 -left-2">"</span>
+                Privyde is 60% of my revenue. I've grown from 2 to 20 chauffeurs and have 10 vehicles from working with them.
+                <span className="text-5xl text-gray-400 absolute -bottom-10 -right-2">"</span>
               </blockquote>
-              <p className="text-right font-medium mt-2 text-gray-800">Angel T., Operiq chauffeur, Madrid</p>
+              <p className="text-right font-medium mt-2 text-gray-800">Angel T., Privyde chauffeur, Madrid</p>
             </motion.div>
           </motion.div>
 
@@ -213,7 +213,7 @@ const Drivers = () => {
                   transition={{ delay: 0.1, duration: 0.5 }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 >
-                  <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                  <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -232,7 +232,7 @@ const Drivers = () => {
                   transition={{ delay: 0.3, duration: 0.5 }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 >
-                  <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                  <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -251,14 +251,14 @@ const Drivers = () => {
                   transition={{ delay: 0.5, duration: 0.5 }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 >
-                  <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                  <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">Únase a un equipo internacional</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Como miembro del equipo de Operiq, podrá decir que forma parte de un servicio internacional, ya que organizamos viajes para nuestros socios y sus huéspedes en más de 50 países.
+                    Como miembro del equipo de Privyde, podrá decir que forma parte de un servicio internacional, ya que organizamos viajes para nuestros socios y sus huéspedes en más de 50 países.
                   </p>
                 </motion.div>
               </div>
@@ -293,19 +293,19 @@ const Drivers = () => {
                 >
                   <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                     Requisitos
-                    <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                    <span className="block w-16 h-1 bg-black mt-4"></span>
                   </h2>
                   <ul className="space-y-6 mb-8">
                     <li className="flex items-start">
-                      <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-left">Poseer un registro de empresa válido, licencias y seguros para todos los chóferes y vehículos.</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-left">Mantener los vehículos limpios, sin daños, libres de humo y en pleno cumplimiento de las regulaciones locales.</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-left">Mantenerse al día con las nuevas normas y políticas y garantizar una calidad excelente.</span>
                     </li>
                   </ul>
@@ -331,14 +331,14 @@ const Drivers = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
                 Preguntas más frecuentes
-                <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+                <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
               </h2>
               
               <div className="space-y-4 max-w-4xl mx-auto">
                 {faqData.map((faq, index) => (
                   <motion.div 
                     key={index} 
-                    className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                    className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -348,8 +348,8 @@ const Drivers = () => {
                       className="flex justify-between items-center w-full p-6 text-left"
                       onClick={() => toggleFaq(index)}
                     >
-                      <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                      <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                      <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                      <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                         {openFaqIndex === index ? (
                           <ChevronUp className="h-5 w-5" />
                         ) : (
@@ -399,7 +399,7 @@ const Drivers = () => {
                 <div>
                   <h2 className="text-3xl font-bold mb-6 relative text-white">
                     ¿Todavía tiene alguna pregunta?
-                    <span className="block w-16 h-1 bg-gradient-to-r from-red-400 to-orange-300 mt-4"></span>
+                    <span className="block w-16 h-1 text-black mt-4"></span>
                   </h2>
                   <p className="text-gray-200 mb-8 leading-relaxed">
                     Visite nuestro Centro de ayuda para socios para consultar nuestras preguntas frecuentes detalladas o póngase en contacto directamente con nuestro equipo de soporte.

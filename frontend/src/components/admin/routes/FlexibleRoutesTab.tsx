@@ -124,7 +124,7 @@ const GoogleZoneMap = ({ center, radius }: {
           </div>
           <div className="mt-1 text-xs text-gray-500 flex justify-between items-center">
             {error ? (
-              <span className="text-red-500">{error}</span>
+              <span className="text-black">{error}</span>
             ) : (
               <span>Google Maps</span>
             )}
@@ -162,7 +162,7 @@ const GoogleZoneMap = ({ center, radius }: {
                     <div className="font-bold text-lg mb-1">Zona Flexible</div>
                     <div className="flex flex-col">
                       <div className="flex items-center">
-                        <MapPin className="h-4 w-4 text-red-500 mr-1 flex-shrink-0" />
+                        <MapPin className="h-4 w-4 text-black mr-1 flex-shrink-0" />
                         <span className="font-medium">Centro:</span>
                         <span className="ml-1">{center.name}</span>
                       </div>
@@ -177,7 +177,7 @@ const GoogleZoneMap = ({ center, radius }: {
                   </div>
                   <Button
                     variant="default"
-                    className="bg-red-600 hover:bg-red-700 text-white"
+                    className="bg-black hover:bg-gray-800 text-white"
                     onClick={() => setShowFullscreen(false)}
                   >
                     <X className="h-4 w-4 mr-2" />
@@ -384,7 +384,7 @@ const FlexibleRoutesTab = ({
               </select>
               <Button 
                 onClick={handleAddZone}
-                className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
                 <PlusCircle size={18} className="mr-2" />
                 Nueva Zona Flexible
@@ -433,7 +433,7 @@ const FlexibleRoutesTab = ({
                       <td className="px-6 py-4">
                         <div className="text-sm text-gray-900">
                           <div className="flex items-start">
-                            <MapPin className="h-4 w-4 text-red-500 mt-0.5 mr-1 flex-shrink-0" />
+                            <MapPin className="h-4 w-4 text-black mt-0.5 mr-1 flex-shrink-0" />
                             <span>{zone.center.name}</span>
                           </div>
                           <div className="ml-5 mt-1 text-xs text-gray-500">
@@ -450,8 +450,8 @@ const FlexibleRoutesTab = ({
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                            <Building className="h-4 w-4 text-blue-600" />
+                          <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <Building className="h-4 w-4 text-gray-600" />
                           </div>
                           <div className="text-sm text-gray-900">
                             {getCollaboratorName(zone.collaboratorId)}
@@ -472,7 +472,7 @@ const FlexibleRoutesTab = ({
                                 </div>
                               ))}
                               {zone.vehicles.length > 3 && (
-                                <div className="text-xs text-blue-600">
+                                <div className="text-xs text-gray-600">
                                   +{zone.vehicles.length - 3} vehículos más
                                 </div>
                               )}
@@ -485,7 +485,7 @@ const FlexibleRoutesTab = ({
                       <td className="px-6 py-4 whitespace-nowrap">
                         <Badge className={`
                           ${zone.status === 'active' 
-                            ? 'bg-green-100 text-green-800 hover:bg-green-100' 
+                            ? 'bg-gray-200 text-green-800 hover:bg-gray-200' 
                             : 'bg-gray-100 text-gray-800 hover:bg-gray-100'}
                         `}>
                           {zone.status === 'active' ? 'Activa' : 'Inactiva'}
@@ -529,7 +529,7 @@ const FlexibleRoutesTab = ({
                           className="text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                         >
                           {zone.status === 'active' ? (
-                            <ToggleRight className="h-5 w-5 text-green-500" />
+                            <ToggleRight className="h-5 w-5 text-gray-600" />
                           ) : (
                             <ToggleLeft className="h-5 w-5 text-gray-400" />
                           )}
@@ -541,7 +541,7 @@ const FlexibleRoutesTab = ({
                             e.stopPropagation();
                             handleEditZone(zone);
                           }}
-                          className="text-blue-600 hover:text-blue-800 hover:bg-blue-50"
+                          className="text-gray-600 hover:text-blue-800 hover:bg-gray-100"
                         >
                           <Edit className="h-4 w-4" />
                         </Button>
@@ -552,7 +552,7 @@ const FlexibleRoutesTab = ({
                             e.stopPropagation();
                             handleDeleteZone(zone.id, e);
                           }}
-                          className="text-red-600 hover:text-red-800 hover:bg-red-50"
+                          className="text-gray-600 hover:text-gray-800 hover:bg-gray-100"
                         >
                           <Trash2 className="h-4 w-4" />
                         </Button>
@@ -570,7 +570,7 @@ const FlexibleRoutesTab = ({
                   <p className="text-gray-500">No se encontraron zonas flexibles que coincidan con los criterios de búsqueda</p>
                   <Button 
                     onClick={handleAddZone}
-                    className="mt-4 flex items-center mx-auto px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                    className="mt-4 flex items-center mx-auto px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
                   >
                     <PlusCircle size={18} className="mr-2" />
                     Crear Nueva Zona
@@ -589,7 +589,7 @@ const FlexibleRoutesTab = ({
             <DialogTitle className="text-xl flex items-center gap-2">
               {selectedZone?.name}
               <Badge className={`ml-2 ${
-                selectedZone?.status === 'active' ? 'bg-green-100 text-green-800' : 
+                selectedZone?.status === 'active' ? 'bg-gray-200 text-green-800' : 
                 'bg-gray-100 text-gray-800'
               }`}>
                 {selectedZone?.status === 'active' ? 'Activa' : 'Inactiva'}
@@ -610,7 +610,7 @@ const FlexibleRoutesTab = ({
                   <div>
                     <div className="text-sm font-medium text-gray-500">Centro de la Zona</div>
                     <div className="flex items-start mt-1">
-                      <MapPin className="h-4 w-4 text-red-500 mt-0.5 mr-1 flex-shrink-0" />
+                      <MapPin className="h-4 w-4 text-black mt-0.5 mr-1 flex-shrink-0" />
                       <span className="text-base">{selectedZone.center.name}</span>
                     </div>
                   </div>
@@ -648,8 +648,8 @@ const FlexibleRoutesTab = ({
                 <div>
                   <h3 className="font-medium text-gray-900 text-base mb-2">Colaborador</h3>
                   <div className="flex items-center bg-gray-50 p-4 rounded-lg">
-                    <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                      <Building className="h-5 w-5 text-blue-600" />
+                    <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                      <Building className="h-5 w-5 text-gray-600" />
                     </div>
                     <div>
                       <div className="font-medium">
@@ -734,7 +734,7 @@ const FlexibleRoutesTab = ({
               Cerrar
             </Button>
             <Button
-              className="bg-blue-600 text-white hover:bg-blue-700"
+              className="bg-black text-white hover:bg-gray-800"
               onClick={() => {
                 if (selectedZone) {
                   setShowDetailsDialog(false);
@@ -759,7 +759,7 @@ const FlexibleRoutesTab = ({
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancelar</AlertDialogCancel>
-            <AlertDialogAction onClick={confirmDelete} className="bg-red-600 hover:bg-red-700">
+            <AlertDialogAction onClick={confirmDelete} className="bg-black hover:bg-gray-800">
               Eliminar
             </AlertDialogAction>
           </AlertDialogFooter>

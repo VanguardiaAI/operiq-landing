@@ -7,39 +7,58 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        border: "hsl(214.3 31.8% 91.4%)",
-        input: "hsl(214.3 31.8% 91.4%)",
-        ring: "hsl(222.2 84% 4.9%)",
+        border: "hsl(0 0% 90%)",
+        input: "hsl(0 0% 95%)",
+        ring: "hsl(0 0% 0%)",
         background: "hsl(0 0% 100%)",
-        foreground: "hsl(222.2 84% 4.9%)",
+        foreground: "hsl(0 0% 0%)",
         primary: {
-          DEFAULT: "hsl(222.2 47.4% 11.2%)",
-          foreground: "hsl(210 40% 98%)",
+          DEFAULT: "hsl(0 0% 0%)",
+          foreground: "hsl(0 0% 100%)",
         },
         secondary: {
-          DEFAULT: "hsl(210 40% 96.1%)",
-          foreground: "hsl(222.2 47.4% 11.2%)",
+          DEFAULT: "hsl(0 0% 95%)",
+          foreground: "hsl(0 0% 0%)",
         },
         muted: {
-          DEFAULT: "hsl(210 40% 96.1%)",
-          foreground: "hsl(215.4 16.3% 46.9%)",
+          DEFAULT: "hsl(0 0% 96%)",
+          foreground: "hsl(0 0% 40%)",
         },
         accent: {
-          DEFAULT: "hsl(210 40% 96.1%)",
-          foreground: "hsl(222.2 47.4% 11.2%)",
+          DEFAULT: "hsl(0 0% 95%)",
+          foreground: "hsl(0 0% 0%)",
         },
         destructive: {
-          DEFAULT: "hsl(0 84.2% 60.2%)",
-          foreground: "hsl(210 40% 98%)",
+          DEFAULT: "hsl(0 0% 20%)",
+          foreground: "hsl(0 0% 100%)",
         },
         card: {
           DEFAULT: "hsl(0 0% 100%)",
-          foreground: "hsl(222.2 84% 4.9%)",
+          foreground: "hsl(0 0% 0%)",
         },
         popover: {
           DEFAULT: "hsl(0 0% 100%)",
-          foreground: "hsl(222.2 84% 4.9%)",
+          foreground: "hsl(0 0% 0%)",
         },
+        'privyde-black': '#000000',
+        'privyde-white': '#FFFFFF',
+        'privyde-gray': {
+          50: '#F9F9F9',
+          100: '#F3F3F3',
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
+      },
+      fontFamily: {
+        'conthrax': ['ConthraxSb', 'sans-serif'],
+        'panton': ['Panton', 'sans-serif'],
+        'sans': ['Panton', 'system-ui', '-apple-system', 'sans-serif'],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -60,29 +79,38 @@ module.exports = {
         DEFAULT: {
           css: {
             maxWidth: '100%',
-            color: 'var(--tw-prose-body)',
+            color: '#000000',
             textAlign: 'left',
+            fontFamily: 'Panton, sans-serif',
             a: {
-              color: 'var(--tw-prose-links)',
+              color: '#000000',
               textDecoration: 'underline',
               fontWeight: '500',
             },
             p: {
               textAlign: 'left',
+              color: '#000000',
             },
             li: {
               textAlign: 'left',
+              color: '#000000',
             },
             h1: {
-              fontWeight: '800',
-              letterSpacing: '-0.025em',
-            },
-            h2: {
+              fontFamily: 'ConthraxSb, sans-serif',
               fontWeight: '700',
               letterSpacing: '-0.025em',
+              color: '#000000',
+            },
+            h2: {
+              fontFamily: 'ConthraxSb, sans-serif',
+              fontWeight: '600',
+              letterSpacing: '-0.025em',
+              color: '#000000',
             },
             h3: {
-              fontWeight: '600',
+              fontFamily: 'ConthraxSb, sans-serif',
+              fontWeight: '500',
+              color: '#000000',
             },
             img: {
               borderRadius: '0.5rem',
@@ -92,8 +120,8 @@ module.exports = {
             },
             blockquote: {
               fontStyle: 'normal',
-              color: 'var(--tw-prose-quotes)',
-              borderLeftColor: 'var(--tw-prose-quotes)',
+              color: '#404040',
+              borderLeftColor: '#000000',
             },
             ul: {
               paddingLeft: '1.625em',
@@ -102,10 +130,10 @@ module.exports = {
               paddingLeft: '1.625em',
             },
             code: {
-              color: 'var(--tw-prose-code)',
+              color: '#000000',
               borderRadius: '0.25rem',
               padding: '0.25rem 0.375rem',
-              backgroundColor: 'var(--tw-prose-pre-bg)',
+              backgroundColor: '#F3F3F3',
               fontWeight: '500',
             },
             'code::before': {
@@ -115,8 +143,8 @@ module.exports = {
               content: '""',
             },
             pre: {
-              color: 'var(--tw-prose-pre-code)',
-              backgroundColor: 'var(--tw-prose-pre-bg)',
+              color: '#FFFFFF',
+              backgroundColor: '#000000',
               overflowX: 'auto',
               fontWeight: '400',
               fontSize: '0.875em',

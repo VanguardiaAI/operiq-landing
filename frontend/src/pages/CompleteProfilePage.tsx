@@ -86,7 +86,7 @@ export default function CompleteProfilePage() {
     <div className="bg-white min-h-screen">
       <header className="border-b border-gray-200 py-4 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <a href="/" className="font-bold text-xl">OPERIQ</a>
+                          <a href="/" className="font-bold text-xl">PRIVYDE</a>
           <div className="flex items-center gap-4">
             <a href="/help" className="text-sm text-gray-600">Ayuda</a>
             <a href="#" className="text-sm flex items-center gap-1">
@@ -112,7 +112,7 @@ export default function CompleteProfilePage() {
         </p>
 
         {error && (
-          <div className="bg-red-50 p-3 rounded border border-red-200 text-red-600 text-sm mb-8">
+          <div className="bg-gray-100 p-3 rounded border border-gray-200 text-gray-600 text-sm mb-8">
             {error}
           </div>
         )}
@@ -189,14 +189,14 @@ export default function CompleteProfilePage() {
             </div>
 
             <div className="text-sm text-gray-500 mt-8">
-              Al añadir sus datos personales, acepta nuestra <a href="#" className="text-blue-600 hover:underline">Política de privacidad</a> y 
-              nuestras <a href="#" className="text-blue-600 hover:underline">Condiciones de uso</a>.
+              Al añadir sus datos personales, acepta nuestra <a href="#" className="text-gray-600 hover:underline">Política de privacidad</a> y 
+              nuestras <a href="#" className="text-gray-600 hover:underline">Condiciones de uso</a>.
             </div>
 
             <div className="pt-4">
               <Button 
                 type="submit" 
-                className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-md transition-colors h-12"
+                className="w-full bg-black hover:bg-gray-800 text-white py-3 px-4 rounded-md transition-colors h-12"
                 disabled={isLoading}
               >
                 {isLoading ? "Guardando..." : "Guardar y continuar"}

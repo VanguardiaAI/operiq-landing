@@ -1,6 +1,6 @@
-# 🚗 Operiq - Plataforma de Transporte de Lujo
+# 🚗 Privyde - Plataforma de Transporte de Lujo
 
-**Operiq** es una plataforma integral de transporte de lujo que conecta clientes con servicios de chófer premium a nivel global. Ofrecemos una experiencia de transporte excepcional con vehículos de alta gama, conductores profesionales y tecnología avanzada.
+**Privyde** es una plataforma integral de transporte de lujo que conecta clientes con servicios de chófer premium a nivel global. Ofrecemos una experiencia de transporte excepcional con vehículos de alta gama, conductores profesionales y tecnología avanzada.
 
 ## 🌟 Características Principales
 
@@ -35,7 +35,7 @@
 ## 🏗️ Arquitectura del Sistema
 
 ```
-operiq-landing/
+privyde-platform/
 ├── 🎨 frontend/              # Aplicación React + TypeScript
 │   ├── src/
 │   │   ├── pages/            # Páginas principales y admin
@@ -92,8 +92,8 @@ operiq-landing/
 
 ### 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/VanguardiaAI/operiq-landing.git
-cd operiq-landing
+git clone https://github.com/VanguardiaAI/privyde-platform.git
+cd privyde-platform
 ```
 
 ### 2. **Instalar todas las dependencias**
@@ -105,7 +105,7 @@ npm run install:all
 
 **Frontend** (`frontend/.env`):
 ```env
-VITE_API_URL=http://localhost:5000
+VITE_API_URL=http://localhost:5001
 VITE_GOOGLE_CLIENT_ID=tu_google_client_id
 VITE_STRIPE_PUBLISHABLE_KEY=tu_stripe_public_key
 ```
@@ -215,16 +215,16 @@ El proyecto está preparado para despliegue en:
 ## 📞 Soporte y Contacto
 
 Para soporte técnico o consultas sobre el proyecto:
-- **Email**: soporte@operiq.com
+- **Email**: soporte@privyde.com
 - **Chat en vivo**: Disponible en la plataforma
 - **Documentación**: Wiki del repositorio
 
 ## 📄 Licencia
 
-Este proyecto es propiedad de **Operiq** y está protegido por derechos de autor. Todos los derechos reservados.
+Este proyecto es propiedad de **Privyde** y está protegido por derechos de autor. Todos los derechos reservados.
 
 ---
 
-**Desarrollado con ❤️ por el equipo de Operiq**
+**Desarrollado con ❤️ por el equipo de Privyde**
 
 *Transformando el transporte de lujo a través de la tecnología* 

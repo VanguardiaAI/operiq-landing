@@ -71,39 +71,39 @@ const ClientTab = ({
             <label className="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
             <input
               type="text"
-              className={`w-full px-3 py-2 border ${validationErrors['client.name'] ? 'border-red-500' : 'border-gray-300'} rounded-md text-sm`}
+              className={`w-full px-3 py-2 border ${validationErrors['client.name'] ? 'border-gray-500' : 'border-gray-300'} rounded-md text-sm`}
               value={newBookingFormData.client.name}
               onChange={(e) => handleFormChange('client', 'name', e.target.value)}
               placeholder="Ingrese el nombre del cliente"
             />
             {validationErrors['client.name'] && (
-              <p className="text-red-500 text-xs mt-1">{validationErrors['client.name']}</p>
+              <p className="text-black text-xs mt-1">{validationErrors['client.name']}</p>
             )}
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
             <input
               type="email"
-              className={`w-full px-3 py-2 border ${validationErrors['client.email'] ? 'border-red-500' : 'border-gray-300'} rounded-md text-sm`}
+              className={`w-full px-3 py-2 border ${validationErrors['client.email'] ? 'border-gray-500' : 'border-gray-300'} rounded-md text-sm`}
               value={newBookingFormData.client.email}
               onChange={(e) => handleFormChange('client', 'email', e.target.value)}
               placeholder="Ingrese el email del cliente"
             />
             {validationErrors['client.email'] && (
-              <p className="text-red-500 text-xs mt-1">{validationErrors['client.email']}</p>
+              <p className="text-black text-xs mt-1">{validationErrors['client.email']}</p>
             )}
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
             <input
               type="tel"
-              className={`w-full px-3 py-2 border ${validationErrors['client.phone'] ? 'border-red-500' : 'border-gray-300'} rounded-md text-sm`}
+              className={`w-full px-3 py-2 border ${validationErrors['client.phone'] ? 'border-gray-500' : 'border-gray-300'} rounded-md text-sm`}
               value={newBookingFormData.client.phone}
               onChange={(e) => handleFormChange('client', 'phone', e.target.value)}
               placeholder="Ingrese el teléfono del cliente"
             />
             {validationErrors['client.phone'] && (
-              <p className="text-red-500 text-xs mt-1">{validationErrors['client.phone']}</p>
+              <p className="text-black text-xs mt-1">{validationErrors['client.phone']}</p>
             )}
           </div>
         </div>
@@ -111,7 +111,7 @@ const ClientTab = ({
       
       <div className="flex justify-end mt-6">
         <Button 
-          className="bg-red-600 hover:bg-red-700 text-sm"
+          className="bg-black hover:bg-gray-800 text-sm"
           onClick={() => handleNextTab('client')}
         >
           Siguiente: Servicio

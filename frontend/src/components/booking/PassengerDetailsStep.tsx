@@ -231,7 +231,7 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
     return (
       <Card className="max-w-3xl mx-auto shadow-sm">
         <CardContent className="p-6 text-center">
-          <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-4" />
+          <AlertCircle className="h-10 w-10 text-black mx-auto mb-4" />
           <h3 className="font-semibold text-lg mb-2">Error de datos</h3>
           <p className="text-gray-600 mb-4">{error}</p>
           <button
@@ -263,11 +263,11 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
             </p>
           </div>
           <div className="flex items-center gap-1 mb-1">
-            <p className="text-sm text-blue-600">{initializedData?.from?.description || "Punto de recogida"}</p>
+            <p className="text-sm text-gray-600">{initializedData?.from?.description || "Punto de recogida"}</p>
             {initializedData.tripType === 'ida' && (
               <>
                 <span className="text-xs">→</span>
-                <p className="text-sm text-blue-600">{initializedData?.to?.description || "Destino"}</p>
+                <p className="text-sm text-gray-600">{initializedData?.to?.description || "Destino"}</p>
               </>
             )}
             {initializedData.tripType === 'horas' && (
@@ -295,7 +295,7 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
                     value="self" 
                     checked={bookingFor === 'self'}
                     onChange={() => setBookingFor('self')}
-                    className="h-4 w-4 text-green-500 border-gray-300 focus:ring-0 focus:ring-offset-0"
+                    className="h-4 w-4 text-gray-600 border-gray-300 focus:ring-0 focus:ring-offset-0"
                   />
                   <label htmlFor="reserve-self" className="text-sm font-medium cursor-pointer">
                     Reservar para mí
@@ -311,7 +311,7 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
                     value="other" 
                     checked={bookingFor === 'other'}
                     onChange={() => setBookingFor('other')}
-                    className="h-4 w-4 text-green-500 border-gray-300 focus:ring-0 focus:ring-offset-0"
+                    className="h-4 w-4 text-gray-600 border-gray-300 focus:ring-0 focus:ring-offset-0"
                   />
                   <label htmlFor="reserve-other" className="text-sm font-medium cursor-pointer">
                     Reservar para otra persona
@@ -345,7 +345,7 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
             {/* Cartel de recogida */}
             <div className="mb-4">
               <label htmlFor="pickup-sign" className="block text-sm font-medium mb-1">
-                Cartel de recogida {bookingFor === 'other' && <span className="text-red-500">*</span>}
+                Cartel de recogida {bookingFor === 'other' && <span className="text-black">*</span>}
               </label>
               <Input
                 id="pickup-sign"
@@ -397,7 +397,7 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
             type="submit"
             className="w-full py-3 px-4 rounded-md text-white font-semibold relative z-20 disabled:opacity-70"
             style={{
-              background: "linear-gradient(90deg, #ff7c1a 0%, #ff3c1a 100%)",
+                              background: "#000000",
             }}
             disabled={loading}
           >
@@ -412,7 +412,7 @@ export default function PassengerDetailsStep({ sessionData, onComplete }: Passen
           </button>
           
           {error && (
-            <div className="mt-4 p-3 bg-red-50 rounded-md border border-red-200 text-red-700 text-sm">
+                            <div className="mt-4 p-3 bg-gray-100 rounded-md border border-gray-200 text-gray-700 text-sm">
               <div className="flex">
                 <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0" />
                 <span>{error}</span>

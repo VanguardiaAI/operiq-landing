@@ -33,19 +33,19 @@ const monthlyRevenueData = [
 ];
 
 const bookingsByType = [
-  { name: "Aeropuerto", value: 45, color: "#FF6B6B" },
-  { name: "Urbano", value: 25, color: "#4ECDC4" },
-  { name: "Por Horas", value: 15, color: "#FFD166" },
-  { name: "Eventos", value: 10, color: "#06D6A0" },
-  { name: "Corporativo", value: 5, color: "#118AB2" }
+  { name: "Aeropuerto", value: 45, color: "#000000" },
+  { name: "Urbano", value: 25, color: "#404040" },
+  { name: "Por Horas", value: 15, color: "#525252" },
+  { name: "Eventos", value: 10, color: "#737373" },
+  { name: "Corporativo", value: 5, color: "#A3A3A3" }
 ];
 
 const vehicleUsage = [
-  { name: "Sedan Lujo", value: 35, color: "#4ECDC4" },
-  { name: "SUV Premium", value: 25, color: "#FF9F1C" },
-  { name: "Limusina", value: 15, color: "#FF6B6B" },
-  { name: "Van Ejecutiva", value: 10, color: "#06D6A0" },
-  { name: "Minibus VIP", value: 5, color: "#118AB2" }
+  { name: "Sedan Lujo", value: 35, color: "#000000" },
+  { name: "SUV Premium", value: 25, color: "#262626" },
+  { name: "Limusina", value: 15, color: "#404040" },
+  { name: "Van Ejecutiva", value: 10, color: "#525252" },
+  { name: "Minibus VIP", value: 5, color: "#737373" }
 ];
 
 const dailyBookings = [
@@ -59,18 +59,18 @@ const dailyBookings = [
 ];
 
 const clientSegmentation = [
-  { name: "VIP", value: 30, color: "#FF6B6B" },
-  { name: "Empresas", value: 35, color: "#4ECDC4" },
-  { name: "Turismo", value: 20, color: "#FFD166" },
-  { name: "Eventos", value: 15, color: "#06D6A0" }
+  { name: "VIP", value: 30, color: "#000000" },
+  { name: "Empresas", value: 35, color: "#262626" },
+  { name: "Turismo", value: 20, color: "#404040" },
+  { name: "Eventos", value: 15, color: "#525252" }
 ];
 
 const routePopularity = [
-  { name: "Aeropuerto-Centro", value: 40, color: "#06D6A0" },
-  { name: "Costa-Ciudad", value: 25, color: "#118AB2" },
-  { name: "Hoteles-Restaurantes", value: 15, color: "#FF6B6B" },
-  { name: "Eventos Especiales", value: 12, color: "#FFD166" },
-  { name: "Recorrido Turístico", value: 8, color: "#4ECDC4" }
+  { name: "Aeropuerto-Centro", value: 40, color: "#000000" },
+  { name: "Costa-Ciudad", value: 25, color: "#262626" },
+  { name: "Hoteles-Restaurantes", value: 15, color: "#404040" },
+  { name: "Eventos Especiales", value: 12, color: "#525252" },
+  { name: "Recorrido Turístico", value: 8, color: "#737373" }
 ];
 
 const driverPerformance = [
@@ -230,7 +230,7 @@ class StatsSection extends React.Component {
               <Calendar size={16} className="mr-2" />
               Personalizar
             </Button>
-            <Button className="bg-red-600 hover:bg-red-700">
+            <Button className="bg-black hover:bg-gray-800">
               <BarChart2 size={16} className="mr-2" />
               Generar Informe
             </Button>
@@ -243,10 +243,10 @@ class StatsSection extends React.Component {
             <CardContent className="p-6">
               <div className="flex justify-between items-start mb-2">
                 <div className="text-xs text-gray-500 uppercase">Ingresos Totales</div>
-                <DollarSign size={18} className="text-red-500" />
+                <DollarSign size={18} className="text-black" />
               </div>
               <div className="text-3xl font-bold mt-2">268.450€</div>
-              <div className="text-xs text-green-500 mt-1 flex items-center">
+              <div className="text-xs text-gray-600 mt-1 flex items-center">
                 <TrendingUp size={14} className="mr-1" /> 
                 15% respecto al período anterior
               </div>
@@ -256,10 +256,10 @@ class StatsSection extends React.Component {
             <CardContent className="p-6">
               <div className="flex justify-between items-start mb-2">
                 <div className="text-xs text-gray-500 uppercase">Reservas Completadas</div>
-                <Clock size={18} className="text-blue-500" />
+                <Clock size={18} className="text-black" />
               </div>
               <div className="text-3xl font-bold mt-2">1.245</div>
-              <div className="text-xs text-green-500 mt-1 flex items-center">
+              <div className="text-xs text-gray-600 mt-1 flex items-center">
                 <TrendingUp size={14} className="mr-1" /> 
                 8% respecto al período anterior
               </div>
@@ -272,7 +272,7 @@ class StatsSection extends React.Component {
                 <Star size={18} className="text-amber-500" />
               </div>
               <div className="text-3xl font-bold mt-2">4.8/5</div>
-              <div className="text-xs text-green-500 mt-1 flex items-center">
+              <div className="text-xs text-gray-600 mt-1 flex items-center">
                 <TrendingUp size={14} className="mr-1" /> 
                 0.2 respecto al período anterior
               </div>
@@ -282,10 +282,10 @@ class StatsSection extends React.Component {
             <CardContent className="p-6">
               <div className="flex justify-between items-start mb-2">
                 <div className="text-xs text-gray-500 uppercase">Incidencias</div>
-                <AlertCircle size={18} className="text-orange-500" />
+                <AlertCircle size={18} className="text-gray-500" />
               </div>
               <div className="text-3xl font-bold mt-2">2.3%</div>
-              <div className="text-xs text-green-500 mt-1 flex items-center">
+              <div className="text-xs text-gray-600 mt-1 flex items-center">
                 <ArrowDown size={14} className="mr-1" /> 
                 0.5% menos que el período anterior
               </div>
@@ -298,7 +298,7 @@ class StatsSection extends React.Component {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <DollarSign size={18} className="mr-2 text-red-500" />
+                <DollarSign size={18} className="mr-2 text-black" />
                 Ingresos y Beneficios
               </CardTitle>
             </CardHeader>
@@ -310,7 +310,7 @@ class StatsSection extends React.Component {
                       <div className="relative h-[200px] w-16 flex flex-col justify-end">
                         {/* Barra de ingresos */}
                         <div 
-                          className="w-8 bg-red-500 opacity-80 rounded-t-sm mx-auto"
+                          className="w-8 bg-black opacity-80 rounded-t-sm mx-auto"
                           style={{ 
                             height: `${(month.revenue / 40000) * 100}%`,
                           }}
@@ -318,7 +318,7 @@ class StatsSection extends React.Component {
                         
                         {/* Barra de beneficios (superpuesta) */}
                         <div 
-                          className="w-8 bg-teal-500 opacity-80 rounded-t-sm mx-auto absolute bottom-0"
+                          className="w-8 bg-gray-600 opacity-80 rounded-t-sm mx-auto absolute bottom-0"
                           style={{ 
                             height: `${(month.beneficio / 40000) * 100}%`,
                           }}
@@ -332,11 +332,11 @@ class StatsSection extends React.Component {
                 {/* Leyenda */}
                 <div className="flex justify-center space-x-4 mt-2">
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-500 opacity-80 mr-1"></div>
+                    <div className="w-3 h-3 bg-black opacity-80 mr-1"></div>
                     <span className="text-xs">Ingresos</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-teal-500 opacity-80 mr-1"></div>
+                    <div className="w-3 h-3 bg-gray-600 opacity-80 mr-1"></div>
                     <span className="text-xs">Beneficio</span>
                   </div>
                 </div>
@@ -349,7 +349,7 @@ class StatsSection extends React.Component {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Car size={18} className="mr-2 text-blue-500" />
+                  <Car size={18} className="mr-2 text-black" />
                   Reservas por Tipo de Servicio
                 </CardTitle>
               </CardHeader>
@@ -366,7 +366,7 @@ class StatsSection extends React.Component {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Car size={18} className="mr-2 text-purple-500" />
+                <Car size={18} className="mr-2 text-gray-500" />
                 Uso de Vehículos por Categoría
               </CardTitle>
             </CardHeader>
@@ -400,7 +400,7 @@ class StatsSection extends React.Component {
                     key={index}
                     value={day.value}
                     maxValue={maxBookingValue}
-                    color="#FF9F1C"
+                    color="#000000"
                     label={day.name}
                   />
                 ))}
@@ -412,7 +412,7 @@ class StatsSection extends React.Component {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Users size={18} className="mr-2 text-indigo-500" />
+                <Users size={18} className="mr-2 text-gray-500" />
                 Segmentación de Clientes
               </CardTitle>
             </CardHeader>
@@ -428,7 +428,7 @@ class StatsSection extends React.Component {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Map size={18} className="mr-2 text-green-500" />
+                <Map size={18} className="mr-2 text-gray-600" />
                 Rutas Más Populares
               </CardTitle>
             </CardHeader>
@@ -451,7 +451,7 @@ class StatsSection extends React.Component {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Users size={18} className="mr-2 text-red-500" />
+                <Users size={18} className="mr-2 text-black" />
                 Rendimiento de Conductores
               </CardTitle>
             </CardHeader>
@@ -472,7 +472,7 @@ class StatsSection extends React.Component {
                     <HorizontalBar 
                       value={driver.bookings} 
                       maxValue={maxDriverBookings} 
-                      color="#118AB2" 
+                      color="#000000" 
                     />
                   </div>
                 ))}
@@ -487,28 +487,28 @@ class StatsSection extends React.Component {
             <CardContent className="p-6">
               <div className="text-xs text-gray-500 uppercase">Clientes Premium</div>
               <div className="text-3xl font-bold mt-2">68</div>
-              <div className="text-xs text-green-500 mt-1">↑ 12% respecto al mes anterior</div>
+              <div className="text-xs text-gray-600 mt-1">↑ 12% respecto al mes anterior</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-6">
               <div className="text-xs text-gray-500 uppercase">Ocupación Flota</div>
               <div className="text-3xl font-bold mt-2">78%</div>
-              <div className="text-xs text-green-500 mt-1">↑ 5% respecto al mes anterior</div>
+              <div className="text-xs text-gray-600 mt-1">↑ 5% respecto al mes anterior</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-6">
               <div className="text-xs text-gray-500 uppercase">Tiempo medio espera</div>
               <div className="text-3xl font-bold mt-2">4.2 min</div>
-              <div className="text-xs text-green-500 mt-1">↓ 0.8 min respecto al mes anterior</div>
+              <div className="text-xs text-gray-600 mt-1">↓ 0.8 min respecto al mes anterior</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-6">
               <div className="text-xs text-gray-500 uppercase">Valor medio reserva</div>
               <div className="text-3xl font-bold mt-2">185€</div>
-              <div className="text-xs text-green-500 mt-1">↑ 12€ respecto al mes anterior</div>
+              <div className="text-xs text-gray-600 mt-1">↑ 12€ respecto al mes anterior</div>
             </CardContent>
           </Card>
         </div>

@@ -59,7 +59,7 @@ def generate_content():
         # Crear el sistema de mensajes para el modelo
         messages = [
             {"role": "system", "content": """Eres un asistente especializado en crear artículos de blog profesionales 
-            para una empresa de transporte ejecutivo y limousinas llamada Operiq. Debes generar artículos completos 
+            para una empresa de transporte ejecutivo y limousinas llamada Privyde. Debes generar artículos completos 
             en markdown, con títulos atractivos, secciones organizadas y contenido relevante sobre transporte ejecutivo, 
             servicio premium, experiencias VIP, consejos de viaje corporativo y temas relacionados.
             

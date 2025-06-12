@@ -286,7 +286,7 @@ const UserDetailsView = ({
                   variant="default"
                   onClick={handleSaveChanges}
                   disabled={isSaving}
-                  className="flex items-center bg-green-600 hover:bg-green-700 transition-colors"
+                  className="flex items-center bg-black hover:bg-gray-800 transition-colors"
                 >
                   {isSaving ? (
                     <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
@@ -332,7 +332,7 @@ const UserDetailsView = ({
                       className="h-24 w-24 rounded-full border-4 border-gray-100 shadow-sm"
                     />
                   ) : (
-                    <div className="h-24 w-24 rounded-full bg-gradient-to-br from-red-100 to-red-200 text-red-600 flex items-center justify-center text-2xl font-bold border-4 border-gray-100 shadow-sm">
+                    <div className="h-24 w-24 rounded-full bg-gradient-to-br from-red-100 to-red-200 text-gray-600 flex items-center justify-center text-2xl font-bold border-4 border-gray-100 shadow-sm">
                       {user.name[0].toUpperCase()}
                     </div>
                   )}
@@ -344,8 +344,8 @@ const UserDetailsView = ({
                         <Badge 
                           className={cn(
                             "px-3 py-1 flex items-center",
-                            user.role === 'admin' ? 'bg-purple-100 text-purple-800 hover:bg-purple-100' : 
-                            user.role === 'company' ? 'bg-blue-100 text-blue-800 hover:bg-blue-100' : 
+                            user.role === 'admin' ? 'bg-gray-200 text-purple-800 hover:bg-gray-200' : 
+                            user.role === 'company' ? 'bg-gray-200 text-blue-800 hover:bg-gray-200' : 
                             'bg-gray-100 text-gray-800 hover:bg-gray-100'
                           )}
                         >
@@ -356,13 +356,13 @@ const UserDetailsView = ({
                           className={cn(
                             "px-3 py-1 flex items-center",
                             user.status === 'active' 
-                              ? 'bg-green-100 text-green-800 hover:bg-green-100' 
-                              : 'bg-red-100 text-red-800 hover:bg-red-100'
+                              ? 'bg-gray-200 text-green-800 hover:bg-gray-200' 
+                              : 'bg-gray-200 text-gray-800 hover:bg-gray-200'
                           )}
                         >
                           <span className={`h-2 w-2 rounded-full mr-1.5 ${
-                            user.status === 'active' ? 'bg-green-600' : 
-                            'bg-red-600'
+                            user.status === 'active' ? 'bg-black' : 
+                            'bg-black'
                           }`}></span>
                           {user.status === 'active' ? 'Activo' : 'Inactivo'}
                         </Badge>
@@ -376,7 +376,7 @@ const UserDetailsView = ({
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                       <div className="w-full space-y-2">
@@ -386,7 +386,7 @@ const UserDetailsView = ({
                           value={formData.status}
                           onValueChange={(value) => setFormData({...formData, status: value})}
                         >
-                          <SelectTrigger className="border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
+                          <SelectTrigger className="border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
                             <SelectValue placeholder="Seleccionar estado" />
                           </SelectTrigger>
                           <SelectContent>
@@ -403,7 +403,7 @@ const UserDetailsView = ({
                 {user.profile_completed ? (
                   <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-md">
                     <div className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-gray-600 mr-2 flex-shrink-0" />
                       <p className="text-sm text-green-700">Perfil completo</p>
                     </div>
                   </div>
@@ -440,7 +440,7 @@ const UserDetailsView = ({
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                        className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                       />
                     ) : (
                       <p className="text-sm font-medium pl-6">{user.email}</p>
@@ -458,14 +458,14 @@ const UserDetailsView = ({
                           name="country_code"
                           value={formData.country_code}
                           onChange={handleInputChange}
-                          className="mt-1 w-20 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 w-20 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                           placeholder="+52"
                         />
                         <Input
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="mt-1 flex-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                          className="mt-1 flex-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                         />
                       </div>
                     ) : (
@@ -530,7 +530,7 @@ const UserDetailsView = ({
                               name="companyName"
                               value={formData.companyName}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                           <div>
@@ -539,7 +539,7 @@ const UserDetailsView = ({
                               name="location"
                               value={formData.location}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                           <div>
@@ -548,7 +548,7 @@ const UserDetailsView = ({
                               name="country"
                               value={formData.country}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                         </div>
@@ -560,7 +560,7 @@ const UserDetailsView = ({
                               name="companySize"
                               value={formData.companySize}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                           <div>
@@ -569,7 +569,7 @@ const UserDetailsView = ({
                               name="hearAbout"
                               value={formData.hearAbout}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                           <div>
@@ -578,7 +578,7 @@ const UserDetailsView = ({
                               name="additionalInfo"
                               value={formData.additionalInfo}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                               rows={3}
                             />
                           </div>
@@ -616,7 +616,7 @@ const UserDetailsView = ({
                               name="representativeFirstName"
                               value={formData.representativeFirstName}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                           <div>
@@ -625,7 +625,7 @@ const UserDetailsView = ({
                               name="representativeLastName"
                               value={formData.representativeLastName}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                           <div>
@@ -634,7 +634,7 @@ const UserDetailsView = ({
                               name="representativeEmail"
                               value={formData.representativeEmail}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                         </div>
@@ -678,7 +678,7 @@ const UserDetailsView = ({
                               value={formData.title || 'none'}
                               onValueChange={(value) => setFormData({...formData, title: value})}
                             >
-                              <SelectTrigger className="border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
+                              <SelectTrigger className="border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md">
                                 <SelectValue placeholder="Seleccionar título" />
                               </SelectTrigger>
                               <SelectContent>
@@ -696,7 +696,7 @@ const UserDetailsView = ({
                               name="first_name"
                               value={formData.first_name}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                         </div>
@@ -708,7 +708,7 @@ const UserDetailsView = ({
                               name="last_name"
                               value={formData.last_name}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                             />
                           </div>
                           <div>
@@ -717,7 +717,7 @@ const UserDetailsView = ({
                               name="address"
                               value={formData.address}
                               onChange={handleInputChange}
-                              className="mt-1 border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
+                              className="mt-1 border-gray-300 focus:border-gray-300 focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md"
                               rows={3}
                             />
                           </div>
@@ -772,7 +772,7 @@ const UserDetailsView = ({
                   <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-3">Destinos favoritos</h4>
                   <div className="flex flex-wrap gap-2">
                     {user.favoriteDestinations.map((destination, index) => (
-                      <Badge key={index} variant="secondary" className="px-2 py-1 bg-blue-50 text-blue-700 hover:bg-blue-100">
+                      <Badge key={index} variant="secondary" className="px-2 py-1 bg-gray-100 text-blue-700 hover:bg-gray-200">
                         {destination}
                       </Badge>
                     ))}
@@ -802,7 +802,7 @@ const UserDetailsView = ({
                 </div>
                 <div className="flex items-center justify-between py-2">
                   <span className="text-sm text-gray-700">Notificaciones:</span>
-                  <Badge variant="outline" className={`${user.preferences?.notifications ? 'bg-green-50 text-green-700 border-green-200' : 'bg-red-50 text-red-700 border-red-200'}`}>
+                  <Badge variant="outline" className={`${user.preferences?.notifications ? 'bg-green-50 text-green-700 border-green-200' : 'bg-gray-100 text-gray-700 border-gray-200'}`}>
                     {user.preferences?.notifications ? 'Activadas' : 'Desactivadas'}
                   </Badge>
                 </div>
@@ -878,7 +878,7 @@ const UserDetailsView = ({
                       <td className="py-4 text-sm text-gray-500">Mercedes-Benz Clase S</td>
                       <td className="py-4 text-sm text-gray-500">450€</td>
                       <td className="py-4">
-                        <Badge variant="secondary" className="bg-green-100 text-green-800 hover:bg-green-100">
+                        <Badge variant="secondary" className="bg-gray-200 text-green-800 hover:bg-gray-200">
                           Completado
                         </Badge>
                       </td>

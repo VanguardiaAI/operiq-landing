@@ -247,7 +247,7 @@ export default function TripsPage() {
                   Cancelar
                 </button>
                 <button 
-                  className="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-md transition-all duration-150 ease-in-out"
+                  className="px-4 py-2 bg-black hover:bg-gray-800 text-white rounded-md transition-all duration-150 ease-in-out"
                   onClick={applyFilters}
                 >
                   Aplicar

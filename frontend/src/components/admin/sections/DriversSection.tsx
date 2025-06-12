@@ -73,7 +73,7 @@ const CustomAlertDialog = (props: {
             {cancelText}
           </Button>
           <Button
-            className="bg-red-600 hover:bg-red-700 text-white"
+            className="bg-black hover:bg-gray-800 text-white"
             onClick={() => {
               onConfirm();
               onOpenChange(false);
@@ -520,7 +520,7 @@ const DriversSection = () => {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh]">
-        <Loader2 className="h-12 w-12 text-red-500 animate-spin mb-4" />
+        <Loader2 className="h-12 w-12 text-black animate-spin mb-4" />
         <h2 className="text-xl font-medium text-gray-600">Cargando chóferes...</h2>
       </div>
     );
@@ -529,11 +529,11 @@ const DriversSection = () => {
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh]">
-        <AlertTriangle className="h-12 w-12 text-red-500 mb-4" />
+        <AlertTriangle className="h-12 w-12 text-black mb-4" />
         <h2 className="text-xl font-medium text-gray-600">{error}</h2>
         <Button 
           onClick={fetchDrivers} 
-          className="mt-4 bg-red-600 hover:bg-red-700 text-white"
+          className="mt-4 bg-black hover:bg-gray-800 text-white"
         >
           Reintentar
         </Button>
@@ -548,7 +548,7 @@ const DriversSection = () => {
         {!showDriverForm && (
           <Button 
             onClick={handleAddDriver}
-            className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
           >
             <PlusCircle size={18} className="mr-2" />
             Añadir Chófer
@@ -621,14 +621,14 @@ const DriversSection = () => {
                             onClick={() => {
                               setImagePreview(null);
                             }}
-                            className="absolute -top-2 -right-2 bg-red-100 text-red-600 rounded-full p-1"
+                            className="absolute -top-2 -right-2 bg-gray-200 text-gray-600 rounded-full p-1"
                           >
                             <X size={16} />
                           </button>
                         </div>
                       ) : (
                         <div>
-                          <div className="mx-auto h-32 w-32 rounded-full bg-red-100 text-red-600 flex items-center justify-center mb-2">
+                          <div className="mx-auto h-32 w-32 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mb-2">
                             <UserCircle className="h-16 w-16" />
                           </div>
                           <label 
@@ -854,7 +854,7 @@ const DriversSection = () => {
                   // Enviar datos al backend
                   handleDriverSubmit(driverData);
                 }}
-                className="bg-red-600 hover:bg-red-700"
+                className="bg-black hover:bg-gray-800"
               >
                 {editingDriver ? 'Actualizar' : 'Crear'} Chófer
               </Button>
@@ -946,13 +946,13 @@ const DriversSection = () => {
                             />
                           ) : (
                             <div 
-                              className="h-10 w-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-medium"
+                              className="h-10 w-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-medium"
                             >
                               {driver.name.charAt(0).toUpperCase()}
                             </div>
                           )}
                           <div 
-                            className="fallback-avatar h-10 w-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-medium"
+                            className="fallback-avatar h-10 w-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-medium"
                             style={{ display: 'none' }}
                           >
                             {driver.name.charAt(0).toUpperCase()}
@@ -978,10 +978,10 @@ const DriversSection = () => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
                         driver.status === 'active' 
-                          ? 'bg-green-100 text-green-800' 
+                          ? 'bg-gray-200 text-green-800' 
                           : driver.status === 'inactive'
                           ? 'bg-gray-100 text-gray-800'
-                          : 'bg-yellow-100 text-yellow-800'
+                          : 'bg-gray-200 text-yellow-800'
                       }`}>
                         {driver.status === 'active' 
                           ? 'Activo' 
@@ -1007,7 +1007,7 @@ const DriversSection = () => {
                         variant="outline"
                         size="sm"
                         onClick={(e) => handleDeleteDriver(driver.id, e)}
-                        className="text-red-600 border-red-200 hover:bg-red-50"
+                        className="text-gray-600 border-gray-200 hover:bg-gray-100"
                       >
                         <Trash2 size={16} />
                       </Button>

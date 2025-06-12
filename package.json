@@ -1,5 +1,5 @@
 {
-  "name": "operiq-platform",
+  "name": "privyde-platform",
   "version": "1.0.0",
   "description": "Plataforma integral de transporte de lujo con servicios de chófer premium a nivel global",
   "scripts": {
@@ -11,7 +11,7 @@
     "install:backend": "cd backend && pip install -r requirements.txt"
   },
   "keywords": [
-    "operiq",
+    "privyde",
     "transporte",
     "lujo",
     "chauffeur",
@@ -24,11 +24,11 @@
     "luxury-transport",
     "booking-platform"
   ],
-  "author": "Operiq Team",
+  "author": "Privyde Team",
   "license": "Proprietary",
   "repository": {
     "type": "git",
-    "url": "https://github.com/VanguardiaAI/operiq-landing.git"
+    "url": "https://github.com/VanguardiaAI/privyde-platform.git"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.13",

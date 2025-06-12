@@ -675,7 +675,7 @@ const VehiclesSection = () => {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh]">
-        <Loader2 className="h-12 w-12 text-red-500 animate-spin mb-4" />
+        <Loader2 className="h-12 w-12 text-black animate-spin mb-4" />
         <h2 className="text-xl font-medium text-gray-600">Cargando vehículos...</h2>
       </div>
     );
@@ -684,11 +684,11 @@ const VehiclesSection = () => {
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh]">
-        <AlertTriangle className="h-12 w-12 text-red-500 mb-4" />
+        <AlertTriangle className="h-12 w-12 text-black mb-4" />
         <h2 className="text-xl font-medium text-gray-600">{error}</h2>
         <Button 
           onClick={fetchVehicles} 
-          className="mt-4 bg-red-600 hover:bg-red-700 text-white"
+          className="mt-4 bg-black hover:bg-gray-800 text-white"
         >
           Reintentar
         </Button>
@@ -703,7 +703,7 @@ const VehiclesSection = () => {
         {!showVehicleForm && (
           <Button 
             onClick={handleAddVehicle}
-            className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
           >
             <PlusCircle size={18} className="mr-2" />
             Añadir Vehículo

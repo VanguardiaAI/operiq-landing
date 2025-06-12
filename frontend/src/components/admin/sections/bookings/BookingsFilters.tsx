@@ -48,11 +48,11 @@ const BookingsFilters = () => {
         </div>
         <div className="bg-white rounded-xl shadow-sm p-4">
           <h3 className="text-xs text-gray-500">En progreso</h3>
-          <p className="text-2xl font-semibold mt-1 text-blue-600">3</p>
+          <p className="text-2xl font-semibold mt-1 text-gray-600">3</p>
         </div>
         <div className="bg-white rounded-xl shadow-sm p-4">
           <h3 className="text-xs text-gray-500">Incidencias</h3>
-          <p className="text-2xl font-semibold mt-1 text-red-600">2</p>
+          <p className="text-2xl font-semibold mt-1 text-gray-600">2</p>
         </div>
       </div>
     </div>

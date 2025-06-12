@@ -66,7 +66,7 @@ pickup_locations = [
         "coordinates": [-3.6922, 40.4168]
     },
     {
-        "location": "Oficina Central Operiq",
+                    "location": "Oficina Central Privyde",
         "coordinates": [-3.7038, 40.4168]
     }
 ]

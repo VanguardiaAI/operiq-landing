@@ -88,11 +88,11 @@ const StatusBadge = ({ status }: { status: string }) => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'open':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-gray-200 text-blue-800';
       case 'in_progress':
-        return 'bg-yellow-100 text-yellow-800';
+        return 'bg-gray-200 text-yellow-800';
       case 'resolved':
-        return 'bg-green-100 text-green-800';
+        return 'bg-gray-200 text-green-800';
       case 'closed':
         return 'bg-gray-100 text-gray-800';
       default:
@@ -112,13 +112,13 @@ const PriorityBadge = ({ priority }: { priority: string }) => {
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'low':
-        return 'bg-green-100 text-green-800';
+        return 'bg-gray-200 text-green-800';
       case 'medium':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-gray-200 text-blue-800';
       case 'high':
-        return 'bg-orange-100 text-orange-800';
+        return 'bg-gray-200 text-orange-800';
       case 'urgent':
-        return 'bg-red-100 text-red-800';
+        return 'bg-gray-200 text-gray-800';
       default:
         return 'bg-gray-100 text-gray-800';
     }
@@ -136,13 +136,13 @@ const SourceBadge = ({ source }: { source: string }) => {
   const getSourceColor = (source: string) => {
     switch (source) {
       case 'web':
-        return 'bg-indigo-100 text-indigo-800';
+        return 'bg-gray-200 text-indigo-800';
       case 'app_client':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-gray-200 text-blue-800';
       case 'app_driver':
-        return 'bg-green-100 text-green-800';
+        return 'bg-gray-200 text-green-800';
       case 'email':
-        return 'bg-purple-100 text-purple-800';
+        return 'bg-gray-200 text-purple-800';
       case 'internal':
         return 'bg-gray-100 text-gray-800';
       default:
@@ -180,7 +180,7 @@ const UserTypeBadge = ({ userType, companyName }: { userType?: string, companyNa
   
   return (
     <span className={`px-2 py-1 text-xs rounded-full ${
-      userType === 'company' ? 'bg-violet-100 text-violet-800' : 'bg-teal-100 text-teal-800'
+      userType === 'company' ? 'bg-gray-200 text-gray-800' : 'bg-gray-200 text-teal-800'
     }`}>
       {userType === 'company' ? `Empresa${companyName ? ': ' + companyName : ''}` : 'Particular'}
     </span>
@@ -263,9 +263,9 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
           },
           {
             id: "admin",
-          name: "Soporte Operiq",
+          name: "Soporte Privyde",
             role: 'admin',
-          avatar: "https://ui-avatars.com/api/?name=Soporte+Operiq&background=f44336&color=fff"
+          avatar: "https://ui-avatars.com/api/?name=Soporte+Privyde&background=f44336&color=fff"
         }
       ],
       lastMessage: {
@@ -335,7 +335,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
         },
         recipient: {
           id: msg.recipient?.id || "recipient-id",
-          name: msg.recipient?.name || "Soporte Operiq",
+          name: msg.recipient?.name || "Soporte Privyde",
           role: msg.recipient?.isAdmin ? 'admin' : 'client',
           avatar: msg.recipient?.avatar
         },
@@ -413,7 +413,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
             },
             recipient: {
               id: msg.recipient?.id || "recipient-id",
-              name: msg.recipient?.name || "Soporte Operiq",
+              name: msg.recipient?.name || "Soporte Privyde",
               role: msg.recipient?.isAdmin ? 'admin' : 'client',
               avatar: msg.recipient?.avatar
             },
@@ -529,7 +529,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
             },
             recipient: {
               id: messageData.isAdmin ? selectedConversation.participants[0].id : "admin",
-              name: messageData.isAdmin ? selectedConversation.participants[0].name : "Soporte Operiq",
+              name: messageData.isAdmin ? selectedConversation.participants[0].name : "Soporte Privyde",
               role: messageData.isAdmin ? 'client' : 'admin'
             },
             timestamp: messageData.timestamp || new Date().toISOString(),
@@ -558,7 +558,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
             },
             recipient: {
               id: msg.recipient?.id || "recipient-id",
-              name: msg.recipient?.name || "Soporte Operiq",
+              name: msg.recipient?.name || "Soporte Privyde",
               role: msg.recipient?.isAdmin ? 'admin' : 'client',
               avatar: msg.recipient?.avatar
             },
@@ -711,7 +711,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
       const messageData: SupportMessageDTO = {
         message: newMessage.trim(),
         sender: {
-          name: "Soporte Operiq",
+          name: "Soporte Privyde",
           email: "soporte@operiq.com",
           isAdmin: true
         },
@@ -732,9 +732,9 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
         message: newMessage.trim(),
       sender: {
         id: "a1",
-        name: "Soporte Operiq",
+        name: "Soporte Privyde",
         role: "admin",
-        avatar: "https://ui-avatars.com/api/?name=Soporte+Operiq&background=f44336&color=fff"
+        avatar: "https://ui-avatars.com/api/?name=Soporte+Privyde&background=f44336&color=fff"
       },
       recipient: selectedConversation.participants.find(p => p.role !== 'admin') || {
         id: "",
@@ -766,7 +766,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
             timestamp: new Date().toISOString(),
             sender: {
               id: "a1",
-              name: "Soporte Operiq",
+              name: "Soporte Privyde",
               role: "admin" as 'admin',
               userType: 'individual' as 'individual'
             }
@@ -858,7 +858,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
         </div>
         
         {activeView === 'inbox' ? (
-          <Button className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+          <Button className="flex items-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
             <PlusCircle size={18} className="mr-2" />
             Nueva conversación
           </Button>
@@ -998,7 +998,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
                   <div 
                     key={conversation.id}
                     onClick={() => handleSelectConversation(conversation)}
-                    className={`p-4 hover:bg-gray-50 cursor-pointer transition-colors ${conversation.unreadCount > 0 ? 'bg-red-50' : ''}`}
+                    className={`p-4 hover:bg-gray-50 cursor-pointer transition-colors ${conversation.unreadCount > 0 ? 'bg-gray-100' : ''}`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
@@ -1016,17 +1016,17 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
                           )}
                           
                           {conversation.unreadCount > 0 && (
-                            <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white rounded-full text-xs flex items-center justify-center">
+                            <span className="absolute -top-1 -right-1 w-5 h-5 bg-gray-1000 text-white rounded-full text-xs flex items-center justify-center">
                               {conversation.unreadCount}
                             </span>
                           )}
                           
                           <span className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${
                             conversation.participants.find(p => p.role !== 'admin')?.role === 'client' 
-                              ? 'bg-blue-500' 
+                              ? 'bg-gray-1000' 
                               : conversation.participants.find(p => p.role !== 'admin')?.role === 'driver'
-                                ? 'bg-green-500'
-                                : 'bg-purple-500'
+                                ? 'bg-gray-600'
+                                : 'bg-gray-600'
                           }`}></span>
                         </div>
                         
@@ -1088,10 +1088,10 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
                   </h3>
                   <span className={`ml-2 w-2 h-2 rounded-full ${
                     selectedConversation.participants.find(p => p.role !== 'admin')?.role === 'client' 
-                      ? 'bg-blue-500' 
+                      ? 'bg-gray-1000' 
                       : selectedConversation.participants.find(p => p.role !== 'admin')?.role === 'driver'
-                        ? 'bg-green-500'
-                        : 'bg-purple-500'
+                        ? 'bg-gray-600'
+                        : 'bg-gray-600'
                   }`}></span>
                   <span className="text-xs text-gray-500 ml-2">
                     {selectedConversation.participants.find(p => p.role !== 'admin')?.role === 'client' 
@@ -1128,7 +1128,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
               >
                 <div className={`max-w-[70%] rounded-lg p-4 ${
                   message.sender.role === 'admin' 
-                    ? 'bg-red-600 text-white' 
+                    ? 'bg-black text-white' 
                     : 'bg-white border border-gray-200'
                 }`}>
                   <div className="flex justify-between items-start mb-1">
@@ -1148,7 +1148,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
                         <div 
                           key={index}
                           className={`text-xs flex items-center px-2 py-1 rounded ${
-                            message.sender.role === 'admin' ? 'bg-red-700 text-white' : 'bg-gray-100 text-gray-800'
+                            message.sender.role === 'admin' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-800'
                           }`}
                         >
                           <span className="truncate">{attachment.name}</span>
@@ -1176,7 +1176,7 @@ const SupportSection: React.FC<SupportSectionProps> = ({ selectedConversationId 
               <Button 
                 onClick={handleSendMessage}
                 disabled={!newMessage.trim()} 
-                className="bg-red-600 hover:bg-red-700 text-white h-full"
+                className="bg-black hover:bg-gray-800 text-white h-full"
               >
                 <SendHorizonal size={18} />
               </Button>

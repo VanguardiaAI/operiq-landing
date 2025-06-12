@@ -227,7 +227,7 @@ const AddExtraScheduleModal: React.FC<AddExtraScheduleModalProps> = ({
         <div className="p-6 space-y-6">
           {/* Vehicle and Driver Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-blue-50 rounded-lg">
+            <div className="p-4 bg-gray-100 rounded-lg">
               <h3 className="font-medium text-gray-800 mb-2">Conductor</h3>
               <div className="text-sm space-y-1">
                 <div className="flex items-center">
@@ -310,7 +310,7 @@ const AddExtraScheduleModal: React.FC<AddExtraScheduleModalProps> = ({
 
             {/* Conflict Check */}
             {isCheckingConflicts && (
-              <div className="mt-3 p-3 bg-blue-50 rounded-lg text-sm text-blue-800">
+              <div className="mt-3 p-3 bg-gray-100 rounded-lg text-sm text-blue-800">
                 <div className="animate-pulse">Verificando conflictos...</div>
               </div>
             )}
@@ -318,7 +318,7 @@ const AddExtraScheduleModal: React.FC<AddExtraScheduleModalProps> = ({
             {conflictCheck && (
               <div className={`mt-3 p-3 rounded-lg text-sm ${
                 conflictCheck.has_conflict 
-                  ? 'bg-red-50 text-red-800' 
+                  ? 'bg-gray-100 text-gray-800' 
                   : 'bg-green-50 text-green-800'
               }`}>
                 <div className="flex items-center">
@@ -390,7 +390,7 @@ const AddExtraScheduleModal: React.FC<AddExtraScheduleModalProps> = ({
           <Button
             onClick={handleSubmitExtraSchedule}
             disabled={isSubmitting || conflictCheck?.has_conflict || !scheduleDate || !startTime || !endTime}
-            className="bg-green-600 hover:bg-green-700 disabled:opacity-50"
+            className="bg-black hover:bg-gray-800 disabled:opacity-50"
           >
             {isSubmitting ? (
               <>

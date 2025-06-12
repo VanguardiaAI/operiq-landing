@@ -166,7 +166,7 @@ const CustomAlertDialog = ({
             {cancelText}
           </Button>
           <Button
-            className="bg-red-600 hover:bg-red-700 text-white"
+            className="bg-black hover:bg-gray-800 text-white"
             onClick={() => {
               confirmAction();
               onOpenChange(false);
@@ -267,26 +267,26 @@ const VehiclesTable = ({
 
   // Mapeo para mostrar etiquetas de tipo de vehículo
   const typeLabels: Record<string, { label: string, color: string, icon?: React.ReactNode }> = {
-    sedan: { label: "Sedán", color: "bg-blue-100 text-blue-800" },
-    suv: { label: "SUV", color: "bg-green-100 text-green-800" },
+    sedan: { label: "Sedán", color: "bg-gray-200 text-blue-800" },
+    suv: { label: "SUV", color: "bg-gray-200 text-green-800" },
     van: { label: "Van/Minivan", color: "bg-amber-100 text-amber-800" },
-    luxury: { label: "Lujo", color: "bg-yellow-100 text-yellow-800" },
-    electric: { label: "Eléctrico", color: "bg-teal-100 text-teal-800" },
+    luxury: { label: "Lujo", color: "bg-gray-200 text-yellow-800" },
+    electric: { label: "Eléctrico", color: "bg-gray-200 text-teal-800" },
     classic: { label: "Clásico", color: "bg-pink-100 text-pink-800" },
-    limousine: { label: "Limusina", color: "bg-purple-100 text-purple-800" },
-    bus: { label: "Bus", color: "bg-indigo-100 text-indigo-800" },
-    helicopter: { label: "Helicóptero", color: "bg-red-100 text-red-800" },
+    limousine: { label: "Limusina", color: "bg-gray-200 text-purple-800" },
+    bus: { label: "Bus", color: "bg-gray-200 text-indigo-800" },
+    helicopter: { label: "Helicóptero", color: "bg-gray-200 text-gray-800" },
     jet: { label: "Jet Privado", color: "bg-pink-100 text-pink-800" }
   };
 
   // Mapeo para mostrar etiquetas de categoría
   const categoryLabels: Record<string, { label: string, color: string }> = {
     standard: { label: "Estándar", color: "bg-gray-100 text-gray-800" },
-    premium: { label: "Premium", color: "bg-blue-100 text-blue-800" },
-    vip: { label: "VIP", color: "bg-purple-100 text-purple-800" },
+    premium: { label: "Premium", color: "bg-gray-200 text-blue-800" },
+    vip: { label: "VIP", color: "bg-gray-200 text-purple-800" },
     luxury: { label: "Lujo", color: "bg-amber-100 text-amber-800" },
-    business: { label: "Business", color: "bg-blue-100 text-blue-800" },
-    executive: { label: "Ejecutivo", color: "bg-purple-100 text-purple-800" }
+    business: { label: "Business", color: "bg-gray-200 text-blue-800" },
+    executive: { label: "Ejecutivo", color: "bg-gray-200 text-purple-800" }
   };
 
   const ownerTypeIcons = {
@@ -446,7 +446,7 @@ const VehiclesTable = ({
                 </td>
                 <td className="px-4 py-4 whitespace-nowrap">
                   <Badge variant={vehicle.available ? "default" : "destructive"} 
-                         className={`${vehicle.available ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                         className={`${vehicle.available ? 'bg-gray-200 text-green-700' : 'bg-gray-200 text-gray-700'}`}>
                     {vehicle.available ? "Disponible" : "No disponible"}
                   </Badge>
                 </td>
@@ -473,7 +473,7 @@ const VehiclesTable = ({
                      <div className="border-t my-1"></div>
                     <CustomDropdownMenuItem 
                       onClick={(e) => { e.stopPropagation(); handleDelete(vehicle.id);}}
-                      className="text-red-600 hover:bg-red-50"
+                      className="text-gray-600 hover:bg-gray-100"
                     >
                       <div className="flex items-center"><Trash2 className="mr-2 h-4 w-4" /><span>Eliminar Vehículo</span></div>
                     </CustomDropdownMenuItem>

@@ -205,7 +205,7 @@ const BookingsSection = () => {
             />
             <Search size={18} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>
-          <Button className="bg-red-600 hover:bg-red-700" onClick={handleOpenNewBookingModal}>
+          <Button className="bg-black hover:bg-gray-800" onClick={handleOpenNewBookingModal}>
             <PlusCircle size={18} className="mr-2" />
             Nueva Reserva
           </Button>

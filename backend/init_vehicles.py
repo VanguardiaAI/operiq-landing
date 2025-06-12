@@ -55,7 +55,7 @@ vehicles_data = [
         # Campos adicionales
         "licensePlate": "1234ABC",
         "ownerType": "company",
-        "ownerName": "Operiq Transport",
+                    "ownerName": "Privyde Transport",
         "ownerCountry": "ES",
         "availabilityType": "zone",
         "availabilityDetails": "Madrid Centro",

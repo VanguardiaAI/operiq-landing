@@ -70,8 +70,8 @@ const BlogPage = () => {
   return (
     <>
       <header>
-        <title>Blog | Operiq - Transporte Ejecutivo y Premium</title>
-        <meta name="description" content="Artículos sobre transporte ejecutivo, viajes corporativos y servicios premium de Operiq." />
+        <title>Blog | Privyde - Transporte Ejecutivo y Premium</title>
+        <meta name="description" content="Artículos sobre transporte ejecutivo, viajes corporativos y servicios premium de Privyde." />
       </header>
       
       <Navbar />
@@ -81,14 +81,14 @@ const BlogPage = () => {
         <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
           {/* Decorative elements */}
           <div className="absolute inset-0 overflow-hidden opacity-20">
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-gray-1000 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
           </div>
           
           <div className="container relative mx-auto px-4 z-10">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-left">
-                Blog de <span className="text-red-500">Operiq</span>
+                Blog de <span className="text-black">Privyde</span>
               </h1>
               <p className="text-xl text-white/80 mb-8 text-left max-w-2xl">
                 Artículos, guías y tendencias sobre transporte ejecutivo y servicios premium para viajeros y empresas exigentes.

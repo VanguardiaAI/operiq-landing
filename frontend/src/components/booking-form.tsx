@@ -209,7 +209,7 @@ function CalendarComponent({ selectedDate, onDateChange }: { selectedDate: Date,
             className={`
               text-center py-2 rounded-md text-sm transition-all
               ${isSelectedDate(day)
-                ? 'bg-gradient-to-r from-[#ff7c1a] to-[#ff3c1a] text-white font-bold'
+                ? 'bg-black text-white font-bold'
                 : isPastDate(day)
                   ? 'text-gray-300 cursor-not-allowed'
                   : 'hover:bg-gray-100'
@@ -257,7 +257,7 @@ function DurationSelector({ selectedDuration, onDurationChange }: { selectedDura
                 className={`
                   text-left px-4 py-3 rounded-md transition-all flex justify-between items-center
                   ${selectedDuration === duration
-                    ? 'bg-gradient-to-r from-[#ff7c1a] to-[#ff3c1a] text-white font-bold'
+                    ? 'bg-black text-white font-bold'
                     : 'hover:bg-gray-100 border border-gray-200'
                   }
                 `}
@@ -558,7 +558,7 @@ export default function BookingForm() {
                   type="submit" 
                   className="select-button w-full h-10 text-base relative z-20"
                   style={{
-                    background: "linear-gradient(90deg, #ff7c1a 0%, #ff3c1a 100%)",
+                    background: "#000000",
                     color: "white",
                     fontWeight: "bold"
                   }}
@@ -650,7 +650,7 @@ export default function BookingForm() {
                   type="submit" 
                   className="select-button w-full h-10 text-base relative z-20"
                   style={{
-                    background: "linear-gradient(90deg, #ff7c1a 0%, #ff3c1a 100%)",
+                    background: "#000000",
                     color: "white",
                     fontWeight: "bold"
                   }}

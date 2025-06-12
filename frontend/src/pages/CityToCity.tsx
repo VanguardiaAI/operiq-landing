@@ -31,7 +31,7 @@ const CityToCity = () => {
             Obtener un presupuesto es fácil:
           </p>
           <ul className="list-disc pl-5 mb-4 space-y-2 text-left">
-            <li className="text-gray-600 text-left">Descargue nuestra aplicación o visite operiq.com</li>
+            <li className="text-gray-600 text-left">Descargue nuestra aplicación o visite privyde.com</li>
             <li className="text-gray-600 text-left">Introduzca las fechas y ubicaciones deseadas como si estuviera reservando</li>
             <li className="text-gray-600 text-left">En el siguiente paso, verá las tarifas para cada tipo de vehículo</li>
           </ul>
@@ -60,11 +60,11 @@ const CityToCity = () => {
       ),
     },
     {
-      question: "¿Qué vehículos utiliza Operiq?",
+      question: "¿Qué vehículos utiliza Privyde?",
       answer: (
         <>
           <p className="text-gray-600 mb-4">
-            Operiq ofrece cuatro tipos de vehículos en la mayoría de las ubicaciones: Business Class, Electric Class, First Class y Business Van/SUV.
+            Privyde ofrece cuatro tipos de vehículos en la mayoría de las ubicaciones: Business Class, Electric Class, First Class y Business Van/SUV.
           </p>
           <p className="text-gray-600 mb-4">
             Cada una de estas categorías contiene una selección de modelos comparables de primera línea, que puede ver en el proceso de reserva o en nuestro Centro de ayuda.
@@ -83,7 +83,7 @@ const CityToCity = () => {
             El nombre y el número de teléfono del chófer se enviarán al pasajero una hora antes de la recogida por correo electrónico y SMS. Este mensaje también contiene la marca, el modelo y el número de placa del vehículo. Si la reserva es para otra persona, esta información se enviará a la dirección de correo electrónico y al número de teléfono proporcionados en el proceso de reserva.
           </p>
           <p className="text-gray-600">
-            Una hora antes del viaje, los pasajeros también pueden contactar por chat con su chófer a través de la aplicación de Operiq.
+            Una hora antes del viaje, los pasajeros también pueden contactar por chat con su chófer a través de la aplicación de Privyde.
           </p>
         </>
       ),
@@ -92,7 +92,7 @@ const CityToCity = () => {
       question: "¿Qué sucede si el chófer llega tarde?",
       answer: (
         <p className="text-gray-600">
-          En el improbable caso de que su chófer se retrase, póngase en contacto con el chófer mediante el chat de la aplicación de Operiq. Si desea cancelar la reserva, puede hacerlo a través de la aplicación o el sitio web de Operiq.
+          En el improbable caso de que su chófer se retrase, póngase en contacto con el chófer mediante el chat de la aplicación de Privyde. Si desea cancelar la reserva, puede hacerlo a través de la aplicación o el sitio web de Privyde.
         </p>
       ),
     },
@@ -108,7 +108,7 @@ const CityToCity = () => {
       question: "¿El chófer habla inglés?",
       answer: (
         <p className="text-gray-600">
-          Todos los chóferes de Operiq hablan inglés básico, así como el idioma local del país en el que se realiza el viaje.
+          Todos los chóferes de Privyde hablan inglés básico, así como el idioma local del país en el que se realiza el viaje.
         </p>
       ),
     },
@@ -242,31 +242,31 @@ const CityToCity = () => {
               
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Ahorre tiempo: con los viajes de puerta a puerta no tiene que esperar colas ni hacer trasbordos entre distintos modos de transporte.</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Establezca un horario: usted elige la hora de recogida y puede cancelar hasta 1 hora antes de su viaje.</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Disfrute de la tranquilidad: viaje cómodamente en un vehículo de alta gama y tenga la seguridad de que cada viaje se compensa con emisiones de carbono.</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Tarifas fijas: el precio de su ruta es el mismo sin importar dónde comience o finalice su viaje dentro de los límites de la ciudad.</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Tarifas competitivas: Los impuestos y los peajes están incluidos, se paga por coche en lugar de por asiento, y el único límite de equipaje es el espacio en el maletero.</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Recogidas seguras: con el servicio de coche de larga distancia, no tiene que preocuparse por huelgas, falta de personal o masificaciones.</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Trabajo en ruta: ¿De viaje de negocios? Trabaje cómodamente con Wi-Fi disponible en la mayoría de los lugares.</span>
                 </li>
               </ul>
@@ -312,7 +312,7 @@ const CityToCity = () => {
             <div className="mb-12 md:mb-16">
               <div className="flex justify-between items-center mb-6 md:mb-8">
                 <h3 className="text-2xl font-semibold text-gray-700">Principales ciudades</h3>
-                <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
+                <a href="#" className="text-gray-600 hover:text-blue-700 font-medium">
                   Ver todo
                 </a>
               </div>
@@ -340,7 +340,7 @@ const CityToCity = () => {
             <div className="mb-12 md:mb-16">
               <div className="flex justify-between items-center mb-6 md:mb-8">
                 <h3 className="text-2xl font-semibold text-gray-700">Principales rutas</h3>
-                <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
+                <a href="#" className="text-gray-600 hover:text-blue-700 font-medium">
                   Ver todo
                 </a>
               </div>
@@ -364,7 +364,7 @@ const CityToCity = () => {
                 <h4 className="text-lg font-semibold text-gray-800 mb-1">¿Tiene en mente ruta?</h4>
                 <p className="text-gray-600">Introduzca sus destinos ideales para ver el precio.</p>
               </div>
-              <button className="mt-4 md:mt-0 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-150 ease-in-out">
+              <button className="mt-4 md:mt-0 bg-black hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-150 ease-in-out">
                 Reservar un viaje de ciudad a ciudad
               </button>
             </div>
@@ -375,21 +375,21 @@ const CityToCity = () => {
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
             Preguntas más frecuentes
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
               >
                 <button
                   className="flex justify-between items-center w-full p-6 text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                  <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                  <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                     {openFaqIndex === index ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (
@@ -480,7 +480,7 @@ const CityToCity = () => {
             <div className="md:w-1/2 flex justify-center md:justify-end">
               <Image 
                 src="https://via.placeholder.com/300x600.png?text=App+Screenshot" 
-                alt="Pantalla de inicio de la aplicación Operiq" 
+                alt="Pantalla de inicio de la aplicación Privyde" 
                 width={300} 
                 height={600} 
                 className="object-contain max-h-[500px]"

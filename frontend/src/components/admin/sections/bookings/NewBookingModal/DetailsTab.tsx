@@ -82,7 +82,7 @@ const DetailsTab = ({
             <label className="inline-flex items-center text-sm">
               <input 
                 type="checkbox" 
-                className="form-checkbox text-red-600 rounded"
+                className="form-checkbox text-gray-600 rounded"
                 checked={(newBookingFormData.details.features as any)?.includes('wifi')}
                 onChange={(e) => {
                   const features = [...((newBookingFormData.details.features as any) || [])];
@@ -100,7 +100,7 @@ const DetailsTab = ({
             <label className="inline-flex items-center text-sm">
               <input 
                 type="checkbox" 
-                className="form-checkbox text-red-600 rounded"
+                className="form-checkbox text-gray-600 rounded"
                 checked={(newBookingFormData.details.features as any)?.includes('child_seat')}
                 onChange={(e) => {
                   const features = [...((newBookingFormData.details.features as any) || [])];
@@ -118,7 +118,7 @@ const DetailsTab = ({
             <label className="inline-flex items-center text-sm">
               <input 
                 type="checkbox" 
-                className="form-checkbox text-red-600 rounded"
+                className="form-checkbox text-gray-600 rounded"
                 checked={(newBookingFormData.details.features as any)?.includes('premium_audio')}
                 onChange={(e) => {
                   const features = [...((newBookingFormData.details.features as any) || [])];
@@ -136,7 +136,7 @@ const DetailsTab = ({
             <label className="inline-flex items-center text-sm">
               <input 
                 type="checkbox" 
-                className="form-checkbox text-red-600 rounded"
+                className="form-checkbox text-gray-600 rounded"
                 checked={(newBookingFormData.details.features as any)?.includes('climate_control')}
                 onChange={(e) => {
                   const features = [...((newBookingFormData.details.features as any) || [])];
@@ -178,7 +178,7 @@ const DetailsTab = ({
           Anterior: Servicio
         </Button>
         <Button 
-          className="bg-red-600 hover:bg-red-700 text-sm"
+          className="bg-black hover:bg-gray-800 text-sm"
           onClick={() => handleNextTab('details')}
         >
           Siguiente: Pago

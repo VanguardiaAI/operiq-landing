@@ -117,7 +117,7 @@ const AirportTransfers = () => {
       question: "What does an airport transfer do?",
       answer: (
         <p className="text-gray-600">
-          An airport transfer is a private car service which takes air passengers to and from the airport from a city or transport hub. Professional airport transfer services like Operiq offer chauffeur-driven vehicles to pick up passengers in the terminal after they collect their luggage, or drop them off to their departure gate well ahead of time. As a global company Operiq is ideally suited to airport transfers, as they can handle passenger's needs at both ends of their international flight.
+          An airport transfer is a private car service which takes air passengers to and from the airport from a city or transport hub. Professional airport transfer services like Privyde offer chauffeur-driven vehicles to pick up passengers in the terminal after they collect their luggage, or drop them off to their departure gate well ahead of time. As a global company Privyde is ideally suited to airport transfers, as they can handle passenger's needs at both ends of their international flight.
         </p>
       ),
     },
@@ -125,7 +125,7 @@ const AirportTransfers = () => {
       question: "Is it worth booking an airport transfer?",
       answer: (
         <p className="text-gray-600">
-          Airport transfers are a great way of avoiding the stress at both ends of a flight — the stress of packing and getting to an airport on time via public transport, as well as that of your onward journey after stepping off an airplane fatigued. Operiq offers a wide range of airport transfer options to suit your needs, from luxury Electric Class limos to glide silently along the route, to the roomy Business Van Class which can comfortably handle groups and their luggage.
+          Airport transfers are a great way of avoiding the stress at both ends of a flight — the stress of packing and getting to an airport on time via public transport, as well as that of your onward journey after stepping off an airplane fatigued. Privyde offers a wide range of airport transfer options to suit your needs, from luxury Electric Class limos to glide silently along the route, to the roomy Business Van Class which can comfortably handle groups and their luggage.
         </p>
       ),
     },
@@ -133,7 +133,7 @@ const AirportTransfers = () => {
       question: "What is a paid airport transfer?",
       answer: (
         <p className="text-gray-600">
-          A paid airport transfer is a ride with a pre-booked professional driver to take customers to and/or from the airport. These airport shuttles are designed to accommodate passengers and their luggage comfortably and safely. Operiq's airport transfer includes tips, tolls, and any additional payments, so the price you see is the final price of your journey.
+          A paid airport transfer is a ride with a pre-booked professional driver to take customers to and/or from the airport. These airport shuttles are designed to accommodate passengers and their luggage comfortably and safely. Privyde's airport transfer includes tips, tolls, and any additional payments, so the price you see is the final price of your journey.
         </p>
       ),
     },
@@ -190,7 +190,7 @@ const AirportTransfers = () => {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <DollarSign className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Precios competitivos</h3>
@@ -200,7 +200,7 @@ const AirportTransfers = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <Clock className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Viaje al aeropuerto sin problemas</h3>
@@ -210,7 +210,7 @@ const AirportTransfers = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                 <TimerReset className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Flexibilidad de viaje</h3>
@@ -266,7 +266,7 @@ const AirportTransfers = () => {
                             key={index}
                             onClick={() => setActiveServiceClass(index)}
                             className={`w-2 h-2 rounded-full ${
-                              activeServiceClass === index ? 'bg-red-500' : 'bg-white bg-opacity-70'
+                              activeServiceClass === index ? 'bg-gray-1000' : 'bg-white bg-opacity-70'
                             }`}
                             aria-label={`Ir a diapositiva ${index + 1}`}
                           />
@@ -281,15 +281,15 @@ const AirportTransfers = () => {
                       <div className="border-t border-gray-200 pt-4">
                         <ul className="space-y-3">
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].capacity}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].luggage}</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-gray-600 mr-2 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{serviceClasses[activeServiceClass].availability}</span>
                           </li>
                         </ul>
@@ -326,7 +326,7 @@ const AirportTransfers = () => {
             <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Traslados hasta y desde aeropuertos en la ciudad</h2>
               <p className="text-gray-600 mb-0 leading-relaxed">
-                Si acaba de bajarse del avión, cansado y dolorido después de un largo vuelo, no hay mejor antídoto para tal malestar que un traslado directo de Operiq que le lleve a su destino. Los traslados de Operiq están disponibles en cientos de ciudades y aeropuertos por todo el mundo, y para aquellos que no disfrutan especialmente descifrando los mapas de transporte públicos en el extranjero o regateos con las empresas de taxi locales, Operiq ofrece un servicio que le llevará a su destino de forma directa desde el aeropuerto. Vaya a donde vaya, nuestros conductores profesionales pueden hacer un seguimiento de su vuelo y ajustar la hora de recogida si hay retrasos fuera de su control. Se escogen personalmente y son expertos en la zona, así que no dude en pedirles consejos o sugerencias sobre qué hacer durante su estancia.
+                Si acaba de bajarse del avión, cansado y dolorido después de un largo vuelo, no hay mejor antídoto para tal malestar que un traslado directo de Privyde que le lleve a su destino. Los traslados de Privyde están disponibles en cientos de ciudades y aeropuertos por todo el mundo, y para aquellos que no disfrutan especialmente descifrando los mapas de transporte públicos en el extranjero o regateos con las empresas de taxi locales, Privyde ofrece un servicio que le llevará a su destino de forma directa desde el aeropuerto. Vaya a donde vaya, nuestros conductores profesionales pueden hacer un seguimiento de su vuelo y ajustar la hora de recogida si hay retrasos fuera de su control. Se escogen personalmente y son expertos en la zona, así que no dude en pedirles consejos o sugerencias sobre qué hacer durante su estancia.
               </p>
             </div>
           </div>
@@ -352,10 +352,10 @@ const AirportTransfers = () => {
                 Llegue o salga del aeropuerto
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Un servicio de chófer de Operiq busca alcanzar los estándares más altos posibles para todos sus pasajeros. Ya acabe de salir de LAX en California por motivos de negocios o necesite que le lleven al aeropuerto internacional de Bangkok después de unas vacaciones en Tailandia, Operiq le llevará, relajado, con las pilas cargadas y listo, gracias a un servicio de taxi para traslados en aeropuertos.
+                Un servicio de chófer de Privyde busca alcanzar los estándares más altos posibles para todos sus pasajeros. Ya acabe de salir de LAX en California por motivos de negocios o necesite que le lleven al aeropuerto internacional de Bangkok después de unas vacaciones en Tailandia, Privyde le llevará, relajado, con las pilas cargadas y listo, gracias a un servicio de taxi para traslados en aeropuertos.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                ¿Necesita ir desde el aeropuerto hasta su hotel con la familia o amigos? Una furgoneta Business de Operiq puede compartirse entre hasta cinco personas, y cuenta con un montón de espacio para equipaje. Para aquellos que busquen algo más, contamos con nuestro servicio Primera Clase, el epítome del estilo y comodidad. Una gran idea para ocasiones especiales.
+                ¿Necesita ir desde el aeropuerto hasta su hotel con la familia o amigos? Una furgoneta Business de Privyde puede compartirse entre hasta cinco personas, y cuenta con un montón de espacio para equipaje. Para aquellos que busquen algo más, contamos con nuestro servicio Primera Clase, el epítome del estilo y comodidad. Una gran idea para ocasiones especiales.
               </p>
             </div>
           </div>
@@ -369,7 +369,7 @@ const AirportTransfers = () => {
                 Reservas de conexiones entre aeropuertos
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Reservar un servicio de limusina de Operiq es fácil y solo se necesitan unos segundos. Puede reservar su traslado hasta o desde aeropuertos en la ciudad que elija por medio del accesible sitio web de Operiq o utilizando la aplicación móvil para dispositivos Apple o Android. Las pasos necesarios son sencillos: simplemente proporcione los datos de recogida y destino y seleccione la clase del vehículo que desea para su traslado. Tras confirmar la tarifa calculada y los datos de pago, recibirá poco después un correo electrónico de confirmación. Operiq se enorgullece de su transparencia, que es por lo que usted no recibirá cargos ocultos cuando reserve con nosotros. El precio que ve es el precio que paga. Una gran manera de empezar su viaje.
+                Reservar un servicio de limusina de Privyde es fácil y solo se necesitan unos segundos. Puede reservar su traslado hasta o desde aeropuertos en la ciudad que elija por medio del accesible sitio web de Privyde o utilizando la aplicación móvil para dispositivos Apple o Android. Las pasos necesarios son sencillos: simplemente proporcione los datos de recogida y destino y seleccione la clase del vehículo que desea para su traslado. Tras confirmar la tarifa calculada y los datos de pago, recibirá poco después un correo electrónico de confirmación. Privyde se enorgullece de su transparencia, que es por lo que usted no recibirá cargos ocultos cuando reserve con nosotros. El precio que ve es el precio que paga. Una gran manera de empezar su viaje.
               </p>
             </div>
             <div>
@@ -386,21 +386,21 @@ const AirportTransfers = () => {
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
             Frequently Asked Questions
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
               >
                 <button
                   className="flex justify-between items-center w-full p-6 text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                  <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                  <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                     {openFaqIndex === index ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (

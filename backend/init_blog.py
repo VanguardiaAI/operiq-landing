@@ -56,7 +56,7 @@ Miami se ha consolidado como el puente perfecto entre Norteamérica y Latinoamé
 
 ---
 
-En Operiq entendemos que cada viaje de negocios es único, por lo que nuestros servicios de transporte ejecutivo se adaptan perfectamente a tus necesidades, ofreciéndote puntualidad, confort y profesionalismo en cualquiera de estos destinos.
+En Privyde entendemos que cada viaje de negocios es único, por lo que nuestros servicios de transporte ejecutivo se adaptan perfectamente a tus necesidades, ofreciéndote puntualidad, confort y profesionalismo en cualquiera de estos destinos.
         """,
         "excerpt": "Descubre los destinos más exclusivos para tus viajes de negocios en 2024.",
         "author": "Ana Martínez",
@@ -68,7 +68,7 @@ En Operiq entendemos que cada viaje de negocios es único, por lo que nuestros s
         "categories": ["Negocios", "Viajes"],
         "tags": ["2024", "Ejecutivos", "Destinos"],
         "seoData": {
-            "metaTitle": "Top 10 Destinos para Viajes de Negocios en 2024 | Operiq",
+            "metaTitle": "Top 10 Destinos para Viajes de Negocios en 2024 | Privyde",
             "metaDescription": "Descubre los mejores destinos para viajes de negocios en 2024. Guía completa para ejecutivos y empresas que buscan comodidad y exclusividad.",
             "keywords": ["viajes de negocios", "destinos ejecutivos", "transporte ejecutivo", "2024"]
         }
@@ -79,7 +79,7 @@ En Operiq entendemos que cada viaje de negocios es único, por lo que nuestros s
         "content": """
 # Cómo elegir el vehículo adecuado para cada ocasión
 
-Seleccionar el vehículo correcto para cada tipo de evento o necesidad corporativa puede potenciar significativamente la experiencia de tus clientes, colaboradores o invitados. En Operiq, entendemos que cada ocasión tiene requerimientos específicos, por lo que hemos preparado esta guía completa.
+Seleccionar el vehículo correcto para cada tipo de evento o necesidad corporativa puede potenciar significativamente la experiencia de tus clientes, colaboradores o invitados. En Privyde, entendemos que cada ocasión tiene requerimientos específicos, por lo que hemos preparado esta guía completa.
 
 ## Para eventos corporativos de alto nivel
 
@@ -131,7 +131,7 @@ Para grupos o familias con mucho equipaje, una van de lujo proporciona:
 
 ---
 
-Recuerda que en Operiq no solo ofrecemos vehículos premium, sino una experiencia completa de transporte ejecutivo con chóferes profesionales, puntualidad garantizada y atención personalizada para que cada trayecto sea excepcional, sin importar la ocasión.
+Recuerda que en Privyde no solo ofrecemos vehículos premium, sino una experiencia completa de transporte ejecutivo con chóferes profesionales, puntualidad garantizada y atención personalizada para que cada trayecto sea excepcional, sin importar la ocasión.
         """,
         "excerpt": "Guía completa para seleccionar el vehículo perfecto según el tipo de evento o necesidad.",
         "author": "Carlos López",
@@ -143,7 +143,7 @@ Recuerda que en Operiq no solo ofrecemos vehículos premium, sino una experienci
         "categories": ["Vehículos", "Consejos"],
         "tags": ["Limousinas", "SUV", "Eventos"],
         "seoData": {
-            "metaTitle": "Guía para Elegir el Vehículo de Lujo Ideal para Cada Ocasión | Operiq",
+            "metaTitle": "Guía para Elegir el Vehículo de Lujo Ideal para Cada Ocasión | Privyde",
             "metaDescription": "Aprende a seleccionar el vehículo de lujo perfecto para cada tipo de evento o necesidad. Desde bodas hasta viajes corporativos.",
             "keywords": ["vehículos de lujo", "transporte ejecutivo", "limousinas", "SUV de lujo"]
         }
@@ -154,7 +154,7 @@ Recuerda que en Operiq no solo ofrecemos vehículos premium, sino una experienci
         "content": """
 # Tendencias en transporte sostenible de lujo
 
-El sector del transporte de lujo está experimentando una transformación verde sin precedentes. Los clientes más exigentes ya no solo buscan exclusividad y confort, sino también opciones que reflejen un compromiso con la sostenibilidad. En Operiq, estamos a la vanguardia de esta revolución.
+El sector del transporte de lujo está experimentando una transformación verde sin precedentes. Los clientes más exigentes ya no solo buscan exclusividad y confort, sino también opciones que reflejen un compromiso con la sostenibilidad. En Privyde, estamos a la vanguardia de esta revolución.
 
 ## Vehículos eléctricos de alta gama
 
@@ -206,7 +206,7 @@ La tecnología está permitiendo servicios más sostenibles sin comprometer la e
 
 ---
 
-En Operiq estamos comprometidos con ofrecer opciones de transporte ejecutivo que no solo satisfagan los más altos estándares de lujo y servicio, sino que también respeten nuestro planeta, porque creemos que el verdadero lujo debe ser sostenible.
+En Privyde estamos comprometidos con ofrecer opciones de transporte ejecutivo que no solo satisfagan los más altos estándares de lujo y servicio, sino que también respeten nuestro planeta, porque creemos que el verdadero lujo debe ser sostenible.
         """,
         "excerpt": "Análisis de las últimas tendencias en transporte sostenible sin renunciar al lujo y la exclusividad.",
         "author": "Elena Gómez",
@@ -218,7 +218,7 @@ En Operiq estamos comprometidos con ofrecer opciones de transporte ejecutivo que
         "categories": ["Sostenibilidad", "Tendencias"],
         "tags": ["Vehículos eléctricos", "Lujo sostenible"],
         "seoData": {
-            "metaTitle": "Tendencias en Transporte Sostenible de Lujo 2024 | Operiq",
+            "metaTitle": "Tendencias en Transporte Sostenible de Lujo 2024 | Privyde",
             "metaDescription": "Descubre las últimas tendencias en transporte sostenible de lujo. Vehículos eléctricos premium y opciones eco-friendly sin renunciar a la exclusividad.",
             "keywords": ["transporte sostenible", "vehículos eléctricos de lujo", "lujo sostenible", "transporte premium"]
         }
@@ -291,7 +291,7 @@ La excelencia en puntualidad va más allá de cumplir con el horario:
 
 ---
 
-En Operiq, entendemos que la puntualidad es la base de nuestro servicio. No solo transportamos personas; gestionamos el tiempo de profesionales para quienes cada minuto tiene un valor incalculable. Por eso, hemos desarrollado sistemas y protocolos que garantizan la máxima fiabilidad en cada trayecto.
+En Privyde, entendemos que la puntualidad es la base de nuestro servicio. No solo transportamos personas; gestionamos el tiempo de profesionales para quienes cada minuto tiene un valor incalculable. Por eso, hemos desarrollado sistemas y protocolos que garantizan la máxima fiabilidad en cada trayecto.
         """,
         "excerpt": "Por qué la puntualidad es un factor crítico en los servicios de transporte ejecutivo y cómo impacta en el éxito empresarial.",
         "author": "Miguel Sánchez",
@@ -303,7 +303,7 @@ En Operiq, entendemos que la puntualidad es la base de nuestro servicio. No solo
         "categories": ["Servicios", "Profesionalidad"],
         "tags": ["Puntualidad", "Ejecutivos", "Calidad"],
         "seoData": {
-            "metaTitle": "La Importancia de la Puntualidad en el Transporte Ejecutivo | Operiq",
+            "metaTitle": "La Importancia de la Puntualidad en el Transporte Ejecutivo | Privyde",
             "metaDescription": "Descubre por qué la puntualidad es esencial en los servicios de transporte ejecutivo y cómo puede impactar en el éxito de tus reuniones de negocios.",
             "keywords": ["puntualidad", "transporte ejecutivo", "servicios premium", "chóferes profesionales"]
         }
@@ -326,7 +326,7 @@ Implementar un sistema centralizado para la reserva y gestión de todos los serv
 - **Poder de negociación**: Posibilidad de obtener tarifas corporativas más ventajosas.
 - **Simplificación administrativa**: Reducción de la carga administrativa con procesos estandarizados.
 
-**Implementación práctica**: Designa un responsable o departamento para la gestión de traslados y establece un sistema de reservas corporativo, ya sea a través de una plataforma especializada o mediante acuerdos con proveedores de confianza como Operiq.
+**Implementación práctica**: Designa un responsable o departamento para la gestión de traslados y establece un sistema de reservas corporativo, ya sea a través de una plataforma especializada o mediante acuerdos con proveedores de confianza como Privyde.
 
 ## 2. Planifica con antelación
 
@@ -379,7 +379,7 @@ La calidad y fiabilidad deben primar sobre el precio cuando se trata de transpor
 
 ---
 
-En Operiq entendemos que cada empresa tiene necesidades específicas de transporte. Nuestro equipo especializado en servicios corporativos puede ayudarte a implementar estas estrategias, adaptándolas a las particularidades de tu organización para maximizar la eficiencia y calidad de tus traslados ejecutivos.
+En Privyde entendemos que cada empresa tiene necesidades específicas de transporte. Nuestro equipo especializado en servicios corporativos puede ayudarte a implementar estas estrategias, adaptándolas a las particularidades de tu organización para maximizar la eficiencia y calidad de tus traslados ejecutivos.
         """,
         "excerpt": "Estrategias efectivas para mejorar la eficiencia, reducir costos y aumentar la productividad en los traslados corporativos.",
         "author": "Laura Vega",
@@ -391,7 +391,7 @@ En Operiq entendemos que cada empresa tiene necesidades específicas de transpor
         "categories": ["Corporativo", "Consejos"],
         "tags": ["Optimización", "Gestión", "Empresas"],
         "seoData": {
-            "metaTitle": "5 Consejos para Optimizar tus Traslados Corporativos | Operiq",
+            "metaTitle": "5 Consejos para Optimizar tus Traslados Corporativos | Privyde",
             "metaDescription": "Aprende a mejorar la eficiencia de los traslados corporativos con estos 5 consejos prácticos. Reduce costos y mejora la experiencia de tus ejecutivos.",
             "keywords": ["traslados corporativos", "transporte ejecutivo", "optimización", "gestión de viajes"]
         }

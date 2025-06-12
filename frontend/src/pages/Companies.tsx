@@ -64,15 +64,15 @@ const Companies = () => {
       question: "¿Con cuánta antelación puedo reservar un viaje?",
       answer: (
         <p className="text-gray-600">
-          Puede reservar viajes con meses de antelación o tan pronto como 60 minutos antes de que lo necesite. Recomendamos reservar con la mayor antelación posible. Operiq cuenta con la política de cancelación más flexible del sector, ya que los pasajeros pueden cancelar viajes de forma gratuita hasta una hora antes de la hora de recogida. También puede realizar cambios en su reserva hasta 60 minutos antes de la hora de recogida.
+          Puede reservar viajes con meses de antelación o tan pronto como 60 minutos antes de que lo necesite. Recomendamos reservar con la mayor antelación posible. Privyde cuenta con la política de cancelación más flexible del sector, ya que los pasajeros pueden cancelar viajes de forma gratuita hasta una hora antes de la hora de recogida. También puede realizar cambios en su reserva hasta 60 minutos antes de la hora de recogida.
         </p>
       ),
     },
     {
-      question: "¿Qué vehículos utiliza Operiq?",
+      question: "¿Qué vehículos utiliza Privyde?",
       answer: (
         <p className="text-gray-600">
-          Operiq ofrece cuatro tipos de vehículos en la mayoría de las ubicaciones: Business Class, Electric Class, First Class y Business Van/SUV.
+          Privyde ofrece cuatro tipos de vehículos en la mayoría de las ubicaciones: Business Class, Electric Class, First Class y Business Van/SUV.
           <br /><br />
           Cada una de estas categorías contiene una selección de modelos comparables de primera línea, que puede ver en el proceso de reserva o en nuestro Centro de ayuda.
           <br /><br />
@@ -84,7 +84,7 @@ const Companies = () => {
       question: "Which languages do the chauffeurs speak?",
       answer: (
         <p className="text-gray-600">
-          All of Operiq's chauffeurs speak English and the language of the country they operate in.
+          All of Privyde's chauffeurs speak English and the language of the country they operate in.
         </p>
       ),
     },
@@ -92,7 +92,7 @@ const Companies = () => {
       question: "Which payment options are available?",
       answer: (
         <p className="text-gray-600">
-          Operiq accepts Visa, Maestro, Mastercard and American Express cards. It is not possible to pay for the ride in cash. You can also pay via Paypal in the apps and Apple Pay if you are an iOS user. Paypal and Apple Pay are not currently available on the website.
+          Privyde accepts Visa, Maestro, Mastercard and American Express cards. It is not possible to pay for the ride in cash. You can also pay via Paypal in the apps and Apple Pay if you are an iOS user. Paypal and Apple Pay are not currently available on the website.
           <br /><br />
           Business accounts can also request to receive monthly invoices, instead of paying on a ride-by-ride basis.
           <br /><br />
@@ -103,10 +103,10 @@ const Companies = () => {
       ),
     },
     {
-      question: "¿Cómo contribuye Operiq a las opciones de viaje sostenibles?",
+      question: "¿Cómo contribuye Privyde a las opciones de viaje sostenibles?",
       answer: (
         <p className="text-gray-600">
-          Operiq contribuye a los viajes sostenibles al ofrecer opciones de vehículos eléctricos, incorporar vehículos eléctricos en nuestra oferta de Business Class en muchas más ciudades y trabajar activamente para compensar su huella de carbono.
+          Privyde contribuye a los viajes sostenibles al ofrecer opciones de vehículos eléctricos, incorporar vehículos eléctricos en nuestra oferta de Business Class en muchas más ciudades y trabajar activamente para compensar su huella de carbono.
         </p>
       ),
     },
@@ -125,7 +125,7 @@ const Companies = () => {
         {/* Imagen de fondo */}
         <img 
           src="/images/woman-in-a-suit-walking.jpeg" 
-          alt="Invitada de Operiq caminando hacia un Mercedes-Benz mientras el chófer le abre la puerta" 
+          alt="Invitada de Privyde caminando hacia un Mercedes-Benz mientras el chófer le abre la puerta" 
           className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
         />
         
@@ -140,7 +140,7 @@ const Companies = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Transporte terrestre para 
               <motion.span 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text text-black"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -175,7 +175,7 @@ const Companies = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
               Servicios de chófer para empresas para cada ocasión
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
           </motion.div>
 
@@ -284,13 +284,13 @@ const Companies = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
               Pruebe nuestro servicio galardonado
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-xl mb-10 max-w-4xl mx-auto shadow-sm border border-gray-200 transform transition-all duration-300 hover:shadow-md">
               <blockquote className="italic text-xl text-gray-700 mb-4 relative">
-                <span className="text-5xl text-red-400 absolute -top-6 -left-2">"</span>
-                I know that I can rely on Operiq's high quality standards worldwide. The customer is the main focus at Operiq, which makes me feel taken care of.
-                <span className="text-5xl text-red-400 absolute -bottom-10 -right-2">"</span>
+                <span className="text-5xl text-gray-400 absolute -top-6 -left-2">"</span>
+                I know that I can rely on Privyde's high quality standards worldwide. The customer is the main focus at Privyde, which makes me feel taken care of.
+                <span className="text-5xl text-gray-400 absolute -bottom-10 -right-2">"</span>
               </blockquote>
               <p className="text-right font-medium mt-2 text-gray-800">Tom Grover, European VSP, Smith & Nephew</p>
             </div>
@@ -309,26 +309,26 @@ const Companies = () => {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                   Chóferes con un nuevo concepto de fiabilidad
-                  <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                  <span className="block w-16 h-1 bg-black mt-4"></span>
                 </h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   Nuestra red global de chóferes con licencia y seguro local garantiza una experiencia de transporte perfecta para los viajes de empresa.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-left">Disponibles en más de 50 países</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-left">Chóferes cualificados de habla inglesa</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-left">Seguimiento y notificaciones en tiempo real</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-left">Flota moderna para un viaje profesional y productivo</span>
                   </li>
                 </ul>
@@ -342,26 +342,26 @@ const Companies = () => {
               <div className="order-2 md:order-1">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                   Sin necesidad de facturas
-                  <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                  <span className="block w-16 h-1 bg-black mt-4"></span>
                 </h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   Simplifique la gestión de sus facturas. Nuestro sistema de facturación automatizado agiliza el proceso, mientras que el servicio de asistencia técnica de la empresa está a su disposición para ayudarle.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-left">Plataforma todo en uno para reservas sin contratiempos</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-left">Facturación automatizada para una fácil gestión de facturas</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-left">Asistencia y gestores de cuentas a su disposición</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-black mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-left">Disfrute de descuentos para empresas e inicio de sesión para más de 500 viajeros</span>
                   </li>
                 </ul>
@@ -397,7 +397,7 @@ const Companies = () => {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                   Booking for your executives
-                  <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                  <span className="block w-16 h-1 bg-black mt-4"></span>
                 </h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   If you're a PA/EA or corporate booker that wants to manage your executive travel with ease using a booking platform designed for your fast-paced world, then you're in luck. We've dedicated a page to you answer all your queries.
@@ -420,7 +420,7 @@ const Companies = () => {
               <div className="order-2 md:order-1">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8 relative">
                   By the hour
-                  <span className="block w-16 h-1 bg-gradient-to-r from-red-500 to-orange-400 mt-4"></span>
+                  <span className="block w-16 h-1 bg-black mt-4"></span>
                 </h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   This service helps businesses globally. No more waiting for different taxis at different locations, taking crowded public transport, or finding parking for your rental car. Maximize your productivity with our by-the-hour service.
@@ -437,7 +437,7 @@ const Companies = () => {
               <div className="order-1 md:order-2">
                 <img 
                   src="/images/limo-elegant.png" 
-                  alt="Un chófer de Operiq sonríe y ajusta un control mientras conduce un Mercedes EQS" 
+                  alt="Un chófer de Privyde sonríe y ajusta un control mientras conduce un Mercedes EQS" 
                   className="w-full h-auto rounded-xl shadow-lg object-cover"
                 />
               </div>
@@ -448,7 +448,7 @@ const Companies = () => {
           <section className="mb-32">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
               Award-winning chauffeur service
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center transform transition-all duration-300 hover:shadow-md hover:border-gray-300">
@@ -484,7 +484,7 @@ const Companies = () => {
           <section className="mb-32">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
               Iniciativas de sostenibilidad
-              <span className="block w-24 h-1 bg-gradient-to-r from-green-500 to-green-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-gray-600 mx-auto mt-4"></span>
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -497,12 +497,12 @@ const Companies = () => {
                 <div className="p-6">
                   <div className="flex items-center mb-3">
                     <h3 className="text-xl font-semibold text-gray-900">Electric Class</h3>
-                    <span className="ml-2 bg-green-100 text-green-800 text-xs font-semibold px-2 py-0.5 rounded">NUEVO</span>
+                    <span className="ml-2 bg-gray-200 text-green-800 text-xs font-semibold px-2 py-0.5 rounded">NUEVO</span>
                   </div>
                   <p className="text-gray-600 leading-relaxed mb-4">
                     Elija nuestra nueva Electric Class para reservar viajes con chofer en vehículos eléctricos de alto nivel como el Jaguar I-PACE, Tesla Model S y Tesla Model X.
                   </p>
-                  <button className="text-red-500 font-medium hover:text-red-600 transition-colors flex items-center">
+                  <button className="text-black font-medium hover:text-gray-600 transition-colors flex items-center">
                     Más información
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -522,7 +522,7 @@ const Companies = () => {
                   <p className="text-gray-600 leading-relaxed mb-4">
                     De la forma en que lo vemos, los vehículos eléctricos se convertirán en el estándar y es por lo cual los vehículos eléctricos ya están incorporados a nuestra Business Class y First Class en muchas ciudades. Nuestro objetivo es seguir facilitando los desplazamientos sostenibles aumentando nuestra flota de vehículos eléctricos.
                   </p>
-                  <button className="text-red-500 font-medium hover:text-red-600 transition-colors flex items-center">
+                  <button className="text-black font-medium hover:text-gray-600 transition-colors flex items-center">
                     Más información
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -542,7 +542,7 @@ const Companies = () => {
                   <p className="text-gray-600 leading-relaxed mb-4">
                     Sea cual sea la clase de vehículo que elija, compensamos automáticamente las emisiones con nuestro programa de compensación de carbono.
                   </p>
-                  <button className="text-red-500 font-medium hover:text-red-600 transition-colors flex items-center">
+                  <button className="text-black font-medium hover:text-gray-600 transition-colors flex items-center">
                     Más información
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -557,12 +557,12 @@ const Companies = () => {
           <section className="mb-32">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
               Experimente nuestros beneficios para empresas
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-                <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -574,7 +574,7 @@ const Companies = () => {
               </div>
               
               <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-                <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -586,7 +586,7 @@ const Companies = () => {
               </div>
               
               <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-                <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -598,7 +598,7 @@ const Companies = () => {
               </div>
               
               <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-                <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -610,7 +610,7 @@ const Companies = () => {
               </div>
               
               <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-                <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9" />
@@ -623,7 +623,7 @@ const Companies = () => {
               </div>
               
               <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-                <div className="text-red-500 mb-6 bg-red-50 w-16 h-16 rounded-full flex items-center justify-center">
+                <div className="text-black mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -640,7 +640,7 @@ const Companies = () => {
           <section className="mb-32">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
               Check out our latest articles
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -655,7 +655,7 @@ const Companies = () => {
                   <p className="text-gray-600 leading-relaxed mb-4">
                     Learn more about our biggest finance round yet.
                   </p>
-                  <button className="text-red-500 font-medium hover:text-red-600 transition-colors flex items-center">
+                  <button className="text-black font-medium hover:text-gray-600 transition-colors flex items-center">
                     Read the story
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -667,15 +667,15 @@ const Companies = () => {
               <div className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-200 transition-all duration-300 hover:shadow-lg hover:border-gray-300">
                 <img 
                   src="/images/chauffeur-silver.jpg" 
-                  alt="Operiq's 2024 in Review" 
+                  alt="Privyde's 2024 in Review" 
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900">Operiq's 2024 in Review</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">Privyde's 2024 in Review</h3>
                   <p className="text-gray-600 leading-relaxed mb-4">
                     Take a peek into how our 2024 went, and what we achieved.
                   </p>
-                  <button className="text-red-500 font-medium hover:text-red-600 transition-colors flex items-center">
+                  <button className="text-black font-medium hover:text-gray-600 transition-colors flex items-center">
                     Read the story
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -695,7 +695,7 @@ const Companies = () => {
                   <p className="text-gray-600 leading-relaxed mb-4">
                     Get an insight into how travel impacts productivity, backed with real data.
                   </p>
-                  <button className="text-red-500 font-medium hover:text-red-600 transition-colors flex items-center">
+                  <button className="text-black font-medium hover:text-gray-600 transition-colors flex items-center">
                     Read the report
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -710,7 +710,7 @@ const Companies = () => {
           <section className="mb-32 bg-gradient-to-br from-gray-50 to-gray-100 p-10 rounded-2xl shadow-sm">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 relative">
               Mejore sus viajes de negocios
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
               Experimente un servicio galardonado; solo tiene que enviar el formulario o un correo electrónico directamente a nuestro equipo corporativo: corporatesales@operiq.com.
@@ -872,14 +872,14 @@ const Companies = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative">
               Frequently asked questions
-              <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+              <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
             </h2>
             
             <div className="space-y-4 max-w-4xl mx-auto">
               {faqData.map((faq, index) => (
                 <motion.div 
                   key={index} 
-                  className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                  className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -889,8 +889,8 @@ const Companies = () => {
                     className="flex justify-between items-center w-full p-6 text-left"
                     onClick={() => toggleFaq(index)}
                   >
-                    <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                    <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                    <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                    <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                       {openFaqIndex === index ? (
                         <ChevronUp className="h-5 w-5" />
                       ) : (

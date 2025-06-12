@@ -627,7 +627,7 @@ const SupportChat: React.FC = () => {
     if (conversationStatus === 'nonexistent' || conversationStatus === 'invalid') {
       return (
         <div className="flex flex-col items-center justify-center p-4 bg-gray-100 rounded-lg mb-4">
-          <AlertCircle className="text-red-500 mb-2" size={24} />
+          <AlertCircle className="text-black mb-2" size={24} />
           <p className="text-sm text-center text-gray-700">
             {conversationStatus === 'nonexistent' 
               ? 'La conversación anterior ya no existe.' 
@@ -638,7 +638,7 @@ const SupportChat: React.FC = () => {
           </p>
           <button
             onClick={resetConversation}
-            className="mt-3 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm"
+            className="mt-3 px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 text-sm"
           >
             Iniciar nueva conversación
           </button>
@@ -653,15 +653,15 @@ const SupportChat: React.FC = () => {
       {/* Botón para abrir el chat */}
       <button
         onClick={toggleChat}
-        className="bg-red-600 hover:bg-red-700 text-white p-4 rounded-full shadow-lg flex items-center justify-center relative"
+        className="bg-black hover:bg-gray-800 text-white p-4 rounded-full shadow-lg flex items-center justify-center relative"
         aria-label="Soporte"
       >
         <MessageSquare size={24} />
         {/* Indicador de estado del socket */}
         <span 
           className={`absolute -top-1 -right-1 w-3 h-3 rounded-full border border-white ${
-            socketStatus === 'connected' ? 'bg-green-500' : 
-            socketStatus === 'connecting' ? 'bg-yellow-500' : 'bg-red-500'
+            socketStatus === 'connected' ? 'bg-gray-600' : 
+            socketStatus === 'connecting' ? 'bg-gray-500' : 'bg-gray-1000'
           }`}
           aria-label={`Estado de conexión: ${socketStatus}`}
         ></span>
@@ -675,8 +675,8 @@ const SupportChat: React.FC = () => {
           style={{ height: '480px', maxHeight: 'calc(100vh - 100px)' }}
         >
           {/* Cabecera del chat */}
-          <div className="bg-red-600 text-white p-3 flex justify-between items-center">
-            <h3 className="font-semibold">Soporte Operiq</h3>
+          <div className="bg-black text-white p-3 flex justify-between items-center">
+            <h3 className="font-semibold">Soporte Privyde</h3>
             <button 
               onClick={toggleChat}
               className="text-white hover:text-gray-200"
@@ -707,7 +707,7 @@ const SupportChat: React.FC = () => {
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-gray-500"
                       placeholder="Tu nombre"
                     />
                   </div>
@@ -721,14 +721,14 @@ const SupportChat: React.FC = () => {
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-gray-500"
                       placeholder="tu@email.com"
                     />
                   </div>
                 </div>
                 
                 {error && (
-                  <p className="text-red-500 text-sm">{error}</p>
+                  <p className="text-black text-sm">{error}</p>
                 )}
                 
                 <button
@@ -736,7 +736,7 @@ const SupportChat: React.FC = () => {
                   disabled={!isFormValid || isLoading}
                   className={`mt-2 w-full py-2 px-4 rounded-md text-white font-medium ${
                     isFormValid && !isLoading
-                      ? 'bg-red-600 hover:bg-red-700' 
+                      ? 'bg-black hover:bg-gray-800' 
                       : 'bg-gray-400 cursor-not-allowed'
                   }`}
                 >
@@ -755,7 +755,7 @@ const SupportChat: React.FC = () => {
               <div className="space-y-4">
                 {isLoading && messages.length === 0 ? (
                   <div className="flex justify-center items-center h-full">
-                    <Loader2 size={24} className="animate-spin text-red-600" />
+                    <Loader2 size={24} className="animate-spin text-gray-600" />
                   </div>
                 ) : (
                   <>
@@ -773,20 +773,20 @@ const SupportChat: React.FC = () => {
                               : msg.pending 
                                 ? 'bg-red-400 text-white' // Color más claro para mensajes pendientes
                                 : msg.error
-                                  ? 'bg-red-300 text-white border border-red-500' // Estilo para mensajes con error
-                                  : 'bg-red-600 text-white'
+                                  ? 'bg-red-300 text-white border border-gray-500' // Estilo para mensajes con error
+                                  : 'bg-black text-white'
                           }`}
                         >
                           <div className="flex justify-between items-center mb-1">
                             <span className="text-xs font-semibold">
-                              {msg.sender.isAdmin ? 'Soporte Operiq' : 'Tú'}
+                              {msg.sender.isAdmin ? 'Soporte Privyde' : 'Tú'}
                             </span>
                             <div className="flex items-center ml-2">
                               {msg.pending && (
                                 <Loader2 size={10} className="animate-spin mr-1" aria-label="Enviando..." />
                               )}
                               {msg.error && (
-                                <AlertCircle size={10} className="text-red-800 mr-1" aria-label="Error al enviar" />
+                                <AlertCircle size={10} className="text-gray-800 mr-1" aria-label="Error al enviar" />
                               )}
                               <span className="text-xs opacity-75">
                                 {formatTime(msg.timestamp)}
@@ -800,7 +800,7 @@ const SupportChat: React.FC = () => {
                             <div className="mt-1 flex justify-end">
                               <button 
                                 onClick={() => sendMessage()} 
-                                className="text-xs text-red-800 bg-white bg-opacity-30 rounded px-2 py-0.5"
+                                className="text-xs text-gray-800 bg-white bg-opacity-30 rounded px-2 py-0.5"
                               >
                                 Reintentar
                               </button>
@@ -822,7 +822,7 @@ const SupportChat: React.FC = () => {
           {conversationStarted && conversationStatus === 'active' && (
             <div className="border-t border-gray-200 p-3 bg-white">
               {error && (
-                <p className="text-red-500 text-xs mb-1">{error}</p>
+                <p className="text-black text-xs mb-1">{error}</p>
               )}
               <div className="flex items-center space-x-2">
                 <input
@@ -831,14 +831,14 @@ const SupportChat: React.FC = () => {
                   onChange={(e) => setNewMessage(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Escribe tu mensaje..."
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-gray-500"
                 />
                 <button
                   onClick={sendMessage}
                   disabled={!newMessage.trim()}
                   className={`p-2 rounded-md ${
                     newMessage.trim()
-                      ? 'bg-red-600 hover:bg-red-700 text-white'
+                      ? 'bg-black hover:bg-gray-800 text-white'
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >

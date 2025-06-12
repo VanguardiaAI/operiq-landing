@@ -11,7 +11,7 @@ const BookingsTable = ({ bookingsData, handleViewBookingDetails }: BookingsTable
     <div className="bg-white rounded-xl shadow-md overflow-hidden">
       <div className="px-6 py-4 border-b border-gray-200">
         <div className="flex space-x-4">
-          <button className="text-sm px-3 py-2 font-medium text-red-600 border-b-2 border-red-600">
+          <button className="text-sm px-3 py-2 font-medium text-gray-600 border-b-2 border-red-600">
             Reservas activas (23)
           </button>
           <button className="text-sm px-3 py-2 text-gray-500 hover:text-gray-700">
@@ -37,7 +37,7 @@ const BookingsTable = ({ bookingsData, handleViewBookingDetails }: BookingsTable
           </thead>
           <tbody className="divide-y divide-gray-200">
             {bookingsData.map((booking, index) => (
-              <tr key={index} className={`hover:bg-gray-50 ${booking.hasIncident ? 'bg-red-50' : ''}`}>
+              <tr key={index} className={`hover:bg-gray-50 ${booking.hasIncident ? 'bg-gray-100' : ''}`}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div>
@@ -45,7 +45,7 @@ const BookingsTable = ({ bookingsData, handleViewBookingDetails }: BookingsTable
                       <div className="text-sm text-gray-500">{booking.clientName}</div>
                     </div>
                     {booking.hasIncident && (
-                      <span className="ml-2 flex-shrink-0 inline-block px-2 py-0.5 text-xs font-medium rounded-full bg-red-100 text-red-800">
+                      <span className="ml-2 flex-shrink-0 inline-block px-2 py-0.5 text-xs font-medium rounded-full bg-gray-200 text-gray-800">
                         {booking.incidentType === 'delay' ? 'Retraso' : booking.incidentType === 'change' ? 'Cambio' : 'Incidencia'}
                       </span>
                     )}
@@ -70,12 +70,12 @@ const BookingsTable = ({ bookingsData, handleViewBookingDetails }: BookingsTable
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full 
-                    ${booking.status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 
-                     booking.status === 'confirmed' ? 'bg-green-100 text-green-800' : 
-                     booking.status === 'in_progress' ? 'bg-blue-100 text-blue-800' : 
+                    ${booking.status === 'pending' ? 'bg-gray-200 text-yellow-800' : 
+                     booking.status === 'confirmed' ? 'bg-gray-200 text-green-800' : 
+                     booking.status === 'in_progress' ? 'bg-gray-200 text-blue-800' : 
                      booking.status === 'completed' ? 'bg-gray-100 text-gray-800' : 
-                     booking.status === 'cancelled' ? 'bg-red-100 text-red-800' : 
-                     'bg-purple-100 text-purple-800'}`}
+                     booking.status === 'cancelled' ? 'bg-gray-200 text-gray-800' : 
+                     'bg-gray-200 text-purple-800'}`}
                   >
                     {booking.status === 'pending' ? 'Pendiente' :
                      booking.status === 'confirmed' ? 'Confirmado' :
@@ -94,10 +94,10 @@ const BookingsTable = ({ bookingsData, handleViewBookingDetails }: BookingsTable
                   >
                     Ver
                   </button>
-                  <button className="text-blue-600 hover:text-blue-900 mr-3">
+                  <button className="text-gray-600 hover:text-blue-900 mr-3">
                     Editar
                   </button>
-                  <button className="text-red-600 hover:text-red-900">
+                  <button className="text-gray-600 hover:text-red-900">
                     Cancelar
                   </button>
                 </td>
@@ -137,7 +137,7 @@ const BookingsTable = ({ bookingsData, handleViewBookingDetails }: BookingsTable
               <button className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
                 2
               </button>
-              <button className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-red-50 text-sm font-medium text-red-600 hover:bg-red-100">
+              <button className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-gray-100 text-sm font-medium text-gray-600 hover:bg-gray-200">
                 3
               </button>
               <button className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">

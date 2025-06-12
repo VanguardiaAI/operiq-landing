@@ -29,7 +29,7 @@ const SpecialEvents = () => {
     {
       id: "wedding",
       title: "Bodas",
-      icon: <Heart className="h-6 w-6 text-red-500" />,
+      icon: <Heart className="h-6 w-6 text-black" />,
       description: "El transporte perfecto para tu día perfecto. Nuestro servicio para bodas ofrece elegancia y confort para la pareja y los invitados.",
       benefits: [
         "Llegada elegante para los novios",
@@ -42,7 +42,7 @@ const SpecialEvents = () => {
     {
       id: "graduation",
       title: "Graduaciones",
-      icon: <GraduationCap className="h-6 w-6 text-red-500" />,
+      icon: <GraduationCap className="h-6 w-6 text-black" />,
       description: "Celebre este importante logro académico con un transporte de lujo que haga el día aún más memorable.",
       benefits: [
         "Impresiona a familiares y amigos",
@@ -55,7 +55,7 @@ const SpecialEvents = () => {
     {
       id: "birthday",
       title: "Cumpleaños",
-      icon: <Wine className="h-6 w-6 text-red-500" />,
+      icon: <Wine className="h-6 w-6 text-black" />,
       description: "Desde fiestas sorpresa hasta celebraciones de hitos importantes, hacemos que tu cumpleaños sea inolvidable con un servicio de transporte premium.",
       benefits: [
         "Recogida y entrega puerta a puerta",
@@ -68,7 +68,7 @@ const SpecialEvents = () => {
     {
       id: "corporate",
       title: "Eventos Corporativos",
-      icon: <Building className="h-6 w-6 text-red-500" />,
+      icon: <Building className="h-6 w-6 text-black" />,
       description: "Impresione a sus clientes y colaboradores con un servicio de chófer exclusivo para sus eventos de empresa más importantes.",
       benefits: [
         "Coordinación de múltiples vehículos",
@@ -81,7 +81,7 @@ const SpecialEvents = () => {
     {
       id: "concert",
       title: "Conciertos y Espectáculos",
-      icon: <Award className="h-6 w-6 text-red-500" />,
+      icon: <Award className="h-6 w-6 text-black" />,
       description: "Disfrute de sus espectáculos favoritos sin preocupaciones. Llegue cómodamente y regrese a casa con seguridad, sin importar la hora.",
       benefits: [
         "Evite problemas de estacionamiento",
@@ -251,7 +251,7 @@ const SpecialEvents = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Servicios a medida para cada ocasión especial
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
 
           {/* Event Type Selector */}
@@ -261,7 +261,7 @@ const SpecialEvents = () => {
                 key={type.id}
                 className={`flex items-center px-6 py-3 m-2 rounded-full transition-all ${
                   activeEventType === type.id
-                    ? "bg-red-500 text-white shadow-md"
+                    ? "bg-gray-1000 text-white shadow-md"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => setActiveEventType(type.id)}
@@ -293,7 +293,7 @@ const SpecialEvents = () => {
                     <ul className="space-y-3">
                       {type.benefits.map((benefit, index) => (
                         <li key={index} className="flex items-start">
-                          <Star className="h-5 w-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <Star className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700">{benefit}</span>
                         </li>
                       ))}
@@ -321,12 +321,12 @@ const SpecialEvents = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             ¿Por qué elegirnos para su evento especial?
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-4 bg-red-50 w-14 h-14 rounded-full flex items-center justify-center">
+              <div className="text-black mb-4 bg-gray-100 w-14 h-14 rounded-full flex items-center justify-center">
                 <Calendar className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Planificación impecable</h3>
@@ -336,7 +336,7 @@ const SpecialEvents = () => {
             </div>
             
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-4 bg-red-50 w-14 h-14 rounded-full flex items-center justify-center">
+              <div className="text-black mb-4 bg-gray-100 w-14 h-14 rounded-full flex items-center justify-center">
                 <Clock className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Puntualidad garantizada</h3>
@@ -346,7 +346,7 @@ const SpecialEvents = () => {
             </div>
             
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-4 bg-red-50 w-14 h-14 rounded-full flex items-center justify-center">
+              <div className="text-black mb-4 bg-gray-100 w-14 h-14 rounded-full flex items-center justify-center">
                 <UserCheck className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Chóferes de élite</h3>
@@ -356,7 +356,7 @@ const SpecialEvents = () => {
             </div>
             
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300">
-              <div className="text-red-500 mb-4 bg-red-50 w-14 h-14 rounded-full flex items-center justify-center">
+              <div className="text-black mb-4 bg-gray-100 w-14 h-14 rounded-full flex items-center justify-center">
                 <Car className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Flota exclusiva</h3>
@@ -413,7 +413,7 @@ const SpecialEvents = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Lo que dicen nuestros clientes
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -421,7 +421,7 @@ const SpecialEvents = () => {
               <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.stars)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-gray-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
@@ -438,21 +438,21 @@ const SpecialEvents = () => {
         <section className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 relative">
             Preguntas frecuentes sobre eventos especiales
-            <span className="block w-24 h-1 bg-gradient-to-r from-red-500 to-orange-400 mx-auto mt-4"></span>
+            <span className="block w-24 h-1 bg-black mx-auto mt-4"></span>
           </h2>
           
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-red-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border ${openFaqIndex === index ? 'border-gray-200 shadow-md' : 'border-gray-200'} overflow-hidden transition-all duration-300`}
               >
                 <button
                   className="flex justify-between items-center w-full p-6 text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-red-600' : 'text-gray-900'}`}>{faq.question}</h3>
-                  <div className={`${openFaqIndex === index ? 'text-red-500 bg-red-50' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
+                  <h3 className={`text-xl font-semibold ${openFaqIndex === index ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
+                  <div className={`${openFaqIndex === index ? 'text-black bg-gray-100' : 'text-gray-400 bg-gray-50'} rounded-full p-1 transition-colors duration-300`}>
                     {openFaqIndex === index ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (
@@ -489,7 +489,7 @@ const SpecialEvents = () => {
                 Nuestro equipo de especialistas en eventos está listo para ayudarle a planificar el transporte perfecto para su ocasión especial. Reserve ahora o contáctenos para un servicio personalizado.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-red-500 hover:bg-red-600 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">
+                <button className="bg-gray-1000 hover:bg-black text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">
                   Reservar ahora
                 </button>
                 <button className="bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200">

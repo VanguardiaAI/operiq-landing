@@ -11,7 +11,7 @@ import json
 from datetime import datetime, timedelta
 
 # Configuración
-API_BASE_URL = "http://localhost:5000"
+API_BASE_URL = "http://localhost:5001"
 
 def test_enhanced_vehicle_search():
     """
@@ -224,7 +224,7 @@ def main():
     Ejecuta todas las pruebas
     """
     print("🚗 PRUEBAS DE MEJORAS - FASE 2")
-    print("Sistema de Horarios Alternativos - Operiq VIP")
+    print("Sistema de Horarios Alternativos - Privyde VIP")
     print("=" * 60)
     
     # Prueba 1: Búsqueda mejorada de vehículos

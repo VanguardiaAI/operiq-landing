@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Logo, Ayuda & App Buttons */}
         <div className="flex justify-between items-center mb-10 border-b border-gray-800 pb-8">
           <div>
-            <Link to="/" className="text-2xl font-bold mb-8 block">OPERIQ</Link>
+            <Link to="/" className="text-2xl font-bold mb-8 block">PRIVYDE</Link>
             <div className="flex space-x-3">
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <Image src="/appstore.png" alt="Download on the App Store" width={100} height={35} />
@@ -41,9 +41,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Operiq for Business */}
+          {/* Privyde for Business */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Operiq for Business</h4>
+            <h4 className="text-lg font-semibold mb-4">Privyde for Business</h4>
             <ul className="space-y-2">
               <li><Link to="/company-overview" className="text-gray-400 hover:text-white text-sm">Resumen</Link></li>
               <li><Link to="/companies" className="text-gray-400 hover:text-white text-sm">Empresas</Link></li>
@@ -105,7 +105,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row md:justify-between">
           <div className="mb-4 md:mb-0">
-            <p className="text-sm text-gray-400">© 2025 Operiq GmbH</p>
+            <p className="text-sm text-gray-400">© 2025 Privyde GmbH</p>
           </div>
           <div className="flex flex-wrap mb-4 md:mb-0">
             <a href="#" className="text-sm text-gray-400 hover:text-white mr-6 mb-2">Condiciones</a>

@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # URL base del API (ajusta según tu configuración)
-API_BASE_URL = "http://localhost:5000"
+API_BASE_URL = "http://localhost:5001"
 
 def test_vehicle_availability_with_alternatives():
     """
@@ -119,7 +119,7 @@ def test_vehicle_availability_with_alternatives():
                 print(f"   Respuesta: {response.text}")
     
     except requests.exceptions.ConnectionError:
-        print("❌ Error de conexión. Asegúrate de que el servidor esté ejecutándose en http://localhost:5000")
+        print("❌ Error de conexión. Asegúrate de que el servidor esté ejecutándose en http://localhost:5001")
     except Exception as e:
         print(f"❌ Error inesperado: {str(e)}")
 
