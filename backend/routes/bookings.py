@@ -3,6 +3,7 @@ from bson import ObjectId
 from datetime import datetime, timedelta
 import json
 from pymongo.errors import PyMongoError
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from models.reservations import (
     reservations_collection, 
     validate_reservation, 
@@ -23,7 +24,8 @@ def setup_collections(db):
     admin_users_collection = db['users']  # Colección de usuarios admin
 
 # Endpoint para obtener todas las reservas (con paginación y filtros)
-@bookings_bp.route('/api/admin/reservations', methods=['GET'])
+@bookings_bp.route('/list', methods=['GET'])
+@jwt_required()
 def get_all_reservations():
     """
     Obtiene todas las reservas con paginación y filtros
@@ -35,6 +37,39 @@ def get_all_reservations():
     - from_date: filtrar desde fecha
     - to_date: filtrar hasta fecha
     """
+    try:
+        # Get JWT identity
+        current_user_id = get_jwt_identity()
+        print(f"[DEBUG] get_all_reservations - JWT identity type: {type(current_user_id)}")
+        print(f"[DEBUG] get_all_reservations - JWT identity value: {current_user_id}")
+        
+        # Handle different JWT identity formats
+        if isinstance(current_user_id, dict):
+            # If JWT identity is a dict, try to get 'id' or '_id' or 'sub'
+            user_id = current_user_id.get('id') or current_user_id.get('_id') or current_user_id.get('sub')
+            print(f"[DEBUG] Extracted user_id from dict: {user_id}")
+        else:
+            user_id = current_user_id
+            print(f"[DEBUG] Using JWT identity as is: {user_id}")
+        
+        # Verificar si el usuario es administrador
+        admin_user = admin_users_collection.find_one({
+            '_id': ObjectId(user_id),
+            'role': 'admin'
+        })
+        
+        if not admin_user:
+            print(f"[DEBUG] User {user_id} not found or not admin")
+            return jsonify({'error': 'No autorizado. Se requieren permisos de administrador'}), 403
+        
+        print(f"[DEBUG] Admin user found: {admin_user.get('email')}")
+    except Exception as e:
+        print(f"[DEBUG] Authentication error: {str(e)}")
+        print(f"[DEBUG] Error type: {type(e).__name__}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': 'Error de autenticación', 'details': str(e)}), 422
+    
     try:
         # Parámetros de paginación
         page = int(request.args.get('page', 1))
@@ -52,7 +87,12 @@ def get_all_reservations():
         
         # Filtrar por estado
         if status:
-            query['status'] = status
+            # Handle comma-separated statuses for filtering multiple states
+            if ',' in status:
+                status_list = [s.strip() for s in status.split(',')]
+                query['status'] = {'$in': status_list}
+            else:
+                query['status'] = status
         
         # Buscar por código o cliente
         if search:
@@ -81,15 +121,20 @@ def get_all_reservations():
         
         # Convertir ObjectId a string para la serialización JSON
         for reservation in reservations:
-            reservation['_id'] = str(reservation['_id'])
-            if 'user_id' in reservation and reservation['user_id']:
-                reservation['user_id'] = str(reservation['user_id'])
-            if 'driver_id' in reservation and reservation['driver_id']:
-                reservation['driver_id'] = str(reservation['driver_id'])
-            if 'vehicle_id' in reservation and reservation['vehicle_id']:
-                reservation['vehicle_id'] = str(reservation['vehicle_id'])
-            if 'created_by' in reservation and reservation['created_by']:
-                reservation['created_by'] = str(reservation['created_by'])
+            # Función recursiva para convertir ObjectIds
+            def convert_objectids(obj):
+                if isinstance(obj, ObjectId):
+                    return str(obj)
+                elif isinstance(obj, dict):
+                    return {k: convert_objectids(v) for k, v in obj.items()}
+                elif isinstance(obj, list):
+                    return [convert_objectids(item) for item in obj]
+                else:
+                    return obj
+            
+            # Convertir todos los ObjectIds del documento
+            for key, value in list(reservation.items()):
+                reservation[key] = convert_objectids(value)
             
             # Formatear fechas para JSON
             for date_field in ['created_at', 'updated_at']:
@@ -123,7 +168,8 @@ def get_all_reservations():
         return jsonify({"error": f"Error al obtener reservas: {str(e)}"}), 500
 
 # Endpoint para crear una nueva reserva
-@bookings_bp.route('/api/admin/reservations', methods=['POST'])
+@bookings_bp.route('/create', methods=['POST'])
+@jwt_required()
 def create_reservation():
     """Crea una nueva reserva desde el panel de administración"""
     try:
@@ -269,7 +315,8 @@ def create_reservation():
         return jsonify({"error": f"Error al crear reserva: {str(e)}"}), 500
 
 # Endpoint para obtener una reserva específica
-@bookings_bp.route('/api/admin/reservations/<reservation_id>', methods=['GET'])
+@bookings_bp.route('/<reservation_id>', methods=['GET'])
+@jwt_required()
 def get_reservation(reservation_id):
     """Obtiene los detalles de una reserva específica"""
     try:
@@ -315,7 +362,8 @@ def get_reservation(reservation_id):
         return jsonify({"error": f"Error al obtener reserva: {str(e)}"}), 500
 
 # Endpoint para actualizar una reserva existente
-@bookings_bp.route('/api/admin/reservations/<reservation_id>', methods=['PUT'])
+@bookings_bp.route('/<reservation_id>/update', methods=['PUT'])
+@jwt_required()
 def update_reservation(reservation_id):
     """Actualiza una reserva existente"""
     try:
@@ -408,7 +456,8 @@ def update_reservation(reservation_id):
         return jsonify({"error": f"Error al actualizar reserva: {str(e)}"}), 500
 
 # Endpoint para cambiar el estado de una reserva
-@bookings_bp.route('/api/admin/reservations/<reservation_id>/status', methods=['PUT'])
+@bookings_bp.route('/<reservation_id>/status', methods=['PUT'])
+@jwt_required()
 def update_reservation_status(reservation_id):
     """Actualiza el estado de una reserva"""
     try:
@@ -496,7 +545,8 @@ def update_reservation_status(reservation_id):
         return jsonify({"error": f"Error al actualizar estado de reserva: {str(e)}"}), 500
 
 # Endpoint para eliminar una reserva (solo para fines administrativos, normalmente se cambia el estado a 'cancelled')
-@bookings_bp.route('/api/admin/reservations/<reservation_id>', methods=['DELETE'])
+@bookings_bp.route('/<reservation_id>/delete', methods=['DELETE'])
+@jwt_required()
 def delete_reservation(reservation_id):
     """Elimina una reserva (solo para fines administrativos)"""
     try:
@@ -524,8 +574,81 @@ def delete_reservation(reservation_id):
         print(f"Error al eliminar reserva: {str(e)}")
         return jsonify({"error": f"Error al eliminar reserva: {str(e)}"}), 500
 
+# Endpoint para obtener estadísticas de reservas
+@bookings_bp.route('/stats', methods=['GET'])
+@jwt_required()
+def get_booking_stats():
+    """Obtiene estadísticas generales de reservas"""
+    try:
+        # Get JWT identity and verify admin role
+        current_user_id = get_jwt_identity()
+        
+        # Handle different JWT identity formats
+        if isinstance(current_user_id, dict):
+            user_id = current_user_id.get('id') or current_user_id.get('_id') or current_user_id.get('sub')
+        else:
+            user_id = current_user_id
+        
+        # Verificar si el usuario es administrador
+        admin_user = admin_users_collection.find_one({
+            '_id': ObjectId(user_id),
+            'role': 'admin'
+        })
+        
+        if not admin_user:
+            return jsonify({'error': 'No autorizado. Se requieren permisos de administrador'}), 403
+
+        # Obtener estadísticas generales
+        total_reservations = reservations_collection.count_documents({})
+        
+        # Contar por estado
+        status_counts = {}
+        statuses = ['pending', 'confirmed', 'in_progress', 'completed', 'cancelled', 'no_show']
+        
+        for status in statuses:
+            count = reservations_collection.count_documents({'status': status})
+            status_counts[status] = count
+        
+        # Contar reservas activas (no completadas ni canceladas)
+        active_statuses = ['pending', 'confirmed', 'in_progress']
+        active_count = reservations_collection.count_documents({'status': {'$in': active_statuses}})
+        
+        # Contar historial (completadas, canceladas, no show)
+        history_statuses = ['completed', 'cancelled', 'no_show']
+        history_count = reservations_collection.count_documents({'status': {'$in': history_statuses}})
+        
+        # Reservas de hoy
+        today_start = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+        today_end = today_start + timedelta(days=1)
+        
+        today_count = reservations_collection.count_documents({
+            'pickup.date': {
+                '$gte': today_start,
+                '$lt': today_end
+            }
+        })
+        
+        # Contar incidencias (reservas con incident_history)
+        incidents_count = reservations_collection.count_documents({
+            'incident_history': {'$exists': True, '$ne': []}
+        })
+        
+        return jsonify({
+            'total': total_reservations,
+            'active': active_count,
+            'history': history_count,
+            'today': today_count,
+            'incidents': incidents_count,
+            'by_status': status_counts
+        }), 200
+        
+    except Exception as e:
+        print(f"Error al obtener estadísticas de reservas: {str(e)}")
+        return jsonify({"error": f"Error al obtener estadísticas: {str(e)}"}), 500
+
 # Nuevo endpoint para buscar vehículos disponibles para una reserva
-@bookings_bp.route('/api/admin/reservations/available-vehicles', methods=['POST'])
+@bookings_bp.route('/available-vehicles', methods=['POST'])
+@jwt_required()
 def find_available_vehicles():
     """
     Busca vehículos disponibles para una reserva
