@@ -144,87 +144,45 @@ const OurServices: React.FC = () => {
         <div className="container mx-auto px-6 pb-12">
           <div className="relative">
             {/* Container wrapper for proper spacing */}
-            {currentService.id % 2 === 0 ? (
-              // Layout for services 2, 4, 6 - Same style as services 1, 3, 5
-              <div className="relative pt-32">
-                {/* Slider Image - Positioned to overlap */}
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-48 sm:w-56 md:w-64 z-20">
-                  <img
-                    src={currentService.image}
-                    alt={currentService.title}
-                    className="w-full h-auto object-contain rounded-lg shadow-xl"
-                  />
-                </div>
-
-                {/* Content Container */}
-                <div className="bg-neutral-800/90 rounded-lg p-4 pt-16 text-white text-left overflow-hidden">
-                  <h2 className="text-sm sm:text-base font-bold mb-2 uppercase tracking-wide text-center line-clamp-2" style={{ fontFamily: 'CONTHRAX-SB' }}>
-                    {currentService.title}
-                  </h2>
-                  
-                  <p className="text-xs sm:text-sm font-semibold mb-2 text-gray-100 text-left line-clamp-2">
-                    {currentService.subtitle}
-                  </p>
-                  
-                  <p className="text-xs text-gray-300 mb-3 leading-relaxed text-left line-clamp-3">
-                    {currentService.description}
-                  </p>
-                  
-                  <ul className="space-y-1 mb-3 text-left list-disc pl-4 max-h-32 overflow-y-auto">
-                    {currentService.features.map((feature, index) => (
-                      <li key={index} className="text-xs text-gray-300 leading-relaxed text-left">
-                        {'title' in feature && feature.title && <span className="font-semibold text-white">{feature.title} </span>}
-                        {feature.text}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <p className="text-xs text-gray-400 italic text-left line-clamp-2">
-                    {currentService.footer}
-                  </p>
-                </div>
+            {/* Single unified layout for all services */}
+            <div className="relative pt-32">
+              {/* Slider Image - Positioned to overlap */}
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-48 sm:w-56 md:w-64 z-20">
+                <img
+                  src={currentService.image}
+                  alt={currentService.title}
+                  className="w-full h-auto object-contain rounded-lg shadow-xl"
+                />
               </div>
-            ) : (
-              // Layout for services 1, 3, 5 - Original layout with image on top
-              <div className="relative pt-32">
-                {/* Slider Image - Positioned to overlap */}
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-48 sm:w-56 md:w-64 z-20">
-                  <img
-                    src={currentService.image}
-                    alt={currentService.title}
-                    className="w-full h-auto object-contain rounded-lg shadow-xl"
-                  />
-                </div>
 
-                {/* Content Container */}
-                <div className="bg-neutral-800/90 rounded-lg p-4 pt-16 text-white text-left overflow-hidden">
-                  <h2 className="text-sm sm:text-base font-bold mb-2 uppercase tracking-wide text-center line-clamp-2" style={{ fontFamily: 'CONTHRAX-SB' }}>
-                    {currentService.title}
-                  </h2>
-                  
-                  <p className="text-xs sm:text-sm font-semibold mb-2 text-gray-100 text-left line-clamp-2">
-                    {currentService.subtitle}
-                  </p>
-                  
-                  <p className="text-xs text-gray-300 mb-3 leading-relaxed text-left line-clamp-3">
-                    {currentService.description}
-                  </p>
-                  
-                  <ul className="space-y-1 mb-3 text-left list-disc pl-4 max-h-32 overflow-y-auto">
-                    {currentService.features.map((feature, index) => (
-                      <li key={index} className="text-xs text-gray-300 leading-relaxed text-left">
-                        {'title' in feature && feature.title && <span className="font-semibold text-white">{feature.title} </span>}
-                        {feature.text}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <p className="text-xs text-gray-400 italic text-left line-clamp-2">
-                    {currentService.footer}
-                  </p>
-                </div>
+              {/* Content Container */}
+              <div className="bg-neutral-800/90 rounded-lg p-4 pt-16 text-white text-left overflow-hidden">
+                <h2 className="text-sm sm:text-base font-bold mb-2 uppercase tracking-wide text-center line-clamp-2" style={{ fontFamily: 'CONTHRAX-SB' }}>
+                  {currentService.title}
+                </h2>
+                
+                <p className="text-xs sm:text-sm font-semibold mb-2 text-gray-100 text-left line-clamp-2">
+                  {currentService.subtitle}
+                </p>
+                
+                <p className="text-xs text-gray-300 mb-3 leading-relaxed text-left line-clamp-3">
+                  {currentService.description}
+                </p>
+                
+                <ul className="space-y-1 mb-3 text-left list-disc pl-4 max-h-32 overflow-y-auto">
+                  {currentService.features.map((feature, index) => (
+                    <li key={index} className="text-xs text-gray-300 leading-relaxed text-left">
+                      {'title' in feature && feature.title && <span className="font-semibold text-white">{feature.title} </span>}
+                      {feature.text}
+                    </li>
+                  ))}
+                </ul>
+                
+                <p className="text-xs text-gray-400 italic text-left line-clamp-2">
+                  {currentService.footer}
+                </p>
               </div>
-            )}
+            </div>
 
             {/* Navigation Buttons */}
             <div className="flex justify-between items-center mt-6 px-2">
