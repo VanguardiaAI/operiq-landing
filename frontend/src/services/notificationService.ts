@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from '@/config/axios';
 import { io, Socket } from "socket.io-client";
 
 // Tipos para las notificaciones
@@ -16,13 +16,12 @@ export interface Notification {
 }
 
 // URL base de la API
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
-const NOTIFICATIONS_API_URL = `${API_URL}/notifications`;
-const SOCKET_URL = import.meta.env.VITE_API_URL?.replace('/api', '') || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
+const SOCKET_URL = API_URL;
 
 // Singleton para socket
 let socket: Socket | null = null;
-let notificationCallbacks: Set<(notification: Notification) => void> = new Set();
+const notificationCallbacks: Set<(notification: Notification) => void> = new Set();
 
 /**
  * Servicio para gestionar las notificaciones del sistema
@@ -159,7 +158,7 @@ export const notificationService = {
         unreadOnly: unreadOnly ? 'true' : 'false'
       });
       
-      const response = await axios.get(`${NOTIFICATIONS_API_URL}?${params}`);
+      const response = await axiosInstance.get(`/api/notifications?${params}`);
       return response.data;
     } catch (error) {
       console.error('[NotificationService] Error al obtener notificaciones:', error);
@@ -172,7 +171,7 @@ export const notificationService = {
    */
   markAsRead: async (notificationId: string): Promise<Notification> => {
     try {
-      const response = await axios.put(`${NOTIFICATIONS_API_URL}/${notificationId}/read`);
+      const response = await axiosInstance.put(`/api/notifications/${notificationId}/read`);
       return response.data;
     } catch (error) {
       console.error('[NotificationService] Error al marcar notificación como leída:', error);
@@ -185,7 +184,7 @@ export const notificationService = {
    */
   markAllAsRead: async (): Promise<{ success: boolean, count: number }> => {
     try {
-      const response = await axios.put(`${NOTIFICATIONS_API_URL}/read-all`);
+      const response = await axiosInstance.put(`/api/notifications/read-all`);
       return response.data;
     } catch (error) {
       console.error('[NotificationService] Error al marcar todas las notificaciones como leídas:', error);
@@ -198,7 +197,7 @@ export const notificationService = {
    */
   deleteNotification: async (notificationId: string): Promise<{ success: boolean }> => {
     try {
-      const response = await axios.delete(`${NOTIFICATIONS_API_URL}/${notificationId}`);
+      const response = await axiosInstance.delete(`/api/notifications/${notificationId}`);
       return response.data;
     } catch (error) {
       console.error('[NotificationService] Error al eliminar notificación:', error);
@@ -211,7 +210,7 @@ export const notificationService = {
    */
   deleteAllNotifications: async (): Promise<{ success: boolean, count: number }> => {
     try {
-      const response = await axios.delete(`${NOTIFICATIONS_API_URL}/all`);
+      const response = await axiosInstance.delete(`/api/notifications/all`);
       return response.data;
     } catch (error) {
       console.error('[NotificationService] Error al eliminar todas las notificaciones:', error);
@@ -224,7 +223,7 @@ export const notificationService = {
    */
   getUnreadCount: async (): Promise<number> => {
     try {
-      const response = await axios.get(`${NOTIFICATIONS_API_URL}/unread-count`);
+      const response = await axiosInstance.get(`/api/notifications/unread-count`);
       return response.data.count;
     } catch (error) {
       console.error('[NotificationService] Error al obtener contador de no leídas:', error);

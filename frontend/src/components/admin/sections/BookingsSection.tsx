@@ -176,24 +176,8 @@ const BookingsSection = () => {
       
       const response = await bookingService.getBookings(filters);
       
-      // Adaptar los datos para la tabla
-      const adaptedBookings = response.reservations.map((booking: any) => ({
-        id: booking._id || booking.code,
-        clientName: booking.clientName,
-        date: booking.date,
-        fromTo: booking.fromTo,
-        type: booking.type,
-        vehicle: booking.vehicle,
-        driver: booking.driver,
-        status: booking.status,
-        price: booking.price,
-        hasIncident: booking.hasIncident,
-        incidentType: booking.incidentType,
-        // Guardar referencia al objeto completo para detalles
-        _fullData: booking
-      }));
-      
-      setBookingsData(adaptedBookings);
+      // The service already processes the bookings data
+      setBookingsData(response.reservations);
       setTotalPages(response.pagination.pages);
       setTotalBookings(response.pagination.total);
       
